@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Settings>
+  <Entry>
+    <CellA>Settings</CellA>
+    <CellB>Value1</CellB>
+    <CellC>Wert1</CellC>
+    <CellD>Das ist nur für einen Test</CellD>
+    <CellE>Yes</CellE>
+  </Entry>
+  <Entry>
+    <CellA>Settings</CellA>
+    <CellB>Value2</CellB>
+    <CellC>Wert2</CellC>
+    <CellD>Das ist auch nur ein Test</CellD>
+    <CellE>No</CellE>
+  </Entry>
+</Settings>
