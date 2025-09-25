@@ -1,0 +1,1394 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  ScreenCheckpoints:
+    Properties:
+      BackgroundImage: ='uvv-clouds'
+      Fill: =RGBA(0, 0, 0, 0)
+      Height: |-
+        =//Max(App.Height; App.MinScreenHeight)
+        Max(App.Height, App.DesignHeight)
+      ImagePosition: =ImagePosition.Fill
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+      OnVisible: |+
+        =If(IsBlank(SelectedCheckpoint) &&
+            CountRows(MyCheckpoints)>0,
+            Set(SelectedCheckpoint,First(MyCheckpoints).Title);
+            Set(CheckpointSelected,true);
+        );
+        //-----------------------------------------------------
+        If(Homepage1="ScreenCheckpoints",Set(Homepage1,""));
+        If(Homepage2="ScreenCheckpoints",Set(Homepage2,""));
+        If(Homepage3="ScreenCheckpoints",Set(Homepage3,""));
+        If(Homepage4="ScreenCheckpoints",Set(Homepage4,""));
+        If(IsBlank(Homepage1),
+            Set(Homepage1,"ScreenCheckpoints"),
+        If(IsBlank(Homepage2),
+            Set(Homepage2,"ScreenCheckpoints"),
+        If(IsBlank(Homepage3),    
+            Set(Homepage3,"ScreenCheckpoints"),
+            Set(Homepage4,"ScreenCheckpoints")
+        )));
+        //-----------------------------------------------------
+      Width: |-
+        =//Max(App.Width; App.MinScreenWidth)
+        Max(App.Width, App.DesignWidth)
+    Children:
+      - MainContainer1_18:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            DropShadow: =DropShadow.None
+            Height: =Parent.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =10
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Parent.Width
+            X: =
+            Y: =
+          Children:
+            - Header1_18:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =90
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutMinHeight: =40
+                  LayoutMinWidth: =Parent.Width-15
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Parent.Width
+                Children:
+                  - HeaderLabel1_18:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        ContentLanguage: =Language()
+                        FillPortions: =1
+                        Font: =Font.'Open Sans'
+                        Height: =Parent.Height
+                        LayoutMinWidth: =1
+                        OnSelect: =
+                        PaddingLeft: =15
+                        Size: =MyFontSize+5
+                        Text: |+
+                          =LookUp(colLanguage,Title="Checkpoints").Wert
+                          & " ("
+                          &CountRows(MyCheckpoints)
+                          &")"
+                        Tooltip: =" "
+                        Width: =
+                        X: =
+                        Y: =
+                  - Back1_18:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =Parent.Height
+                        LayoutMinHeight: =
+                        LayoutMinWidth: =
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =90
+                        X: =
+                        Y: =
+                      Children:
+                        - BackIcon1_18:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              AccessibleLabel: =Self.Tooltip
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisabledFill: =RGBA(39, 113, 194, 1)
+                              FocusedBorderColor: =RGBA(9, 33, 98, 1)
+                              Height: =60
+                              HoverBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                              HoverFill: =RGBA(39, 113, 194, 1)
+                              Icon: =Icon.ArrowLeft
+                              OnSelect: |+
+                                =//Set(SelectedChecklist;Blank());;
+                                //--------------------------------------------------
+                                If(Homepage1="ScreenCheckpoints",Set(Homepage1,""));
+                                If(Homepage2="ScreenCheckpoints",Set(Homepage2,""));
+                                If(Homepage3="ScreenCheckpoints",Set(Homepage3,""));
+                                If(Homepage4="ScreenCheckpoints",Set(Homepage4,""));
+
+                                If(!IsBlank(Homepage4),
+                                    //Notify("Homepage4...");;
+                                    Switch(Homepage4, 
+                                        "ScreenChecklists", 
+                                            Set(Homepage4,"");
+                                            Navigate(ScreenChecklists),
+                                        //Standardergebnis
+                                            Set(Homepage4,"");
+                                            Navigate(StartScreen)
+                                    )
+                                ,//Else
+                                If(!IsBlank(Homepage3),
+                                    //Notify("Homepage3...");;
+                                    Switch(Homepage3, 
+                                        "ScreenChecklists", 
+                                            Set(Homepage3,"");
+                                            Set(Homepage4,"");
+                                            Navigate(ScreenChecklists),
+                                        //Standardergebnis
+                                            Set(Homepage3,"");
+                                            Set(Homepage4,"");
+                                            Navigate(StartScreen)
+                                    )
+                                ,//Else
+                                If(!IsBlank(Homepage2),
+                                    //Notify("Homepage2...");;
+                                    Switch(Homepage2, 
+                                        "ScreenChecklists", 
+                                            Set(Homepage2,"");
+                                            Set(Homepage3,"");
+                                            Set(Homepage4,"");
+                                            Navigate(ScreenChecklists),
+                                        //Standarsergebnis
+                                            Set(Homepage2,"");
+                                            Set(Homepage3,"");
+                                            Set(Homepage4,"");
+                                            Navigate(StartScreen)
+                                    )
+                                ,//Else
+                                    //Notify("Homepage1...");;
+                                    Switch(Homepage1, 
+                                        "ScreenChecklists", 
+                                            Set(Homepage1,"");
+                                            Set(Homepage2,"");
+                                            Set(Homepage3,"");
+                                            Set(Homepage4,"");
+                                            Navigate(ScreenChecklists),
+                                        //Standarsergebnis
+                                            Set(Homepage1,"");
+                                            Set(Homepage2,"");
+                                            Set(Homepage3,"");
+                                            Set(Homepage4,"");
+                                            Navigate(StartScreen)
+                                    )
+                                )));
+                              PaddingBottom: =5
+                              PaddingLeft: =5
+                              PaddingRight: =5
+                              PaddingTop: =5
+                              PressedBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                              PressedFill: =RGBA(39, 113, 194, 1)
+                              TabIndex: =0
+                              Tooltip: =LookUp(colLanguage,Title="Back",Wert)
+                              Width: =60
+                              X: =15
+                              Y: =15
+                        - BackLabel1_18:
+                            Control: FluentV8/Label@1.8.6
+                            Properties:
+                              Alignment: =Align.Center
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisplayMode: =DisplayMode.View
+                              Font: =Font.'Patrick Hand'
+                              FontSize: =MyFontSize-4
+                              Height: =30
+                              Text: =LookUp(colLanguage,Title="Back",Wert)
+                              Tooltip: =LookUp(colLanguage,Title="Back tooltip").Wert
+                              VerticalAlignment: =VerticalAlign.Middle
+                              Visible: =BackIcon1_18.Visible
+                              Width: =90
+                              X: |+
+                                =BackIcon1_18.X+BackIcon1_18.Width/2-Self.Width/2
+                              Y: =60
+            - Details1_18:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.Start
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  DropShadow: =DropShadow.None
+                  Height: =88
+                  LayoutAlignItems: =LayoutAlignItems.Stretch
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutMinHeight: =1
+                  LayoutMinWidth: =1
+                  PaddingLeft: =10
+                  PaddingRight: =10
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Parent.Width
+                Children:
+                  - DetailsView1_18:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Start
+                        BorderThickness: =2
+                        DropShadow: =DropShadow.Semibold
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: |+
+                          =Parent.Height
+                          -Parent.PaddingTop
+                          -Parent.PaddingBottom
+                        LayoutMinHeight: =If(Self.Visible,Parent.Height-15,0)
+                        LayoutMinWidth: =1
+                        RadiusBottomLeft: =30
+                        RadiusBottomRight: =30
+                        RadiusTopLeft: =30
+                        RadiusTopRight: =30
+                        Visible: =!IsBlank(SelectedChecklist)
+                        Width: =Parent.Width-Self.X*2
+                        X: =19+1
+                        Y: =20
+                      Children:
+                        - Delete1_18:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              DropShadow: =DropShadow.None
+                              Height: =90
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Visible: |+
+                                =OnlineStatus=1 && !IsBlank(SelectedCheckpoint)
+                                //es wurde keine Daten für den Checkpunkt erfasst
+                                /*
+                                && IsBlank(LookUp(pssChecklistsActivitiesP;
+                                Titel=SelectedChecklist && Checkpoint=SelectedCheckpoint;ID))
+                                */
+                              Width: =90
+                              X: =Parent.Width-Self.Width
+                              Y: =Edit1_18.Y+Edit1_18.Height
+                            Children:
+                              - DeleteIcon1_18:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    AccessibleLabel: =Self.Tooltip
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    ContentLanguage: =Language()
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(255, 255, 255, 1)
+                                    DisabledFill: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(9, 33, 98, 1)
+                                    FocusedBorderColor: =RGBA(9, 33, 98, 1)
+                                    Height: =60
+                                    HoverBorderColor: =
+                                    HoverColor: =RGBA(255, 255, 255, 1)
+                                    HoverFill: =RGBA(39, 113, 194, 1)
+                                    Icon: =Icon.Trash
+                                    OnSelect: =Set(ShowDeleteDialog,!ShowDeleteDialog);
+                                    PaddingBottom: =5
+                                    PaddingLeft: =5
+                                    PaddingRight: =5
+                                    PaddingTop: =5
+                                    PressedBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                                    PressedFill: =RGBA(39, 113, 194, 1)
+                                    TabIndex: =0
+                                    Tooltip: =LookUp(colLanguage,Title="Delete tooltip",Wert)
+                                    Width: =60
+                                    X: =15
+                                    Y: =10
+                              - DeleteLabel1_18:
+                                  Control: FluentV8/Label@1.8.6
+                                  Properties:
+                                    Alignment: =Align.Center
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    ContentLanguage: =Language()
+                                    DisplayMode: =DisplayMode.View
+                                    Font: =Font.'Patrick Hand'
+                                    FontSize: =MyFontSize-4
+                                    Height: =20
+                                    Text: =LookUp(colLanguage,Title="Delete").Wert
+                                    Tooltip: =LookUp(colLanguage,Title="Delete tooltip").Wert
+                                    VerticalAlignment: =VerticalAlign.Middle
+                                    Width: =90
+                                    Wrap: =false
+                                    X: |+
+                                      =DeleteIcon1_18.X+DeleteIcon1_18.Width/2-Self.Width/2
+                                    Y: =70
+                        - Edit1_18:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              DropShadow: =DropShadow.None
+                              Height: =90
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Visible: =OnlineStatus=1 && !IsBlank(SelectedCheckpoint)
+                              Width: =90
+                              X: =Parent.Width-Self.Width
+                              Y: =
+                            Children:
+                              - EditIcon1_18:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    AccessibleLabel: =Self.Tooltip
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    ContentLanguage: =Language()
+                                    DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                                    DisabledColor: =RGBA(255, 255, 255, 1)
+                                    DisabledFill: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(9, 33, 98, 1)
+                                    FocusedBorderColor: =RGBA(9, 33, 98, 1)
+                                    Height: =60
+                                    HoverBorderColor: =RGBA(255, 255, 255, 1)
+                                    HoverColor: =RGBA(255, 255, 255, 1)
+                                    HoverFill: =RGBA(39, 113, 194, 1)
+                                    Icon: =Icon.Edit
+                                    OnSelect: |+
+                                      =EditForm(EditForm1_20);
+                                      Navigate(ScreenCheckpointTextEdit);
+                                    PaddingBottom: =5
+                                    PaddingLeft: =5
+                                    PaddingRight: =5
+                                    PaddingTop: =5
+                                    PressedBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                                    PressedFill: =RGBA(39, 113, 194, 1)
+                                    TabIndex: =0
+                                    Tooltip: =LookUp(colLanguage,Title="Edit tooltip").Wert
+                                    Width: =60
+                                    X: =15
+                                    Y: =10
+                              - EditLabel1_18:
+                                  Control: FluentV8/Label@1.8.6
+                                  Properties:
+                                    Alignment: =Align.Center
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    ContentLanguage: =Language()
+                                    DisplayMode: =DisplayMode.View
+                                    Font: =Font.'Patrick Hand'
+                                    FontSize: =MyFontSize-4
+                                    FontWeight: =FontWeight.Normal
+                                    Height: =20
+                                    Text: =LookUp(colLanguage,Title="Edit").Wert
+                                    Tooltip: =LookUp(colLanguage,Title="Edit tooltip").Wert
+                                    VerticalAlignment: =VerticalAlign.Middle
+                                    Width: =90
+                                    Wrap: =false
+                                    X: |+
+                                      =EditIcon1_18.X+EditIcon1_18.Width/2-Self.Width/2
+                                    Y: =70
+                        - DetailsViewHtmlText1_18:
+                            Control: HtmlViewer@2.1.0
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              ContentLanguage: =Language()
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisplayMode: =DisplayMode.View
+                              Fill: =
+                              Font: =Font.'Open Sans'
+                              Height: =Parent.Height-Self.Y
+                              HtmlText: |+
+                                =""
+
+                                &"<span style='font-size: smaller;'>"
+                                &LookUp(colLanguage,Title="Checklist",Wert)
+                                &": "
+                                &"</span>"
+                                &"<b>"
+                                &If(IsBlank(SChecklistText),
+                                    SelectedChecklist
+                                ,//Else
+                                    SChecklistText
+                                )
+                                &"</b>"
+                                &"<br />"
+                                &"<br />"
+
+                                &If(!IsBlank(SelectedCheckpoint),
+
+                                    "<span style='font-size: smaller;'>"
+                                    &LookUp(colLanguage,Title="Checkpoint",Wert)
+                                    &": "
+                                    &"</span>"
+                                    &"<b>"
+                                    &SelectedCheckpoint
+                                    &"</b>"
+                                    &"<br />"
+
+                                    &"<span style='font-size: smaller;'>"
+                                    &LookUp(colLanguage,Title="Checkpoint name",Wert)
+                                    &": "
+                                    &"</span>"
+                                    &"<b>"
+                                    &If(IsBlank(SCheckpointText),
+                                        SelectedCheckpoint
+                                    ,//Else
+                                        SCheckpointText
+                                    )
+                                    &"</b>"
+                                    &"<br />"
+
+                                    &"<span style='font-size: smaller;'>"
+                                    &LookUp(colLanguage,Title="Input required",Wert)
+                                    &": "
+                                    &"</span>"
+                                    &"<b>"
+                                    &If(SCheckpointRequired,
+                                        LookUp(colLanguage,Title="Yes",Wert),
+                                        LookUp(colLanguage,Title="No",Wert)
+                                    )
+                                    &"</b>"
+                                    &"<br />"
+                                    &"<br />"
+
+                                    &"<span style='font-size: smaller;'>"
+                                    &LookUp(colLanguage,Title="Possible status",Wert)
+                                    &": "
+                                    &"</span>"
+                                    &"<b><br>"
+                                    &If(!IsBlank(SCheckpointStatus1),
+                                        LookUp(MyStatus,Status=SCheckpointStatus1,StatusText)
+                                    )
+                                    &If(!IsBlank(SCheckpointStatus2),
+                                        "<br>"&
+                                        LookUp(MyStatus,Status=SCheckpointStatus2,StatusText)
+                                    )
+                                    &If(!IsBlank(SCheckpointStatus3),
+                                        "<br>"&
+                                        LookUp(MyStatus,Status=SCheckpointStatus3,StatusText)
+                                    )
+                                    &If(!IsBlank(SCheckpointStatus4),
+                                        "<br>"&
+                                        LookUp(MyStatus,Status=SCheckpointStatus4,StatusText)
+                                    )
+                                    &If(!IsBlank(SCheckpointStatus5),
+                                        "<br>"&
+                                        LookUp(MyStatus,Status=SCheckpointStatus5,StatusText)
+                                    )
+                                    &"</b>"
+                                    &"<br />"
+                                    &"<br />"
+
+                                    &"<span style='font-size: smaller;'>"
+                                    &LookUp(colLanguage,Title="Flex fields",Wert)
+                                    &": "
+                                    &"</span>"
+                                    &"<b>"
+                                    &If(!IsBlank(SCheckpointF1Label),
+                                        "<br>"&
+                                        SCheckpointF1Label
+                                    )
+                                    &If(!IsBlank(SCheckpointF2Label),
+                                        "<br>"&
+                                        SCheckpointF2Label
+                                    )
+                                    &If(!IsBlank(SCheckpointF3Label),
+                                        "<br>"&
+                                        SCheckpointF3Label
+                                    )
+                                    &If(!IsBlank(SCheckpointF4Label),
+                                        "<br>"&
+                                        SCheckpointF4Label
+                                    )
+                                    &If(!IsBlank(SCheckpointF5Label),
+                                        "<br>"&
+                                        SCheckpointF5Label
+                                    )
+                                    &"</b>"
+                                    &"<br />"
+
+                                    /*
+                                    &"<span style='font-size: smaller;'>"
+                                    &"<b>"&"Description: "&"</b>"
+                                    &"</span>"
+                                    */
+
+                                    &"<br />"
+                                    &SCheckpointDescription
+                                )
+                              PaddingBottom: =15
+                              PaddingLeft: =15
+                              PaddingRight: =15
+                              PaddingTop: =15
+                              Size: =MyFontSize
+                              Tooltip: ="Checklist"
+                              Width: =Edit1_18.X
+                              X: =
+                              Y: =
+                        - PosUp1_18:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              DropShadow: =DropShadow.None
+                              Height: =90
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Visible: =SCheckpointPos>1 && OnlineStatus=1 && !IsBlank(SelectedCheckpoint)
+                              Width: =90
+                              X: =Parent.Width-Self.Width
+                              Y: =Parent.Height-Self.Height-10
+                            Children:
+                              - PosUpIcon1_18:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    AccessibleLabel: =Self.Tooltip
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    ContentLanguage: =Language()
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(255, 255, 255, 1)
+                                    DisabledFill: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(9, 33, 98, 1)
+                                    FocusedBorderColor: =RGBA(9, 33, 98, 1)
+                                    Height: =60
+                                    HoverBorderColor: =
+                                    HoverColor: =RGBA(255, 255, 255, 1)
+                                    HoverFill: =RGBA(39, 113, 194, 1)
+                                    Icon: =Icon.ArrowUp
+                                    OnSelect: "=Set(ShowDeleteDialog,false);\r\nSet(_ShowLoadingHint,true);\r\n\r\n//Pos = 99 for predecessor\r\nPatch(MyCheckpoints, \r\n    LookUp(MyCheckpoints,Pos=SCheckpointPos-1),\r\n    {Pos:99}\r\n);\r\n\r\n//Pos = Pos -1 for selected entry\r\nPatch(MyCheckpoints, \r\n    LookUp(MyCheckpoints,Pos=SCheckpointPos),\r\n    {Pos:SCheckpointPos-1}\r\n);\r\n\r\n//Pos = current pos for predecessor\r\nPatch(MyCheckpoints, \r\n    LookUp(MyCheckpoints,Pos=99),\r\n    {Pos:SCheckpointPos}\r\n);\r\n\r\n//Update SP list\r\nForAll(MyCheckpoints As aSource,\r\n    Patch(pssChecklistsCheckpoints,\r\n        LookUp(pssChecklistsCheckpoints,\r\n        Title=aSource.Title&&\r\n        Checkpoint=aSource.Checkpoint),\r\n        {Pos:aSource.Pos}\r\n    )\r\n);\r\n   \r\n//Set(InitialReadCheckpoints;true);;\r\n//Set(ReadCheckpoints;true);;\r\nSet(CheckpointSelected,true);\r\nSet(_ShowLoadingHint,false);\r\n"
+                                    PaddingBottom: =5
+                                    PaddingLeft: =5
+                                    PaddingRight: =5
+                                    PaddingTop: =5
+                                    PressedBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                                    PressedFill: =RGBA(39, 113, 194, 1)
+                                    TabIndex: =0
+                                    Tooltip: =LookUp(colLanguage,Title="Position up tooltip",Wert)
+                                    Width: =60
+                                    X: =15
+                                    Y: =10
+                              - PosUpLabel1_18:
+                                  Control: FluentV8/Label@1.8.6
+                                  Properties:
+                                    Alignment: =Align.Center
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    ContentLanguage: =Language()
+                                    DisplayMode: =DisplayMode.View
+                                    Font: =Font.'Patrick Hand'
+                                    FontSize: =MyFontSize-4
+                                    Height: =20
+                                    Text: =LookUp(colLanguage,Title="Pos up",Wert)
+                                    Tooltip: =LookUp(colLanguage,Title="Position up tooltip",Wert)
+                                    VerticalAlignment: =VerticalAlign.Middle
+                                    Width: =90
+                                    Wrap: =false
+                                    X: |+
+                                      =PosUpIcon1_18.X+PosUpIcon1_18.Width/2-Self.Width/2
+                                    Y: =70
+            - Filter1_18:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =90
+                  LayoutAlignItems: =LayoutAlignItems.Stretch
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutMinHeight: =40
+                  LayoutMinWidth: =Parent.Width-15
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Parent.Width
+                Children:
+                  - Search1_18:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DropShadow: =DropShadow.None
+                        Height: =Parent.Height
+                        LayoutMinHeight: =1
+                        LayoutMinWidth: =1
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Visible: =true//CountRows(MyChecklists)>0
+                        Width: =
+                        X: =
+                        Y: =
+                      Children:
+                        - CheckpointsSearchBox:
+                            Control: Classic/TextInput@2.3.2
+                            Properties:
+                              AccessibleLabel: =Self.Tooltip
+                              Align: =TextPosition.Left
+                              BorderColor: =RGBA(116, 116, 116, 1)
+                              BorderThickness: =1
+                              Clear: =true
+                              ContentLanguage: =Language()
+                              Default: =ChecklistsSearchBoxDefault
+                              DelayOutput: =true
+                              DisabledFill: =RGBA(255, 255, 255, 1)
+                              DisplayMode: |-
+                                =If(CountRows(MyCheckpoints)>1,
+                                    DisplayMode.Edit
+                                ,//Else
+                                    DisplayMode.Disabled
+                                )
+                              FocusedBorderThickness: =2
+                              Font: =Font.'Open Sans'
+                              Height: =60
+                              HintText: =Self.Tooltip
+                              HoverBorderColor: =RGBA(0, 18, 107, 1)
+                              HoverFill: =RGBA(237, 237, 237, 1)
+                              OnChange: =
+                              OnSelect: =
+                              PaddingLeft: =SearchIcon1_18.Width+15
+                              PressedColor: =Color.Black
+                              PressedFill: =Color.White
+                              RadiusBottomLeft: =10
+                              RadiusBottomRight: =10
+                              RadiusTopLeft: =10
+                              RadiusTopRight: =10
+                              Reset: =true
+                              Size: =MyFontSize
+                              Tooltip: =LookUp(colLanguage,Title="Search tooltip Checkpoints").Wert
+                              Width: =Parent.Width-Self.X*2
+                              X: =15+1
+                              Y: =9+1
+                        - SearchIcon1_18:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              AccessibleLabel: =Self.Tooltip
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Color: =RGBA(128, 128, 128, 1)
+                              ContentLanguage: =Language()
+                              DisabledBorderColor: =RGBA(56, 56, 56, 1)
+                              DisabledColor: =RGBA(193, 193, 193, 0.95)
+                              DisabledFill: =SearchIcon1_18.Fill
+                              DisplayMode: =DisplayMode.View
+                              FocusedBorderColor: =Color.White
+                              FocusedBorderThickness: =1
+                              Height: =60
+                              HoverBorderColor: =ColorFade(SearchIcon1_18.BorderColor, 20%)
+                              HoverColor: =ColorFade(SearchIcon1_18.Color, 20%)
+                              HoverFill: =SearchIcon1_18.Fill
+                              Icon: =Icon.Search
+                              OnSelect: =
+                              PaddingBottom: =10
+                              PaddingLeft: =10
+                              PaddingRight: =10
+                              PaddingTop: =10
+                              PressedBorderColor: =ColorFade(SearchIcon1_18.BorderColor, -20%)
+                              PressedColor: =ColorFade(SearchIcon1_18.Color, -20%)
+                              PressedFill: =SearchIcon1_18.Fill
+                              TabIndex: =0
+                              Tooltip: =LookUp(colLanguage,Title="Search tooltip Checkpoint").Wert
+                              Width: =59+1
+                              X: =CheckpointsSearchBox.X
+                              Y: =CheckpointsSearchBox.Y
+                  - Add1_18:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =Parent.Height
+                        LayoutMinHeight: =
+                        LayoutMinWidth: =
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Visible: =OnlineStatus=1
+                        Width: =90
+                        X: =
+                        Y: =
+                      Children:
+                        - AddIcon1_18:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              AccessibleLabel: =Self.Tooltip
+                              BorderColor: =RGBA(9, 33, 98, 1)
+                              BorderStyle: =BorderStyle.None
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisabledFill: =RGBA(39, 113, 194, 1)
+                              Fill: =RGBA(9, 33, 98, 1)
+                              FocusedBorderColor: =RGBA(9, 33, 98, 1)
+                              Height: =60
+                              HoverBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                              HoverFill: =RGBA(39, 113, 194, 1)
+                              Icon: =Icon.Add
+                              OnSelect: |+
+                                =Set(ShowDeleteDialog,false);
+
+                                Set(SCheckpointPos,0);
+                                Set(SCheckpointText,"");
+                                Set(SCheckpointDescription,"");
+                                Set(SCheckpointRequired,true);
+
+                                Set(SCheckpointStatus1,"");
+                                Set(SCheckpointStatus2,"");
+                                Set(SCheckpointStatus3,"");
+                                Set(SCheckpointStatus4,"");
+                                Set(SCheckpointStatus5,"");
+
+                                Clear(colFlexForm);
+
+                                Set(SCheckpointFlexForm,"");
+
+                                Set(SCheckpointF1,"");
+                                Set(SCheckpointF2,"");
+                                Set(SCheckpointF3,"");
+                                Set(SCheckpointF4,"");
+                                Set(SCheckpointF5,"");
+
+                                Set(SCheckpointF1Label,"");
+                                Set(SCheckpointF2Label,"");
+                                Set(SCheckpointF3Label,"");
+                                Set(SCheckpointF4Label,"");
+                                Set(SCheckpointF5Label,"");
+
+                                Set(NPos,Max(MyCheckpoints,Pos)+1);
+                                ResetForm(EditForm1_19);
+                                NewForm(EditForm1_19);
+                                Navigate(ScreenCheckpointAdd);
+                              PaddingBottom: =5
+                              PaddingLeft: =5
+                              PaddingRight: =5
+                              PaddingTop: =5
+                              PressedBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                              PressedFill: =RGBA(39, 113, 194, 1)
+                              TabIndex: =0
+                              Tooltip: =LookUp(colLanguage,Title="Add tooltip Checkpoints",Wert)
+                              Width: =60
+                              X: =15
+                              Y: =10
+                        - AddLabel1_18:
+                            Control: FluentV8/Label@1.8.6
+                            Properties:
+                              Alignment: =Align.Center
+                              Color: =RGBA(0, 0, 0, 1)
+                              ContentLanguage: =Language()
+                              DisplayMode: =DisplayMode.View
+                              Font: =Font.'Patrick Hand'
+                              FontSize: =MyFontSize-4
+                              Height: =20
+                              Text: =LookUp(colLanguage,Title="Add",Wert)
+                              Tooltip: =LookUp(colLanguage,Title="Add tooltip Checkpoints",Wert)
+                              VerticalAlignment: =VerticalAlign.Middle
+                              Width: =90
+                              Wrap: =false
+                              X: |+
+                                =AddIcon1_18.X+AddIcon1_18.Width/2-Self.Width/2
+                              Y: =70
+                  - Sort1_18:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =Parent.Height
+                        LayoutMinHeight: =
+                        LayoutMinWidth: =
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Visible: =false//CountRows(MyCheckpoints)>1
+                        Width: =90
+                        X: =
+                        Y: =
+                      Children:
+                        - SortIcon1_18:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              AccessibleLabel: =Self.Tooltip
+                              BorderColor: =RGBA(9, 33, 98, 1)
+                              BorderStyle: =BorderStyle.None
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisabledFill: =RGBA(39, 113, 194, 1)
+                              Fill: =RGBA(9, 33, 98, 1)
+                              FocusedBorderColor: =RGBA(9, 33, 98, 1)
+                              Height: =60
+                              HoverBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                              HoverFill: =RGBA(39, 113, 194, 1)
+                              Icon: =Icon.Sort
+                              OnSelect: |-
+                                =Set(ShowDeleteDialog,false);
+                                Set(ChecklistsSortDescending,!ChecklistsSortDescending)
+                              PaddingBottom: =5
+                              PaddingLeft: =5
+                              PaddingRight: =5
+                              PaddingTop: =5
+                              PressedBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                              PressedFill: =RGBA(39, 113, 194, 1)
+                              TabIndex: =0
+                              Tooltip: |-
+                                ="Sort ascending/descending"
+                                //LookUp(MyUVVSettings;Title="UVV Prüfung erfassen").Wert
+                              Width: =60
+                              X: =15
+                              Y: =10
+                        - SortLabel1_18:
+                            Control: FluentV8/Label@1.8.6
+                            Properties:
+                              Alignment: =Align.Center
+                              Color: =RGBA(0, 0, 0, 1)
+                              ContentLanguage: =Language()
+                              DisplayMode: =DisplayMode.View
+                              Font: =Font.'Patrick Hand'
+                              FontSize: =MyFontSize-4
+                              Height: =20
+                              Text: |-
+                                ="Sort"
+                                //LookUp(MyUVVSettings;Title="Bearbeiten").Wert
+                              VerticalAlignment: =VerticalAlign.Middle
+                              Width: =90
+                              Wrap: =false
+                              X: |+
+                                =SortIcon1_18.X+SortIcon1_18.Width/2-Self.Width/2
+                              Y: =70
+                  - Refresh1_18:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =Parent.Height
+                        LayoutMinHeight: =
+                        LayoutMinWidth: =
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Visible: =OnlineStatus=1
+                        Width: =90
+                        X: =
+                        Y: =
+                      Children:
+                        - RefreshIcon1_18:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              AccessibleLabel: =Self.Tooltip
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisabledFill: =RGBA(39, 113, 194, 1)
+                              Fill: =RGBA(9, 33, 98, 1)
+                              FocusedBorderColor: =RGBA(9, 33, 98, 1)
+                              Height: =60
+                              HoverBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                              HoverFill: =RGBA(39, 113, 194, 1)
+                              Icon: =Icon.Reload
+                              OnSelect: |+
+                                =Set(ShowDeleteDialog,false);
+                                Set(InitialReadCheckpoints,true);
+                                Set(ReadCheckpoints,true);
+                              PaddingBottom: =5
+                              PaddingLeft: =5
+                              PaddingRight: =5
+                              PaddingTop: =5
+                              PressedBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                              PressedFill: =RGBA(39, 113, 194, 1)
+                              TabIndex: =0
+                              Tooltip: =LookUp(colLanguage,Title="Refresh tooltip",Wert)
+                              Width: =60
+                              X: =15
+                              Y: =10
+                        - RefreshLabel1_18:
+                            Control: FluentV8/Label@1.8.6
+                            Properties:
+                              Alignment: =Align.Center
+                              Color: =RGBA(0, 0, 0, 1)
+                              ContentLanguage: =Language()
+                              DisplayMode: =DisplayMode.View
+                              Font: =Font.'Patrick Hand'
+                              FontSize: =MyFontSize-4
+                              Height: =20
+                              Text: =LookUp(colLanguage,Title="Refresh",Wert)
+                              Tooltip: =LookUp(colLanguage,Title="Refresh tooltip",Wert)
+                              VerticalAlignment: =VerticalAlign.Middle
+                              Width: =90
+                              Wrap: =false
+                              X: |+
+                                =RefreshIcon1_18.X+RefreshIcon1_18.Width/2-Self.Width/2
+                              Y: =70
+            - Gallery1_18:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.Start
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  DropShadow: =DropShadow.None
+                  Height: =88
+                  LayoutAlignItems: =LayoutAlignItems.Stretch
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutMinHeight: =40
+                  LayoutMinWidth: =Parent.Width-15
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Parent.Width
+                Children:
+                  - FlexibleHeightGalleryCheckpoints:
+                      Control: Gallery@2.15.0
+                      Variant: BrowseLayout_Flexible_SocialFeed_pcfCore
+                      Properties:
+                        AccessibleLabel: =LookUp(colLanguage,Title="Checkpoints tooltip",Wert)
+                        AlignInContainer: =AlignInContainer.Start
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        ContentLanguage: =Language()
+                        FocusedBorderColor: =RGBA(98, 100, 167, 1)
+                        FocusedBorderThickness: =2
+                        Height: |+
+                          =Parent.Height
+                          -Parent.PaddingTop
+                          -Parent.PaddingBottom
+                        ItemAccessibleLabel: =LookUp(colLanguage,Title="Checkpoints tooltip",Wert)
+                        Items: |+
+                          =SortByColumns(
+                              Filter(MyCheckpoints, 
+                                  CheckpointsSearchBox.Text in Checkpoint ||
+                                  CheckpointsSearchBox.Text in CheckpointText ||
+                                  CheckpointsSearchBox.Text in Description
+                              ),
+                              "Pos", 
+                              If(CheckpointsSortDescending,
+                              SortOrder.Descending,SortOrder.Ascending)
+                          )
+                        LayoutMinWidth: =300
+                        NavigationStep: =5
+                        OnSelect: |+
+                          =Set(SelectedCheckpoint,ThisItem.Checkpoint);
+                          Set(CheckpointSelected,true);
+                        ShowNavigation: =true
+                        TabIndex: =0
+                        TemplatePadding: =10
+                        TemplateSize: |+
+                          =//Min(45, Self.Height+15)
+                        Width: =300
+                        X: =20*1
+                        Y: =Parent.PaddingTop
+                      Children:
+                        - GalleryCheckpointsRectangle:
+                            Control: Classic/TextInput@2.3.2
+                            Properties:
+                              AccessibleLabel: =Self.Tooltip
+                              Align: =TextPosition.Left
+                              BorderColor: |-
+                                =If(ThisItem.Title=SelectedChecklist,
+                                    galleryBorderColorSelected,
+                                    galleryBorderColor
+                                )
+                              BorderThickness: =1
+                              Clear: =true
+                              ContentLanguage: =Language()
+                              Default: =
+                              DisabledFill: =GalleryCheckpointsRectangle.Fill
+                              Fill: |+
+                                =If(ThisItem.Checkpoint=SelectedCheckpoint,
+                                    galleryColorSelected,
+                                    galleryColorFill
+                                )
+                              FocusedBorderColor: =GalleryCheckpointsRectangle.BorderColor
+                              Font: =Font.'Open Sans'
+                              Height: =GalleryCheckpointsHtmlText.Height
+                              HintText: =
+                              HoverBorderColor: =RGBA(0, 18, 107, 1)
+                              HoverFill: =GalleryCheckpointsRectangle.Fill
+                              OnChange: =
+                              OnSelect: =
+                              PaddingBottom: =
+                              PaddingLeft: =
+                              PaddingRight: =
+                              PaddingTop: =
+                              PressedColor: =Color.Black
+                              PressedFill: =GalleryCheckpointsRectangle.Fill
+                              RadiusBottomLeft: =30
+                              RadiusBottomRight: =30
+                              RadiusTopLeft: =30
+                              RadiusTopRight: =30
+                              Reset: =true
+                              Size: =10
+                              Tooltip: =
+                              Width: =Parent.TemplateWidth-10
+                        - GalleryCheckpointsHtmlText:
+                            Control: HtmlViewer@2.1.0
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              ContentLanguage: =Language()
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              Fill: =
+                              Font: =Font.'Open Sans'
+                              Height: =65
+                              HtmlText: =Text(ThisItem.Pos,"00")&" "&ThisItem.CheckpointText
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =15
+                              PaddingLeft: =15
+                              PaddingRight: =15
+                              PaddingTop: =15
+                              Size: =MyFontSize
+                              Tooltip: =LookUp(colLanguage,Title="Checkpoints tooltip",Wert)
+                              Width: =GalleryCheckpointsRectangle.Width
+            - FooterLabel1_18:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Right
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  Color: =RGBA(255, 255, 255, 1)
+                  DisplayMode: =DisplayMode.View
+                  Fill: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Lighter
+                  Height: =50
+                  PaddingLeft: =15
+                  PaddingRight: =15
+                  Size: =MyFontSize-3
+                  Text: "=If(!IsBlank(FooterText),\r\n    FooterText,\r\n    \"v\"\r\n    &MyVersion\r\n    &\"|\"&MyDeviceType\r\n    &If(OnlineStatus=0,\"|Offline\",\"|Online\")\r\n    &\"|\"&MyLanguage\r\n    \r\n    //&\"|Mode:\"&EditForm1_15.Mode //(0=Edit;1=Add)\r\n    //&\"|SelectedChecklist:\"&SelectedChecklist\r\n    //&\"|\"&SelectedCheckpoint\r\n)\r\n"
+                  Width: =Parent.Width
+                  Y: =Parent.Height-Self.Height
+      - GroupDelete1_18:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            BorderThickness: =2
+            DropShadow: =DropShadow.ExtraBold
+            Fill: =RGBA(244, 244, 243, 1)
+            Height: =DeleteTitel1_18.Height+DeleteText1_18.Height+DeleteButtons1_18.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            PaddingBottom: =2
+            PaddingLeft: =2
+            PaddingRight: =2
+            PaddingTop: =2
+            RadiusBottomLeft: =30
+            RadiusBottomRight: =30
+            RadiusTopLeft: =30
+            RadiusTopRight: =30
+            Visible: =ShowDeleteDialog
+            Width: =375
+            X: =Delete1_18.X+Delete1_18.Width-Self.Width
+            Y: =Header1_18.Height+Delete1_18.Y+Delete1_18.Height+25
+          Children:
+            - DeleteTitel1_18:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  AlignInContainer: =AlignInContainer.Start
+                  BorderColor: =
+                  BorderStyle: =BorderStyle.None
+                  Color: =galleryColor
+                  ContentLanguage: =Language()
+                  DisplayMode: =DisplayMode.View
+                  FillPortions: =1
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =50
+                  LayoutMinHeight: =50
+                  LayoutMinWidth: =1
+                  PaddingBottom: =10
+                  PaddingLeft: =10
+                  PaddingRight: =10
+                  PaddingTop: =10
+                  Size: =MyFontSize+2
+                  Text: |+
+                    =LookUp(colLanguage,Title="Delete checkpoint?").Wert
+                  Tooltip: =" "
+                  Width: =Parent.Width
+            - DeleteText1_18:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  AlignInContainer: =AlignInContainer.Stretch
+                  BorderColor: =
+                  BorderStyle: =BorderStyle.None
+                  Color: =galleryColor
+                  ContentLanguage: =Language()
+                  DisplayMode: =DisplayMode.View
+                  FocusedBorderThickness: =2
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =125
+                  LayoutMinHeight: =1
+                  LayoutMinWidth: =150
+                  PaddingBottom: =10
+                  PaddingLeft: =10
+                  PaddingRight: =10
+                  PaddingTop: =10
+                  Size: =MyFontSize
+                  Text: |+
+                    =LookUp(colLanguage,Title="Do you really want to delete the selected checkpoint?").Wert
+                  Tooltip: =" "
+                  Width: =Parent.Width
+                  Y: =50
+            - DeleteButtons1_18:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =80
+                  LayoutMinHeight: =60
+                  LayoutMinWidth: =Parent.Width
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Parent.Width
+                Children:
+                  - DeleteGroupJaButton1_18:
+                      Control: Classic/Button@2.2.0
+                      Group: DeleteGroupJa1_18
+                      Properties:
+                        BorderThickness: =0
+                        Color: =galleryColor
+                        ContentLanguage: =Language()
+                        DisplayMode: |-
+                          =If(Connection.Connected,
+                          DisplayMode.Edit,
+                          DisplayMode.Disabled)
+                        Fill: =RGBA(152, 208, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =50
+                        HoverColor: =RGBA(0, 0, 0, 1)
+                        HoverFill: =RGBA(152, 208, 70, 1)
+                        OnSelect: "=Set(ShowDeleteDialog,false);\r\nSet (locErrorCode, \"\");\r\n//--------------------------------------------------------\r\n// Delete checklist\r\nIf(IsBlank(locErrorCode),\r\n\r\n    // remove from collection\r\n    RemoveIf(MyCheckpoints,\r\n        Title=SelectedChecklist&&\r\n        Checkpoint=SelectedCheckpoint); \r\n    \r\n    //all good?\r\n    If(!IsEmpty(Errors([@MyCheckpoints])),\r\n        Set(locErrorCode, \r\n            LookUp(colLanguage,Title=\"Error! Was not able to delete the checkpoint\").Wert\r\n        );\r\n        Notify(\r\n            locErrorCode,\r\n            //LookUp(MyUVVSettings;\r\n            //Title=\"Fehler beim Löschen in UVVKundenliste\").Wert;\r\n            NotificationType.Error,2000\r\n        );\r\n    ,// Else\r\n        Set (locErrorCode, \"\");\r\n    );\r\n\r\n    // Save checkpoints locally\r\n    If(MyDeviceType=\"Mobile\" && IsBlank(locErrorCode),\r\n        SaveData(MyCheckpoints,\"MyCheckpoints\")  \r\n    );\r\n\r\n    // Generate pos number\r\n    If(IsBlank(locErrorCode),\r\n        ClearCollect(\r\n            MyCheckpoints,\r\n            ForAll(\r\n                Sequence(CountRows(MyCheckpoints)),\r\n                Patch(\r\n                    Last(FirstN(MyCheckpoints, Value)),\r\n                    {Pos:Value}\r\n                )\r\n            )\r\n        )\r\n    );\r\n\r\n    //Remove from SP list\r\n    If(IsBlank(locErrorCode) && OnlineStatus=1,\r\n        RemoveIf(pssChecklistsCheckpoints,\r\n            Title=SelectedChecklist&&\r\n            Checkpoint=SelectedCheckpoint\r\n        ); \r\n        RemoveIf(pssChecklistsCheckpointsText,\r\n            Title=SelectedChecklist&&\r\n            Checkpoint=SelectedCheckpoint\r\n        ); \r\n        ForAll(MyCheckpoints As aSource,\r\n            Patch(pssChecklistsCheckpoints,\r\n                LookUp(pssChecklistsCheckpoints,\r\n                Title=aSource.Title&&\r\n                Checkpoint=aSource.Checkpoint),\r\n                {Pos:aSource.Pos}\r\n            )\r\n        );\r\n    );\r\n\r\n    If(CountRows(MyCheckpoints)>0,\r\n        Set(SelectedCheckpoint,\r\n            First(MyCheckpoints).Checkpoint\r\n        );\r\n        Set(CheckpointSelected,true);\r\n    ,//Else\r\n        Set(SelectedCheckpoint,\"\");\r\n        Set(CheckpointSelected,false);\r\n    );\r\n    \r\n    //Set(InitialReadCheckpoints;true);;\r\n    //Set(ReadCheckpoints;true);;\r\n\r\n);\r\n\r\n"
+                        PaddingLeft: =45
+                        PressedColor: =RGBA(0, 0, 0, 1)
+                        PressedFill: =RGBA(152, 208, 70, 1)
+                        Size: =MyFontSize
+                        Text: |+
+                          =LookUp(colLanguage,Title="Yes").Wert
+                        Tooltip: =Self.Text
+                        Width: =150
+                        X: =25
+                        Y: =10
+                  - DeleteGroupJaIcon1_18:
+                      Control: Classic/Icon@2.5.0
+                      Group: DeleteGroupJa1_18
+                      Properties:
+                        AccessibleLabel: =Self.Tooltip
+                        Color: =galleryColor
+                        ContentLanguage: =Language()
+                        DisplayMode: =DisplayMode.View
+                        FocusedBorderColor: =Color.White
+                        FocusedBorderThickness: =1
+                        Height: =DeleteGroupJaButton1_18.Height
+                        Icon: =Icon.ThumbsUp
+                        PaddingBottom: =9
+                        PaddingLeft: =9
+                        PaddingRight: =9
+                        PaddingTop: =9
+                        TabIndex: =0
+                        Tooltip: =DeleteGroupJaButton1_18.Text
+                        Width: =DeleteGroupJaButton1_18.Height
+                        X: =DeleteGroupJaButton1_18.X
+                        Y: =DeleteGroupJaButton1_18.Y
+                  - DeleteGroupNeinButton1_18:
+                      Control: Classic/Button@2.2.0
+                      Group: DeleteGroupNein1_18
+                      Properties:
+                        BorderThickness: =0
+                        Color: =RGBA(255, 255, 255, 1)
+                        ContentLanguage: =Language()
+                        DisplayMode: |-
+                          =If(Connection.Connected,
+                          DisplayMode.Edit,
+                          DisplayMode.Disabled)
+                        Fill: =RGBA(221, 79, 14, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =DeleteGroupJaButton1_18.Height
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(221, 79, 14, 1)
+                        OnSelect: =Set (ShowDeleteDialog,false)
+                        PaddingLeft: =45
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(221, 79, 14, 1)
+                        Size: =MyFontSize
+                        Text: |+
+                          =LookUp(colLanguage,Title="No").Wert
+                        Tooltip: =Self.Text
+                        Width: =DeleteGroupJaButton1_18.Width
+                        X: |+
+                          =DeleteGroupJaButton1_18.X
+                          +DeleteGroupJaButton1_18.Width
+                          +25
+                        Y: =DeleteGroupJaButton1_18.Y
+                  - DeleteGroupNeinIcon1_18:
+                      Control: Classic/Icon@2.5.0
+                      Group: DeleteGroupNein1_18
+                      Properties:
+                        AccessibleLabel: =Self.Tooltip
+                        Color: =RGBA(255, 255, 255, 1)
+                        ContentLanguage: =Language()
+                        DisplayMode: =DisplayMode.View
+                        FocusedBorderColor: =Color.White
+                        FocusedBorderThickness: =1
+                        Height: =DeleteGroupNeinButton1_18.Height
+                        Icon: =Icon.CancelBadge
+                        PaddingBottom: =9
+                        PaddingLeft: =9
+                        PaddingRight: =9
+                        PaddingTop: =9
+                        TabIndex: =0
+                        Tooltip: =DeleteGroupNeinButton1_18.Text
+                        Width: =DeleteGroupNeinButton1_18.Height
+                        X: =DeleteGroupNeinButton1_18.X
+                        Y: =DeleteGroupNeinButton1_18.Y
+      - ImageLoading1_18:
+          Control: Image@2.2.3
+          Properties:
+            AccessibleLabel: =" "
+            BorderColor: =RGBA(0, 18, 107, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =150
+            Image: =Loading_1
+            ImagePosition: =ImagePosition.Fill
+            TabIndex: =0
+            Visible: =_ShowLoadingHint
+            Width: =150
+            X: =Parent.Width/2 - Self.Width/2
+            Y: =Parent.Height/2 - Self.Height/2
+      - KeineDaten1_18:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            BorderThickness: =2
+            DropShadow: =DropShadow.Semibold
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =Gallery1_18.Height
+            RadiusBottomLeft: =30
+            RadiusBottomRight: =30
+            RadiusTopLeft: =30
+            RadiusTopRight: =30
+            Visible: |+
+              =!ReadChecklists &&
+              !_ShowLoadingHint && 
+              CountRows(MyChecklists)=0
+            Width: =Parent.Width-Self.X*2
+            X: =15
+            Y: =Gallery1_18.Y
+          Children:
+            - KeineDatenImage1_18:
+                Control: Image@2.2.3
+                Properties:
+                  AccessibleLabel: =Self.Tooltip
+                  AutoDisableOnSelect: =false
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  ContentLanguage: =Language()
+                  DisplayMode: =DisplayMode.View
+                  Height: |-
+                    =Parent.Height
+                    -KeineDatenLabel1_18.Height
+                  Image: =Anna
+                  OnSelect: =
+                  PaddingBottom: =50
+                  PaddingLeft: =50
+                  PaddingRight: =50
+                  PaddingTop: =50
+                  Tooltip: |-
+                    =" "
+                    //LookUp(MyUVVSettings;Title="Keine Daten gefunden").Wert
+                  Width: =Parent.Width
+                  X: =
+                  Y: =
+            - KeineDatenLabel1_18:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  AutoHeight: =true
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  ContentLanguage: =Language()
+                  DisplayMode: =DisplayMode.View
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =200
+                  PaddingBottom: =15
+                  PaddingTop: =15
+                  Size: =MyFontSize+3
+                  Text: =LookUp(colLanguage,Title="Nothing here",Wert)
+                  Width: =Parent.Width
+                  X: =
+                  Y: =Parent.Height-Self.Height
+      - TimerREADCheckpoints:
+          Control: Timer@2.1.0
+          Properties:
+            AutoStart: =true
+            BorderColor: =//ColorFade(Self.Fill; -15%)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =
+            DisabledColor: =
+            DisabledFill: =
+            Duration: =500
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Lighter
+            Height: =26
+            HoverBorderColor: =
+            HoverColor: =
+            HoverFill: =
+            OnTimerEnd: "=If(Connection.Connected,\r\n    Set (OnlineStatus, 1)\r\n,// Else    \r\n    Set (OnlineStatus, 0)\r\n);\r\n//---------------------------------------------\r\n//Load all checkpoints from SP or from cache to local collections\r\nIf(IsBlank(InitialReadCheckpoints)||InitialReadCheckpoints,\r\n    Set(_ShowLoadingHint,true);\r\n    //-----------------------------------------------------\r\n    Set(InitialReadCheckpoints,false);\r\n    //-----------------------------------------------------\r\n    If(OnlineStatus=1,\r\n        //-------------------------------------------------\r\n        //load checkpoints from SP list\r\n        Set(FooterText,\"Loading checkpoints\");\r\n        Refresh(pssChecklistsCheckpoints);\r\n        ClearCollect(colCheckpoints,\r\n            ShowColumns(\r\n                Filter(pssChecklistsCheckpoints,\r\n                    Load=true\r\n                ),\r\n                ID,Title,Checkpoint,Pos,Required,PossibleStatus,Status1,Status2,Status3,Status4,Status5,FlexForm\r\n            )\r\n        );\r\n        // Save checkpoints locally\r\n        If(MyDeviceType=\"Mobile\",\r\n            SaveData(colCheckpoints,\"Checkpoints\")  \r\n        );\r\n        //-------------------------------------------------\r\n        Set(FooterText,\"Loading checkpoints text\");\r\n        Refresh(pssChecklistsCheckpointsText);\r\n        ClearCollect(colCheckpointsText,\r\n            ShowColumns(\r\n                Filter(pssChecklistsCheckpointsText,\r\n                    Load=true\r\n                ),\r\n                ID,Title,Checkpoint,CheckpointText,Description,LanguageTag\r\n            )\r\n        );\r\n        // Save checkpoints text locally\r\n        If(MyDeviceType=\"Mobile\",\r\n            SaveData(colCheckpointsText,\"CheckpointsText\")  \r\n        );\r\n    ,//Else\r\n        If(MyDeviceType=\"Mobile\",\r\n            Clear(colCheckpoints);\r\n            Clear(colCheckpointsText);\r\n            \r\n            Set(FooterText,\"Loading checkpoints from cache\");\r\n            LoadData(colCheckpoints,\"Checkpoints\",true);\r\n\r\n            Set(FooterText,\"Loading checkpoints text from cache\");\r\n            LoadData(colCheckpointsText,\"CheckpointsText\",true);\r\n        )\r\n    );\r\n    Set(FooterText,\"\");\r\n    Set(_ShowLoadingHint,false); \r\n);\r\n//------------------------------------------------\r\n//Load checkpoints\r\nIf(IsBlank(ReadCheckpoints)||ReadCheckpoints,\r\n    Set(_ShowLoadingHint,true);\r\n    //-----------------------------------------------------\r\n    Set(FooterText,\"Loading checkpoints\");\r\n    //-----------------------------------------------------\r\n    Set(ReadCheckpoints,false);\r\n    //-----------------------------------------------------\r\n    If(IsBlank(CheckpointsSortDescending),\r\n        Set(CheckpointsSortDescending,false)\r\n    );\r\n    //-----------------------------------------------------\r\n    //load checkpoints from local collections\r\n    ClearCollect(MyCheckpoints,\r\n        SortByColumns(\r\n            AddColumns(\r\n                ShowColumns(\r\n                    Filter(\r\n                        colCheckpoints,\r\n                        Title=SelectedChecklist\r\n                    ),\r\n                    Title,Checkpoint,Pos,Required,Status1,Status2,Status3,Status4,Status5,FlexForm\r\n                ) As aSource,\r\n\r\n                CheckpointText,\r\n                    LookUp(colCheckpointsText,\r\n                    Title=aSource.Title&&\r\n                    Checkpoint=aSource.Checkpoint&&\r\n                    LanguageTag=Left(Language(),2),\r\n                    CheckpointText),\r\n                \r\n                Description,\r\n                    LookUp(colCheckpointsText,\r\n                    Title=aSource.Title&&\r\n                    Checkpoint=aSource.Checkpoint&&\r\n                    LanguageTag=Left(Language(),2),\r\n                    Description)\r\n                    \r\n            ),\r\n            \"Pos\",If(CheckpointsSortDescending,\r\n            SortOrder.Descending,SortOrder.Ascending)\r\n        )\r\n    );\r\n    If(CountRows(MyCheckpoints)>0,\r\n        If(IsBlank(SelectedCheckpoint),\r\n            Set(SelectedCheckpoint,\r\n            First(MyCheckpoints).Checkpoint)\r\n        );\r\n        Set(CheckpointSelected,true);\r\n    ,//Else\r\n        Set(SelectedCheckpoint,\"\");\r\n        Set(CheckpointSelected,true);\r\n    );\r\n    Set(FooterText,\"\");\r\n    Set(_ShowLoadingHint,false); \r\n);\r\n//-----------------------------------------------------\r\nIf(CheckpointSelected,\r\n\r\n    Set(SelectedCheckpointRecord,\r\n        First(Filter(MyCheckpoints,\r\n        Title=SelectedChecklist&&\r\n        Checkpoint=SelectedCheckpoint))\r\n    );\r\n\r\n    Set(SCheckpointPos,\r\n        SelectedCheckpointRecord.Pos);\r\n    Set(SCheckpointText,\r\n        SelectedCheckpointRecord.CheckpointText);\r\n    \r\n    Set(SCheckpointDescription,\r\n        SelectedCheckpointRecord.Description);\r\n    Set(SCheckpointDescription,\r\n        Substitute(SCheckpointDescription,Char(10),\"<br>\")\r\n    );\r\n\r\n    Set(SCheckpointRequired,\r\n        SelectedCheckpointRecord.Required);\r\n\r\n    Set(SCheckpointStatus1,\r\n        SelectedCheckpointRecord.Status1);\r\n    Set(SCheckpointStatus2,\r\n        SelectedCheckpointRecord.Status2);\r\n    Set(SCheckpointStatus3,\r\n        SelectedCheckpointRecord.Status3);\r\n    Set(SCheckpointStatus4,\r\n        SelectedCheckpointRecord.Status4);\r\n    Set(SCheckpointStatus5,\r\n        SelectedCheckpointRecord.Status5);\r\n\r\n    Set(SCheckpointFlexForm,\r\n        SelectedCheckpointRecord.FlexForm);\r\n\r\n    //FlexForm auseinandernehmen \r\n    Clear(colFlexForm);\r\n    //result of the Split() function is a Value\r\n    ForAll(Split(SCheckpointFlexForm,\"DisplayOrder:\"),\r\n        If(!IsBlank(Value) &&\r\n            Value(First(Split(Value,\",\")).Value)<6,\r\n            Collect(colFlexForm,\r\n                {\r\n                    Pos:SCheckpointPos,\r\n                    DisplayOrder:\r\n                        First(Split(Value,\",\")).Value,\r\n                    Definition:\r\n                        \"DisplayOrder:\"&Value,\r\n                    Question:\r\n                        First(Split(\r\n                        Last(Split(Value,\"Question:\")).Value\r\n                        ,\",\")).Value,\r\n                    QuestionText:\r\n                        LookUp(\r\n                        MyFlexFields,\r\n                        Title=First(Split(\r\n                        Last(Split(Value,\"Question:\")).Value\r\n                        ,\",\")).Value,\r\n                        FlexFieldText),\r\n                    ResponseType:\r\n                        First(Split(\r\n                        Last(Split(Value,\"ResponseType:\")).Value\r\n                        ,\",\")).Value,\r\n                    Choices:\r\n                        If(\"Choices\" in Value,\r\n                            First(Split(\r\n                            Last(Split(Value,\"Choices:\")).Value\r\n                            ,\",\")).Value\r\n                        )\r\n                }\r\n            )\r\n        )\r\n    );\r\n\r\n    Set(SCheckpointF1,\r\n        LookUp(colFlexForm,Value(DisplayOrder)=1,Definition));\r\n    Set(SCheckpointF1Label,\r\n        LookUp(colFlexForm,Value(DisplayOrder)=1,QuestionText));\r\n\r\n    Set(SCheckpointF2,\r\n        LookUp(colFlexForm,Value(DisplayOrder)=2,Definition));\r\n    Set(SCheckpointF2Label,\r\n        LookUp(colFlexForm,Value(DisplayOrder)=2,QuestionText));\r\n\r\n    Set(SCheckpointF3,\r\n        LookUp(colFlexForm,Value(DisplayOrder)=3,Definition));\r\n    Set(SCheckpointF3Label,\r\n        LookUp(colFlexForm,Value(DisplayOrder)=3,QuestionText));\r\n\r\n    Set(SCheckpointF4,\r\n        LookUp(colFlexForm,Value(DisplayOrder)=4,Definition));\r\n    Set(SCheckpointF4Label,\r\n        LookUp(colFlexForm,Value(DisplayOrder)=4,QuestionText));\r\n\r\n    Set(SCheckpointF5,\r\n        LookUp(colFlexForm,Value(DisplayOrder)=5,Definition));\r\n    Set(SCheckpointF5Label,\r\n        LookUp(colFlexForm,Value(DisplayOrder)=5,QuestionText));\r\n\r\n\r\n    Set(CheckpointSelected,false);\r\n\r\n);\r\n//-----------------------------------------------------\r\n"
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Repeat: =true
+            Size: =11
+            Text: =//Text(Time(0; 0; Self.Value/1000); "hh:mm:ss")
+            Visible: =false
+            Width: =98
+            X: =476
+            Y: =928

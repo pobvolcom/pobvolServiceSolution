@@ -1,0 +1,1752 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  ScreenCheckpointTextEdit:
+    Properties:
+      BackgroundImage: ='uvv-clouds'
+      Fill: =RGBA(0, 0, 0, 0)
+      Height: |-
+        =//Max(App.Height; App.MinScreenHeight)
+        Max(App.Height, App.DesignHeight)
+      ImagePosition: =ImagePosition.Fill
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+      Width: |-
+        =//Max(App.Width; App.MinScreenWidth)
+        Max(App.Width, App.DesignWidth)
+    Children:
+      - MainContainer1_20:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            DropShadow: =DropShadow.None
+            Height: =Parent.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =10
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Parent.Width
+            X: =
+            Y: =
+          Children:
+            - Header1_20:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =88
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutMinHeight: =40
+                  LayoutMinWidth: =Parent.Width-15
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Parent.Width
+                Children:
+                  - HeaderLabel1_20:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        ContentLanguage: =Language()
+                        FillPortions: =1
+                        Font: =Font.'Open Sans'
+                        Height: =Parent.Height
+                        LayoutMinWidth: =1
+                        OnSelect: =
+                        PaddingLeft: =15
+                        Size: =MyFontSize+5
+                        Text: =LookUp(colLanguage,Title="Edit checkpoint").Wert
+                        Tooltip: =" "
+                        Width: =
+                        X: =
+                        Y: =
+                  - Back1_20:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =Parent.Height
+                        LayoutMinHeight: =
+                        LayoutMinWidth: =
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =90
+                        X: =
+                        Y: =
+                      Children:
+                        - BackIcon1_20:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              AccessibleLabel: =Self.Tooltip
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisabledFill: =RGBA(39, 113, 194, 1)
+                              FocusedBorderColor: =RGBA(9, 33, 98, 1)
+                              Height: =60
+                              HoverBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                              HoverFill: =RGBA(39, 113, 194, 1)
+                              Icon: =Icon.ArrowLeft
+                              OnSelect: =Navigate(ScreenCheckpoints);
+                              PressedBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                              PressedFill: =RGBA(39, 113, 194, 1)
+                              TabIndex: =0
+                              Tooltip: =BackLabel1_20.Text
+                              Width: =60
+                              X: =15
+                              Y: =15
+                        - BackLabel1_20:
+                            Control: FluentV8/Label@1.8.6
+                            Properties:
+                              Alignment: =Align.Center
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisplayMode: =DisplayMode.View
+                              Font: =Font.'Patrick Hand'
+                              FontSize: =MyFontSize-4
+                              Height: =30
+                              Text: =LookUp(colLanguage,Title="Back").Wert
+                              Tooltip: =" "
+                              VerticalAlignment: =VerticalAlign.Middle
+                              Visible: =BackIcon1_20.Visible
+                              Width: =90
+                              X: |+
+                                =BackIcon1_20.X+BackIcon1_20.Width/2-Self.Width/2
+                              Y: =58
+            - Body1_20:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.Start
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  DropShadow: =DropShadow.None
+                  Height: =88
+                  LayoutAlignItems: =LayoutAlignItems.Stretch
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutMinHeight: =40
+                  LayoutMinWidth: =Parent.Width-15
+                  PaddingLeft: =10
+                  PaddingRight: =10
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Parent.Width
+                Children:
+                  - ContainerEdit1_20:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Start
+                        BorderThickness: =2
+                        DropShadow: =DropShadow.None
+                        Fill: |-
+                          =RGBA(241, 244, 249, 1)
+                          //RGBA(244; 244; 243; 1)
+                        FillPortions: =0
+                        Height: |+
+                          =Parent.Height
+                          -Parent.PaddingTop
+                          -Parent.PaddingBottom
+                        LayoutMinHeight: =If(Self.Visible,Parent.Height-15,0)
+                        LayoutMinWidth: =1
+                        RadiusBottomLeft: =30
+                        RadiusBottomRight: =30
+                        RadiusTopLeft: =30
+                        RadiusTopRight: =30
+                        Width: |+
+                          =Parent.Width-Self.X*2
+                        X: =19+1
+                        Y: =20
+                      Children:
+                        - SaveGroupButton1_20:
+                            Control: Classic/Button@2.2.0
+                            Group: SaveGroup1_20
+                            Properties:
+                              BorderThickness: =0
+                              Color: =RGBA(255,255,255,1)
+                              ContentLanguage: =Language()
+                              DisplayMode: =If(OnlineStatus=1,DisplayMode.Edit,DisplayMode.Disabled)
+                              Fill: =RGBA(56, 96, 178, 1)
+                              Height: =60
+                              HoverBorderColor: =
+                              HoverColor: =RGBA(255, 255, 255, 1)
+                              HoverFill: =RGBA(9, 33, 98, 1)
+                              OnSelect: "=Set (ShowDeleteDialog,false);\r\nSet(_ShowLoadingHint,true);\r\n//--------------------------------------------------\r\nUpdateContext({locInputCheck:true});\r\n//--------------------------------------------------\r\n// Title\r\nIf(IsBlank(DataCardValue8_3.Text), \r\n    UpdateContext({locInputCheck:false});\r\n    Notify(\"Title must not be empty\");\r\n);\r\n// Pos\r\nIf(IsBlank(DataCardValue5.Text), \r\n    UpdateContext({locInputCheck:false});\r\n    Notify(\"Checkpoint position must not be empty\");\r\n);\r\n// Checkpoint\r\nIf(IsBlank(DataCardValue4.Text), \r\n    UpdateContext({locInputCheck:false});\r\n    Notify(\"Checkpoint must not be empty\");\r\n);\r\n//CheckpointText\r\nIf(IsBlank(DataCardValue11_2.Text),\r\n    UpdateContext({locInputCheck:false});\r\n    Notify(\"Checkpoint name must not be empty\");\r\n);\r\n//Status1\r\nIf(IsBlank(DCPossibleStatus1.Selected.Status),\r\n    UpdateContext({locInputCheck:false});\r\n    Notify(\"Status1 must not be empty\");\r\n);\r\n//Status2\r\nIf(!IsBlank(DCPossibleStatus2.Selected.Status),\r\n    If(SCheckpointStatus2 = SCheckpointStatus1 ||\r\n       SCheckpointStatus2 = SCheckpointStatus3 ||\r\n       SCheckpointStatus2 = SCheckpointStatus4 ||\r\n       SCheckpointStatus2 = SCheckpointStatus5,\r\n        UpdateContext({locInputCheck:false});\r\n        Notify(\"Status2 is not unique\");\r\n    )\r\n);\r\n//Status3\r\nIf(!IsBlank(DCPossibleStatus3.Selected.Status),\r\n    If(SCheckpointStatus3 = SCheckpointStatus1 ||\r\n       SCheckpointStatus3 = SCheckpointStatus2 ||\r\n       SCheckpointStatus3 = SCheckpointStatus4 ||\r\n       SCheckpointStatus3 = SCheckpointStatus5,\r\n        UpdateContext({locInputCheck:false});\r\n        Notify(\"Status3 is not unique\");\r\n    )\r\n);\r\n//Status4\r\nIf(!IsBlank(DCPossibleStatus4.Selected.Status),\r\n    If(SCheckpointStatus4 = SCheckpointStatus1 ||\r\n       SCheckpointStatus4 = SCheckpointStatus2 ||\r\n       SCheckpointStatus4 = SCheckpointStatus3 ||\r\n       SCheckpointStatus4 = SCheckpointStatus5,\r\n        UpdateContext({locInputCheck:false});\r\n        Notify(\"Status4 is not unique\");\r\n    )\r\n);\r\n//Status5\r\nIf(!IsBlank(DCPossibleStatus5.Selected.Status),\r\n    If(SCheckpointStatus5 = SCheckpointStatus1 ||\r\n       SCheckpointStatus5 = SCheckpointStatus2 ||\r\n       SCheckpointStatus5 = SCheckpointStatus3 ||\r\n       SCheckpointStatus5 = SCheckpointStatus4,\r\n        UpdateContext({locInputCheck:false});\r\n        Notify(\"Status5 is not unique\");\r\n    )\r\n);\r\n//--------------------------------------------------\r\n//Daten speichern\r\n//If(locInputCheck, \r\n//    SubmitForm(EditForm1_3); \r\n//);\r\n//--------------------------------------------------\r\nIf(locInputCheck, \r\n    Patch(MyCheckpoints, \r\n        LookUp(MyCheckpoints,\r\n        Title=SelectedChecklist&&\r\n        Checkpoint=SelectedCheckpoint),\r\n        {\r\n            CheckpointText:DataCardValue11_2.Text,\r\n            Description:DataCardValue10_2.Text,\r\n            Status1:DCPossibleStatus1.Selected.Status,\r\n            Status2:DCPossibleStatus2.Selected.Status,\r\n            Status3:DCPossibleStatus3.Selected.Status,\r\n            Status4:DCPossibleStatus4.Selected.Status,\r\n            Status5:DCPossibleStatus5.Selected.Status,\r\n            FlexForm:SCheckpointFlexForm,\r\n            Required:DataCardValue6.Value\r\n        }\r\n    );    \r\n\r\n    If(!IsEmpty(Errors([@MyChecklists])),\r\n        Set(locErrorCode,\r\n            \"Error! Could not add the new record.\"\r\n        );\r\n        Notify(\r\n            locErrorCode,\r\n            //LookUp(MyUVVSettings;\r\n            //Title=\"Fehler beim Speichern!\").Wert;\r\n            NotificationType.Error, \r\n            2000\r\n        );\r\n    , //Else\r\n        Set(locErrorCode,\"\");\r\n    );\r\n\r\n    If(IsBlank(locErrorCode) && OnlineStatus=1,\r\n\r\n        \r\n        //Record available?\r\n        Set(PatchID,0);\r\n        Set(PatchID,\r\n            LookUp(pssChecklistsCheckpoints,\r\n                Title=SelectedChecklist&&\r\n                Checkpoint=SelectedCheckpoint\r\n            ).ID\r\n        );\r\n        Patch(pssChecklistsCheckpoints, \r\n            If(PatchID>0,\r\n                LookUp(pssChecklistsCheckpoints,ID=PatchID)\r\n            ,//Else\r\n                Defaults(pssChecklistsCheckpoints)\r\n            ),\r\n            {\r\n                Title:DataCardValue8_3.Text,\r\n                Pos:Value(DataCardValue5.Text),\r\n                Checkpoint:DataCardValue4.Text,\r\n                Status1:DCPossibleStatus1.Selected.Status,\r\n                Status2:DCPossibleStatus2.Selected.Status,\r\n                Status3:DCPossibleStatus3.Selected.Status,\r\n                Status4:DCPossibleStatus4.Selected.Status,\r\n                Status5:DCPossibleStatus5.Selected.Status,\r\n                FlexForm:SCheckpointFlexForm,\r\n                Required:DataCardValue6.Value\r\n            }\r\n        );    \r\n\r\n\r\n        //Record available?\r\n        Set(PatchID,0);\r\n        Set(PatchID,\r\n            LookUp(pssChecklistsCheckpointsText,\r\n                Title=SelectedChecklist&&\r\n                Checkpoint=SelectedCheckpoint&&\r\n                LanguageTag=Left(Language(),2)\r\n            ).ID\r\n        );\r\n        Patch(pssChecklistsCheckpointsText, \r\n            If(PatchID>0,\r\n                LookUp(pssChecklistsCheckpointsText,ID=PatchID)\r\n            ,//Else\r\n                Defaults(pssChecklistsCheckpointsText)\r\n            ),\r\n            {\r\n                Title:DataCardValue8_3.Text,\r\n                Checkpoint:DataCardValue4.Text,\r\n                CheckpointText:DataCardValue11_2.Text,\r\n                Description:DataCardValue10_2.Text,\r\n                LanguageTag:Left(Language(),2)\r\n            }\r\n        );    \r\n    );\r\n);\r\n//--------------------------------------------------\r\n//Daten neu einlesen\r\nSet(_ShowLoadingHint,false);\r\nIf(locInputCheck, \r\n    Set(InitialReadCheckpoints,true);\r\n    Set(ReadCheckpoints,true);\r\n    Set(CheckpointSelected,true);\r\n    Navigate(ScreenCheckpoints);\r\n);\r\n"
+                              PaddingLeft: =45
+                              PressedBorderColor: =
+                              PressedColor: =RGBA(255, 255, 255, 1)
+                              PressedFill: =RGBA(9, 33, 98, 1)
+                              Size: =MyFontSize-3
+                              Text: =LookUp(colLanguage,Title="Save").Wert
+                              Tooltip: =Self.Text
+                              Width: =Parent.Width/2
+                              X: =Parent.Width/2-Self.Width/2
+                              Y: =Parent.Height-Self.Height-15
+                        - SaveGroupIcon1_20:
+                            Control: Classic/Icon@2.5.0
+                            Group: SaveGroup1_20
+                            Properties:
+                              AccessibleLabel: =Self.Tooltip
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisplayMode: =If(OnlineStatus=1,DisplayMode.Edit,DisplayMode.Disabled)
+                              FocusedBorderColor: =Color.White
+                              FocusedBorderThickness: =1
+                              Height: =SaveGroupButton1_20.Height
+                              Icon: =Icon.Save
+                              PaddingBottom: =9
+                              PaddingLeft: =9
+                              PaddingRight: =9
+                              PaddingTop: =9
+                              TabIndex: =0
+                              Tooltip: =SaveGroupButton1_20.Text
+                              Width: =SaveGroupButton1_20.Height
+                              X: =SaveGroupButton1_20.X
+                              Y: =Parent.Height-Self.Height-15
+                        - EditForm1_20:
+                            Control: Form@2.4.4
+                            Variant: Classic
+                            Layout: Vertical
+                            Properties:
+                              AcceptsFocus: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              ContentLanguage: =Language()
+                              DataSource: |-
+                                =MyCheckpoints
+                                //pssChecklistsCheckpoints
+                                //pssChecklistsCheckpointsText
+                              FocusedBorderThickness: =2
+                              Height: =SaveGroupButton1_20.Y-Self.Y-15
+                              Item: =First(Filter(MyCheckpoints,Title=SelectedChecklist&&Checkpoint=SelectedCheckpoint))
+                              SnapToColumns: =false
+                              Width: =Parent.Width-2
+                              Y: =14+1
+                            Children:
+                              - Title_DataCard1_20:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: ClassicTextualEdit
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    DataField: ="Title"
+                                    Default: =ThisItem.Title
+                                    DisplayMode: =DisplayMode.View
+                                    DisplayName: =LookUp(colLanguage,Title="Checklist title").Wert
+                                    MaxLength: |-
+                                      =32
+                                      //DataSourceInfo([@pssChecklistsChecklistsText]; DataSourceInfo.MaxLength; Title)
+                                    Required: =true
+                                    Update: =DataCardValue8_3.Text
+                                    Width: =Parent.Width
+                                    X: =1
+                                    Y: =1
+                                  Children:
+                                    - StarVisible25_3:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldRequired
+                                        Properties:
+                                          Align: =Align.Center
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =DataCardKey37_3.Height
+                                          Text: ="*"
+                                          Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                          Width: =30
+                                          Wrap: =false
+                                          Y: =DataCardKey37_3.Y
+                                    - DataCardKey37_3:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldName
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =48
+                                          Size: =MyFontSize
+                                          Text: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          Wrap: =false
+                                          X: =30
+                                          Y: =10
+                                    - DataCardValue8_3:
+                                        Control: Classic/TextInput@2.3.2
+                                        MetadataKey: FieldValue
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          Default: =Parent.Default
+                                          DelayOutput: =true
+                                          DisplayMode: =Parent.DisplayMode
+                                          Fill: |+
+                                            =//Ändern nur, wenn noch kein Wert vorhanden
+                                            If(Self.DisplayMode=DisplayMode.Edit,
+                                                RGBA(255, 255, 0, 1) //gelb
+                                            ,
+                                                RGBA(255, 255, 255, 1)
+                                            )
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          MaxLength: =Parent.MaxLength
+                                          PaddingLeft: =5
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          Size: =MyFontSize
+                                          Tooltip: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardKey37_3.Y + DataCardKey37_3.Height + 5
+                                    - ErrorMessage32_3:
+                                        Control: Label@2.5.1
+                                        MetadataKey: ErrorMessage
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(168, 0, 0, 1)
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =10
+                                          Live: =Live.Assertive
+                                          PaddingBottom: =0
+                                          PaddingLeft: =0
+                                          PaddingRight: =0
+                                          PaddingTop: =0
+                                          Size: =MyFontSize
+                                          Text: |+
+                                            =//Parent.Error
+                                            If(IsBlank(DataCardValue8_3.Text), 
+                                                "Title must not be empty"
+                                            )
+                                          Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardValue8_3.Y + DataCardValue8_3.Height
+                              - LanguageTag_DataCard1_20:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: ClassicTextualEdit
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    DataField: ="LanguageTag"
+                                    Default: =Left(Language(),2)
+                                    DisplayMode: =DisplayMode.View
+                                    DisplayName: =LookUp(colLanguage,Title="Language").Wert
+                                    MaxLength: |-
+                                      =2
+                                      //DataSourceInfo([@pssChecklistsChecklistsText]; DataSourceInfo.MaxLength; LanguageTag)
+                                    Required: =false
+                                    Update: =DataCardValue9_2.Text
+                                    Width: =Parent.Width
+                                    X: =2
+                                    Y: =1
+                                  Children:
+                                    - StarVisible26_2:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldRequired
+                                        Properties:
+                                          Align: =Align.Center
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =DataCardKey38_2.Height
+                                          Text: ="*"
+                                          Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                          Width: =30
+                                          Wrap: =false
+                                          Y: =DataCardKey38_2.Y
+                                    - DataCardKey38_2:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldName
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =48
+                                          Size: =MyFontSize
+                                          Text: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          Wrap: =false
+                                          X: =30
+                                          Y: =10
+                                    - DataCardValue9_2:
+                                        Control: Classic/TextInput@2.3.2
+                                        MetadataKey: FieldValue
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          Default: =Parent.Default
+                                          DelayOutput: =true
+                                          DisplayMode: =Parent.DisplayMode
+                                          Fill: |+
+                                            =//Ändern nur, wenn noch kein Wert vorhanden
+                                            If(Self.DisplayMode=DisplayMode.Edit,
+                                                RGBA(255, 255, 0, 1) //gelb
+                                            ,
+                                                RGBA(255, 255, 255, 1)
+                                            )
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          MaxLength: =Parent.MaxLength
+                                          PaddingLeft: =5
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          Size: =MyFontSize
+                                          Tooltip: =Parent.DisplayName
+                                          Width: =200
+                                          X: =30
+                                          Y: =DataCardKey38_2.Y + DataCardKey38_2.Height + 5
+                                    - ErrorMessage33_2:
+                                        Control: Label@2.5.1
+                                        MetadataKey: ErrorMessage
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(168, 0, 0, 1)
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =10
+                                          Live: =Live.Assertive
+                                          PaddingBottom: =0
+                                          PaddingLeft: =0
+                                          PaddingRight: =0
+                                          PaddingTop: =0
+                                          Size: =MyFontSize
+                                          Text: =Parent.Error
+                                          Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardValue9_2.Y + DataCardValue9_2.Height
+                              - Checkpoint_DataCard2:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: ClassicTextualEdit
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    DataField: ="Checkpoint"
+                                    Default: =ThisItem.Checkpoint
+                                    DisplayMode: =DisplayMode.View
+                                    DisplayName: =LookUp(colLanguage,Title="Checkpoint").Wert
+                                    MaxLength: |-
+                                      =32
+                                      //DataSourceInfo([@pssChecklistsCheckpointsText]; DataSourceInfo.MaxLength; Checkpoint)
+                                    Required: =true
+                                    Update: =DataCardValue4.Text
+                                    Width: =Parent.Width
+                                    X: =1
+                                    Y: =2
+                                  Children:
+                                    - DataCardKey4:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldName
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =48
+                                          Size: =MyFontSize
+                                          Text: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          Wrap: =false
+                                          X: =30
+                                          Y: =10
+                                    - DataCardValue4:
+                                        Control: Classic/TextInput@2.3.2
+                                        MetadataKey: FieldValue
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          Default: =Parent.Default
+                                          DelayOutput: =true
+                                          DisplayMode: =Parent.DisplayMode
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          MaxLength: =Parent.MaxLength
+                                          PaddingLeft: =5
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          Size: =MyFontSize
+                                          Tooltip: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardKey4.Y + DataCardKey4.Height + 5
+                                    - ErrorMessage4:
+                                        Control: Label@2.5.1
+                                        MetadataKey: ErrorMessage
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(168, 0, 0, 1)
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =10
+                                          Live: =Live.Assertive
+                                          PaddingBottom: =0
+                                          PaddingLeft: =0
+                                          PaddingRight: =0
+                                          PaddingTop: =0
+                                          Size: =MyFontSize
+                                          Text: |+
+                                            =//Parent.Error
+                                            If(IsBlank(DataCardValue4.Text), 
+                                                "Checkpoint must not be empty"
+                                            )
+                                          Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardValue4.Y + DataCardValue4.Height
+                                    - StarVisible4:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldRequired
+                                        Properties:
+                                          Align: =Align.Center
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =DataCardKey4.Height
+                                          Text: ="*"
+                                          Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                          Width: =30
+                                          Wrap: =false
+                                          Y: =DataCardKey4.Y
+                              - Pos_DataCard2:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: ClassicNumberEdit
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    DataField: ="Pos"
+                                    Default: =ThisItem.Pos
+                                    DisplayMode: =DisplayMode.View
+                                    DisplayName: =LookUp(colLanguage,Title="Position").Wert
+                                    Required: =true
+                                    Update: =Value(DataCardValue5.Text)
+                                    Width: =Parent.Width
+                                    X: =2
+                                    Y: =2
+                                  Children:
+                                    - DataCardKey5:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldName
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =48
+                                          Size: =MyFontSize
+                                          Text: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          Wrap: =false
+                                          X: =30
+                                          Y: =10
+                                    - DataCardValue5:
+                                        Control: Classic/TextInput@2.3.2
+                                        MetadataKey: FieldValue
+                                        Properties:
+                                          AccessibleLabel: =" "
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          Default: =Parent.Default
+                                          DelayOutput: =true
+                                          DisplayMode: =Parent.DisplayMode
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          Format: =TextFormat.Number
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          PaddingLeft: =5
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          Size: =MyFontSize+2
+                                          Tooltip: =Parent.DisplayName
+                                          Width: =200
+                                          X: =30
+                                          Y: =DataCardKey5.Y + DataCardKey5.Height + 5
+                                    - ErrorMessage5:
+                                        Control: Label@2.5.1
+                                        MetadataKey: ErrorMessage
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(168, 0, 0, 1)
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =10
+                                          Live: =Live.Assertive
+                                          PaddingBottom: =0
+                                          PaddingLeft: =0
+                                          PaddingRight: =0
+                                          PaddingTop: =0
+                                          Size: =MyFontSize
+                                          Text: =Parent.Error
+                                          Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardValue5.Y + DataCardValue5.Height
+                                    - StarVisible5:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldRequired
+                                        Properties:
+                                          Align: =Align.Center
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =DataCardKey5.Height
+                                          Text: ="*"
+                                          Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                          Width: =30
+                                          Wrap: =false
+                                          Y: =DataCardKey5.Y
+                              - Required_DataCard2:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: ClassicToggleEdit
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    DataField: ="Required"
+                                    Default: =ThisItem.Required
+                                    DisplayName: =LookUp(colLanguage,Title="Required").Wert
+                                    Required: =false
+                                    Update: =DataCardValue6.Value
+                                    Width: =Parent.Width
+                                    X: =3
+                                    Y: =2
+                                  Children:
+                                    - DataCardKey6:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldName
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =48
+                                          Size: =MyFontSize
+                                          Text: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          Wrap: =false
+                                          X: =30
+                                          Y: =10
+                                    - DataCardValue6:
+                                        Control: Classic/Toggle@2.1.0
+                                        MetadataKey: FieldValue
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          Default: =Parent.Default
+                                          DisplayMode: =Parent.DisplayMode
+                                          FalseText: =LookUp(colLanguage,Title="No").Wert
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          Size: =MyFontSize
+                                          Tooltip: =Parent.DisplayName
+                                          TrueFill: =RGBA(56, 96, 178, 1)
+                                          TrueText: =LookUp(colLanguage,Title="Yes").Wert
+                                          Width: =175
+                                          X: =30
+                                          Y: =DataCardKey6.Y + DataCardKey6.Height + 5
+                                    - ErrorMessage6:
+                                        Control: Label@2.5.1
+                                        MetadataKey: ErrorMessage
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(168, 0, 0, 1)
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =10
+                                          Live: =Live.Assertive
+                                          PaddingBottom: =0
+                                          PaddingLeft: =0
+                                          PaddingRight: =0
+                                          PaddingTop: =0
+                                          Size: =MyFontSize
+                                          Text: =Parent.Error
+                                          Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardValue6.Y + DataCardValue6.Height
+                                    - StarVisible6:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldRequired
+                                        Properties:
+                                          Align: =Align.Center
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =DataCardKey6.Height
+                                          Text: ="*"
+                                          Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                          Width: =30
+                                          Wrap: =false
+                                          Y: =DataCardKey6.Y
+                              - ChecklistText_DataCard1_20:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: ClassicTextualEdit
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    DataField: ="ChecklistText"
+                                    Default: =ThisItem.CheckpointText
+                                    DisplayName: =LookUp(colLanguage,Title="Checkpoint name (max 128 chars)").Wert
+                                    MaxLength: |-
+                                      =128
+                                      //DataSourceInfo([@pssChecklistsCheckpointsText]; DataSourceInfo.MaxLength; CheckpointText)
+                                    Required: =false
+                                    Update: =DataCardValue11_2.Text
+                                    Width: =Parent.Width
+                                    X: =0
+                                    Y: =3
+                                  Children:
+                                    - StarVisible28_2:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldRequired
+                                        Properties:
+                                          Align: =Align.Center
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =DataCardKey40_2.Height
+                                          Text: ="*"
+                                          Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                          Width: =30
+                                          Wrap: =false
+                                          Y: =DataCardKey40_2.Y
+                                    - DataCardKey40_2:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldName
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =48
+                                          Size: =MyFontSize
+                                          Text: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          Wrap: =false
+                                          X: =30
+                                          Y: =10
+                                    - DataCardValue11_2:
+                                        Control: Classic/TextInput@2.3.2
+                                        MetadataKey: FieldValue
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          Default: =Parent.Default
+                                          DelayOutput: =true
+                                          DisplayMode: =Parent.DisplayMode
+                                          Fill: |+
+                                            =//Ändern nur, wenn noch kein Wert vorhanden
+                                            If(Self.DisplayMode=DisplayMode.Edit,
+                                                RGBA(255, 255, 0, 1) //gelb
+                                            ,
+                                                RGBA(255, 255, 255, 1)
+                                            )
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          Height: =90
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          MaxLength: =Parent.MaxLength
+                                          Mode: =TextMode.MultiLine
+                                          PaddingLeft: =5
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          Size: =MyFontSize
+                                          Tooltip: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardKey40_2.Y + DataCardKey40_2.Height + 5
+                                    - ErrorMessage35_2:
+                                        Control: Label@2.5.1
+                                        MetadataKey: ErrorMessage
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(168, 0, 0, 1)
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =10
+                                          Live: =Live.Assertive
+                                          PaddingBottom: =0
+                                          PaddingLeft: =0
+                                          PaddingRight: =0
+                                          PaddingTop: =0
+                                          Size: =MyFontSize
+                                          Text: |+
+                                            =If(IsBlank(DataCardValue11_2.Text),
+                                                "Checkpoint name must not be empty"
+                                            )
+                                          Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardValue11_2.Y + DataCardValue11_2.Height
+                              - Description_DataCard1_20:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: ClassicTextualEdit
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    DataField: ="Description"
+                                    Default: =ThisItem.Description
+                                    DisplayName: =LookUp(colLanguage,Title="Checkpoint description").Wert
+                                    MaxLength: =//DataSourceInfo([@pssChecklistsCheckpointsText]; DataSourceInfo.MaxLength; Description)
+                                    Required: =false
+                                    Update: =DataCardValue10_2.Text
+                                    Width: =Parent.Width
+                                    X: =0
+                                    Y: =5
+                                  Children:
+                                    - StarVisible27_2:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldRequired
+                                        Properties:
+                                          Align: =Align.Center
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =DataCardKey39_2.Height
+                                          Text: ="*"
+                                          Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                          Width: =30
+                                          Wrap: =false
+                                          Y: =DataCardKey39_2.Y
+                                    - DataCardKey39_2:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldName
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =48
+                                          Size: =MyFontSize
+                                          Text: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          Wrap: =false
+                                          X: =30
+                                          Y: =10
+                                    - DataCardValue10_2:
+                                        Control: Classic/TextInput@2.3.2
+                                        MetadataKey: FieldValue
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          Default: =Parent.Default
+                                          DelayOutput: =true
+                                          DisplayMode: =Parent.DisplayMode
+                                          Fill: |+
+                                            =//Ändern nur, wenn noch kein Wert vorhanden
+                                            If(Self.DisplayMode=DisplayMode.Edit,
+                                                RGBA(255, 255, 0, 1) //gelb
+                                            ,
+                                                RGBA(255, 255, 255, 1)
+                                            )
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          Height: =190
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          MaxLength: =Parent.MaxLength
+                                          Mode: =TextMode.MultiLine
+                                          PaddingLeft: =5
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          Size: =MyFontSize
+                                          Tooltip: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardKey39_2.Y + DataCardKey39_2.Height + 5
+                                    - ErrorMessage34_2:
+                                        Control: Label@2.5.1
+                                        MetadataKey: ErrorMessage
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(168, 0, 0, 1)
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =10
+                                          Live: =Live.Assertive
+                                          PaddingBottom: =0
+                                          PaddingLeft: =0
+                                          PaddingRight: =0
+                                          PaddingTop: =0
+                                          Size: =MyFontSize
+                                          Text: =Parent.Error
+                                          Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardValue10_2.Y + DataCardValue10_2.Height
+                              - Status1_DataCard1:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: ClassicTextualEdit
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    DataField: ="Status1"
+                                    Default: =ThisItem.Status1
+                                    DisplayName: =LookUp(colLanguage,Title="Possible status (max 5)").Wert
+                                    MaxLength: =32 //DataSourceInfo([@pssChecklistsCheckpoints]; DataSourceInfo.MaxLength; Status1)
+                                    Required: =false
+                                    Update: =DCPossibleStatus1.Selected.Status
+                                    Width: =Parent.Width
+                                    X: =0
+                                    Y: =11
+                                  Children:
+                                    - DataCardKey9:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldName
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =48
+                                          Size: =MyFontSize
+                                          Text: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          Wrap: =false
+                                          X: =30
+                                          Y: =10
+                                    - ErrorMessage9:
+                                        Control: Label@2.5.1
+                                        MetadataKey: ErrorMessage
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(168, 0, 0, 1)
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =10
+                                          Live: =Live.Assertive
+                                          PaddingBottom: =0
+                                          PaddingLeft: =0
+                                          PaddingRight: =0
+                                          PaddingTop: =0
+                                          Size: =MyFontSize
+                                          Text: |-
+                                            =//Parent.Error
+                                            If(IsBlank(SCheckpointStatus1),
+                                                "Status1 must not be empty",
+                                            If(!IsBlank(SCheckpointStatus2) &&
+                                                (SCheckpointStatus2 = SCheckpointStatus1 ||
+                                                 SCheckpointStatus2 = SCheckpointStatus3 ||
+                                                 SCheckpointStatus2 = SCheckpointStatus4 ||
+                                                 SCheckpointStatus2 = SCheckpointStatus5),
+                                                "Status2 is not unique",
+                                            If(!IsBlank(SCheckpointStatus3) &&
+                                                (SCheckpointStatus3 = SCheckpointStatus1 ||
+                                                 SCheckpointStatus3 = SCheckpointStatus2 ||
+                                                 SCheckpointStatus3 = SCheckpointStatus4 ||
+                                                 SCheckpointStatus3 = SCheckpointStatus5),
+                                                "Status3 is not unique",
+                                            If(!IsBlank(SCheckpointStatus4) &&
+                                                (SCheckpointStatus4 = SCheckpointStatus1 ||
+                                                 SCheckpointStatus4 = SCheckpointStatus2 ||
+                                                 SCheckpointStatus4 = SCheckpointStatus3 ||
+                                                 SCheckpointStatus4 = SCheckpointStatus5),
+                                                "Status4 is not unique",
+                                            If(!IsBlank(SCheckpointStatus5) &&
+                                                (SCheckpointStatus5 = SCheckpointStatus1 ||
+                                                 SCheckpointStatus5 = SCheckpointStatus2 ||
+                                                 SCheckpointStatus5 = SCheckpointStatus3 ||
+                                                 SCheckpointStatus5 = SCheckpointStatus4),
+                                                "Status5 is not unique"
+                                            )))))
+                                          Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DCPossibleStatus5.Y + DCPossibleStatus5.Height
+                                    - StarVisible9:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldRequired
+                                        Properties:
+                                          Align: =Align.Center
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =DataCardKey9.Height
+                                          Text: ="*"
+                                          Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                          Width: =30
+                                          Wrap: =false
+                                          Y: =DataCardKey9.Y
+                                    - DCPossibleStatus5:
+                                        Control: Classic/DropDown@2.3.1
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          BorderThickness: =1
+                                          ChevronBackground: =RGBA(56, 96, 178, 1)
+                                          ChevronFill: =RGBA(255, 255, 255, 1)
+                                          ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                                          ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                          ContentLanguage: =Language()
+                                          Default: |-
+                                            =If(!IsBlank(SCheckpointStatus5),
+                                                LookUp(MyStatus,Status=SCheckpointStatus5,StatusText)
+                                            ,//Else
+                                                ""
+                                            )
+                                          Fill: =RGBA(255, 255, 0, 1) //gelb
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          Height: =If(Self.Visible,70,0)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          Items: =MyStatus
+                                          Items.Value: =StatusText
+                                          OnChange: =Set(SCheckpointStatus5,DCPossibleStatus5.Selected.Status);
+                                          OnSelect: =
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PressedColor: =RGBA(255, 255, 255, 1)
+                                          PressedFill: =RGBA(0, 18, 107, 1)
+                                          Reset: =true
+                                          SelectionColor: =RGBA(255, 255, 255, 1)
+                                          SelectionFill: =RGBA(56, 96, 178, 1)
+                                          Size: =MyFontSize
+                                          Tooltip: |-
+                                            ="Select possible status for this checkpoint"
+                                            //LookUp(MyUVVSettings;Title="Status Tooltip").Wert
+                                          Visible: =!IsBlank(SCheckpointStatus4)
+                                          Width: =Parent.Width - 60
+                                          X: =29+1
+                                          Y: =DCPossibleStatus4.Y + DCPossibleStatus4.Height+10
+                                    - DCPossibleStatus4:
+                                        Control: Classic/DropDown@2.3.1
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          BorderThickness: =1
+                                          ChevronBackground: =RGBA(56, 96, 178, 1)
+                                          ChevronFill: =RGBA(255, 255, 255, 1)
+                                          ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                                          ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                          ContentLanguage: =Language()
+                                          Default: |-
+                                            =If(!IsBlank(SCheckpointStatus4),
+                                                LookUp(MyStatus,Status=SCheckpointStatus4,StatusText)
+                                            ,//Else
+                                                ""
+                                            )
+                                          Fill: =RGBA(255, 255, 0, 1) //gelb
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          Height: =If(Self.Visible,70,0)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          Items: =MyStatus
+                                          Items.Value: =StatusText
+                                          OnChange: |-
+                                            =Set(SCheckpointStatus4,DCPossibleStatus4.Selected.Status);
+                                            If(IsBlank(SCheckpointStatus4),
+                                                Set(SCheckpointStatus5,Blank());
+                                            );
+                                          OnSelect: =
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PressedColor: =RGBA(255, 255, 255, 1)
+                                          PressedFill: =RGBA(0, 18, 107, 1)
+                                          Reset: =true
+                                          SelectionColor: =RGBA(255, 255, 255, 1)
+                                          SelectionFill: =RGBA(56, 96, 178, 1)
+                                          Size: =MyFontSize
+                                          Tooltip: |-
+                                            ="Select possible status for this checkpoint"
+                                            //LookUp(MyUVVSettings;Title="Status Tooltip").Wert
+                                          Visible: =!IsBlank(SCheckpointStatus3)
+                                          Width: =Parent.Width - 60
+                                          X: =29+1
+                                          Y: =DCPossibleStatus3.Y + DCPossibleStatus3.Height+10
+                                    - DCPossibleStatus3:
+                                        Control: Classic/DropDown@2.3.1
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          BorderThickness: =1
+                                          ChevronBackground: =RGBA(56, 96, 178, 1)
+                                          ChevronFill: =RGBA(255, 255, 255, 1)
+                                          ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                                          ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                          ContentLanguage: =Language()
+                                          Default: |-
+                                            =If(!IsBlank(SCheckpointStatus3),
+                                                LookUp(MyStatus,Status=SCheckpointStatus3,StatusText)
+                                            ,//Else
+                                                ""
+                                            )
+                                          Fill: =RGBA(255, 255, 0, 1) //gelb
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          Height: =If(Self.Visible,70,0)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          Items: =MyStatus
+                                          Items.Value: =StatusText
+                                          OnChange: |-
+                                            =Set(SCheckpointStatus3,DCPossibleStatus3.Selected.Status);
+                                            If(IsBlank(SCheckpointStatus3),
+                                                Set(SCheckpointStatus4,Blank());
+                                                Set(SCheckpointStatus5,Blank());
+                                            );
+                                          OnSelect: =
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PressedColor: =RGBA(255, 255, 255, 1)
+                                          PressedFill: =RGBA(0, 18, 107, 1)
+                                          Reset: =true
+                                          SelectionColor: =RGBA(255, 255, 255, 1)
+                                          SelectionFill: =RGBA(56, 96, 178, 1)
+                                          Size: =MyFontSize
+                                          Tooltip: |-
+                                            ="Select possible status for this checkpoint"
+                                            //LookUp(MyUVVSettings;Title="Status Tooltip").Wert
+                                          Visible: =!IsBlank(SCheckpointStatus2)
+                                          Width: =Parent.Width - 60
+                                          X: =29+1
+                                          Y: =DCPossibleStatus2.Y + DCPossibleStatus2.Height+10
+                                    - DCPossibleStatus2:
+                                        Control: Classic/DropDown@2.3.1
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          ChevronBackground: =RGBA(56, 96, 178, 1)
+                                          ChevronFill: =RGBA(255, 255, 255, 1)
+                                          ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                                          ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                          ContentLanguage: =Language()
+                                          Default: |-
+                                            =If(!IsBlank(SCheckpointStatus2),
+                                                LookUp(MyStatus,Status=SCheckpointStatus2,StatusText)
+                                            ,//Else
+                                                ""
+                                            )
+                                          Fill: =RGBA(255, 255, 0, 1) //gelb
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          Height: =If(Self.Visible,70,0)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          Items: =MyStatus
+                                          Items.Value: =StatusText
+                                          OnChange: |-
+                                            =Set(SCheckpointStatus2,DCPossibleStatus2.Selected.Status);
+                                            If(IsBlank(SCheckpointStatus2),
+                                                Set(SCheckpointStatus3,Blank());
+                                                Set(SCheckpointStatus4,Blank());
+                                                Set(SCheckpointStatus5,Blank());
+                                            );
+                                          OnSelect: =
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PressedColor: =RGBA(255, 255, 255, 1)
+                                          PressedFill: =RGBA(0, 18, 107, 1)
+                                          Reset: =true
+                                          SelectionColor: =RGBA(255, 255, 255, 1)
+                                          SelectionFill: =RGBA(56, 96, 178, 1)
+                                          Size: =MyFontSize
+                                          Tooltip: |-
+                                            ="Select possible status for this checkpoint"
+                                            //LookUp(MyUVVSettings;Title="Status Tooltip").Wert
+                                          Visible: =!IsBlank(SCheckpointStatus1)
+                                          Width: =Parent.Width - 60
+                                          X: =29+1
+                                          Y: =DCPossibleStatus1.Y + DCPossibleStatus1.Height+10
+                                    - DCPossibleStatus1:
+                                        Control: Classic/DropDown@2.3.1
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          ChevronBackground: =RGBA(56, 96, 178, 1)
+                                          ChevronFill: =RGBA(255, 255, 255, 1)
+                                          ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                                          ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                          ContentLanguage: =Language()
+                                          Default: |-
+                                            =If(!IsBlank(SCheckpointStatus1),
+                                                LookUp(MyStatus,Status=SCheckpointStatus1,StatusText)
+                                            ,//Else
+                                                ""
+                                            )
+                                          Fill: =RGBA(255, 255, 0, 1) //gelb
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          Items: =MyStatus
+                                          Items.Value: =StatusText
+                                          OnChange: |+
+                                            =Set(SCheckpointStatus1,DCPossibleStatus1.Selected.Status);
+
+                                            If(IsBlank(SCheckpointStatus1),
+                                                Set(SCheckpointStatus2,Blank());
+                                                Set(SCheckpointStatus3,Blank());
+                                                Set(SCheckpointStatus4,Blank());
+                                                Set(SCheckpointStatus5,Blank());
+                                            );
+
+                                            If(SCheckpointStatus1="without identified defects" ||
+                                               SCheckpointStatus1="OK",
+                                                Set(SCheckpointStatus2,"minor defects");
+                                                Set(SCheckpointStatus3,"significant defects");
+                                                Set(SCheckpointStatus4,"dangerous defects");
+                                                Set(SCheckpointStatus5,Blank());
+                                            );
+
+                                            If(SCheckpointStatus1="Yes",
+                                                Set(SCheckpointStatus2,"No");
+                                                //Set(SCheckpointStatus3;Blank());;
+                                                //Set(SCheckpointStatus4;Blank());;
+                                                //Set(SCheckpointStatus5;Blank());;
+                                            );
+
+                                          OnSelect: =
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PressedColor: =RGBA(255, 255, 255, 1)
+                                          PressedFill: =RGBA(0, 18, 107, 1)
+                                          Reset: =true
+                                          SelectionColor: =RGBA(255, 255, 255, 1)
+                                          SelectionFill: =RGBA(56, 96, 178, 1)
+                                          Size: =MyFontSize
+                                          Tooltip: |-
+                                            ="Select possible status for this checkpoint"
+                                            //LookUp(MyUVVSettings;Title="Status Tooltip").Wert
+                                          Width: =Parent.Width - 60
+                                          X: =29+1
+                                          Y: =DataCardKey9.Y + DataCardKey9.Height + 5
+                              - FlexForm_DataCard1:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: ClassicTextualEdit
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    DataField: ="FlexForm"
+                                    Default: =SCheckpointFlexForm
+                                    DisplayName: =LookUp(colLanguage,Title="Flex fields").Wert
+                                    MaxLength: =//DataSourceInfo([@pssChecklistsCheckpoints]; DataSourceInfo.MaxLength; FlexForm)
+                                    Required: =false
+                                    Update: =SCheckpointFlexForm
+                                    Width: =Parent.Width
+                                    X: =0
+                                    Y: =20
+                                  Children:
+                                    - DataCardKey7:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldName
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =48
+                                          Size: =MyFontSize
+                                          Text: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          Wrap: =false
+                                          X: =30
+                                          Y: =10
+                                    - DataCardValue7:
+                                        Control: Classic/TextInput@2.3.2
+                                        MetadataKey: FieldValue
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          Default: =Parent.Default
+                                          DelayOutput: =true
+                                          DisplayMode: =Parent.DisplayMode
+                                          Fill: |+
+                                            =//Ändern nur, wenn noch kein Wert vorhanden
+                                            If(Self.DisplayMode=DisplayMode.Edit,
+                                                RGBA(255, 255, 0, 1) //gelb
+                                            ,
+                                                RGBA(255, 255, 255, 1)
+                                            )
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          MaxLength: =Parent.MaxLength
+                                          PaddingLeft: =5
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          Size: =MyFontSize
+                                          Tooltip: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardKey7.Y + DataCardKey7.Height + 5
+                                    - ErrorMessage7:
+                                        Control: Label@2.5.1
+                                        MetadataKey: ErrorMessage
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(168, 0, 0, 1)
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =10
+                                          Live: =Live.Assertive
+                                          PaddingBottom: =0
+                                          PaddingLeft: =0
+                                          PaddingRight: =0
+                                          PaddingTop: =0
+                                          Size: =MyFontSize
+                                          Text: =Parent.Error
+                                          Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DCField5.Y + DCField5.Height
+                                    - StarVisible7:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldRequired
+                                        Properties:
+                                          Align: =Align.Center
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =DataCardKey7.Height
+                                          Text: ="*"
+                                          Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                          Width: =30
+                                          Wrap: =false
+                                          Y: =DataCardKey7.Y
+                                    - DCField5:
+                                        Control: Classic/DropDown@2.3.1
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          BorderThickness: =1
+                                          ChevronBackground: =RGBA(56, 96, 178, 1)
+                                          ChevronFill: =RGBA(255, 255, 255, 1)
+                                          ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                                          ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                          ContentLanguage: =Language()
+                                          Default: |-
+                                            =If(!IsBlank(SCheckpointF5Label),
+                                                SCheckpointF5Label
+                                            ,//Else
+                                                ""
+                                            )
+                                          Fill: =RGBA(255, 255, 0, 1) //gelb
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          Height: =If(Self.Visible,70,0)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          Items: =Sort(MyFlexFields,FlexFieldText)
+                                          Items.Value: =FlexFieldText
+                                          OnChange: |+
+                                            =Set(SCheckpointF5,"");
+                                            If(!IsBlank(DCField5.Selected.Title),
+                                                Set(SCheckpointF5,
+                                                "DisplayOrder:5, Question:"
+                                                &DCField5.Selected.Title
+                                                &", ResponseType:"
+                                                &DCField5.Selected.ResponseType
+                                                &If(DCField5.Selected.ResponseType="Radio"||
+                                                    DCField5.Selected.ResponseType="Combobox",
+                                                    ", Choices:"
+                                                    &DCField5.Selected.Choices
+                                                    &","
+                                                ,//Else
+                                                    ","
+                                                ))
+                                            );
+                                            Set(SCheckpointFlexForm,
+                                                SCheckpointF1 &
+                                                SCheckpointF2 &
+                                                SCheckpointF3 &
+                                                SCheckpointF4 &
+                                                SCheckpointF5
+                                            );
+                                          OnSelect: =
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PressedColor: =RGBA(255, 255, 255, 1)
+                                          PressedFill: =RGBA(0, 18, 107, 1)
+                                          Reset: =true
+                                          SelectionColor: =RGBA(255, 255, 255, 1)
+                                          SelectionFill: =RGBA(56, 96, 178, 1)
+                                          Size: =MyFontSize
+                                          Tooltip: |-
+                                            ="Select possible status for this checkpoint"
+                                            //LookUp(MyUVVSettings;Title="Status Tooltip").Wert
+                                          Visible: =!IsBlank(DCField4.Selected.Title)
+                                          Width: =Parent.Width - 60
+                                          X: =29+1
+                                          Y: =DCField4.Y + DCField4.Height+10
+                                    - DCField4:
+                                        Control: Classic/DropDown@2.3.1
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          BorderThickness: =1
+                                          ChevronBackground: =RGBA(56, 96, 178, 1)
+                                          ChevronFill: =RGBA(255, 255, 255, 1)
+                                          ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                                          ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                          ContentLanguage: =Language()
+                                          Default: |-
+                                            =If(!IsBlank(SCheckpointF4Label),
+                                                SCheckpointF4Label
+                                            ,//Else
+                                                ""
+                                            )
+                                          Fill: =RGBA(255, 255, 0, 1) //gelb
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          Height: =If(Self.Visible,70,0)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          Items: =Sort(MyFlexFields,FlexFieldText)
+                                          Items.Value: =FlexFieldText
+                                          OnChange: |+
+                                            =Set(SCheckpointF4,"");
+                                            If(!IsBlank(DCField4.Selected.Title),
+                                                Set(SCheckpointF4,
+                                                "DisplayOrder:4, Question:"
+                                                &DCField4.Selected.Title
+                                                &", ResponseType:"
+                                                &DCField4.Selected.ResponseType
+                                                &If(DCField4.Selected.ResponseType="Radio"||
+                                                    DCField4.Selected.ResponseType="Combobox",
+                                                    ", Choices:"
+                                                    &DCField4.Selected.Choices
+                                                    &","
+                                                ,//Else
+                                                    ","
+                                                ))
+                                            );
+                                            Set(SCheckpointFlexForm,
+                                                SCheckpointF1 &
+                                                SCheckpointF2 &
+                                                SCheckpointF3 &
+                                                SCheckpointF4 &
+                                                SCheckpointF5
+                                            );
+                                          OnSelect: =
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PressedColor: =RGBA(255, 255, 255, 1)
+                                          PressedFill: =RGBA(0, 18, 107, 1)
+                                          Reset: =true
+                                          SelectionColor: =RGBA(255, 255, 255, 1)
+                                          SelectionFill: =RGBA(56, 96, 178, 1)
+                                          Size: =MyFontSize
+                                          Tooltip: |-
+                                            ="Select possible status for this checkpoint"
+                                            //LookUp(MyUVVSettings;Title="Status Tooltip").Wert
+                                          Visible: =!IsBlank(DCField3.Selected.Title)
+                                          Width: =Parent.Width - 60
+                                          X: =29+1
+                                          Y: =DCField3.Y + DCField3.Height+10
+                                    - DCField3:
+                                        Control: Classic/DropDown@2.3.1
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          BorderThickness: =1
+                                          ChevronBackground: =RGBA(56, 96, 178, 1)
+                                          ChevronFill: =RGBA(255, 255, 255, 1)
+                                          ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                                          ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                          ContentLanguage: =Language()
+                                          Default: |-
+                                            =If(!IsBlank(SCheckpointF3Label),
+                                                SCheckpointF3Label
+                                            ,//Else
+                                                ""
+                                            )
+                                          Fill: =RGBA(255, 255, 0, 1) //gelb
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          Height: =If(Self.Visible,70,0)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          Items: =Sort(MyFlexFields,FlexFieldText)
+                                          Items.Value: =FlexFieldText
+                                          OnChange: |+
+                                            =Set(SCheckpointF3,"");
+                                            If(!IsBlank(DCField3.Selected.Title),
+                                                Set(SCheckpointF3,
+                                                "DisplayOrder:3, Question:"
+                                                &DCField3.Selected.Title
+                                                &", ResponseType:"
+                                                &DCField3.Selected.ResponseType
+                                                &If(DCField3.Selected.ResponseType="Radio"||
+                                                    DCField3.Selected.ResponseType="Combobox",
+                                                    ", Choices:"
+                                                    &DCField3.Selected.Choices
+                                                    &","
+                                                ,//Else
+                                                    ","
+                                                ))
+                                            );
+                                            Set(SCheckpointFlexForm,
+                                                SCheckpointF1 &
+                                                SCheckpointF2 &
+                                                SCheckpointF3 &
+                                                SCheckpointF4 &
+                                                SCheckpointF5
+                                            );
+                                          OnSelect: =
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PressedColor: =RGBA(255, 255, 255, 1)
+                                          PressedFill: =RGBA(0, 18, 107, 1)
+                                          Reset: =true
+                                          SelectionColor: =RGBA(255, 255, 255, 1)
+                                          SelectionFill: =RGBA(56, 96, 178, 1)
+                                          Size: =MyFontSize
+                                          Tooltip: |-
+                                            ="Select possible status for this checkpoint"
+                                            //LookUp(MyUVVSettings;Title="Status Tooltip").Wert
+                                          Visible: =!IsBlank(DCField2.Selected.Title)
+                                          Width: =Parent.Width - 60
+                                          X: =29+1
+                                          Y: =DCField2.Y + DCField2.Height+10
+                                    - DCField2:
+                                        Control: Classic/DropDown@2.3.1
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          ChevronBackground: =RGBA(56, 96, 178, 1)
+                                          ChevronFill: =RGBA(255, 255, 255, 1)
+                                          ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                                          ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                          ContentLanguage: =Language()
+                                          Default: |-
+                                            =If(!IsBlank(SCheckpointF2Label),
+                                                SCheckpointF2Label
+                                            ,//Else
+                                                ""
+                                            )
+                                          Fill: =RGBA(255, 255, 0, 1) //gelb
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          Height: =If(Self.Visible,70,0)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          Items: =Sort(MyFlexFields,FlexFieldText)
+                                          Items.Value: =FlexFieldText
+                                          OnChange: |+
+                                            =Set(SCheckpointF2,"");
+                                            If(!IsBlank(DCField2.Selected.Title),
+                                                Set(SCheckpointF2,
+                                                "DisplayOrder:2, Question:"
+                                                &DCField2.Selected.Title
+                                                &", ResponseType:"
+                                                &DCField2.Selected.ResponseType
+                                                &If(DCField2.Selected.ResponseType="Radio"||
+                                                    DCField2.Selected.ResponseType="Combobox",
+                                                    ", Choices:"
+                                                    &DCField2.Selected.Choices
+                                                    &","
+                                                ,//Else
+                                                    ","
+                                                ))
+                                            );
+                                            Set(SCheckpointFlexForm,
+                                                SCheckpointF1 &
+                                                SCheckpointF2 &
+                                                SCheckpointF3 &
+                                                SCheckpointF4 &
+                                                SCheckpointF5
+                                            );
+                                          OnSelect: =
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PressedColor: =RGBA(255, 255, 255, 1)
+                                          PressedFill: =RGBA(0, 18, 107, 1)
+                                          Reset: =true
+                                          SelectionColor: =RGBA(255, 255, 255, 1)
+                                          SelectionFill: =RGBA(56, 96, 178, 1)
+                                          Size: =MyFontSize
+                                          Tooltip: |-
+                                            ="Select possible status for this checkpoint"
+                                            //LookUp(MyUVVSettings;Title="Status Tooltip").Wert
+                                          Visible: =!IsBlank(DCField1.Selected.Title)
+                                          Width: =Parent.Width - 60
+                                          X: =29+1
+                                          Y: =DCField1.Y + DCField1.Height+10
+                                    - DCField1:
+                                        Control: Classic/DropDown@2.3.1
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          ChevronBackground: =RGBA(56, 96, 178, 1)
+                                          ChevronFill: =RGBA(255, 255, 255, 1)
+                                          ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                                          ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                          ContentLanguage: =Language()
+                                          Default: |-
+                                            =If(!IsBlank(SCheckpointF1Label),
+                                                SCheckpointF1Label
+                                            ,//Else
+                                                ""
+                                            )
+                                          Fill: =RGBA(255, 255, 0, 1) //gelb
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          Items: =Sort(MyFlexFields,FlexFieldText)
+                                          Items.Value: =FlexFieldText
+                                          OnChange: |+
+                                            =Set(SCheckpointF1,"");
+                                            If(!IsBlank(DCField1.Selected.Title),
+                                                Set(SCheckpointF1,
+                                                "DisplayOrder:1, Question:"
+                                                &DCField1.Selected.Title
+                                                &", ResponseType:"
+                                                &DCField1.Selected.ResponseType
+                                                &If(DCField1.Selected.ResponseType="Radio"||
+                                                    DCField1.Selected.ResponseType="Combobox",
+                                                    ", Choices:"
+                                                    &DCField1.Selected.Choices
+                                                    &","
+                                                ,//Else
+                                                    ","
+                                                ))
+                                            );
+                                            Set(SCheckpointFlexForm,
+                                                SCheckpointF1 &
+                                                SCheckpointF2 &
+                                                SCheckpointF3 &
+                                                SCheckpointF4 &
+                                                SCheckpointF5
+                                            );
+                                          OnSelect: =
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PressedColor: =RGBA(255, 255, 255, 1)
+                                          PressedFill: =RGBA(0, 18, 107, 1)
+                                          Reset: =true
+                                          SelectionColor: =RGBA(255, 255, 255, 1)
+                                          SelectionFill: =RGBA(56, 96, 178, 1)
+                                          Size: =MyFontSize
+                                          Tooltip: |-
+                                            ="Select possible status for this checkpoint"
+                                            //LookUp(MyUVVSettings;Title="Status Tooltip").Wert
+                                          Width: =Parent.Width - 60
+                                          X: =29+1
+                                          Y: =DataCardKey9.Y + DataCardKey9.Height + 5
+            - FooterLabel1_20:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Right
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  Color: =RGBA(255, 255, 255, 1)
+                  DisplayMode: =DisplayMode.View
+                  Fill: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Lighter
+                  Height: =50
+                  PaddingLeft: =15
+                  PaddingRight: =15
+                  Size: =MyFontSize-3
+                  Text: |+
+                    =If(!IsBlank(FooterText),
+                        FooterText,
+                        //MyAppName
+                        //"|"
+                        "v"&MyVersion
+                        &"|"&MyDeviceType
+                        &If(OnlineStatus=0,"|Offline","|Online")
+                        &"|"&MyLanguage
+
+                        //&"|Mode:"&EditForm1_17.Mode //(0=Edit;1=Add)
+                        //&"|"&SCheckpointStatus3
+                        //&"|"&SCheckpointFlexForm
+                    )
+                  Width: =Parent.Width
+                  Y: =Parent.Height-Self.Height
+      - ImageLoading1_20:
+          Control: Image@2.2.3
+          Properties:
+            AccessibleLabel: =" "
+            BorderColor: =RGBA(0, 18, 107, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =150
+            Image: =Loading_1
+            ImagePosition: =ImagePosition.Fill
+            TabIndex: =0
+            Visible: =_ShowLoadingHint
+            Width: =150
+            X: =Parent.Width/2 - Self.Width/2
+            Y: =Parent.Height/2 - Self.Height/2
+      - Timer1_20:
+          Control: Timer@2.1.0
+          Properties:
+            AutoStart: =true
+            BorderColor: =//ColorFade(Self.Fill; -15%)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =
+            DisabledColor: =
+            DisabledFill: =
+            Duration: =500
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Lighter
+            Height: =26
+            HoverBorderColor: =
+            HoverColor: =
+            HoverFill: =
+            OnTimerEnd: |+
+              =If(Connection.Connected,
+                  Set (OnlineStatus, 1)
+              ,// Else    
+                  Set (OnlineStatus, 0)
+              );
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Repeat: =true
+            Size: =11
+            Text: =//Text(Time(0; 0; Self.Value/1000); "hh:mm:ss")
+            Visible: =false
+            Width: =98
+            X: =476
+            Y: =928
