@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2022/09/ProvisioningSchema">
+  <pnp:Preferences Generator="PnP.Framework, Version=1.18.0.0, Culture=neutral, PublicKeyToken=0d501f89f11b748c" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-EE95AB4B85044E059EF0B3710123F22E">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-EE95AB4B85044E059EF0B3710123F22E" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
+      <pnp:SiteFields>
+        <Field Type="Note" DisplayName="HashTags_0" StaticName="j33b1bc20532487296f1bbbdead35a56" Name="j33b1bc20532487296f1bbbdead35a56" ID="{790722e8-f13c-4f84-90b2-36161bfe7873}" ShowInViewForms="FALSE" Required="FALSE" CanToggleHidden="TRUE" SourceID="{9c6aee29-068b-463e-84b6-8ee336240caa}" Hidden="TRUE" />
+        <Field ID="{f2630201-2b18-4f74-867b-18551759b437}" Name="Scope" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Scope" Group="Suchkonfiguration" Type="Choice" Hidden="FALSE" DisplayName="Bereich">
+          <CHOICES>
+            <CHOICE>Mandant</CHOICE>
+            <CHOICE>SPSite</CHOICE>
+            <CHOICE>SPWeb</CHOICE>
+          </CHOICES>
+        </Field>
+        <Field ID="{d26b5f0c-27cf-46d0-984c-a0c2ea81cb10}" Name="Status" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Status" Group="Suchkonfiguration" Type="Text" Hidden="FALSE" DisplayName="Status" />
+        <Field ID="{9889a80f-c9ec-41d8-a359-ac5fb5c4cfa2}" Name="_SPCallToAction" StaticName="_SPCallToAction" DisplayName="Handlungsaufruf" Type="Note" SourceID="http://schemas.microsoft.com/sharepoint/v3" Group="_Hidden" Description="" AllowDeletion="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ShowInDisplayForm="FALSE" ShowInViewForms="FALSE" ShowInListSettings="FALSE" />
+        <Field ID="{86EBE41F-255F-4170-B040-9977528A8BF5}" Name="_SPCollaborators" StaticName="_SPCollaborators" DisplayName="Mitarbeiter" Type="Note" SourceID="http://schemas.microsoft.com/sharepoint/v3" Group="_Hidden" Description="" AllowDeletion="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ShowInDisplayForm="FALSE" ShowInViewForms="FALSE" ShowInListSettings="FALSE" ReadOnly="TRUE" Hidden="TRUE" />
+        <Field ID="{d84a863a-bad2-40c0-bdc5-2030ef3d998f}" Name="_SPTranslatedLanguages" StaticName="_SPTranslatedLanguages" DisplayName="Übersetzungssprachen" Type="MultiChoice" SourceID="http://schemas.microsoft.com/sharepoint/v3" Group="_Hidden" Description="Sprachen, in die dieses Element übersetzt wurde oder wird." AllowDeletion="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ShowInDisplayForm="FALSE" ShowInViewForms="FALSE" ShowInListSettings="FALSE" ShowInVersionHistory="FALSE" ReadOnly="TRUE">
+          <CHOICES>
+            <CHOICE>ar-SA</CHOICE>
+            <CHOICE>az-Latn-AZ</CHOICE>
+            <CHOICE>bg-BG</CHOICE>
+            <CHOICE>bs-Latn-BA</CHOICE>
+            <CHOICE>ca-ES</CHOICE>
+            <CHOICE>cs-CZ</CHOICE>
+            <CHOICE>cy-GB</CHOICE>
+            <CHOICE>da-DK</CHOICE>
+            <CHOICE>de-DE</CHOICE>
+            <CHOICE>el-GR</CHOICE>
+            <CHOICE>en-US</CHOICE>
+            <CHOICE>es-ES</CHOICE>
+            <CHOICE>et-EE</CHOICE>
+            <CHOICE>eu-ES</CHOICE>
+            <CHOICE>fi-FI</CHOICE>
+            <CHOICE>fr-FR</CHOICE>
+            <CHOICE>ga-IE</CHOICE>
+            <CHOICE>gl-ES</CHOICE>
+            <CHOICE>he-IL</CHOICE>
+            <CHOICE>hi-IN</CHOICE>
+            <CHOICE>hr-HR</CHOICE>
+            <CHOICE>hu-HU</CHOICE>
+            <CHOICE>id-ID</CHOICE>
+            <CHOICE>it-IT</CHOICE>
+            <CHOICE>ja-JP</CHOICE>
+            <CHOICE>kk-KZ</CHOICE>
+            <CHOICE>ko-KR</CHOICE>
+            <CHOICE>lt-LT</CHOICE>
+            <CHOICE>lv-LV</CHOICE>
+            <CHOICE>mk-MK</CHOICE>
+            <CHOICE>ms-MY</CHOICE>
+            <CHOICE>nb-NO</CHOICE>
+            <CHOICE>nl-NL</CHOICE>
+            <CHOICE>pl-PL</CHOICE>
+            <CHOICE>prs-AF</CHOICE>
+            <CHOICE>pt-BR</CHOICE>
+            <CHOICE>pt-PT</CHOICE>
+            <CHOICE>ro-RO</CHOICE>
+            <CHOICE>ru-RU</CHOICE>
+            <CHOICE>sk-SK</CHOICE>
+            <CHOICE>sl-SI</CHOICE>
+            <CHOICE>sr-Cyrl-RS</CHOICE>
+            <CHOICE>sr-Latn-CS</CHOICE>
+            <CHOICE>sr-Latn-RS</CHOICE>
+            <CHOICE>sv-SE</CHOICE>
+            <CHOICE>th-TH</CHOICE>
+            <CHOICE>tr-TR</CHOICE>
+            <CHOICE>uk-UA</CHOICE>
+            <CHOICE>vi-VN</CHOICE>
+            <CHOICE>zh-CN</CHOICE>
+            <CHOICE>zh-TW</CHOICE>
+          </CHOICES>
+        </Field>
+        <Field ID="{46e6583c-87b2-4560-87e6-734a34780746}" Type="Note" Group="_Hidden" Name="_SPHiddenHighlightsMetadata" DisplayName="Ausgeblendete Highlights von Viva Topics" AllowDeletion="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ShowInDisplayForm="FALSE" ShowInViewForms="FALSE" ShowInListSettings="FALSE" ShowInVersionHistory="FALSE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="_SPHiddenHighlightsMetadata" Hidden="TRUE" />
+        <Field ID="{cb19284a-cde7-4570-a980-1dab8bd74470}" Name="_ExtendedDescription" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="_ExtendedDescription" DisplayName="Beschreibung" Group="Erweiterte Spalten" RichText="TRUE" ShowInEditForm="FALSE" RichTextMode="Compatible" CanToggleHidden="TRUE" Type="Note" />
+        <Field ID="{fed55352-c65f-410c-9b96-021a35f2591f}" Name="_SPTranslationSourceItemId" StaticName="_SPTranslationSourceItemId" DisplayName="Übersetzungsquell-ID" Type="Guid" SourceID="http://schemas.microsoft.com/sharepoint/v3" Group="_Hidden" Description="Eindeutige ID des Elements, auf dem diese Übersetzung basiert." AllowDeletion="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ShowInDisplayForm="FALSE" ShowInViewForms="FALSE" ShowInListSettings="FALSE" ShowInVersionHistory="FALSE" ReadOnly="TRUE" />
+        <Field ID="{df38fc53-0740-4846-80b2-cd5c4cf6b5d7}" Name="ConfigNotes" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="ConfigNotes" Group="Suchkonfiguration" Type="Note" Hidden="FALSE" DisplayName="Hinweise" />
+        <Field ID="{AC9CE95B-F081-4B8A-BB19-2F4427D44674}" Name="_ExpirationDate" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="_ExpirationDate" Hidden="TRUE" Group="_Hidden" ReadOnly="TRUE" Type="Lookup" List="Docs" ShowField="ExpirationDate" DisplayName="Ablaufdatum" FromBaseType="TRUE" DisplaceOnUpgrade="TRUE" FieldRef="ID" JoinColName="DoclibRowId" JoinRowOrdinal="0" JoinType="INNER" />
+        <Field ID="{08D89A66-4634-42B8-9D5A-0C27395A48B3}" Name="TriggerFlowInfo" SourceID="http://schemas.microsoft.com/sharepoint/v3" Required="FALSE" ShowInFileDlg="FALSE" Hidden="TRUE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ReadOnlyEnforced="FALSE" ReadOnly="TRUE" DisplaceOnUpgrade="TRUE" StaticName="TriggerFlowInfo" Type="Text" DisplayName="Flow-Info auslösen" Sortable="FALSE" />
+        <Field ID="{4C321A6D-2A91-428B-8296-59408B35901A}" Name="_SourceDynamicSectionId" StaticName="_SourceDynamicSectionId" DisplayName="sourceDynamicPageId" Type="Text" SourceID="http://schemas.microsoft.com/sharepoint/v3" Group="_Hidden" Indexed="TRUE" Description="" ShowInEditForm="FALSE" AllowDeletion="FALSE" Hidden="TRUE" />
+        <Field ID="{4cfeca70-6332-4beb-93c5-05c950fe3888}" Name="_SPIsTranslation" StaticName="_SPIsTranslation" DisplayName="Übersetzung" Type="Boolean" SourceID="http://schemas.microsoft.com/sharepoint/v3" Group="_Hidden" Description="Dieses Element ist eine Übersetzung." AllowDeletion="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ShowInDisplayForm="FALSE" ShowInViewForms="FALSE" ShowInListSettings="FALSE" ShowInVersionHistory="FALSE" ReadOnly="TRUE">
+          <Default>FALSE</Default>
+        </Field>
+        <Field ID="{D8A77D76-536B-45D2-8B9B-E4E9B00CF3DC}" Name="_Emoji" SourceID="http://schemas.microsoft.com/sharepoint/v3" Required="FALSE" Hidden="TRUE" ShowInFileDlg="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" DisplaceOnUpgrade="TRUE" StaticName="_Emoji" Type="Text" DisplayName="Emoji" Sortable="FALSE" />
+        <Field ID="{ef991a83-108d-4407-8ee5-ccc0c3d836b9}" Type="UserMulti" DisplayName="Freigegeben für" Mult="TRUE" Name="SharedWithUsers" StaticName="SharedWithUsers" Group="_Hidden" AllowDeletion="FALSE" ShowInDisplayForm="FALSE" ShowInEditForm="FALSE" ShowInListSettings="FALSE" Viewable="FALSE" SourceID="{9c6aee29-068b-463e-84b6-8ee336240caa}" Sealed="TRUE" ReadOnly="TRUE" />
+        <Field ID="{ff41708b-e251-4237-a060-bea44657e8dc}" Name="_SPAssetFolderId" StaticName="_SPAssetFolderId" DisplayName="Ressourcenordner-ID" Type="Number" SourceID="http://schemas.microsoft.com/sharepoint/v3" Group="_Hidden" Description="" ReadOnly="TRUE" AllowDeletion="FALSE" Hidden="TRUE" />
+        <Field ID="{b6ee4892-f45b-44b4-9b52-d31be51e8f5f}" Name="_SPTranslationLanguage" StaticName="_SPTranslationLanguage" DisplayName="Elementsprache" Type="Choice" SourceID="http://schemas.microsoft.com/sharepoint/v3" Group="_Hidden" Description="Sprache dieses Elements." AllowDeletion="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ShowInDisplayForm="FALSE" ShowInViewForms="FALSE" ShowInListSettings="FALSE" ShowInVersionHistory="FALSE" ReadOnly="TRUE">
+          <CHOICES>
+            <CHOICE>ar-SA</CHOICE>
+            <CHOICE>az-Latn-AZ</CHOICE>
+            <CHOICE>bg-BG</CHOICE>
+            <CHOICE>bs-Latn-BA</CHOICE>
+            <CHOICE>ca-ES</CHOICE>
+            <CHOICE>cs-CZ</CHOICE>
+            <CHOICE>cy-GB</CHOICE>
+            <CHOICE>da-DK</CHOICE>
+            <CHOICE>de-DE</CHOICE>
+            <CHOICE>el-GR</CHOICE>
+            <CHOICE>en-US</CHOICE>
+            <CHOICE>es-ES</CHOICE>
+            <CHOICE>et-EE</CHOICE>
+            <CHOICE>eu-ES</CHOICE>
+            <CHOICE>fi-FI</CHOICE>
+            <CHOICE>fr-FR</CHOICE>
+            <CHOICE>ga-IE</CHOICE>
+            <CHOICE>gl-ES</CHOICE>
+            <CHOICE>he-IL</CHOICE>
+            <CHOICE>hi-IN</CHOICE>
+            <CHOICE>hr-HR</CHOICE>
+            <CHOICE>hu-HU</CHOICE>
+            <CHOICE>id-ID</CHOICE>
+            <CHOICE>it-IT</CHOICE>
+            <CHOICE>ja-JP</CHOICE>
+            <CHOICE>kk-KZ</CHOICE>
+            <CHOICE>ko-KR</CHOICE>
+            <CHOICE>lt-LT</CHOICE>
+            <CHOICE>lv-LV</CHOICE>
+            <CHOICE>mk-MK</CHOICE>
+            <CHOICE>ms-MY</CHOICE>
+            <CHOICE>nb-NO</CHOICE>
+            <CHOICE>nl-NL</CHOICE>
+            <CHOICE>pl-PL</CHOICE>
+            <CHOICE>prs-AF</CHOICE>
+            <CHOICE>pt-BR</CHOICE>
+            <CHOICE>pt-PT</CHOICE>
+            <CHOICE>ro-RO</CHOICE>
+            <CHOICE>ru-RU</CHOICE>
+            <CHOICE>sk-SK</CHOICE>
+            <CHOICE>sl-SI</CHOICE>
+            <CHOICE>sr-Cyrl-RS</CHOICE>
+            <CHOICE>sr-Latn-CS</CHOICE>
+            <CHOICE>sr-Latn-RS</CHOICE>
+            <CHOICE>sv-SE</CHOICE>
+            <CHOICE>th-TH</CHOICE>
+            <CHOICE>tr-TR</CHOICE>
+            <CHOICE>uk-UA</CHOICE>
+            <CHOICE>vi-VN</CHOICE>
+            <CHOICE>zh-CN</CHOICE>
+            <CHOICE>zh-TW</CHOICE>
+          </CHOICES>
+        </Field>
+        <Field ID="{b03d6d98-defb-4047-9d2d-a741eb0b4c68}" Type="User" List="UserInfo" Group="_Hidden" Name="_SPHideListEditorMetadata" DisplayName="Editor für Hervorhebungslisten ausblenden" AllowDeletion="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ShowInDisplayForm="FALSE" ShowInViewForms="FALSE" ShowInListSettings="FALSE" ShowInVersionHistory="FALSE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="_SPHideListEditorMetadata" Hidden="TRUE" />
+        <Field ID="{577d74a4-b828-4c3c-bfcd-b16d76cdbc0a}" Name="ComplianceTagAppId" SourceID="http://schemas.microsoft.com/sharepoint/v3" Required="FALSE" ShowInFileDlg="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" Hidden="TRUE" DisplaceOnUpgrade="TRUE" ReadOnly="TRUE" StaticName="ComplianceTagAppId" Type="Text" DisplayName="Von App-ID angewendete Bezeichnung" Sortable="FALSE" />
+        <Field ID="{3BDAB9AC-9E5D-44D4-BDE9-13B37E170618}" Name="_ColorHex" SourceID="http://schemas.microsoft.com/sharepoint/v3" Required="FALSE" Hidden="TRUE" ShowInFileDlg="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" DisplaceOnUpgrade="TRUE" StaticName="_ColorHex" Type="Text" DisplayName="Farbe" Sortable="FALSE" />
+        <Field Type="TaxonomyFieldTypeMulti" DisplayName="HashTags" StaticName="HashTags" Name="HashTags" ID="{333b1bc2-0532-4872-96f1-bbbdead35a56}" Description="Some description" SourceID="{{siteid}}" List="{{listid:TaxonomyHiddenList}}" WebId="{siteid}" ShowField="Term1031" Mult="TRUE" Sortable="FALSE" ShowInDisplayForm="TRUE" ShowInNewForm="FALSE" ShowInEditForm="FALSE">
+          <Customization>
+            <ArrayOfProperty>
+              <Property>
+                <Name>SspId</Name>
+                <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+              </Property>
+              <Property>
+                <Name>GroupId</Name>
+              </Property>
+              <Property>
+                <Name>TermSetId</Name>
+                <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:System:Hashtags}</Value>
+              </Property>
+              <Property>
+                <Name>AnchorId</Name>
+                <Value xmlns:q3="http://www.w3.org/2001/XMLSchema" p4:type="q3:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">00000000-0000-0000-0000-000000000000</Value>
+              </Property>
+              <Property>
+                <Name>UserCreated</Name>
+                <Value xmlns:q4="http://www.w3.org/2001/XMLSchema" p4:type="q4:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+              </Property>
+              <Property>
+                <Name>Open</Name>
+                <Value xmlns:q5="http://www.w3.org/2001/XMLSchema" p4:type="q5:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+              </Property>
+              <Property>
+                <Name>TextField</Name>
+                <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{790722e8-f13c-4f84-90b2-36161bfe7873}</Value>
+              </Property>
+              <Property>
+                <Name>IsPathRendered</Name>
+                <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+              </Property>
+              <Property>
+                <Name>IsKeyword</Name>
+                <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+              </Property>
+              <Property>
+                <Name>TargetTemplate</Name>
+              </Property>
+              <Property>
+                <Name>CreateValuesInEditForm</Name>
+                <Value xmlns:q9="http://www.w3.org/2001/XMLSchema" p4:type="q9:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+              </Property>
+              <Property>
+                <Name>IsDocTagsEnabled</Name>
+                <Value xmlns:q10="http://www.w3.org/2001/XMLSchema" p4:type="q10:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+              </Property>
+              <Property>
+                <Name>IsEnhancedImageTaggingEnabled</Name>
+                <Value xmlns:q11="http://www.w3.org/2001/XMLSchema" p4:type="q11:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+              </Property>
+              <Property>
+                <Name>FilterAssemblyStrongName</Name>
+                <Value xmlns:q12="http://www.w3.org/2001/XMLSchema" p4:type="q12:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">Microsoft.SharePoint.Taxonomy, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Value>
+              </Property>
+              <Property>
+                <Name>FilterClassName</Name>
+                <Value xmlns:q13="http://www.w3.org/2001/XMLSchema" p4:type="q13:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">Microsoft.SharePoint.Taxonomy.TaxonomyField</Value>
+              </Property>
+              <Property>
+                <Name>FilterMethodName</Name>
+                <Value xmlns:q14="http://www.w3.org/2001/XMLSchema" p4:type="q14:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">GetFilteringHtml</Value>
+              </Property>
+              <Property>
+                <Name>FilterJavascriptProperty</Name>
+                <Value xmlns:q15="http://www.w3.org/2001/XMLSchema" p4:type="q15:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">FilteringJavascript</Value>
+              </Property>
+            </ArrayOfProperty>
+          </Customization>
+        </Field>
+        <Field ID="{76D13CD2-1BAE-45A5-8B74-545B87B65037}" Name="_ColorTag" SourceID="http://schemas.microsoft.com/sharepoint/v3" Required="FALSE" ShowInFileDlg="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ReadOnly="TRUE" DisplaceOnUpgrade="TRUE" Type="Text" StaticName="_ColorTag" DisplayName="Farbkennzeichnung" Sortable="TRUE" />
+        <Field ID="{d3c9caf7-044c-4c71-ae64-092981e54b33}" Type="Note" DisplayName="Freigegeben für - Details" Name="SharedWithDetails" StaticName="SharedWithDetails" Group="_Hidden" AllowDeletion="FALSE" ShowInDisplayForm="FALSE" ShowInEditForm="FALSE" ShowInListSettings="FALSE" Viewable="FALSE" SourceID="{9c6aee29-068b-463e-84b6-8ee336240caa}" Sealed="TRUE" ReadOnly="TRUE" />
+        <Field ID="{3A8EE3F8-166B-4394-B3E2-E98DCF86A847}" Name="A2ODMountCount" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="A2ODMountCount" Hidden="TRUE" Group="_Hidden" ReadOnly="TRUE" Type="Lookup" List="Docs" ShowField="A2ODMountCount" DisplayName="A2OD-Bereitstellungsanzahl" FromBaseType="TRUE" DisplaceOnUpgrade="TRUE" FieldRef="ID" JoinColName="DoclibRowId" JoinRowOrdinal="0" JoinType="INNER" />
+        <Field ID="{031C92FD-9CB6-4AC8-8F5F-636D28E37079}" Name="_SPAuthoringMetadata" StaticName="_SPAuthoringMetadata" DisplayName="Metadaten werden erstellt" Type="Note" SourceID="http://schemas.microsoft.com/sharepoint/v3" Group="_Hidden" Description="" AllowDeletion="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ShowInDisplayForm="FALSE" ShowInViewForms="FALSE" ShowInListSettings="FALSE" ReadOnly="TRUE" Hidden="TRUE" />
+      </pnp:SiteFields>
+      <pnp:Lists>
+        <pnp:ListInstance Title="ServicevorgaengeP" Description="Service Operations Details for Checkpoints" DocumentTemplate="" TemplateType="100" Url="Lists/ServicevorgaengeP" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="50" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableAttachments="false" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/ServicevorgaengeP/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/ServicevorgaengeP/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/ServicevorgaengeP/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{B27ACD08-5A11-403B-98CF-12B1032B8F46}" Type="HTML" DisplayName="331" Url="{site}/Lists/ServicevorgaengeP/331.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="ParentID" />
+                    <Value Type="Number">331.000000000000</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="ID" />
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="KEY" />
+                <FieldRef Name="ParentID" />
+                <FieldRef Name="Pos" />
+                <FieldRef Name="Checkpunkt" />
+                <FieldRef Name="Status" />
+                <FieldRef Name="Bemerkung" />
+                <FieldRef Name="F1Label" />
+                <FieldRef Name="_x0046_1" />
+                <FieldRef Name="F2Label" />
+                <FieldRef Name="_x0046_2" />
+                <FieldRef Name="F3Label" />
+                <FieldRef Name="_x0046_3" />
+                <FieldRef Name="F4Label" />
+                <FieldRef Name="_x0046_4" />
+                <FieldRef Name="F5Label" />
+                <FieldRef Name="_x0046_5" />
+                <FieldRef Name="CheckpunktText" />
+                <FieldRef Name="StatusText" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+              <CalendarViewStyles>
+                <CalendarViewStyle Title="Day" Type="day" Template="CalendarViewdayChrome" Sequence="1" Default="FALSE" />
+                <CalendarViewStyle Title="Week" Type="week" Template="CalendarViewweekChrome" Sequence="2" Default="FALSE" />
+                <CalendarViewStyle Title="Month" Type="month" Template="CalendarViewmonthChrome" Sequence="3" Default="FALSE" />
+                <CalendarViewStyle Title="Work week" Type="workweek" Template="CalendarViewweekChrome" Sequence="4" Default="FALSE" />
+              </CalendarViewStyles>
+            </View>
+            <View Name="{CBF3CCBB-8642-4338-B702-E78F673F9C54}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="Alle Elemente" Url="{site}/Lists/ServicevorgaengeP/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="Modified" Ascending="FALSE" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Modified" />
+                <FieldRef Name="ID" />
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="KEY" />
+                <FieldRef Name="ParentID" />
+                <FieldRef Name="Pos" />
+                <FieldRef Name="Checkpunkt" />
+                <FieldRef Name="Status" />
+                <FieldRef Name="Bemerkung" />
+                <FieldRef Name="F1Label" />
+                <FieldRef Name="_x0046_1" />
+                <FieldRef Name="F2Label" />
+                <FieldRef Name="_x0046_2" />
+                <FieldRef Name="F3Label" />
+                <FieldRef Name="_x0046_3" />
+                <FieldRef Name="F4Label" />
+                <FieldRef Name="_x0046_4" />
+                <FieldRef Name="F5Label" />
+                <FieldRef Name="_x0046_5" />
+                <FieldRef Name="CheckpunktText" />
+                <FieldRef Name="StatusText" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+              <ColumnWidth>
+                <FieldRef Name="Checkpunkt" width="377.79998779296875" />
+                <FieldRef Name="KEY" width="331.8000030517578" />
+                <FieldRef Name="CheckpunktText" width="230.75" />
+                <FieldRef Name="Status" width="328.1363525390625" />
+                <FieldRef Name="Titel" width="250.19998168945312" />
+              </ColumnWidth>
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field Type="Text" DisplayName="KEY" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="TRUE" MaxLength="255" ID="{c276ce2a-697c-400e-bf88-802a2df75581}" SourceID="{{listid:ServicevorgaengeP}}" StaticName="KEY" Name="KEY" ColName="nvarchar22" RowOrdinal="0" Version="4" CustomFormatter="" />
+            <Field Type="Number" DisplayName="ParentID" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="TRUE" ID="{2366755b-fa99-45bb-a2be-5a44c651c382}" SourceID="{{listid:ServicevorgaengeP}}" StaticName="ParentID" Name="ParentID" ColName="float1" RowOrdinal="0" CustomFormatter="" Decimals="0" Percentage="FALSE" Version="8" />
+            <Field Type="Number" DisplayName="Pos" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="TRUE" Decimals="0" ID="{fa181a48-290b-44b2-b373-3d55d6fba807}" SourceID="{{listid:ServicevorgaengeP}}" StaticName="Pos" Name="Pos" ColName="float2" RowOrdinal="0" Version="1" />
+            <Field Type="Text" DisplayName="Checkpunkt" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{c9d56a01-5629-4d86-abe4-a9ce259af4ac}" SourceID="{{listid:ServicevorgaengeP}}" StaticName="Checkpunkt" Name="Checkpunkt" ColName="nvarchar7" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="CheckpunktText" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{8f1f2821-5871-4b83-ba61-484a24555314}" SourceID="{{listid:ServicevorgaengeP}}" StaticName="CheckpunktText" Name="CheckpunktText" ColName="nvarchar10" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="Status" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{8580dfc2-ff63-4258-adc2-3a1dd41c9725}" SourceID="{{listid:ServicevorgaengeP}}" StaticName="Status" Name="Status" ColName="nvarchar8" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="StatusText" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{cb45f190-6954-4858-b6a8-6f68f975d188}" SourceID="{{listid:ServicevorgaengeP}}" StaticName="StatusText" Name="StatusText" ColName="nvarchar11" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="Bemerkung" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{8fd86aae-fea9-46f5-b201-036df8b0d2cc}" SourceID="{{listid:ServicevorgaengeP}}" StaticName="Bemerkung" Name="Bemerkung" ColName="nvarchar9" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="F1" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{373d04e2-2ea1-4952-a044-4f0a5ec1dce1}" SourceID="{{listid:ServicevorgaengeP}}" StaticName="_x0046_1" Name="_x0046_1" ColName="nvarchar12" RowOrdinal="0" Version="1" />
+            <Field Type="Text" DisplayName="F2" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{b8b8a0da-9780-4384-8a93-8ade03775330}" SourceID="{{listid:ServicevorgaengeP}}" StaticName="_x0046_2" Name="_x0046_2" ColName="nvarchar13" RowOrdinal="0" Version="1" />
+            <Field Type="Text" DisplayName="F3" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{50955c97-eb91-4ca9-b7b9-202d9ea569c4}" SourceID="{{listid:ServicevorgaengeP}}" StaticName="_x0046_3" Name="_x0046_3" ColName="nvarchar14" RowOrdinal="0" Version="1" />
+            <Field Type="Text" DisplayName="F4" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{94d0ff1d-aa3c-4b13-a64a-4690c6e73202}" SourceID="{{listid:ServicevorgaengeP}}" StaticName="_x0046_4" Name="_x0046_4" ColName="nvarchar15" RowOrdinal="0" Version="1" />
+            <Field Type="Text" DisplayName="F5" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{b7db3eb7-80bc-4505-8664-d6470d1c4368}" SourceID="{{listid:ServicevorgaengeP}}" StaticName="_x0046_5" Name="_x0046_5" ColName="nvarchar16" RowOrdinal="0" Version="1" />
+            <Field Type="Text" DisplayName="F1Label" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{faafb117-24bb-40d9-98f0-29590256843f}" SourceID="{{listid:ServicevorgaengeP}}" StaticName="F1Label" Name="F1Label" ColName="nvarchar17" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="F2Label" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{40978140-bbab-42c6-8c63-28221b5b19fd}" SourceID="{{listid:ServicevorgaengeP}}" StaticName="F2Label" Name="F2Label" ColName="nvarchar18" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="F3Label" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{e52be7e7-14ea-4a0a-9ddc-768adb0be52b}" SourceID="{{listid:ServicevorgaengeP}}" StaticName="F3Label" Name="F3Label" ColName="nvarchar19" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="F4Label" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{38fe2fc1-b82c-4e6f-b6d2-7acdd9c77f67}" SourceID="{{listid:ServicevorgaengeP}}" StaticName="F4Label" Name="F4Label" ColName="nvarchar20" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="F5Label" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{d16447f9-0cc5-48fd-b2ff-77f5b880a75f}" SourceID="{{listid:ServicevorgaengeP}}" StaticName="F5Label" Name="F5Label" ColName="nvarchar21" RowOrdinal="0" />
+          </pnp:Fields>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="fa564e0f-0c70-4ab9-b863-0177e6ddd247" Name="Title" Required="true" DisplayName="Title" />
+            <pnp:FieldRef ID="76d13cd2-1bae-45a5-8b74-545b87b65037" Name="_ColorTag" DisplayName="Farbkennzeichnung" />
+          </pnp:FieldRefs>
+          <pnp:FieldDefaults>
+            <pnp:FieldDefault FieldName="Title">Checkpunkt</pnp:FieldDefault>
+          </pnp:FieldDefaults>
+          <pnp:Security>
+            <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
+              <pnp:RoleAssignment Principal="{associatedownergroupid}" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="{associatedvisitorgroupid}" RoleDefinition="Read" />
+              <pnp:RoleAssignment Principal="{associatedmembergroupid}" RoleDefinition="Contribute" />
+            </pnp:BreakRoleInheritance>
+          </pnp:Security>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>

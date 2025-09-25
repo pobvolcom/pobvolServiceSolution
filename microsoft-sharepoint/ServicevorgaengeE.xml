@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2022/09/ProvisioningSchema">
+  <pnp:Preferences Generator="PnP.Framework, Version=1.18.0.0, Culture=neutral, PublicKeyToken=0d501f89f11b748c" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-46ACECED2E874A6CB73FF84FD9FC14C6">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-46ACECED2E874A6CB73FF84FD9FC14C6" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
+      <pnp:SiteFields>
+        <Field Type="Note" DisplayName="HashTags_0" StaticName="j33b1bc20532487296f1bbbdead35a56" Name="j33b1bc20532487296f1bbbdead35a56" ID="{790722e8-f13c-4f84-90b2-36161bfe7873}" ShowInViewForms="FALSE" Required="FALSE" CanToggleHidden="TRUE" SourceID="{9c6aee29-068b-463e-84b6-8ee336240caa}" Hidden="TRUE" />
+        <Field ID="{f2630201-2b18-4f74-867b-18551759b437}" Name="Scope" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Scope" Group="Suchkonfiguration" Type="Choice" Hidden="FALSE" DisplayName="Bereich">
+          <CHOICES>
+            <CHOICE>Mandant</CHOICE>
+            <CHOICE>SPSite</CHOICE>
+            <CHOICE>SPWeb</CHOICE>
+          </CHOICES>
+        </Field>
+        <Field ID="{d26b5f0c-27cf-46d0-984c-a0c2ea81cb10}" Name="Status" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Status" Group="Suchkonfiguration" Type="Text" Hidden="FALSE" DisplayName="Status" />
+        <Field ID="{9889a80f-c9ec-41d8-a359-ac5fb5c4cfa2}" Name="_SPCallToAction" StaticName="_SPCallToAction" DisplayName="Handlungsaufruf" Type="Note" SourceID="http://schemas.microsoft.com/sharepoint/v3" Group="_Hidden" Description="" AllowDeletion="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ShowInDisplayForm="FALSE" ShowInViewForms="FALSE" ShowInListSettings="FALSE" />
+        <Field ID="{86EBE41F-255F-4170-B040-9977528A8BF5}" Name="_SPCollaborators" StaticName="_SPCollaborators" DisplayName="Mitarbeiter" Type="Note" SourceID="http://schemas.microsoft.com/sharepoint/v3" Group="_Hidden" Description="" AllowDeletion="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ShowInDisplayForm="FALSE" ShowInViewForms="FALSE" ShowInListSettings="FALSE" ReadOnly="TRUE" Hidden="TRUE" />
+        <Field ID="{d84a863a-bad2-40c0-bdc5-2030ef3d998f}" Name="_SPTranslatedLanguages" StaticName="_SPTranslatedLanguages" DisplayName="Übersetzungssprachen" Type="MultiChoice" SourceID="http://schemas.microsoft.com/sharepoint/v3" Group="_Hidden" Description="Sprachen, in die dieses Element übersetzt wurde oder wird." AllowDeletion="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ShowInDisplayForm="FALSE" ShowInViewForms="FALSE" ShowInListSettings="FALSE" ShowInVersionHistory="FALSE" ReadOnly="TRUE">
+          <CHOICES>
+            <CHOICE>ar-SA</CHOICE>
+            <CHOICE>az-Latn-AZ</CHOICE>
+            <CHOICE>bg-BG</CHOICE>
+            <CHOICE>bs-Latn-BA</CHOICE>
+            <CHOICE>ca-ES</CHOICE>
+            <CHOICE>cs-CZ</CHOICE>
+            <CHOICE>cy-GB</CHOICE>
+            <CHOICE>da-DK</CHOICE>
+            <CHOICE>de-DE</CHOICE>
+            <CHOICE>el-GR</CHOICE>
+            <CHOICE>en-US</CHOICE>
+            <CHOICE>es-ES</CHOICE>
+            <CHOICE>et-EE</CHOICE>
+            <CHOICE>eu-ES</CHOICE>
+            <CHOICE>fi-FI</CHOICE>
+            <CHOICE>fr-FR</CHOICE>
+            <CHOICE>ga-IE</CHOICE>
+            <CHOICE>gl-ES</CHOICE>
+            <CHOICE>he-IL</CHOICE>
+            <CHOICE>hi-IN</CHOICE>
+            <CHOICE>hr-HR</CHOICE>
+            <CHOICE>hu-HU</CHOICE>
+            <CHOICE>id-ID</CHOICE>
+            <CHOICE>it-IT</CHOICE>
+            <CHOICE>ja-JP</CHOICE>
+            <CHOICE>kk-KZ</CHOICE>
+            <CHOICE>ko-KR</CHOICE>
+            <CHOICE>lt-LT</CHOICE>
+            <CHOICE>lv-LV</CHOICE>
+            <CHOICE>mk-MK</CHOICE>
+            <CHOICE>ms-MY</CHOICE>
+            <CHOICE>nb-NO</CHOICE>
+            <CHOICE>nl-NL</CHOICE>
+            <CHOICE>pl-PL</CHOICE>
+            <CHOICE>prs-AF</CHOICE>
+            <CHOICE>pt-BR</CHOICE>
+            <CHOICE>pt-PT</CHOICE>
+            <CHOICE>ro-RO</CHOICE>
+            <CHOICE>ru-RU</CHOICE>
+            <CHOICE>sk-SK</CHOICE>
+            <CHOICE>sl-SI</CHOICE>
+            <CHOICE>sr-Cyrl-RS</CHOICE>
+            <CHOICE>sr-Latn-CS</CHOICE>
+            <CHOICE>sr-Latn-RS</CHOICE>
+            <CHOICE>sv-SE</CHOICE>
+            <CHOICE>th-TH</CHOICE>
+            <CHOICE>tr-TR</CHOICE>
+            <CHOICE>uk-UA</CHOICE>
+            <CHOICE>vi-VN</CHOICE>
+            <CHOICE>zh-CN</CHOICE>
+            <CHOICE>zh-TW</CHOICE>
+          </CHOICES>
+        </Field>
+        <Field ID="{46e6583c-87b2-4560-87e6-734a34780746}" Type="Note" Group="_Hidden" Name="_SPHiddenHighlightsMetadata" DisplayName="Ausgeblendete Highlights von Viva Topics" AllowDeletion="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ShowInDisplayForm="FALSE" ShowInViewForms="FALSE" ShowInListSettings="FALSE" ShowInVersionHistory="FALSE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="_SPHiddenHighlightsMetadata" Hidden="TRUE" />
+        <Field ID="{cb19284a-cde7-4570-a980-1dab8bd74470}" Name="_ExtendedDescription" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="_ExtendedDescription" DisplayName="Beschreibung" Group="Erweiterte Spalten" RichText="TRUE" ShowInEditForm="FALSE" RichTextMode="Compatible" CanToggleHidden="TRUE" Type="Note" />
+        <Field ID="{fed55352-c65f-410c-9b96-021a35f2591f}" Name="_SPTranslationSourceItemId" StaticName="_SPTranslationSourceItemId" DisplayName="Übersetzungsquell-ID" Type="Guid" SourceID="http://schemas.microsoft.com/sharepoint/v3" Group="_Hidden" Description="Eindeutige ID des Elements, auf dem diese Übersetzung basiert." AllowDeletion="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ShowInDisplayForm="FALSE" ShowInViewForms="FALSE" ShowInListSettings="FALSE" ShowInVersionHistory="FALSE" ReadOnly="TRUE" />
+        <Field ID="{df38fc53-0740-4846-80b2-cd5c4cf6b5d7}" Name="ConfigNotes" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="ConfigNotes" Group="Suchkonfiguration" Type="Note" Hidden="FALSE" DisplayName="Hinweise" />
+        <Field ID="{AC9CE95B-F081-4B8A-BB19-2F4427D44674}" Name="_ExpirationDate" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="_ExpirationDate" Hidden="TRUE" Group="_Hidden" ReadOnly="TRUE" Type="Lookup" List="Docs" ShowField="ExpirationDate" DisplayName="Ablaufdatum" FromBaseType="TRUE" DisplaceOnUpgrade="TRUE" FieldRef="ID" JoinColName="DoclibRowId" JoinRowOrdinal="0" JoinType="INNER" />
+        <Field ID="{08D89A66-4634-42B8-9D5A-0C27395A48B3}" Name="TriggerFlowInfo" SourceID="http://schemas.microsoft.com/sharepoint/v3" Required="FALSE" ShowInFileDlg="FALSE" Hidden="TRUE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ReadOnlyEnforced="FALSE" ReadOnly="TRUE" DisplaceOnUpgrade="TRUE" StaticName="TriggerFlowInfo" Type="Text" DisplayName="Flow-Info auslösen" Sortable="FALSE" />
+        <Field ID="{4C321A6D-2A91-428B-8296-59408B35901A}" Name="_SourceDynamicSectionId" StaticName="_SourceDynamicSectionId" DisplayName="sourceDynamicPageId" Type="Text" SourceID="http://schemas.microsoft.com/sharepoint/v3" Group="_Hidden" Indexed="TRUE" Description="" ShowInEditForm="FALSE" AllowDeletion="FALSE" Hidden="TRUE" />
+        <Field ID="{4cfeca70-6332-4beb-93c5-05c950fe3888}" Name="_SPIsTranslation" StaticName="_SPIsTranslation" DisplayName="Übersetzung" Type="Boolean" SourceID="http://schemas.microsoft.com/sharepoint/v3" Group="_Hidden" Description="Dieses Element ist eine Übersetzung." AllowDeletion="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ShowInDisplayForm="FALSE" ShowInViewForms="FALSE" ShowInListSettings="FALSE" ShowInVersionHistory="FALSE" ReadOnly="TRUE">
+          <Default>FALSE</Default>
+        </Field>
+        <Field ID="{D8A77D76-536B-45D2-8B9B-E4E9B00CF3DC}" Name="_Emoji" SourceID="http://schemas.microsoft.com/sharepoint/v3" Required="FALSE" Hidden="TRUE" ShowInFileDlg="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" DisplaceOnUpgrade="TRUE" StaticName="_Emoji" Type="Text" DisplayName="Emoji" Sortable="FALSE" />
+        <Field ID="{ef991a83-108d-4407-8ee5-ccc0c3d836b9}" Type="UserMulti" DisplayName="Freigegeben für" Mult="TRUE" Name="SharedWithUsers" StaticName="SharedWithUsers" Group="_Hidden" AllowDeletion="FALSE" ShowInDisplayForm="FALSE" ShowInEditForm="FALSE" ShowInListSettings="FALSE" Viewable="FALSE" SourceID="{9c6aee29-068b-463e-84b6-8ee336240caa}" Sealed="TRUE" ReadOnly="TRUE" />
+        <Field ID="{ff41708b-e251-4237-a060-bea44657e8dc}" Name="_SPAssetFolderId" StaticName="_SPAssetFolderId" DisplayName="Ressourcenordner-ID" Type="Number" SourceID="http://schemas.microsoft.com/sharepoint/v3" Group="_Hidden" Description="" ReadOnly="TRUE" AllowDeletion="FALSE" Hidden="TRUE" />
+        <Field ID="{b6ee4892-f45b-44b4-9b52-d31be51e8f5f}" Name="_SPTranslationLanguage" StaticName="_SPTranslationLanguage" DisplayName="Elementsprache" Type="Choice" SourceID="http://schemas.microsoft.com/sharepoint/v3" Group="_Hidden" Description="Sprache dieses Elements." AllowDeletion="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ShowInDisplayForm="FALSE" ShowInViewForms="FALSE" ShowInListSettings="FALSE" ShowInVersionHistory="FALSE" ReadOnly="TRUE">
+          <CHOICES>
+            <CHOICE>ar-SA</CHOICE>
+            <CHOICE>az-Latn-AZ</CHOICE>
+            <CHOICE>bg-BG</CHOICE>
+            <CHOICE>bs-Latn-BA</CHOICE>
+            <CHOICE>ca-ES</CHOICE>
+            <CHOICE>cs-CZ</CHOICE>
+            <CHOICE>cy-GB</CHOICE>
+            <CHOICE>da-DK</CHOICE>
+            <CHOICE>de-DE</CHOICE>
+            <CHOICE>el-GR</CHOICE>
+            <CHOICE>en-US</CHOICE>
+            <CHOICE>es-ES</CHOICE>
+            <CHOICE>et-EE</CHOICE>
+            <CHOICE>eu-ES</CHOICE>
+            <CHOICE>fi-FI</CHOICE>
+            <CHOICE>fr-FR</CHOICE>
+            <CHOICE>ga-IE</CHOICE>
+            <CHOICE>gl-ES</CHOICE>
+            <CHOICE>he-IL</CHOICE>
+            <CHOICE>hi-IN</CHOICE>
+            <CHOICE>hr-HR</CHOICE>
+            <CHOICE>hu-HU</CHOICE>
+            <CHOICE>id-ID</CHOICE>
+            <CHOICE>it-IT</CHOICE>
+            <CHOICE>ja-JP</CHOICE>
+            <CHOICE>kk-KZ</CHOICE>
+            <CHOICE>ko-KR</CHOICE>
+            <CHOICE>lt-LT</CHOICE>
+            <CHOICE>lv-LV</CHOICE>
+            <CHOICE>mk-MK</CHOICE>
+            <CHOICE>ms-MY</CHOICE>
+            <CHOICE>nb-NO</CHOICE>
+            <CHOICE>nl-NL</CHOICE>
+            <CHOICE>pl-PL</CHOICE>
+            <CHOICE>prs-AF</CHOICE>
+            <CHOICE>pt-BR</CHOICE>
+            <CHOICE>pt-PT</CHOICE>
+            <CHOICE>ro-RO</CHOICE>
+            <CHOICE>ru-RU</CHOICE>
+            <CHOICE>sk-SK</CHOICE>
+            <CHOICE>sl-SI</CHOICE>
+            <CHOICE>sr-Cyrl-RS</CHOICE>
+            <CHOICE>sr-Latn-CS</CHOICE>
+            <CHOICE>sr-Latn-RS</CHOICE>
+            <CHOICE>sv-SE</CHOICE>
+            <CHOICE>th-TH</CHOICE>
+            <CHOICE>tr-TR</CHOICE>
+            <CHOICE>uk-UA</CHOICE>
+            <CHOICE>vi-VN</CHOICE>
+            <CHOICE>zh-CN</CHOICE>
+            <CHOICE>zh-TW</CHOICE>
+          </CHOICES>
+        </Field>
+        <Field ID="{b03d6d98-defb-4047-9d2d-a741eb0b4c68}" Type="User" List="UserInfo" Group="_Hidden" Name="_SPHideListEditorMetadata" DisplayName="Editor für Hervorhebungslisten ausblenden" AllowDeletion="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ShowInDisplayForm="FALSE" ShowInViewForms="FALSE" ShowInListSettings="FALSE" ShowInVersionHistory="FALSE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="_SPHideListEditorMetadata" Hidden="TRUE" />
+        <Field ID="{577d74a4-b828-4c3c-bfcd-b16d76cdbc0a}" Name="ComplianceTagAppId" SourceID="http://schemas.microsoft.com/sharepoint/v3" Required="FALSE" ShowInFileDlg="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" Hidden="TRUE" DisplaceOnUpgrade="TRUE" ReadOnly="TRUE" StaticName="ComplianceTagAppId" Type="Text" DisplayName="Von App-ID angewendete Bezeichnung" Sortable="FALSE" />
+        <Field ID="{3BDAB9AC-9E5D-44D4-BDE9-13B37E170618}" Name="_ColorHex" SourceID="http://schemas.microsoft.com/sharepoint/v3" Required="FALSE" Hidden="TRUE" ShowInFileDlg="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" DisplaceOnUpgrade="TRUE" StaticName="_ColorHex" Type="Text" DisplayName="Farbe" Sortable="FALSE" />
+        <Field Type="TaxonomyFieldTypeMulti" DisplayName="HashTags" StaticName="HashTags" Name="HashTags" ID="{333b1bc2-0532-4872-96f1-bbbdead35a56}" Description="Some description" SourceID="{{siteid}}" List="{{listid:TaxonomyHiddenList}}" WebId="{siteid}" ShowField="Term1031" Mult="TRUE" Sortable="FALSE" ShowInDisplayForm="TRUE" ShowInNewForm="FALSE" ShowInEditForm="FALSE">
+          <Customization>
+            <ArrayOfProperty>
+              <Property>
+                <Name>SspId</Name>
+                <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+              </Property>
+              <Property>
+                <Name>GroupId</Name>
+              </Property>
+              <Property>
+                <Name>TermSetId</Name>
+                <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:System:Hashtags}</Value>
+              </Property>
+              <Property>
+                <Name>AnchorId</Name>
+                <Value xmlns:q3="http://www.w3.org/2001/XMLSchema" p4:type="q3:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">00000000-0000-0000-0000-000000000000</Value>
+              </Property>
+              <Property>
+                <Name>UserCreated</Name>
+                <Value xmlns:q4="http://www.w3.org/2001/XMLSchema" p4:type="q4:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+              </Property>
+              <Property>
+                <Name>Open</Name>
+                <Value xmlns:q5="http://www.w3.org/2001/XMLSchema" p4:type="q5:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+              </Property>
+              <Property>
+                <Name>TextField</Name>
+                <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{790722e8-f13c-4f84-90b2-36161bfe7873}</Value>
+              </Property>
+              <Property>
+                <Name>IsPathRendered</Name>
+                <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+              </Property>
+              <Property>
+                <Name>IsKeyword</Name>
+                <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+              </Property>
+              <Property>
+                <Name>TargetTemplate</Name>
+              </Property>
+              <Property>
+                <Name>CreateValuesInEditForm</Name>
+                <Value xmlns:q9="http://www.w3.org/2001/XMLSchema" p4:type="q9:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+              </Property>
+              <Property>
+                <Name>IsDocTagsEnabled</Name>
+                <Value xmlns:q10="http://www.w3.org/2001/XMLSchema" p4:type="q10:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+              </Property>
+              <Property>
+                <Name>IsEnhancedImageTaggingEnabled</Name>
+                <Value xmlns:q11="http://www.w3.org/2001/XMLSchema" p4:type="q11:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+              </Property>
+              <Property>
+                <Name>FilterAssemblyStrongName</Name>
+                <Value xmlns:q12="http://www.w3.org/2001/XMLSchema" p4:type="q12:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">Microsoft.SharePoint.Taxonomy, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Value>
+              </Property>
+              <Property>
+                <Name>FilterClassName</Name>
+                <Value xmlns:q13="http://www.w3.org/2001/XMLSchema" p4:type="q13:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">Microsoft.SharePoint.Taxonomy.TaxonomyField</Value>
+              </Property>
+              <Property>
+                <Name>FilterMethodName</Name>
+                <Value xmlns:q14="http://www.w3.org/2001/XMLSchema" p4:type="q14:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">GetFilteringHtml</Value>
+              </Property>
+              <Property>
+                <Name>FilterJavascriptProperty</Name>
+                <Value xmlns:q15="http://www.w3.org/2001/XMLSchema" p4:type="q15:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">FilteringJavascript</Value>
+              </Property>
+            </ArrayOfProperty>
+          </Customization>
+        </Field>
+        <Field ID="{76D13CD2-1BAE-45A5-8B74-545B87B65037}" Name="_ColorTag" SourceID="http://schemas.microsoft.com/sharepoint/v3" Required="FALSE" ShowInFileDlg="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ReadOnly="TRUE" DisplaceOnUpgrade="TRUE" Type="Text" StaticName="_ColorTag" DisplayName="Farbkennzeichnung" Sortable="TRUE" />
+        <Field ID="{d3c9caf7-044c-4c71-ae64-092981e54b33}" Type="Note" DisplayName="Freigegeben für - Details" Name="SharedWithDetails" StaticName="SharedWithDetails" Group="_Hidden" AllowDeletion="FALSE" ShowInDisplayForm="FALSE" ShowInEditForm="FALSE" ShowInListSettings="FALSE" Viewable="FALSE" SourceID="{9c6aee29-068b-463e-84b6-8ee336240caa}" Sealed="TRUE" ReadOnly="TRUE" />
+        <Field ID="{3A8EE3F8-166B-4394-B3E2-E98DCF86A847}" Name="A2ODMountCount" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="A2ODMountCount" Hidden="TRUE" Group="_Hidden" ReadOnly="TRUE" Type="Lookup" List="Docs" ShowField="A2ODMountCount" DisplayName="A2OD-Bereitstellungsanzahl" FromBaseType="TRUE" DisplaceOnUpgrade="TRUE" FieldRef="ID" JoinColName="DoclibRowId" JoinRowOrdinal="0" JoinType="INNER" />
+        <Field ID="{031C92FD-9CB6-4AC8-8F5F-636D28E37079}" Name="_SPAuthoringMetadata" StaticName="_SPAuthoringMetadata" DisplayName="Metadaten werden erstellt" Type="Note" SourceID="http://schemas.microsoft.com/sharepoint/v3" Group="_Hidden" Description="" AllowDeletion="FALSE" ShowInNewForm="FALSE" ShowInEditForm="FALSE" ShowInDisplayForm="FALSE" ShowInViewForms="FALSE" ShowInListSettings="FALSE" ReadOnly="TRUE" Hidden="TRUE" />
+      </pnp:SiteFields>
+      <pnp:Lists>
+        <pnp:ListInstance Title="ServicevorgaengeE" Description="Ersatz- und Zubehörteile bei Reparatur" DocumentTemplate="" TemplateType="100" Url="Lists/ServicevorgaengeE" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="50" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/ServicevorgaengeE/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/ServicevorgaengeE/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/ServicevorgaengeE/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:PropertyBagEntries>
+            <pnp:PropertyBagEntry Key="wte_Source" Value="https://pobvol.sharepoint.com/sites/pssService/Lists/ServicevorgaengeP/AllItems.aspx" Overwrite="false" />
+          </pnp:PropertyBagEntries>
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{5766D5A8-AE40-40CF-8F67-5E5D948D12B9}" MobileView="TRUE" Type="HTML" DisplayName="331" Url="{site}/Lists/ServicevorgaengeE/331.aspx" Level="1" ContentTypeID="0x">
+              <Query>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="ParentID" />
+                    <Value Type="Number">331.000000000000</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="ID" />
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="KEY" />
+                <FieldRef Name="ParentID" />
+                <FieldRef Name="Pos" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <CalendarViewStyles>
+                <CalendarViewStyle Title="Day" Type="day" Template="CalendarViewdayChrome" Sequence="1" Default="FALSE" />
+                <CalendarViewStyle Title="Week" Type="week" Template="CalendarViewweekChrome" Sequence="2" Default="FALSE" />
+                <CalendarViewStyle Title="Month" Type="month" Template="CalendarViewmonthChrome" Sequence="3" Default="FALSE" />
+                <CalendarViewStyle Title="Work week" Type="workweek" Template="CalendarViewweekChrome" Sequence="4" Default="FALSE" />
+              </CalendarViewStyles>
+            </View>
+            <View Name="{394CE552-9885-4B78-B2FA-14687D64A555}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="Alle Elemente" Url="{site}/Lists/ServicevorgaengeE/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="Modified" Ascending="FALSE" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Modified" />
+                <FieldRef Name="ID" />
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="KEY" />
+                <FieldRef Name="ParentID" />
+                <FieldRef Name="Pos" />
+                <FieldRef Name="Fehlerort" />
+                <FieldRef Name="Fehlerort0" />
+                <FieldRef Name="Einbauort" />
+                <FieldRef Name="Fehlerart" />
+                <FieldRef Name="DurchgefuehrteMassnahme" />
+                <FieldRef Name="FehlerortUntergruppe" />
+                <FieldRef Name="FehlerortAnzahl" />
+                <FieldRef Name="FehlerortEinheit" />
+                <FieldRef Name="FehlerortChargenNr" />
+                <FieldRef Name="ErsatzteilId" />
+                <FieldRef Name="Ersatzteil" />
+                <FieldRef Name="ErsatzteilChargenNr" />
+                <FieldRef Name="ErsatzteilLagerort" />
+                <FieldRef Name="ZubehoerId" />
+                <FieldRef Name="Zubehoer" />
+                <FieldRef Name="Kennung" />
+                <FieldRef Name="EinmalartikelId" />
+                <FieldRef Name="Einmalartikel" />
+                <FieldRef Name="ZubehoerChargenNr" />
+                <FieldRef Name="Anzahl" />
+                <FieldRef Name="Einheit" />
+                <FieldRef Name="PreisInEuro" />
+                <FieldRef Name="MwStSatz" />
+                <FieldRef Name="MwStBetrag" />
+                <FieldRef Name="FehlerortEinheitText" />
+                <FieldRef Name="EinheitText" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+              <ColumnWidth>
+                <FieldRef Name="Checkpunkt" width="377.79998779296875" />
+                <FieldRef Name="KEY" width="331.8000030517578" />
+                <FieldRef Name="CheckpunktText" width="230.75" />
+                <FieldRef Name="Status" width="328.1363525390625" />
+                <FieldRef Name="Titel" width="250.19998168945312" />
+              </ColumnWidth>
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field Type="Text" DisplayName="KEY" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="TRUE" MaxLength="255" ID="{c276ce2a-697c-400e-bf88-802a2df75581}" StaticName="KEY" Name="KEY" CustomFormatter="" ColName="nvarchar7" RowOrdinal="0" SourceID="{{listid:ServicevorgaengeE}}" />
+            <Field Type="Number" DisplayName="ParentID" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="TRUE" ID="{2366755b-fa99-45bb-a2be-5a44c651c382}" StaticName="ParentID" Name="ParentID" CustomFormatter="" Decimals="0" Percentage="FALSE" ColName="float1" RowOrdinal="0" SourceID="{{listid:ServicevorgaengeE}}" />
+            <Field Type="Number" DisplayName="Pos" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="TRUE" Decimals="0" ID="{fa181a48-290b-44b2-b373-3d55d6fba807}" StaticName="Pos" Name="Pos" ColName="float2" RowOrdinal="0" SourceID="{{listid:ServicevorgaengeE}}" />
+            <Field Type="Text" DisplayName="Kennung" Description="E für Ersatzteil / Z für Zubehör / 1 für Einmalartikel" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="1" ID="{128ff9b6-72d1-483e-8826-e80d12babcd4}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="Kennung" Name="Kennung" ColName="nvarchar17" RowOrdinal="0" CustomFormatter="" Version="1">
+              <Default>E</Default>
+            </Field>
+            <Field Type="Text" DisplayName="FehlerortId" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{b496d8bb-4043-413b-bf30-ef72ade9c317}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="Fehlerort" Name="Fehlerort" ColName="nvarchar23" RowOrdinal="0" Description="Welche Baugruppe hat einen Fehler? Bspw.: 34505784" CustomFormatter="" Version="2" />
+            <Field Type="Text" DisplayName="Fehlerort" Description="Welche Baugruppe hat einen Fehler? Bspw.: Tropfensensor komplett" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{e7e5ebd6-4c5d-470c-a4e6-424bad62855e}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="Fehlerort0" Name="Fehlerort0" ColName="nvarchar11" RowOrdinal="0" Version="1" />
+            <Field Type="Number" DisplayName="FehlerortAnzahl" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{0b7b6529-0b59-42cc-a0ce-deb540f99be2}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="FehlerortAnzahl" Name="FehlerortAnzahl" ColName="float4" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="FehlerortEinheit" Description="Stück, Packung/Packungen, Meter" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{5db0162d-e817-473e-9ad1-a4b15fd11812}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="FehlerortEinheit" Name="FehlerortEinheit" ColName="nvarchar8" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="FehlerortEinheitText" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{bac36460-a948-488b-97a0-d49112e77a15}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="FehlerortEinheitText" Name="FehlerortEinheitText" ColName="nvarchar22" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="FehlerortChargenNr" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{2a38ea0f-a803-4087-826b-44a4fbf397aa}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="FehlerortChargenNr" Name="FehlerortChargenNr" ColName="nvarchar10" RowOrdinal="0" Description="ausgebaut wurde 01395" CustomFormatter="" Version="1" />
+            <Field Type="Text" DisplayName="Einbauort" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{f199306a-3330-486a-b7c4-643adbd00c3c}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="Einbauort" Name="Einbauort" ColName="nvarchar24" RowOrdinal="0" Description="Wo im Gerät ist sie eingebaut?" CustomFormatter="" Version="1" />
+            <Field Type="Text" DisplayName="Fehlerart" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{7ea57d27-dc70-4347-bacd-a52c8465ea2e}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="Fehlerart" Name="Fehlerart" ColName="nvarchar25" RowOrdinal="0" Description="Welcher Fehler lag vor? Bspw.: Mechanik zerstört" CustomFormatter="" Version="1" />
+            <Field Type="Text" DisplayName="DurchgefuehrteMassnahme" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{2f1e3e39-e2e7-484c-b8f0-e7256ffa872d}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="DurchgefuehrteMassnahme" Name="DurchgefuehrteMassnahme" ColName="nvarchar26" RowOrdinal="0" Description="Durch welche Maßnahme wurde der Fehler beseitigt? Bspw.: Austausch" CustomFormatter="" Version="1" />
+            <Field Type="Text" DisplayName="FehlerortUntergruppe" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{89773e5e-b7fb-4f4b-b2bf-5a219420fc2c}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="FehlerortUntergruppe" Name="FehlerortUntergruppe" ColName="nvarchar28" RowOrdinal="0" Description="Welches Bauteil der Baugruppe hat den Fehler?" CustomFormatter="" Version="1" />
+            <Field Type="Text" DisplayName="ErsatzteilId" Description="Unterscheiden sich ein- und ausgebautesErsatzteil? Bspw.: eingebaut wurde 3450578A Torpfensensor mit Abschirmung" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{19f09073-4cc3-414f-9eff-f8087bb4f20c}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="ErsatzteilId" Name="ErsatzteilId" ColName="nvarchar9" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="Ersatzteil" Description="Unterscheiden sich ein- und ausgebautesErsatzteil? Bspw.: eingebaut wurde 3450578A Torpfensensor mit Abschirmung" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{57cc34c5-c633-408b-a3b7-71bcaec12443}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="Ersatzteil" Name="Ersatzteil" ColName="nvarchar12" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="ErsatzteilChargenNr" Description="eingebaut wurde 10156" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{696913b3-8e4b-4ab5-857c-29793b70a18e}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="ErsatzteilChargenNr" Name="ErsatzteilChargenNr" ColName="nvarchar13" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="ZubehoerId" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{d9c17a4d-1e08-4646-8408-ec588c50c291}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="ZubehoerId" Name="ZubehoerId" ColName="nvarchar15" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="Zubehoer" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{b1102aa5-0fb7-40de-9a1b-6c6a5e21ea7a}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="Zubehoer" Name="Zubehoer" ColName="nvarchar16" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="ZubehoerChargenNr" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{6c6c1b97-0a34-41aa-921e-3fec820a4390}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="ZubehoerChargenNr" Name="ZubehoerChargenNr" ColName="nvarchar20" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="EinmalartikelId" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{951d31b6-1fea-48d0-ae62-d8ba27a02ba8}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="EinmalartikelId" Name="EinmalartikelId" ColName="nvarchar18" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="Einmalartikel" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{10fa2c4e-7ef0-426f-a9a4-0beb479bb249}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="Einmalartikel" Name="Einmalartikel" ColName="nvarchar19" RowOrdinal="0" />
+            <Field Type="Number" DisplayName="Anzahl" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{d4715431-ed47-4537-97f4-208ba34561b5}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="Anzahl" Name="Anzahl" ColName="float3" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="Einheit" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{49415cbd-c394-4725-adcd-1bc435fd1dd2}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="Einheit" Name="Einheit" ColName="nvarchar21" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="EinheitText" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{c8782cba-9bed-41e7-a71b-1266f22f8f72}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="EinheitText" Name="EinheitText" ColName="nvarchar27" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="Lagerort" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{0b435b5a-a3e4-4660-9b7f-e7f741485f40}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="ErsatzteilLagerort" Name="ErsatzteilLagerort" ColName="nvarchar14" RowOrdinal="0" CustomFormatter="" Version="1" />
+            <Field Type="Currency" DisplayName="PreisInEuro" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Decimals="2" LCID="1031" ID="{b0842a86-687f-4d6d-952a-c1ebe9c6499e}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="PreisInEuro" Name="PreisInEuro" ColName="float5" RowOrdinal="0" />
+            <Field Type="Number" DisplayName="MwStSatz" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" ID="{6ea93b00-6557-431d-aecc-980457fae8c0}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="MwStSatz" Name="MwStSatz" ColName="float6" RowOrdinal="0" />
+            <Field Type="Currency" DisplayName="MwStBetrag" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Decimals="2" LCID="1031" ID="{27652ec1-e5c7-4cba-8198-45365ff4458e}" SourceID="{{listid:ServicevorgaengeE}}" StaticName="MwStBetrag" Name="MwStBetrag" ColName="float7" RowOrdinal="0" />
+          </pnp:Fields>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="fa564e0f-0c70-4ab9-b863-0177e6ddd247" Name="Title" Required="true" DisplayName="Titel" />
+            <pnp:FieldRef ID="76d13cd2-1bae-45a5-8b74-545b87b65037" Name="_ColorTag" DisplayName="Farbkennzeichnung" />
+          </pnp:FieldRefs>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>
