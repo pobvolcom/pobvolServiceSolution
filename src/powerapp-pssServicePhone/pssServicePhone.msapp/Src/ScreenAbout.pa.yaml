@@ -1,0 +1,337 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  ScreenAbout:
+    Properties:
+      BackgroundImage: ='uvv-clouds'
+      Fill: =RGBA(0, 0, 0, 0)
+      Height: |-
+        =//Max(App.Height; App.MinScreenHeight)
+        Max(App.Height, App.DesignHeight)
+      ImagePosition: =ImagePosition.Fill
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+      OnVisible: |+
+        =Set(MyBrowserUserAgentValue,Host.BrowserUserAgent);
+        Set(MyOSValue,Host.OSType);
+        Set(MySessionIDValue,Host.SessionID);
+        Set(MyTenantIDValue,Host.TenantID);
+      Width: |-
+        =//Max(App.Width; App.MinScreenWidth)
+        Max(App.Width, App.DesignWidth)
+    Children:
+      - MainContainer1_29:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            DropShadow: =DropShadow.None
+            Height: =Parent.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =10
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Parent.Width
+            X: =
+            Y: =
+          Children:
+            - Header1_29:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =88
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutMinHeight: =40
+                  LayoutMinWidth: =Parent.Width-15
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Parent.Width
+                Children:
+                  - HeaderLabel1_29:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        ContentLanguage: =Language()
+                        FillPortions: =1
+                        Font: =Font.'Open Sans'
+                        Height: =Parent.Height
+                        LayoutMinWidth: =1
+                        OnSelect: =
+                        PaddingLeft: =15
+                        Size: =MyFontSize+5
+                        Text: |+
+                          =LookUp(colLanguage,Title="About",Wert)
+                        Tooltip: =" "
+                        Width: =
+                        X: =
+                        Y: =
+                  - Back1_29:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =Parent.Height
+                        LayoutMinHeight: =
+                        LayoutMinWidth: =
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =90
+                        X: =
+                        Y: =
+                      Children:
+                        - BackIcon1_29:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              AccessibleLabel: =Self.Tooltip
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisabledFill: =RGBA(39, 113, 194, 1)
+                              FocusedBorderColor: =RGBA(9, 33, 98, 1)
+                              Height: =60
+                              HoverBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                              HoverFill: =RGBA(39, 113, 194, 1)
+                              Icon: =Icon.ArrowLeft
+                              OnSelect: =Navigate(StartScreen);
+                              PressedBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                              PressedFill: =RGBA(39, 113, 194, 1)
+                              TabIndex: =0
+                              Tooltip: =BackLabel1_29.Text
+                              Width: =60
+                              X: =15
+                              Y: =15
+                        - BackLabel1_29:
+                            Control: FluentV8/Label@1.8.6
+                            Properties:
+                              Alignment: =Align.Center
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisplayMode: =DisplayMode.View
+                              Font: =Font.'Patrick Hand'
+                              FontSize: =MyFontSize-4
+                              Height: =30
+                              Text: =LookUp(colLanguage,Title="Back",Wert)
+                              VerticalAlignment: =VerticalAlign.Middle
+                              Visible: =BackIcon1_29.Visible
+                              Width: =90
+                              X: |+
+                                =BackIcon1_29.X+BackIcon1_29.Width/2-Self.Width/2
+                              Y: =58
+                  - Next1_29:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =Parent.Height
+                        LayoutMinHeight: =
+                        LayoutMinWidth: =
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =90
+                        X: =
+                        Y: =
+                      Children:
+                        - NextIcon1_29:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              AccessibleLabel: =Self.Tooltip
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisabledFill: =RGBA(39, 113, 194, 1)
+                              FocusedBorderColor: =RGBA(9, 33, 98, 1)
+                              Height: =60
+                              HoverBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                              HoverFill: =RGBA(39, 113, 194, 1)
+                              Icon: =Icon.ArrowRight
+                              OnSelect: =Navigate(ScreenLicense);
+                              PressedBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                              PressedFill: =RGBA(39, 113, 194, 1)
+                              TabIndex: =0
+                              Tooltip: =NextLabel1_29.Text
+                              Width: =60
+                              X: =15
+                              Y: =15
+                        - NextLabel1_29:
+                            Control: FluentV8/Label@1.8.6
+                            Properties:
+                              Alignment: =Align.Center
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisplayMode: =DisplayMode.View
+                              Font: =Font.'Patrick Hand'
+                              FontSize: =MyFontSize-4
+                              Height: =30
+                              Text: =LookUp(colLanguage,Title="Next",Wert)
+                              VerticalAlignment: =VerticalAlign.Middle
+                              Visible: =NextIcon1_29.Visible
+                              Width: =90
+                              X: |
+                                =NextIcon1_29.X+NextIcon1_29.Width/2-Self.Width/2
+                              Y: =58
+            - Body1_29:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.Start
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  DropShadow: =DropShadow.None
+                  Height: =88
+                  LayoutAlignItems: =LayoutAlignItems.Stretch
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutMinHeight: =40
+                  LayoutMinWidth: =Parent.Width-15
+                  PaddingLeft: =10
+                  PaddingRight: =10
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Parent.Width
+                Children:
+                  - ContainerEdit1_29:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Start
+                        BorderThickness: =2
+                        DropShadow: =DropShadow.None
+                        Fill: =RGBA(255, 255, 255, 1)
+                        FillPortions: =0
+                        Height: |+
+                          =Parent.Height
+                          -Parent.PaddingTop
+                          -Parent.PaddingBottom
+                        LayoutMinHeight: =If(Self.Visible,Parent.Height-15,0)
+                        LayoutMinWidth: =1
+                        RadiusBottomLeft: =30
+                        RadiusBottomRight: =30
+                        RadiusTopLeft: =30
+                        RadiusTopRight: =30
+                        Width: |+
+                          =Parent.Width-Self.X*2
+                        X: =19+1
+                        Y: =20
+                      Children:
+                        - HtmlText1_29:
+                            Control: HtmlViewer@2.1.0
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              ContentLanguage: =Language()
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisplayMode: =DisplayMode.View
+                              Fill: =
+                              Font: =Font.'Open Sans'
+                              Height: =Parent.Height
+                              HtmlText: |
+                                =// About
+                                "<h3>Solution: "&MySolution  
+                                &"<br>App: " &MyAppName  & "</h3>"
+                                &"<hr/>"
+                                &If(Left(Language(),2)="de",
+                                "
+                                Mit der Softwarelösung pobvol Open Checklists kann Ihr Team einfach und schnell Checklisten mit Checkpunkten und Feldern definieren und mit diesen dann die Ergebnisse von Checks strukturiert an Ihre SharePoint-Listen übermitteln. <a target='_blank' href='https://pobvol.com/de/intro-de-checklists.html'>Mehr ></a>
+                                "
+                                ,//Else
+                                "
+                                With the software solution pobvol Open Checklists, your teams can easily and quickly define their own checklists with checkpoints and fields and then use them to transmit the results of checks and other activities to their own SharePoint lists in a structured manner. <a target='_blank' href='https://pobvol.com/en/intro-en-checklists.html'>Learn more ></a>
+                                "
+                                )
+                                &"<hr/>"
+                                &If(Left(Language(),2)="de",
+                                "
+                                <b>Freie Software</b>: Die Softwarelösung pobvol Open Checklists ist <a target='_blank' href='https://de.wikipedia.org/wiki/Freie_Software'>Freie Software☯</a> und wird quelloffen zur Verfügung gestellt. Sie dürfen die Lösung herunterladen, in Ihrer Microsoft 365-Umgebung installieren und betreiben und an Ihre Bedürfnisse anpassen. Die Nutzung der Lösung ist kostenlos. Für jeden Anwender benötigen Sie jedoch eine Microsoft 365 Business Basic Lizenz oder höher. Diese ist nicht kostenlos und muss von Ihnen bei Microsoft erworben werden! 
+                                <hr>
+                                <b>Lizenz</b>: Sie können die Lösung unter den Bedingungen der GNU General Public License, wie von der Free Software Foundation, Version 3 der Lizenz oder jeder neueren veröffentlichten Version, weiter verteilen und/oder modifizieren. Die Lösung wird in der Hoffnung, dass sie nützlich sein wird, aber OHNE JEDE GEWÄHRLEISTUNG, bereitgestellt; sogar ohne die implizite Gewährleistung der MARKTFÄHIGKEIT oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK. Siehe die <a target='_blank' href='https://www.gnu.org/licenses/licenses.de.html'>GNU General Public License☯</a> für weitere Details.<br>
+                                <hr>
+                                Copyright @ 2025 Volker Pobloth (pobvol Software Services).<br>
+                                66292 Riegelsberg, Germany<br>
+                                M:<a href='mailto:kontakt@pobvol.com'>kontakt@pobvol.com</a><br>
+                                W:<a href='https://pobvol.com/de/psschecklists.html'>https://pobvol.com/de/psschecklists.html</a><br>
+                                "
+
+                                ,//Else
+
+                                "
+                                <b>Free Software</b>: The software solution pobvol Open Checklists is <a target='_blank' href='https://en.wikipedia.org/wiki/Free_software'>Free Software☯</a>, delivered as open source. You can download the solution, install and operate it in your Microsoft 365 environment and adapt to your needs. The use of the solution is free of charge. But you will need a Microsoft 365 Business Basic License or higher per user. This is not free and must be purchased by you from Microsoft.<br>
+                                <hr>
+                                <b>License</b>: You can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version. The solution is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should receive a copy of the GNU General Public License along with the solution. If not, see <a target='_blank' href='https://www.gnu.org/licenses/gpl-3.0'>GNU General Public License☯</a> for more details.<br>
+                                <hr>
+                                Copyright @ 2025 Volker Pobloth (pobvol Software Services).<br>
+                                66292 Riegelsberg, Germany<br>
+                                M:<a href='mailto:kontakt@pobvol.com'>kontakt@pobvol.com</a><br>
+                                W:<a href='https://pobvol.com/en/psschecklists.html'>https://pobvol.com/en/psschecklists.html</a><br>
+                                "
+                                )
+                                &"<hr/>"
+                                &"App Name: <b>" & MyAppName & "</b><br>"
+                                //&"App Id: <b>" & MyAppID & "</b><br>"
+                                &"App Version: <b>" & MyVersion & "</b><br>"
+                                & "User: <b>"&User().FullName&" ("& User().Email&")</b><br>"
+                                & "Device: <b>"&MyDeviceType
+                                & If(OnlineStatus=0," (Offline)"," (Online)")
+                                & "</b><br>"
+                                //& If(MyDeviceType="Mobile";"Device GUID: <b>" & DeviceID & "</b><br>")
+                                & "OS: <b>" & MyOSValue & "</b><br>"
+                                & "Sprache/Language: <b>" & Language() & "</b><br>"
+                                & "Browser User Agent: <b>" & MyBrowserUserAgentValue & "</b><br>"
+                                & "Session ID: <b>" & MySessionIDValue & "</b><br>"
+                                & "Tenant ID: <b>" & MyTenantIDValue & "</b><br>"
+                              PaddingBottom: =15
+                              PaddingLeft: =15
+                              PaddingRight: =15
+                              PaddingTop: =15
+                              Size: =MyFontSize
+                              Width: =Parent.Width
+                              X: =
+                              Y: =
+            - FooterLabel1_29:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Right
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  Color: =RGBA(255, 255, 255, 1)
+                  DisplayMode: =DisplayMode.View
+                  Fill: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Lighter
+                  Height: =50
+                  PaddingLeft: =15
+                  PaddingRight: =15
+                  Size: =MyFontSize-3
+                  Text: "=If(!IsBlank(FooterText),\r\n    FooterText,\r\n    \"v\"\r\n    &MyVersion\r\n    &\"|\"&MyDeviceType\r\n    &If(OnlineStatus=0,\"|Offline\",\"|Online\")\r\n    &\"|\"&MyLanguage\r\n    \r\n    //&\"|Mode:\"&EditForm1_15.Mode //(0=Edit;1=Add)\r\n    //&\"|EditEntry:\"&EditEntry\r\n    //&\"|SelectedChecklist\"&SelectedChecklist\r\n)\r\n"
+                  Width: =Parent.Width
+                  Wrap: =false
+                  Y: =Parent.Height-Self.Height

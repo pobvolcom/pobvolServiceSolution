@@ -1,0 +1,1071 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  ScreenActivity:
+    Properties:
+      BackgroundImage: ='uvv-clouds'
+      Fill: =RGBA(0, 0, 0, 0)
+      Height: |-
+        =//Max(App.Height; App.MinScreenHeight)
+        Max(App.Height, App.DesignHeight)
+      ImagePosition: =ImagePosition.Fill
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+      Width: |-
+        =//Max(App.Width; App.MinScreenWidth)
+        Max(App.Width, App.DesignWidth)
+    Children:
+      - MainContainer1_3:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            DropShadow: =DropShadow.None
+            Height: =Parent.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =10
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Parent.Width
+            X: =
+            Y: =
+          Children:
+            - Header1_3:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =88
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutMinHeight: =40
+                  LayoutMinWidth: =Parent.Width-15
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Parent.Width
+                Children:
+                  - HeaderLabel1_3:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        ContentLanguage: =Language()
+                        FillPortions: =1
+                        Font: =Font.'Open Sans'
+                        Height: =Parent.Height
+                        LayoutMinWidth: =1
+                        OnSelect: =
+                        PaddingLeft: =15
+                        Size: =MyFontSize+5
+                        Text: |+
+                          =If(SActivityDocumentStatus="New",
+                              LookUp(colLanguage,Title="Edit activity").Wert
+                          ,//Else
+                              LookUp(colLanguage,Title="View activity").Wert
+                          )
+                        Tooltip: =" "
+                        Width: =
+                        X: =
+                        Y: =
+                  - Back1_3:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =Parent.Height
+                        LayoutMinHeight: =
+                        LayoutMinWidth: =
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =90
+                        X: =
+                        Y: =
+                      Children:
+                        - BackIcon1_3:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              AccessibleLabel: =Self.Tooltip
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisabledFill: =RGBA(39, 113, 194, 1)
+                              FocusedBorderColor: =RGBA(9, 33, 98, 1)
+                              Height: =60
+                              HoverBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                              HoverFill: =RGBA(39, 113, 194, 1)
+                              Icon: =Icon.ArrowLeft
+                              OnSelect: =Navigate(StartScreen);
+                              PressedBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                              PressedFill: =RGBA(39, 113, 194, 1)
+                              TabIndex: =0
+                              Tooltip: =BackLabel1_3.Text
+                              Width: =60
+                              X: =15
+                              Y: =15
+                        - BackLabel1_3:
+                            Control: FluentV8/Label@1.8.6
+                            Properties:
+                              Alignment: =Align.Center
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisplayMode: =DisplayMode.View
+                              Font: =Font.'Patrick Hand'
+                              FontSize: =MyFontSize-4
+                              Height: =30
+                              Text: =LookUp(colLanguage,Title="Back").Wert
+                              Tooltip: =" "
+                              VerticalAlignment: =VerticalAlign.Middle
+                              Visible: =BackIcon1_3.Visible
+                              Width: =90
+                              X: |+
+                                =BackIcon1_3.X+BackIcon1_3.Width/2-Self.Width/2
+                              Y: =58
+            - Body1_3:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.Start
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  DropShadow: =DropShadow.None
+                  Height: =88
+                  LayoutAlignItems: =LayoutAlignItems.Stretch
+                  LayoutDirection: =LayoutDirection.Vertical
+                  LayoutGap: =30
+                  LayoutMinHeight: =40
+                  LayoutMinWidth: =Parent.Width-15
+                  LayoutOverflowY: =LayoutOverflow.Scroll
+                  PaddingLeft: =10
+                  PaddingRight: =10
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Parent.Width
+                Children:
+                  - ContainerActivityHeader:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderThickness: =2
+                        DropShadow: =DropShadow.None
+                        Fill: =RGBA(255, 255, 255, 1)
+                        FillPortions: =0
+                        Height: |-
+                          =If(Status1_3.Visible,
+                              Status1_3.Y+Status1_3.Height+15
+                          ,//Else
+                              ActivityHeaderHtmlText.Height
+                          )
+                        LayoutMinHeight: =1
+                        LayoutMinWidth: =1
+                        RadiusBottomLeft: =30
+                        RadiusBottomRight: =30
+                        RadiusTopLeft: =30
+                        RadiusTopRight: =30
+                        Visible: =!IsBlank(SelectedActivity)
+                        Width: =Parent.Width
+                      Children:
+                        - ActivityHeaderHtmlText:
+                            Control: HtmlViewer@2.1.0
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisplayMode: =DisplayMode.View
+                              Fill: =RGBA(0, 0, 0, 0)
+                              Font: =Font.'Open Sans'
+                              Height: =250
+                              HtmlText: |+
+                                ="<b>"  
+
+                                //&SActivityTitle
+                                &SActivityChecklistText
+                                &"<br />"
+
+                                &If(Left(Language(),2)="de",
+                                    Text(SActivityDate,"dddd, d. mmmm yyyy | hh:mm","de")
+                                , //Else
+                                    Text(SActivityDate,"dddd, mmmm d, yyyy | hh:mm AM/PM","en")
+                                )
+                                &"<br />"
+
+                                //&SActivityUser &"<br />"
+                                //&"<br />"
+
+                                &"</b>"  
+
+                                &"<span style='font-size: smaller;'>"
+                                &"KEY: " &SActivityKEY
+                                &"</span>"
+                              PaddingBottom: =15
+                              PaddingLeft: =15
+                              PaddingRight: =15
+                              PaddingTop: =15
+                              Size: =MyFontSize
+                              Width: =Parent.Width
+                              X: =
+                              Y: =
+                        - Delete1_3:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              DropShadow: =DropShadow.None
+                              Height: =90
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Visible: |-
+                                =//OnlineStatus=1 && 
+                                !IsBlank(SelectedActivity) &&
+                                SActivityDocumentStatus="New"
+                              Width: =90
+                              X: =Parent.Width-Self.Width
+                              Y: =
+                            Children:
+                              - DeleteIcon1_3:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    AccessibleLabel: =Self.Tooltip
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    ContentLanguage: =Language()
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(255, 255, 255, 1)
+                                    DisabledFill: =RGBA(255, 255, 255, 1)
+                                    Fill: =RGBA(9, 33, 98, 1)
+                                    FocusedBorderColor: =RGBA(9, 33, 98, 1)
+                                    Height: =60
+                                    HoverBorderColor: =
+                                    HoverColor: =RGBA(255, 255, 255, 1)
+                                    HoverFill: =RGBA(39, 113, 194, 1)
+                                    Icon: =Icon.Trash
+                                    OnSelect: =Set(ShowDeleteDialog,!ShowDeleteDialog);
+                                    PaddingBottom: =5
+                                    PaddingLeft: =5
+                                    PaddingRight: =5
+                                    PaddingTop: =5
+                                    PressedBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                                    PressedFill: =RGBA(39, 113, 194, 1)
+                                    TabIndex: =0
+                                    Tooltip: =DeleteLabel1_3.Text
+                                    Visible: =!_ShowLoadingHint
+                                    Width: =60
+                                    X: =15
+                                    Y: =10
+                              - DeleteLabel1_3:
+                                  Control: FluentV8/Label@1.8.6
+                                  Properties:
+                                    Alignment: =Align.Center
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    ContentLanguage: =Language()
+                                    DisplayMode: =DisplayMode.View
+                                    Font: =Font.'Patrick Hand'
+                                    FontSize: =MyFontSize-4
+                                    Height: =20
+                                    Text: =LookUp(colLanguage,Title="Delete").Wert
+                                    Tooltip: =" "
+                                    VerticalAlignment: =VerticalAlign.Middle
+                                    Width: =90
+                                    Wrap: =false
+                                    X: |+
+                                      =DeleteIcon1_3.X+DeleteIcon1_3.Width/2-Self.Width/2
+                                    Y: =70
+                        - Status1_3:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              DropShadow: =DropShadow.None
+                              Height: =60
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Visible: =false
+                              Width: =Parent.Width
+                              X: =
+                              Y: =ActivityHeaderHtmlText.Y+ActivityHeaderHtmlText.Height
+                            Children:
+                              - StatusIcon1_3:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    AccessibleLabel: =Self.Tooltip
+                                    AutoDisableOnSelect: =false
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    ContentLanguage: =Language()
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(255, 255, 255, 1)
+                                    DisabledFill: =RGBA(255, 255, 255, 1)
+                                    DisplayMode: =DisplayMode.View
+                                    FocusedBorderColor: =RGBA(9, 33, 98, 1)
+                                    Height: =60
+                                    HoverBorderColor: =
+                                    HoverColor: =RGBA(255, 255, 255, 1)
+                                    HoverFill: =RGBA(39, 113, 194, 1)
+                                    Icon: =Icon.Information
+                                    OnSelect: =Set(ShowDeleteDialog,!ShowDeleteDialog);
+                                    PaddingBottom: =5
+                                    PaddingLeft: =5
+                                    PaddingRight: =5
+                                    PaddingTop: =5
+                                    PressedBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                                    PressedFill: =RGBA(39, 113, 194, 1)
+                                    TabIndex: =0
+                                    Tooltip: |-
+                                      ="Status"
+                                      //LookUp(MyUVVSettings;Title="UVV Prüfung erfassen").Wert
+                                    Width: =60
+                                    X: =10
+                                    Y: =
+                              - StatusLabel1_3:
+                                  Control: FluentV8/Label@1.8.6
+                                  Properties:
+                                    Alignment: =Align.Left
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    ContentLanguage: =Language()
+                                    DisplayMode: =DisplayMode.View
+                                    Font: =Font.'Open Sans'
+                                    FontSize: =MyFontSize
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =Parent.Height
+                                    Text: =SActivityDocumentStatus
+                                    VerticalAlignment: =VerticalAlign.Middle
+                                    Width: =Parent.Width-Self.X-15
+                                    Wrap: =false
+                                    X: |+
+                                      =StatusIcon1_3.X+StatusIcon1_3.Width
+                                    Y: =
+                  - ContainerActivityCheckpoints:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderThickness: =2
+                        DropShadow: =DropShadow.None
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =
+                        LayoutMinHeight: =1
+                        LayoutMinWidth: =1
+                        RadiusBottomLeft: =30
+                        RadiusBottomRight: =30
+                        RadiusTopLeft: =30
+                        RadiusTopRight: =30
+                        Visible: =!IsBlank(SelectedActivity)
+                        Width: =Parent.Width
+                      Children:
+                        - ContainerActivityCheckpointsHeader:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(255, 255, 255, 1)
+                              Height: =100
+                              RadiusBottomLeft: =
+                              RadiusBottomRight: =
+                              RadiusTopLeft: =30
+                              RadiusTopRight: =30
+                              Width: =Parent.Width
+                            Children:
+                              - CheckpointsLabel1_3:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    BorderStyle: =BorderStyle.None
+                                    Color: =RGBA(109, 49, 162, 1)
+                                    ContentLanguage: =Language()
+                                    DisplayMode: =DisplayMode.View
+                                    FocusedBorderThickness: =2
+                                    Font: =Font.'Open Sans'
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =50
+                                    PaddingBottom: =0
+                                    PaddingLeft: =0
+                                    PaddingRight: =0
+                                    PaddingTop: =0
+                                    Size: =MyFontSize+2
+                                    TabIndex: =0
+                                    Text: =LookUp(colLanguage,Title="Checkpoints").Wert
+                                    Tooltip: =" "
+                                    Width: =Parent.Width-Self.X
+                                    X: =CheckpointsIcon1_3.X+CheckpointsIcon1_3.Width+10
+                                    Y: =CheckpointsIcon1_3.Y
+                              - CheckpointsIcon1_3:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    AccessibleLabel: =Self.Tooltip
+                                    AutoDisableOnSelect: =false
+                                    BorderColor: =RGBA(101, 128, 187, 1)
+                                    Color: =RGBA(109, 49, 162, 1)
+                                    ContentLanguage: =Language()
+                                    DisabledBorderColor: =RGBA(159, 167, 165, 1)
+                                    DisabledColor: =RGBA(193, 193, 193, 0.95)
+                                    DisplayMode: =DisplayMode.View
+                                    Height: =50
+                                    Icon: =Icon.CheckBadge
+                                    Tooltip: =" "
+                                    Width: =50
+                                    X: =15
+                                    Y: =15
+                              - MarkAll1_3:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: ManualLayout
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    DropShadow: =DropShadow.None
+                                    Height: =100
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Visible: |-
+                                      =//OnlineStatus=1 && 
+                                      !IsBlank(SelectedActivity) &&
+                                      SActivityDocumentStatus="New"
+                                    Width: =90
+                                    X: =Parent.Width-Self.Width
+                                    Y: =
+                                  Children:
+                                    - MarkAllIcon1_3:
+                                        Control: Classic/Icon@2.5.0
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          Color: =RGBA(255, 255, 255, 1)
+                                          ContentLanguage: =Language()
+                                          DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                          DisabledColor: =RGBA(255, 255, 255, 1)
+                                          DisabledFill: =RGBA(255, 255, 255, 1)
+                                          Fill: =RGBA(9, 33, 98, 1)
+                                          FocusedBorderColor: =RGBA(9, 33, 98, 1)
+                                          Height: =60
+                                          HoverBorderColor: =
+                                          HoverColor: =RGBA(255, 255, 255, 1)
+                                          HoverFill: =RGBA(39, 113, 194, 1)
+                                          Icon: =Icon.Check
+                                          OnSelect: "=Set (ShowDeleteDialog,false);\r\n//--------------------------------------------------\r\n/*\r\nForAll(SComponents; \r\n    If(IsBlank(Status)&&Required=true;\r\n        Patch(SComponents;\r\n        ThisRecord; \r\n        {\r\n            Status:\r\n                Last(Split(\r\n                First(Split(PossibleStatus;\";\")).Value;\r\n                \"Status.\")).Value;\r\n        \r\n            StatusText:\r\n                LookUp(MyStatus;\r\n                Status=\r\n                Last(Split(\r\n                First(Split(PossibleStatus;\";\")).Value;\r\n                \"Status.\")).Value;\r\n                StatusText);\r\n\r\n            DefectClass:\r\n                LookUp(MyStatus;\r\n                Status=\r\n                Last(Split(\r\n                First(Split(PossibleStatus;\";\")).Value;\r\n                \"Status.\")).Value;\r\n                DefectClass)\r\n\r\n        })\r\n    )\r\n);;\r\n*/\r\n\r\nForAll(SComponents As aSource, \r\n    If(IsBlank(aSource.Status)&&aSource.Required=true,\r\n        If(LookUp(MyActivitiesP,\r\n            KEY=SActivityKEY && \r\n            Pos=aSource.Pos,\r\n            KEY)=Blank(),\r\n            Collect(MyActivitiesP,\r\n            {\r\n                KEY:SActivityKEY,\r\n                ParentID:SelectedActivity,\r\n                Pos:aSource.Pos,\r\n                Checkpoint:aSource.Checkpoint,\r\n                CheckpointText:aSource.CheckpointText,\r\n\r\n                Status:\r\n                    Last(Split(\r\n                    First(Split(aSource.PossibleStatus,\";\")).Value,\r\n                    \"Status.\")).Value,\r\n            \r\n                StatusText:\r\n                    LookUp(MyStatus,\r\n                    Status=\r\n                    Last(Split(\r\n                    First(Split(aSource.PossibleStatus,\";\")).Value,\r\n                    \"Status.\")).Value,\r\n                    StatusText),\r\n\r\n                DefectClass:\r\n                    LookUp(MyStatus,\r\n                    Status=\r\n                    Last(Split(\r\n                    First(Split(aSource.PossibleStatus,\";\")).Value,\r\n                    \"Status.\")).Value,\r\n                    DefectClass),\r\n\r\n                Comments:aSource.Comments,\r\n                F1:aSource.F1,\r\n                F2:aSource.F2,\r\n                F3:aSource.F3,\r\n                F4:aSource.F4,\r\n                F5:aSource.F5,\r\n                F1Label:aSource.F1Label,\r\n                F2Label:aSource.F2Label,\r\n                F3Label:aSource.F3Label,\r\n                F4Label:aSource.F4Label,\r\n                F5Label:aSource.F5Label\r\n            })\r\n        ,//Else\r\n            Patch(MyActivitiesP,\r\n                LookUp(MyActivitiesP,\r\n                    KEY=SActivityKEY && Pos=aSource.Pos\r\n                ),\r\n                {\r\n                KEY:SActivityKEY,\r\n                ParentID:SelectedActivity,\r\n                Pos:aSource.Pos,\r\n                Checkpoint:aSource.Checkpoint,\r\n                CheckpointText:aSource.CheckpointText,\r\n                Status:aSource.Status,\r\n                StatusText:aSource.StatusText,\r\n                DefectClass:aSource.DefectClass,\r\n                Comments:aSource.Comments,\r\n                F1:aSource.F1,\r\n                F2:aSource.F2,\r\n                F3:aSource.F3,\r\n                F4:aSource.F4,\r\n                F5:aSource.F5,\r\n                F1Label:aSource.F1Label,\r\n                F2Label:aSource.F2Label,\r\n                F3Label:aSource.F3Label,\r\n                F4Label:aSource.F4Label,\r\n                F5Label:aSource.F5Label\r\n                }\r\n            )\r\n        )\r\n    )\r\n);\r\n//--------------------------------------------------\r\n//Save activity checkpoints data in cache, on mobile devices\r\nIf(MyDeviceType=\"Mobile\",\r\n    SaveData(MyActivitiesP,\"ActivitiesP\")  \r\n);\r\n//--------------------------------------------------\r\nSet(ActivitySelected,true);"
+                                          PaddingBottom: =5
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PaddingTop: =5
+                                          PressedBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                                          PressedFill: =RGBA(39, 113, 194, 1)
+                                          TabIndex: =0
+                                          Tooltip: =LookUp(colLanguage,Title="Mark all required checkpoints").Wert
+                                          Visible: =!_ShowLoadingHint
+                                          Width: =60
+                                          X: =15
+                                          Y: =10
+                                    - MarkAllLabel1_3:
+                                        Control: FluentV8/Label@1.8.6
+                                        Properties:
+                                          Alignment: =Align.Center
+                                          Color: =RGBA(0, 0, 0, 1)
+                                          ContentLanguage: =Language()
+                                          DisplayMode: =DisplayMode.View
+                                          Font: =Font.'Patrick Hand'
+                                          FontSize: =MyFontSize-4
+                                          Height: =30
+                                          Text: =LookUp(colLanguage,Title="Mark all").Wert
+                                          Tooltip: =LookUp(colLanguage,Title="Mark all required checkpoints").Wert
+                                          VerticalAlignment: =VerticalAlign.Middle
+                                          Width: =90
+                                          Wrap: =false
+                                          X: |+
+                                            =MarkAllIcon1_3.X+MarkAllIcon1_3.Width/2-Self.Width/2
+                                          Y: =70
+                        - ContainerActivityCheckpointsGallery:
+                            Control: Gallery@2.15.0
+                            Variant: BrowseLayout_Flexible_SocialFeed_pcfCore
+                            Properties:
+                              AccessibleLabel: =LookUp(colLanguage,Title="Checkpoint").Wert
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              ContentLanguage: =Language()
+                              Fill: =RGBA(255, 255, 255, 1)
+                              FocusedBorderColor: =RGBA(98, 100, 167, 1)
+                              FocusedBorderThickness: =2
+                              Height: =Parent.Height-ContainerActivityCheckpointsHeader.Height-15
+                              ItemAccessibleLabel: =LookUp(colLanguage,Title="Checkpoint").Wert
+                              Items: |+
+                                =Sort(
+                                    Filter(SComponents,
+                                        CheckpointText<>"",
+                                        PossibleStatus<>""
+                                    ),
+                                    Pos
+                                )
+
+
+                              NavigationStep: =2
+                              OnSelect: "=\r\nSet(ShowDeleteDialog,false);\r\nSet(_ShowLoadingHint,true);\r\n\r\nSet(SACheckpointPos,ThisItem.Pos);\r\nSet(SACheckpoint,ThisItem.Checkpoint);\r\nSet(SACheckpointText,ThisItem.CheckpointText);\r\nSet(SACheckpointStatus,ThisItem.Status);\r\nSet(SACheckpointStatusText,ThisItem.StatusText);\r\nSet(SACheckpointDefectClass,ThisItem.DefectClass);\r\nSet(SACheckpointComments,ThisItem.Comments);\r\n\r\nClear(colFlexForm);\r\nIf(!IsBlank(ThisItem.FlexForm),\r\n    \r\n    ForAll(Split(ThisItem.FlexForm,\"DisplayOrder:\"),\r\n        If(!IsBlank(Value),\r\n            Collect(colFlexForm,\r\n                {\r\n                    DisplayOrder:\r\n                        First(Split(Value,\",\")).Value,\r\n                    Question:\r\n                        First(Split(\r\n                        Last(Split(Value,\"Question:\")).Value\r\n                        ,\",\")).Value,\r\n                    QuestionText:\r\n                        LookUp(\r\n                        MyFlexFields,\r\n                        Title=First(Split(\r\n                        Last(Split(Value,\"Question:\")).Value\r\n                        ,\",\")).Value,\r\n                        FlexFieldText),\r\n                    ResponseType:\r\n                        First(Split(\r\n                        Last(Split(Value,\"ResponseType:\")).Value\r\n                        ,\",\")).Value,\r\n                    Choices:\r\n                        /*\r\n                        If(\"Choices\" in Value;\r\n                        First(Split(\r\n                        Last(Split(Value;\"Choices:\")).Value\r\n                        ;\",\")).Value\r\n                        );\r\n                        */\r\n                        First(Split(\r\n                        Last(Split(Value,\"Choices:\")).Value\r\n                        ,\",\")).Value,\r\n\r\n                    Calculation:\r\n                        If(\"Calculation\" in Value,\r\n                        First(Split(\r\n                        Last(Split(Value,\"Calculation:\")).Value\r\n                        ,\",\")).Value\r\n                    ),\r\n                    Response:\"\"\r\n                    \r\n                }\r\n            )\r\n        )\r\n    );\r\n\r\n    //Die Fragen aus der FlexForm in die \r\n    //Collection SComponents übertragen\r\n    ForAll(colFlexForm As aPatch,\r\n        Patch(SComponents,\r\n            LookUp(SComponents,Pos=SACheckpointPos),\r\n            Switch(aPatch.DisplayOrder,\r\n                \r\n                \"1\",\r\n                    {F1Title:aPatch.Question};\r\n                    {F1Label:aPatch.QuestionText};\r\n                    {F1:\r\n                        If(IsBlank(ThisItem.F1) &&\r\n                            (aPatch.ResponseType=\"Combobox\" ||\r\n                            aPatch.ResponseType=\"Radio\"),\r\n                            First(Split(aPatch.Choices,\";\")).Value\r\n                        ,\r\n                            ThisItem.F1\r\n                        )\r\n                    },\r\n                \r\n                \"2\",\r\n                    {F2Title:aPatch.Question};\r\n                    {F2Label:aPatch.QuestionText};\r\n                    {F2:\r\n                        If(IsBlank(ThisItem.F2) &&\r\n                            (aPatch.ResponseType=\"Combobox\" ||\r\n                            aPatch.ResponseType=\"Radio\"),\r\n                            First(Split(aPatch.Choices,\";\")).Value\r\n                        ,\r\n                            ThisItem.F2\r\n                        )\r\n                    },\r\n                \r\n                \"3\",\r\n                    {F3Title:aPatch.Question};\r\n                    {F3Label:aPatch.QuestionText};\r\n                    {F3:\r\n                        If(IsBlank(ThisItem.F3) &&\r\n                            (aPatch.ResponseType=\"Combobox\" ||\r\n                            aPatch.ResponseType=\"Radio\"),\r\n                            First(Split(aPatch.Choices,\";\")).Value\r\n                        ,\r\n                            ThisItem.F3\r\n                        )\r\n                    },\r\n                    \r\n                \"4\",\r\n                    {F4Title:aPatch.Question};\r\n                    {F4Label:aPatch.QuestionText};\r\n                    {F4:\r\n                        If(IsBlank(ThisItem.F4) &&\r\n                            (aPatch.ResponseType=\"Combobox\" ||\r\n                            aPatch.ResponseType=\"Radio\"),\r\n                            First(Split(aPatch.Choices,\";\")).Value\r\n                        ,\r\n                            ThisItem.F4\r\n                        )\r\n                    },\r\n                    \r\n                \"5\",\r\n                    {F5Title:aPatch.Question};\r\n                    {F5Label:aPatch.QuestionText};\r\n                    {F5:\r\n                        If(IsBlank(ThisItem.F5) &&\r\n                            (aPatch.ResponseType=\"Combobox\" ||\r\n                            aPatch.ResponseType=\"Radio\"),\r\n                            First(Split(aPatch.Choices,\";\")).Value\r\n                        ,\r\n                            ThisItem.F5\r\n                        )\r\n                    }\r\n                    \r\n            )\r\n        )\r\n    );\r\n);\r\n    \r\n/*\r\nSet(SACheckpointF1Title;\r\n    LookUp(colFlexForm;Value(DisplayOrder)=1;Question)\r\n);;\r\nSet(SACheckpointF2Title;\r\n    LookUp(colFlexForm;Value(DisplayOrder)=2;Question)\r\n);;\r\nSet(SACheckpointF3Title;\r\n    LookUp(colFlexForm;Value(DisplayOrder)=3;Question)\r\n);;\r\nSet(SACheckpointF4Title;\r\n    LookUp(colFlexForm;Value(DisplayOrder)=4;Question)\r\n);;\r\nSet(SACheckpointF5Title;\r\n    LookUp(colFlexForm;Value(DisplayOrder)=5;Question)\r\n);;\r\n\r\n\r\nSet(SACheckpointF1Label;\r\n    LookUp(colFlexForm;Value(DisplayOrder)=1;QuestionText)\r\n);;\r\nSet(SACheckpointF2Label;\r\n    LookUp(colFlexForm;Value(DisplayOrder)=2;QuestionText)\r\n);;\r\nSet(SACheckpointF3Label;\r\n    LookUp(colFlexForm;Value(DisplayOrder)=3;QuestionText)\r\n);;\r\nSet(SACheckpointF4Label;\r\n    LookUp(colFlexForm;Value(DisplayOrder)=4;QuestionText)\r\n);;\r\nSet(SACheckpointF5Label;\r\n    LookUp(colFlexForm;Value(DisplayOrder)=5;QuestionText)\r\n);;\r\n*/\r\n\r\nSet(SACheckpointF1Title,ThisItem.F1Title);\r\nSet(SACheckpointF2Title,ThisItem.F2Title);\r\nSet(SACheckpointF3Title,ThisItem.F3Title);\r\nSet(SACheckpointF4Title,ThisItem.F4Title);\r\nSet(SACheckpointF5Title,ThisItem.F5Title);\r\n\r\nSet(SACheckpointF1Label,ThisItem.F1Label);\r\nSet(SACheckpointF2Label,ThisItem.F2Label);\r\nSet(SACheckpointF3Label,ThisItem.F3Label);\r\nSet(SACheckpointF4Label,ThisItem.F4Label);\r\nSet(SACheckpointF5Label,ThisItem.F5Label);\r\n\r\nSet(SACheckpointF1,ThisItem.F1);\r\nSet(SACheckpointF2,ThisItem.F2);\r\nSet(SACheckpointF3,ThisItem.F3);\r\nSet(SACheckpointF4,ThisItem.F4);\r\nSet(SACheckpointF5,ThisItem.F5);\r\n\r\nSet(SACheckpointF1,LookUp(SComponents,Pos=SACheckpointPos,F1));\r\nSet(SACheckpointF2,LookUp(SComponents,Pos=SACheckpointPos,F2));\r\nSet(SACheckpointF3,LookUp(SComponents,Pos=SACheckpointPos,F3));\r\nSet(SACheckpointF4,LookUp(SComponents,Pos=SACheckpointPos,F4));\r\nSet(SACheckpointF5,LookUp(SComponents,Pos=SACheckpointPos,F5));\r\n\r\n//Possible status\r\nClearCollect(MyPossibleStatus,\r\n    AddColumns(\r\n        \r\n        Split(ThisItem.PossibleStatus,\";\") As aSource,\r\n        \r\n        Status, aSource.Value,\r\n        \r\n        StatusText, \r\n            LookUp(MyStatus,Status=aSource.Value,StatusText)    \r\n    )\r\n);\r\n\r\nIf(IsBlank(ThisItem.Status),\r\n    Set(SACheckpointStatus,\r\n        First(MyPossibleStatus).Status\r\n    );\r\n    Set(SACheckpointStatusText,\r\n        LookUp(MyStatus,Status=SACheckpointStatus,StatusText)\r\n    );\r\n    Set(SACheckpointDefectClass,\r\n        LookUp(MyStatus,Status=SACheckpointStatus,DefectClass)\r\n    );\r\n);\r\n\r\nSet(_ShowLoadingHint,false);\r\n\r\nEditForm(EditForm1_6);\r\nNavigate(ScreenActivityEditCheckpoint);\r\n\r\n\r\n"
+                              ShowNavigation: =true
+                              TabIndex: =0
+                              TemplatePadding: =5
+                              TemplateSize: |+
+                                =//Min(45, Self.Height+15)
+                              Width: =Parent.Width
+                              X: =1
+                              Y: =110
+                            Children:
+                              - FlexibleHeightGalleryChecklisteRectangle:
+                                  Control: Classic/TextInput@2.3.2
+                                  Properties:
+                                    AccessibleLabel: =Self.Tooltip
+                                    Align: =TextPosition.Left
+                                    BorderColor: |-
+                                      =If(ThisItem.Pos=SCheckpointPos,
+                                          galleryBorderColorSelected,
+                                          galleryBorderColor
+                                      )
+                                    BorderThickness: =1
+                                    ContentLanguage: =Language()
+                                    Default: =
+                                    DisabledFill: =FlexibleHeightGalleryChecklisteRectangle.Fill
+                                    Fill: |+
+                                      =If(ThisItem.Pos=SCheckpointPos,
+                                          galleryColorSelected,
+                                          galleryColorFill
+                                      )
+                                    FocusedBorderColor: =FlexibleHeightGalleryChecklisteRectangle.BorderColor
+                                    Font: =Font.'Open Sans'
+                                    FontWeight: =FontWeight.Lighter
+                                    Height: =Max(Title1.Height,Icon1.Height)+20
+                                    HintText: =
+                                    HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                    HoverFill: =FlexibleHeightGalleryChecklisteRectangle.Fill
+                                    OnChange: =
+                                    OnSelect: =
+                                    PaddingBottom: =
+                                    PaddingLeft: =
+                                    PaddingRight: =
+                                    PaddingTop: =
+                                    PressedColor: =Color.Black
+                                    PressedFill: =FlexibleHeightGalleryChecklisteRectangle.Fill
+                                    RadiusBottomLeft: =10
+                                    RadiusBottomRight: =10
+                                    RadiusTopLeft: =10
+                                    RadiusTopRight: =10
+                                    Reset: =true
+                                    Size: =10
+                                    Tooltip: =" "
+                                    Width: |-
+                                      =Parent.Width-
+                                      -Self.X*2-35
+                                    X: =5
+                                    Y: =1
+                              - Separator1:
+                                  Control: Rectangle@2.3.0
+                                  Properties:
+                                    AccessibleLabel: =Parent.AccessibleLabel
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    ContentLanguage: =Parent.ContentLanguage
+                                    DisplayMode: =DisplayMode.View
+                                    Fill: =RGBA(204, 204, 204, 1)
+                                    Height: =1
+                                    OnSelect: =Select(Parent)
+                                    TabIndex: =0
+                                    Tooltip: =Parent.AccessibleLabel
+                                    Visible: =false
+                                    Width: =Parent.Width-Self.X*2
+                                    X: =15
+                              - Icon1:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    AccessibleLabel: =Self.Tooltip
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    ContentLanguage: =Language()
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisplayMode: =DisplayMode.View
+                                    Height: =50
+                                    HoverBorderColor: =
+                                    HoverColor: =RGBA(0, 0, 0, 1)
+                                    HoverFill: =RGBA(230, 230, 230, 1)
+                                    Icon: |-
+                                      =Switch(
+                                          LookUp(MyStatus,Status=ThisItem.Status,Icon),
+                                          "Icon.Flag",Icon.Flag,
+                                          "Icon.CheckBadge",Icon.CheckBadge,
+                                          "Icon.Blocked",Icon.Blocked,
+                                          "Icon.EmojiHappy",Icon.EmojiHappy,
+                                          "Icon.EmojiNeutral",Icon.EmojiNeutral,
+                                          "Icon.EmojiSad",Icon.EmojiSad,
+                                          "Icon.EmojiSmile",Icon.EmojiSmile,
+                                          "Icon.Enhance",Icon.Enhance,
+                                          "Icon.Medical",Icon.Medical,
+                                          "Icon.ThumbsDown",Icon.ThumbsDown,
+                                          "Icon.ThumbsUp",Icon.ThumbsUp,
+                                          "Icon.Warning",Icon.Warning,
+                                          Icon.Flag
+                                      )
+                                    PressedFill: =RGBA(255, 255, 255, 0.3)
+                                    TabIndex: =0
+                                    Tooltip: =ThisItem.Status
+                                    Width: =50
+                                    X: =10
+                                    Y: =10
+                              - Title1:
+                                  Control: HtmlViewer@2.1.0
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =
+                                    ContentLanguage: =Language()
+                                    DisabledBorderColor: =RGBA(56, 56, 56, 1)
+                                    Font: =Font.'Open Sans'
+                                    Height: =1
+                                    HtmlText: |+
+                                      =
+                                      "<b>"
+                                      &Text(ThisItem.Pos,"#0") &". "
+                                      &ThisItem.CheckpointText&"
+                                      </b>"
+
+                                      &"<span style='font-size:smaller'>"
+                                      &If(!IsBlank(ThisItem.Status),
+                                          "<br>"
+                                          //&"Status: " 
+                                          &ThisItem.StatusText
+                                          &" (defect class:"
+                                          &ThisItem.DefectClass
+                                          &")"
+                                          //&" | "
+                                          //&LookUp(MyStatus;Status=ThisItem.Status;Icon)
+                                      )
+                                      &If(!IsBlank(ThisItem.Comments),
+                                          "<br>"
+                                          //&"Comments: " 
+                                          &ThisItem.Comments
+                                          //&Substitute(ThisItem.Comments;Char(10);"<br>")
+                                      )
+
+                                      &If(!IsBlank(ThisItem.F1Label),
+                                          "<br>"
+                                          &ThisItem.F1Label
+                                          //&LookUp(MyUVVSettings;Title=ThisItem.F1Label).Wert 
+                                          &": <b>" 
+                                          &ThisItem.F1
+                                          &"</b>"
+                                      )
+
+                                      &If(!IsBlank(ThisItem.F2Label),
+                                          "<br>"
+                                          //&LookUp(MyUVVSettings;Title=ThisItem.F2Label).Wert 
+                                          &ThisItem.F2Label
+                                          &": <b>" 
+                                          &ThisItem.F2 
+                                          &"</b>"
+                                      )
+
+                                      &If(!IsBlank(ThisItem.F3Label),
+                                          "<br>"
+                                          //&LookUp(MyUVVSettings;Title=ThisItem.F3Label).Wert 
+                                          &ThisItem.F3Label
+                                          &": <b>" 
+                                          &ThisItem.F3 
+                                          &"</b>"
+                                      )
+
+                                      &If(!IsBlank(ThisItem.F4Label),
+                                          "<br>"
+                                          //&LookUp(MyUVVSettings;Title=ThisItem.F4Label).Wert 
+                                          &ThisItem.F4Label
+                                          &": <b>" 
+                                          &ThisItem.F4 
+                                          &"</b>"
+                                      )
+
+                                      &If(!IsBlank(ThisItem.F5Label),
+                                          "<br>"
+                                          //&LookUp(MyUVVSettings;Title=ThisItem.F5Label).Wert 
+                                          &ThisItem.F5Label
+                                          &": <b>" 
+                                          &ThisItem.F5
+                                          &"</b>"
+                                      )
+
+                                      &"</span>"
+                                    OnSelect: =Select(Parent)
+                                    PaddingBottom: =0
+                                    PaddingLeft: =0
+                                    PaddingRight: =0
+                                    PaddingTop: =0
+                                    Size: =MyFontSize
+                                    Tooltip: |-
+                                      ="Checkpoint"
+                                      //LookUp(MyUVVSettings;Title="Checkpunkt").Wert
+                                    Width: =Parent.Width-Self.X-25
+                                    X: =Icon1.X+Icon1.Width+10
+                                    Y: =5
+                  - Send1_3:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =SendButton1_3.Height
+                        LayoutMinHeight: =70
+                        LayoutMinWidth: =1
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Visible: =!IsBlank(SelectedActivity) && !IsBlank(SActivityKEY)
+                        Width: =Parent.Width
+                      Children:
+                        - SendButton1_3:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =0
+                              Color: =RGBA(255,255,255,1)
+                              ContentLanguage: =Language()
+                              DisplayMode: |-
+                                =If(OnlineStatus=1,
+                                    DisplayMode.Edit
+                                ,//Else
+                                    DisplayMode.Disabled
+                                )
+                              Fill: =RGBA(9, 33, 98, 1)
+                              Height: =60
+                              HoverBorderColor: =
+                              HoverColor: =RGBA(255, 255, 255, 1)
+                              HoverFill: =RGBA(39, 113, 194, 1)
+                              OnSelect: |+
+                                =Set(ShowDeleteDialog,false);
+                                EditForm(EditForm1_4);
+                                Navigate(ScreenActivityFinalizeAndSend);
+                              PaddingLeft: =45
+                              PressedBorderColor: =
+                              PressedColor: =RGBA(255, 255, 255, 1)
+                              PressedFill: =RGBA(39, 113, 194, 1)
+                              Size: =MyFontSize-3
+                              Text: =LookUp(colLanguage,Title="Finalize & send activity").Wert
+                              Tooltip: =//Self.Text
+                              Width: =Parent.Width-Self.X*2
+                              Y: =
+                        - SendIcon1_3:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              AccessibleLabel: =SendButton1_3.Text
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisplayMode: |-
+                                =If(OnlineStatus=1,
+                                    DisplayMode.View
+                                ,//Else
+                                    DisplayMode.Disabled
+                                )
+                              FocusedBorderColor: =Color.White
+                              FocusedBorderThickness: =1
+                              Height: =SendButton1_3.Height
+                              Icon: =Icon.Send
+                              PaddingBottom: =9
+                              PaddingLeft: =9
+                              PaddingRight: =9
+                              PaddingTop: =9
+                              TabIndex: =0
+                              Tooltip: =" "
+                              Width: =SendButton1_3.Height
+                              X: =SendButton1_3.X
+                              Y: =
+            - FooterLabel1_3:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Right
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  Color: =RGBA(255, 255, 255, 1)
+                  DisplayMode: =DisplayMode.View
+                  Fill: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Lighter
+                  Height: =50
+                  PaddingLeft: =15
+                  PaddingRight: =15
+                  Size: =MyFontSize-3
+                  Text: "=If(!IsBlank(FooterText),\r\n    FooterText,\r\n    \"v\"\r\n    &MyVersion\r\n    &\"|\"&MyDeviceType\r\n    &If(OnlineStatus=0,\"|Offline\",\"|Online\")\r\n    &\"|\"&MyLanguage\r\n    \r\n    //&\"|Mode:\"&EditForm1_15.Mode //(0=Edit;1=Add)\r\n    //&\"|EditEntry:\"&EditEntry\r\n    //&\"|SelectedChecklist\"&SelectedChecklist\r\n    //&LookUp(SComponents;Pos=SACheckpointPos;F1)\r\n)\r\n"
+                  Width: =Parent.Width
+                  Wrap: =false
+                  Y: =Parent.Height-Self.Height
+      - TimerREADActivity:
+          Control: Timer@2.1.0
+          Properties:
+            AutoStart: =true
+            BorderColor: =//ColorFade(Self.Fill; -15%)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =
+            DisabledColor: =
+            DisabledFill: =
+            Duration: =500
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Lighter
+            Height: =26
+            HoverBorderColor: =
+            HoverColor: =
+            HoverFill: =
+            OnTimerEnd: "=Set(CurrentTime,Now());\r\n//-----------------------------------------------------\r\nIf(Connection.Connected,\r\n    Set (OnlineStatus, 1)\r\n,// Else    \r\n    Set (OnlineStatus, 0)\r\n);\r\n//------------------------------------------------\r\nIf(ActivitySelected,\r\n    Set(ActivitySelected,false);\r\n\r\n    Set(_ShowLoadingHint,true);\r\n\r\n    Set(SelectedActivityRecord,\r\n        First(Filter(MyActivities,ID=SelectedActivity))\r\n    );\r\n\r\n    Set(SActivityKEY,SelectedActivityRecord.KEY);\r\n     Set(SActivityTitle,SelectedActivityRecord.Title);\r\n    Set(SActivityChecklistText,\r\n        LookUp(MyChecklists,Title=SActivityTitle,ChecklistText)\r\n    );\r\n    Set(SActivityUser,SelectedActivityRecord.User);\r\n    Set(SActivityUserEMail,SelectedActivityRecord.UserEMail);\r\n    Set(SActivityDate,SelectedActivityRecord.Date);\r\n    Set(SActivityDocumentStatus,SelectedActivityRecord.DocumentStatus);\r\n    Set(SActivityComments,SelectedActivityRecord.Comments);\r\n\r\n    //-----------------------------------------------------\r\n    \r\n    Clear(SComponents);\r\n    ForAll(\r\n        Filter(colCheckpoints,Title = SActivityTitle) As aSource,\r\n        \r\n        Collect(SComponents,\r\n            {\r\n                ParentID:SelectedActivity,\r\n                KEY:SActivityKEY,\r\n                Pos:aSource.Pos,\r\n                Checkpoint:aSource.Checkpoint,\r\n                CheckpointText:\r\n                    LookUp(colCheckpointsText,\r\n                        Title=SActivityTitle &&\r\n                        Checkpoint=aSource.Checkpoint&&\r\n                        LanguageTag=Left(Language(),2),\r\n                        CheckpointText),\r\n                Required:aSource.Required,\r\n                PossibleStatus:\r\n                        If(!IsBlank(aSource.Status1),aSource.Status1)&\r\n                        If(!IsBlank(aSource.Status2),\";\"&aSource.Status2)&\r\n                        If(!IsBlank(aSource.Status3),\";\"&aSource.Status3)&\r\n                        If(!IsBlank(aSource.Status4),\";\"&aSource.Status4)&\r\n                        If(!IsBlank(aSource.Status5),\";\"&aSource.Status5),\r\n                Status:\"\",\r\n                StatusText:\"\",\r\n                DefectClass:0,\r\n                Comments:\"\",\r\n                FlexForm:aSource.FlexForm,\r\n                F1:\"\",\r\n                F2:\"\",\r\n                F3:\"\",\r\n                F4:\"\",\r\n                F5:\"\",\r\n                F1Title:\"\",\r\n                F2Title:\"\",\r\n                F3Title:\"\",\r\n                F4Title:\"\",\r\n                F5Title:\"\",\r\n                F1Label:\"\",\r\n                F2Label:\"\",\r\n                F3Label:\"\",\r\n                F4Label:\"\",\r\n                F5Label:\"\"\r\n            }\r\n        )\r\n    );\r\n    //-----------------------------------------------------\r\n    //Transform field FlexForm into collection colFlexForm \r\n    Clear(colFlexForm);\r\n    ForAll(SComponents As aSource,\r\n        ForAll(Split(aSource.FlexForm,\"DisplayOrder:\"),\r\n            If(!IsBlank(Value),\r\n                Collect(colFlexForm,\r\n                    {\r\n                        Pos:aSource.Pos,\r\n                        DisplayOrder:\r\n                            First(Split(Value,\",\")).Value,\r\n                        Question:\r\n                            First(Split(\r\n                            Last(Split(Value,\"Question:\")).Value\r\n                            ,\",\")).Value,\r\n                        QuestionText:\r\n                            LookUp(\r\n                            MyFlexFields,\r\n                            Title=First(Split(\r\n                            Last(Split(Value,\"Question:\")).Value\r\n                            ,\",\")).Value,\r\n                            FlexFieldText)\r\n                        }\r\n                )\r\n            )\r\n        );\r\n    );\r\n    //-----------------------------------------------------\r\n    //Transfer title and text into SComponents \r\n    ForAll(colFlexForm As aPatch,\r\n        Patch(SComponents,\r\n            LookUp(SComponents,Pos=aPatch.Pos),\r\n            Switch(aPatch.DisplayOrder,\r\n                \"1\",\r\n                    {F1Title:aPatch.Question,\r\n                     F1Label:aPatch.QuestionText},\r\n                \"2\",\r\n                    {F2Title:aPatch.Question,\r\n                     F2Label:aPatch.QuestionText},\r\n                \"3\",\r\n                    {F3Title:aPatch.Question,\r\n                     F3Label:aPatch.QuestionText},\r\n                \"4\",\r\n                    {F4Title:aPatch.Question,\r\n                     F4Label:aPatch.QuestionText},\r\n                \"5\",\r\n                    {F5Title:aPatch.Question,\r\n                     F5Label:aPatch.QuestionText}\r\n            )\r\n        )\r\n    );\r\n    //-----------------------------------------------------\r\n    //Now add the existing data to the correct flex field\r\n    //Note: We cannot use DisplayOrder for the transfer \r\n    //We must use the title od the flex field for the same!\r\n    ForAll(\r\n        \r\n        Filter(MyActivitiesP,KEY=SActivityKEY) As aPatch,\r\n\r\n        Patch(SComponents,\r\n            LookUp(SComponents,Pos=aPatch.Pos),\r\n            {\r\n                Status:aPatch.Status,\r\n                StatusText:aPatch.StatusText,\r\n                DefectClass:aPatch.DefectClass,\r\n                Comments:aPatch.Comments,\r\n\r\n                F1:\r\n                    Switch(\r\n                        LookUp(SComponents,Pos=aPatch.Pos,F1Title),\r\n                        aPatch.F1Title,Text(aPatch.F1),\r\n                        aPatch.F2Title,Text(aPatch.F2),\r\n                        aPatch.F3Title,Text(aPatch.F3),\r\n                        aPatch.F4Title,Text(aPatch.F4),\r\n                        aPatch.F5Title,Text(aPatch.F5),\r\n                        \"\"\r\n                    ),\r\n                F2:\r\n                    Switch(\r\n                        LookUp(SComponents,Pos=aPatch.Pos,F2Title),\r\n                        aPatch.F1Title,Text(aPatch.F1),\r\n                        aPatch.F2Title,Text(aPatch.F2),\r\n                        aPatch.F3Title,Text(aPatch.F3),\r\n                        aPatch.F4Title,Text(aPatch.F4),\r\n                        aPatch.F5Title,Text(aPatch.F5),\r\n                        \"\"\r\n                    ),\r\n                F3:\r\n                    Switch(\r\n                        LookUp(SComponents,Pos=aPatch.Pos,F3Title),\r\n                        aPatch.F1Title,Text(aPatch.F1),\r\n                        aPatch.F2Title,Text(aPatch.F2),\r\n                        aPatch.F3Title,Text(aPatch.F3),\r\n                        aPatch.F4Title,Text(aPatch.F4),\r\n                        aPatch.F5Title,Text(aPatch.F5),\r\n                        \"\"\r\n                    ),\r\n                F4:\r\n                    Switch(\r\n                        LookUp(SComponents,Pos=aPatch.Pos,F4Title),\r\n                        aPatch.F1Title,Text(aPatch.F1),\r\n                        aPatch.F2Title,Text(aPatch.F2),\r\n                        aPatch.F3Title,Text(aPatch.F3),\r\n                        aPatch.F4Title,Text(aPatch.F4),\r\n                        aPatch.F5Title,Text(aPatch.F5),\r\n                        \"\"\r\n                    ),\r\n                F5:\r\n                    Switch(\r\n                        LookUp(SComponents,Pos=aPatch.Pos,F5Title),\r\n                        aPatch.F1Title,Text(aPatch.F1),\r\n                        aPatch.F2Title,Text(aPatch.F2),\r\n                        aPatch.F3Title,Text(aPatch.F3),\r\n                        aPatch.F4Title,Text(aPatch.F4),\r\n                        aPatch.F5Title,Text(aPatch.F5),\r\n                        \"\"\r\n                    )\r\n            }\r\n        )\r\n    );\r\n    //-----------------------------------------------------\r\n    Set(locErrorCode,\"\");\r\n    Set(SCheckpointPos,0);\r\n    Set(_ShowLoadingHint,false);\r\n\r\n);\r\n"
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Repeat: =true
+            Size: =11
+            Text: =//Text(Time(0; 0; Self.Value/1000); "hh:mm:ss")
+            Visible: =false
+            Width: =98
+            X: =476
+            Y: =928
+      - GroupDelete1_3:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            BorderThickness: =2
+            DropShadow: =DropShadow.ExtraBold
+            Fill: =RGBA(244, 244, 243, 1)
+            Height: =DeleteTitel1_3.Height+DeleteText1_3.Height+DeleteButtons1_3.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            PaddingBottom: =2
+            PaddingLeft: =2
+            PaddingRight: =2
+            PaddingTop: =2
+            RadiusBottomLeft: =30
+            RadiusBottomRight: =30
+            RadiusTopLeft: =30
+            RadiusTopRight: =30
+            Visible: =ShowDeleteDialog
+            Width: =375
+            X: =Delete1_3.X+Delete1_3.Width-Self.Width
+            Y: =Header1_3.Height+Delete1_3.Y+Delete1_3.Height+25
+          Children:
+            - DeleteTitel1_3:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  AlignInContainer: =AlignInContainer.Start
+                  BorderColor: =
+                  BorderStyle: =BorderStyle.None
+                  Color: =galleryColor
+                  ContentLanguage: =Language()
+                  DisplayMode: =DisplayMode.View
+                  FillPortions: =1
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =50
+                  LayoutMinHeight: =50
+                  LayoutMinWidth: =1
+                  PaddingBottom: =10
+                  PaddingLeft: =10
+                  PaddingRight: =10
+                  PaddingTop: =10
+                  Size: =MyFontSize+2
+                  Text: |-
+                    ="Delete activity?"
+                    //LookUp(MyUVVSettings;Title="Kunde löschen?").Wert
+                  Tooltip: =" "
+                  Width: =Parent.Width
+            - DeleteText1_3:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  AlignInContainer: =AlignInContainer.Stretch
+                  BorderColor: =
+                  BorderStyle: =BorderStyle.None
+                  Color: =galleryColor
+                  ContentLanguage: =Language()
+                  DisplayMode: =DisplayMode.View
+                  FocusedBorderThickness: =2
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =125
+                  LayoutMinHeight: =1
+                  LayoutMinWidth: =150
+                  PaddingBottom: =10
+                  PaddingLeft: =10
+                  PaddingRight: =10
+                  PaddingTop: =10
+                  Size: =MyFontSize
+                  Text: |-
+                    ="Do you really want to delete this activity?"
+                    //LookUp(MyUVVSettings;Title="Soll dieser Kunde wirklich gelöscht werden?").Wert
+                  Tooltip: =" "
+                  Width: =Parent.Width
+                  Y: =50
+            - DeleteButtons1_3:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =80
+                  LayoutMinHeight: =60
+                  LayoutMinWidth: =Parent.Width
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Parent.Width
+                Children:
+                  - DeleteGroupNeinButton1_3:
+                      Control: Classic/Button@2.2.0
+                      Group: DeleteGroupNein1_3
+                      Properties:
+                        BorderThickness: =0
+                        Color: =RGBA(255, 255, 255, 1)
+                        ContentLanguage: =Language()
+                        DisplayMode: |-
+                          =If(Connection.Connected,
+                          DisplayMode.Edit,
+                          DisplayMode.Disabled)
+                        Fill: =RGBA(221, 79, 14, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =DeleteGroupJaButton1_3.Height
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(221, 79, 14, 1)
+                        OnSelect: =Set (ShowDeleteDialog,false)
+                        PaddingLeft: =45
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(221, 79, 14, 1)
+                        Size: =MyFontSize
+                        Text: |+
+                          ="No"
+                          //LookUp(MyUVVSettings;Title="Nein").Wert
+                        Tooltip: |+
+                          ="No, please cancel"
+                          //LookUp(MyUVVSettings;Title="Nein, lieber doch nicht. Vorgang abbrechen.").Wert
+                        Width: =DeleteGroupJaButton1_3.Width
+                        X: |+
+                          =DeleteGroupJaButton1_3.X
+                          +DeleteGroupJaButton1_3.Width
+                          +25
+                        Y: =DeleteGroupJaButton1_3.Y
+                  - DeleteGroupNeinIcon1_3:
+                      Control: Classic/Icon@2.5.0
+                      Group: DeleteGroupNein1_3
+                      Properties:
+                        AccessibleLabel: =Self.Tooltip
+                        Color: =RGBA(255, 255, 255, 1)
+                        ContentLanguage: =Language()
+                        DisplayMode: =DisplayMode.View
+                        FocusedBorderColor: =Color.White
+                        FocusedBorderThickness: =1
+                        Height: =DeleteGroupNeinButton1_3.Height
+                        Icon: =Icon.CancelBadge
+                        PaddingBottom: =9
+                        PaddingLeft: =9
+                        PaddingRight: =9
+                        PaddingTop: =9
+                        TabIndex: =0
+                        Tooltip: |+
+                          ="No, please cancel"
+                          //LookUp(MyUVVSettings;Title="Nein, lieber doch nicht. Vorgang abbrechen.").Wert
+                        Width: =DeleteGroupNeinButton1_3.Height
+                        X: =DeleteGroupNeinButton1_3.X
+                        Y: =DeleteGroupNeinButton1_3.Y
+                  - DeleteGroupJaButton1_3:
+                      Control: Classic/Button@2.2.0
+                      Group: DeleteGroupJa1_3
+                      Properties:
+                        BorderThickness: =0
+                        Color: =galleryColor
+                        ContentLanguage: =Language()
+                        DisplayMode: |-
+                          =If(Connection.Connected,
+                          DisplayMode.Edit,
+                          DisplayMode.Disabled)
+                        Fill: =RGBA(152, 208, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =50
+                        HoverColor: =RGBA(0, 0, 0, 1)
+                        HoverFill: =RGBA(152, 208, 70, 1)
+                        OnSelect: "=Set(ShowDeleteDialog,false);\r\nSet (locErrorCode, \"\");\r\n//--------------------------------------------------------\r\n// Delete activity\r\nIf(IsBlank(locErrorCode),\r\n\r\n    // remove from collection\r\n    RemoveIf(MyActivities,ID=SelectedActivity); \r\n    \r\n    //all good?\r\n    If(!IsEmpty(Errors([@MyActivities])),\r\n        Set(locErrorCode, \"Error! Was not able to delete the activity\");\r\n        Notify(\r\n            locErrorCode,\r\n            //LookUp(MyUVVSettings;\r\n            //Title=\"Fehler beim Löschen in UVVKundenliste\").Wert;\r\n            NotificationType.Error,2000\r\n        );\r\n    ,// Else\r\n        Set (locErrorCode, \"\");\r\n    );\r\n\r\n    // Save checklists locally\r\n    If(MyDeviceType=\"Mobile\" && IsBlank(locErrorCode),\r\n        If(CountRows(MyActivities)=0,\r\n            ClearData(\"Activities\")\r\n        ,//Else\r\n            SaveData(MyActivities,\"Activities\");  \r\n        )\r\n    );\r\n\r\n    If(CountRows(MyActivities)>0,\r\n        Set(SelectedActivity,\r\n            First(MyActivities).ID\r\n        );\r\n        Set(ActivitySelected,true);\r\n    ,//Else\r\n        Set(SelectedActivity,0);\r\n        Set(ActivitySelected,false);\r\n    );\r\n    Navigate(StartScreen);\r\n);\r\n\r\n"
+                        PaddingLeft: =45
+                        PressedColor: =RGBA(0, 0, 0, 1)
+                        PressedFill: =RGBA(152, 208, 70, 1)
+                        Size: =MyFontSize
+                        Text: |+
+                          ="Yes"
+                          //LookUp(MyUVVSettings;Title="Ja").Wert
+                        Tooltip: |+
+                          ="Yes, delete this activity"
+                          //LookUp(MyUVVSettings;Title="Ja, Bericht als genehmigt markieren").Wert
+                        Width: =150
+                        X: =25
+                        Y: =10
+                  - DeleteGroupJaIcon1_3:
+                      Control: Classic/Icon@2.5.0
+                      Group: DeleteGroupJa1_3
+                      Properties:
+                        AccessibleLabel: =Self.Tooltip
+                        Color: =galleryColor
+                        ContentLanguage: =Language()
+                        DisplayMode: =DisplayMode.View
+                        FocusedBorderColor: =Color.White
+                        FocusedBorderThickness: =1
+                        Height: =DeleteGroupJaButton1_3.Height
+                        Icon: =Icon.ThumbsUp
+                        PaddingBottom: =9
+                        PaddingLeft: =9
+                        PaddingRight: =9
+                        PaddingTop: =9
+                        TabIndex: =0
+                        Tooltip: |+
+                          ="Yes, delete this activity"
+                          //LookUp(MyUVVSettings;Title="Ja, Rechnung als genehmigt markieren").Wert
+                        Width: =DeleteGroupJaButton1_3.Height
+                        X: =DeleteGroupJaButton1_3.X
+                        Y: =DeleteGroupJaButton1_3.Y
+      - ImageLoading1_3:
+          Control: Image@2.2.3
+          Properties:
+            AccessibleLabel: =" "
+            BorderColor: =RGBA(0, 18, 107, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =150
+            Image: =Loading_1
+            ImagePosition: =ImagePosition.Fill
+            TabIndex: =0
+            Visible: =_ShowLoadingHint
+            Width: =150
+            X: =Parent.Width/2 - Self.Width/2
+            Y: =Parent.Height/2 - Self.Height/2

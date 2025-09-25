@@ -1,0 +1,1581 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  StartScreen:
+    Properties:
+      BackgroundImage: ='uvv-clouds'
+      ContentLanguage: =Language()
+      Fill: =RGBA(241, 244, 249, 1)
+      Height: |-
+        =If(App.Height<App.MinScreenHeight,
+        App.Height,App.MinScreenHeight)
+        //Max(App.Height; App.MinScreenHeight)
+        //Max(App.Height; App.DesignHeight)
+      ImagePosition: =ImagePosition.Fill
+      LoadingSpinner: =LoadingSpinner.Data
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+      OnVisible: |+
+        =Set(MySolution,"pobvol Open Checklists");
+        Set(MyAppName,"pssChecks");
+        Set(MyVersion, "290825-1430"); 
+        Set(MyLanguage,Left(Language(),2));
+        //-----------------------------------------------------
+        Set(Homepage1,"");
+        Set(Homepage2,"");
+        Set(Homepage3,"");
+        Set(Homepage4,"");
+        //--------------------------------------------------------
+        /*
+        Set(menuColor,
+            RGBA(242, 244, 249, 1) // hellgrau    
+            //RGBA(9, 33, 98, 1) // dunkelblau
+        );
+        */
+        //Set(menuColorSelected,RGBA(255, 191, 0, 1));
+        Set(galleryColorFill,
+            RGBA(255, 255, 255, 1) // weiss
+        );
+        Set(galleryColor,RGBA(0, 0, 0, 1));
+        Set(galleryColorSelected,
+            //RGBA(230; 230; 230; 1) // hellgrau
+            RGBA(209, 232, 178, 1) //Hellgrün
+        );
+        Set(galleryBorderColor,RGBA(0, 0, 0, 1));
+        Set(galleryBorderColorSelected,RGBA(0, 0, 0, 1));
+        //Set(containerDetailsFill;RGBA(255; 255; 255; 1));; //weiss
+        //Set(containerDetailsBorderColor;RGBA(128; 128; 128; 1));;
+        //Set(containerDetailsBorderColor;RGBA(0; 0; 0; 1));;
+        Set(galleryColorFill,RGBA(255, 255, 255, 1)); // weiss
+        Set(galleryColor,RGBA(0, 0, 0, 1));
+        Set(galleryColorSelected,RGBA(209, 232, 178, 1)); //Hellgrün
+        Set(galleryBorderColor,RGBA(0, 0, 0, 1));
+        Set(galleryBorderColorSelected,RGBA(0, 0, 0, 1));
+        //--------------------------------------------------------
+        //FontSize
+        Set(MyFontSizeMobileMax,23);
+        Set(MyFontSizeDesktopMax,23);
+        //If(IsBlank(MyFontSize)||MyFontSize<20;
+            Set(MyFontSize,20);
+        //);;
+        If(MyDeviceType="Mobile",
+            If(MyFontSize > MyFontSizeMobileMax,
+                Set(MyFontSize,MyFontSizeMobileMax)
+            )
+        );
+        If(MyDeviceType="Desktop",
+            If(MyFontSize>MyFontSizeDesktopMax,
+                Set(MyFontSize,MyFontSizeDesktopMax)
+            )
+        );
+        //--------------------------------------------------------
+        UpdateContext({ChartEdit:true}); 
+        Set(ChecklistsSearchBoxDefault,"");
+        Set(StartTimer,true);
+
+
+
+      Width: |+
+        =If(App.Width<App.MinScreenWidth,
+        App.Width,App.MinScreenWidth)
+        //Max(App.Width; App.MinScreenWidth)
+        //Max(App.Width; App.DesignWidth)
+
+
+
+    Children:
+      - MainContainer:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            DropShadow: =DropShadow.None
+            Height: =Parent.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =15
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Parent.Width
+            X: =
+            Y: =
+          Children:
+            - Header:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =100
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutMinHeight: =40
+                  LayoutMinWidth: =Parent.Width-15
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Parent.Width
+                Children:
+                  - HeaderLabel:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        Color: =RGBA(255, 255, 255, 1)
+                        ContentLanguage: =Language()
+                        FillPortions: =1
+                        FocusedBorderThickness: =2
+                        Font: =Font.'Open Sans'
+                        Height: =Parent.Height
+                        LayoutMinWidth: =1
+                        OnSelect: |-
+                          =Set(InitialReadLanguage,true);
+                          Set(InitialReadChecklists,true);
+                          Set(InitialReadStatus,true);
+                        PaddingLeft: =15
+                        Size: =MyFontSize+5
+                        TabIndex: =0
+                        Text: =MyAppName
+                        Tooltip: =" "
+                        Width: =
+                        X: =
+                        Y: =
+                  - Help:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =Parent.Height
+                        LayoutMinHeight: =
+                        LayoutMinWidth: =
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =90
+                        X: =
+                        Y: =
+                      Children:
+                        - HelpIcon1_1:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              AccessibleLabel: =Self.Tooltip
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisabledFill: =RGBA(39, 113, 194, 1)
+                              FocusedBorderColor: =RGBA(9, 33, 98, 1)
+                              Height: =60
+                              HoverBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                              HoverFill: =RGBA(39, 113, 194, 1)
+                              Icon: =Icon.Help
+                              OnSelect: =Navigate(ScreenAbout)
+                              PaddingBottom: =5
+                              PaddingLeft: =5
+                              PaddingRight: =5
+                              PaddingTop: =5
+                              PressedBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                              PressedFill: =RGBA(39, 113, 194, 1)
+                              TabIndex: =0
+                              Tooltip: =HelpLabel1_1.Text
+                              Width: =60
+                              X: =15
+                              Y: =10
+                        - HelpLabel1_1:
+                            Control: FluentV8/Label@1.8.6
+                            Properties:
+                              Alignment: =Align.Center
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisplayMode: =DisplayMode.View
+                              Font: =Font.'Patrick Hand'
+                              FontSize: =MyFontSize-4
+                              Height: =20
+                              Text: =LookUp(colLanguage,Title="Help").Wert
+                              VerticalAlignment: =VerticalAlign.Middle
+                              Visible: =HelpIcon1_1.Visible
+                              Width: =90
+                              Wrap: =false
+                              X: |+
+                                =HelpIcon1_1.X+HelpIcon1_1.Width/2-Self.Width/2
+                              Y: =70
+                  - Exit:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =Parent.Height
+                        LayoutMinHeight: =90
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =90
+                        X: =
+                        Y: =
+                      Children:
+                        - ExiteIcon1_1:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              AccessibleLabel: =Self.Tooltip
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisabledFill: =RGBA(39, 113, 194, 1)
+                              FocusedBorderColor: =RGBA(9, 33, 98, 1)
+                              Height: =60
+                              HoverBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                              HoverFill: =RGBA(39, 113, 194, 1)
+                              Icon: =Icon.Leave
+                              OnSelect: =Exit()
+                              PaddingBottom: =5
+                              PaddingLeft: =5
+                              PaddingRight: =5
+                              PaddingTop: =5
+                              PressedBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                              PressedFill: =RGBA(39, 113, 194, 1)
+                              TabIndex: =0
+                              Tooltip: =ExitLabel1_1.Text
+                              Width: =60
+                              X: =15
+                              Y: =10
+                        - ExitLabel1_1:
+                            Control: FluentV8/Label@1.8.6
+                            Properties:
+                              Alignment: =Align.Center
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisplayMode: =DisplayMode.View
+                              Font: =Font.'Patrick Hand'
+                              FontSize: =MyFontSize-4
+                              Height: =20
+                              Text: =LookUp(colLanguage,Title="Exit").Wert
+                              VerticalAlignment: =VerticalAlign.Middle
+                              Visible: =ExiteIcon1_1.Visible
+                              Width: =90
+                              Wrap: =false
+                              X: |+
+                                =ExiteIcon1_1.X+ExiteIcon1_1.Width/2-Self.Width/2
+                              Y: =70
+            - Details:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.Start
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  DropShadow: =DropShadow.None
+                  Height: =
+                  LayoutDirection: =LayoutDirection.Vertical
+                  LayoutGap: =30
+                  LayoutMinHeight: =1
+                  LayoutMinWidth: =1
+                  LayoutOverflowY: =LayoutOverflow.Scroll
+                  PaddingLeft: =10
+                  PaddingRight: =10
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Parent.Width
+                Children:
+                  - ContainerActivities:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderThickness: =1
+                        DropShadow: =DropShadow.None
+                        Fill: =RGBA(255, 255, 255, 1)
+                        FillPortions: =0
+                        Height: =600
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =10
+                        LayoutMinHeight: =500
+                        RadiusBottomLeft: =30
+                        RadiusBottomRight: =30
+                        RadiusTopLeft: =30
+                        RadiusTopRight: =30
+                        Visible: =CountRows(MyChecklists)>0
+                        Width: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                      Children:
+                        - ContainerActivitiesHeader:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.SetByContainer
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              DropShadow: =DropShadow.None
+                              FillPortions: =0
+                              Height: =70
+                              LayoutMinHeight: =1
+                              PaddingBottom: =
+                              PaddingLeft: =
+                              PaddingRight: =
+                              PaddingTop: =
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: |-
+                                =Parent.Width
+                                -Parent.PaddingLeft
+                                -Parent.PaddingRight
+                            Children:
+                              - ContainerActivitiesIcon:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    AccessibleLabel: =" "
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    Color: =RGBA(98, 100, 167, 1)
+                                    DisabledBorderColor: =RGBA(243, 242, 241, 1)
+                                    DisabledColor: =RGBA(220, 220, 220, 1)
+                                    DisabledFill: =RGBA(0, 0, 0, 0)
+                                    DisplayMode: =DisplayMode.View
+                                    Height: =60
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverColor: =ColorFade(RGBA(98, 100, 167, 1), -30%)
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    Icon: =Icon.DockCheckProperties
+                                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                    PressedColor: =ColorFade(RGBA(98, 100, 167, 1), -30%)
+                                    PressedFill: =RGBA(0, 0, 0, 0)
+                                    TabIndex: =0
+                                    Tooltip: =" "
+                                    Width: =60
+                                    X: =15
+                                    Y: =5
+                              - ContainerActivitiesTitle:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    ContentLanguage: =Language()
+                                    DisplayMode: =DisplayMode.View
+                                    FocusedBorderThickness: =1
+                                    Font: =Font.Arial
+                                    FontWeight: =FontWeight.Bold
+                                    PaddingBottom: =0
+                                    PaddingLeft: =
+                                    PaddingRight: =
+                                    PaddingTop: =0
+                                    Size: =MyFontSize+2
+                                    TabIndex: =0
+                                    Text: |
+                                      =LookUp(colLanguage,Title="Activities" ).Wert
+                                      &" (" &CountRows(MyActivities) &")"
+                                    Tooltip: =" "
+                                    Width: =Parent.Width-Self.X-15
+                                    X: =80
+                        - Filter:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              DropShadow: =DropShadow.None
+                              FillPortions: =0
+                              Height: =90
+                              LayoutAlignItems: =LayoutAlignItems.Stretch
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =Parent.Width
+                            Children:
+                              - Search:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: ManualLayout
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    DropShadow: =DropShadow.None
+                                    Height: =Parent.Height
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Visible: =true//CountRows(MyChecklists)>0
+                                    Width: =
+                                    X: =
+                                    Y: =
+                                  Children:
+                                    - ActivitiesSearchBox:
+                                        Control: Classic/TextInput@2.3.2
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          Align: =TextPosition.Left
+                                          BorderColor: =RGBA(116, 116, 116, 1)
+                                          BorderThickness: =1
+                                          Clear: =true
+                                          ContentLanguage: =Language()
+                                          Default: =//ActivitiesSearchBoxDefault
+                                          DelayOutput: =true
+                                          DisabledFill: =RGBA(255, 255, 255, 1)
+                                          DisplayMode: |-
+                                            =If(CountRows(MyChecklists)>1,
+                                                DisplayMode.Edit
+                                            ,//Else
+                                                DisplayMode.Disabled
+                                            )
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          Height: =60
+                                          HintText: =Self.Tooltip
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =RGBA(237, 237, 237, 1)
+                                          OnChange: =
+                                          OnSelect: =Set(ShowDeleteDialog,false);
+                                          PaddingLeft: =SearchIcon1_1.Width+15
+                                          PressedColor: =Color.Black
+                                          PressedFill: =Color.White
+                                          RadiusBottomLeft: =10
+                                          RadiusBottomRight: =10
+                                          RadiusTopLeft: =10
+                                          RadiusTopRight: =10
+                                          Reset: =true
+                                          Size: =MyFontSize
+                                          Tooltip: =LookUp(colLanguage,Title="Search tooltip").Wert
+                                          Width: =Parent.Width-Self.X*2
+                                          X: =15+1
+                                          Y: =9+1
+                                    - SearchIcon1_1:
+                                        Control: Classic/Icon@2.5.0
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(128, 128, 128, 1)
+                                          ContentLanguage: =Language()
+                                          DisabledBorderColor: =RGBA(56, 56, 56, 1)
+                                          DisabledColor: =RGBA(193, 193, 193, 0.95)
+                                          DisabledFill: =SearchIcon1_1.Fill
+                                          DisplayMode: =DisplayMode.View
+                                          FocusedBorderColor: =Color.White
+                                          FocusedBorderThickness: =1
+                                          Height: =60
+                                          HoverBorderColor: =ColorFade(SearchIcon1_1.BorderColor, 20%)
+                                          HoverColor: =ColorFade(SearchIcon1_1.Color, 20%)
+                                          HoverFill: =SearchIcon1_1.Fill
+                                          Icon: =Icon.Search
+                                          OnSelect: =
+                                          PaddingBottom: =10
+                                          PaddingLeft: =10
+                                          PaddingRight: =10
+                                          PaddingTop: =10
+                                          PressedBorderColor: =ColorFade(SearchIcon1_1.BorderColor, -20%)
+                                          PressedColor: =ColorFade(SearchIcon1_1.Color, -20%)
+                                          PressedFill: =SearchIcon1_1.Fill
+                                          TabIndex: =0
+                                          Tooltip: =" "
+                                          Width: =59+1
+                                          X: =ActivitiesSearchBox.X
+                                          Y: =ActivitiesSearchBox.Y
+                              - Add:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: ManualLayout
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    DropShadow: =DropShadow.None
+                                    FillPortions: =0
+                                    Height: =Parent.Height
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Visible: |+
+                                      =CountRows(MyChecklists)>0
+                                    Width: =90
+                                    X: =
+                                    Y: =
+                                  Children:
+                                    - AddIcon1_1:
+                                        Control: Classic/Icon@2.5.0
+                                        Properties:
+                                          AccessibleLabel: =AddLabel1_1.Text
+                                          BorderColor: =RGBA(9, 33, 98, 1)
+                                          BorderStyle: =BorderStyle.None
+                                          Color: =RGBA(255, 255, 255, 1)
+                                          ContentLanguage: =Language()
+                                          DisabledFill: =RGBA(39, 113, 194, 1)
+                                          Fill: =RGBA(9, 33, 98, 1)
+                                          FocusedBorderColor: =RGBA(9, 33, 98, 1)
+                                          Height: =60
+                                          HoverBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                                          HoverFill: =RGBA(39, 113, 194, 1)
+                                          Icon: =Icon.Add
+                                          OnSelect: |+
+                                            =Set(ShowDeleteDialog,false);
+                                            ResetForm(EditForm1_2);
+                                            NewForm(EditForm1_2);
+                                            Navigate(ScreenActivityAdd);
+                                          PaddingBottom: =5
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PaddingTop: =5
+                                          PressedBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                                          PressedFill: =RGBA(39, 113, 194, 1)
+                                          TabIndex: =0
+                                          Tooltip: =LookUp(colLanguage,Title="Add tooltip").Wert
+                                          Width: =60
+                                          X: =15
+                                          Y: =10
+                                    - AddLabel1_1:
+                                        Control: FluentV8/Label@1.8.6
+                                        Properties:
+                                          Alignment: =Align.Center
+                                          Color: =RGBA(0, 0, 0, 1)
+                                          ContentLanguage: =Language()
+                                          DisplayMode: =DisplayMode.View
+                                          Font: =Font.'Patrick Hand'
+                                          FontSize: =MyFontSize-4
+                                          Height: =20
+                                          Text: =LookUp(colLanguage,Title="Add").Wert
+                                          Tooltip: =LookUp(colLanguage,Title="Add tooltip").Wert
+                                          VerticalAlignment: =VerticalAlign.Middle
+                                          Width: =90
+                                          Wrap: =false
+                                          X: |+
+                                            =AddIcon1_1.X+AddIcon1_1.Width/2-Self.Width/2
+                                          Y: =70
+                              - Sort:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: ManualLayout
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    DropShadow: =DropShadow.None
+                                    FillPortions: =0
+                                    Height: =Parent.Height
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Visible: =CountRows(MyActivities)>1
+                                    Width: =90
+                                    X: =
+                                    Y: =
+                                  Children:
+                                    - SortIcon1_1:
+                                        Control: Classic/Icon@2.5.0
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =RGBA(9, 33, 98, 1)
+                                          BorderStyle: =BorderStyle.None
+                                          Color: =RGBA(255, 255, 255, 1)
+                                          ContentLanguage: =Language()
+                                          DisabledFill: =RGBA(39, 113, 194, 1)
+                                          Fill: =RGBA(9, 33, 98, 1)
+                                          FocusedBorderColor: =RGBA(9, 33, 98, 1)
+                                          Height: =60
+                                          HoverBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                                          HoverFill: =RGBA(39, 113, 194, 1)
+                                          Icon: =Icon.Sort
+                                          OnSelect: |-
+                                            =Set(ShowDeleteDialog,false);
+                                            Set(ActivitiesSortDescending,!ChecklistsSortDescending)
+                                          PaddingBottom: =5
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PaddingTop: =5
+                                          PressedBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                                          PressedFill: =RGBA(39, 113, 194, 1)
+                                          TabIndex: =0
+                                          Tooltip: =LookUp(colLanguage,Title="Sort tooltip").Wert
+                                          Width: =60
+                                          X: =15
+                                          Y: =10
+                                    - SortLabel1_1:
+                                        Control: FluentV8/Label@1.8.6
+                                        Properties:
+                                          Alignment: =Align.Center
+                                          Color: =RGBA(0, 0, 0, 1)
+                                          ContentLanguage: =Language()
+                                          DisplayMode: =DisplayMode.View
+                                          Font: =Font.'Patrick Hand'
+                                          FontSize: =MyFontSize-4
+                                          Height: =20
+                                          Text: =LookUp(colLanguage,Title="Sort").Wert
+                                          Tooltip: =LookUp(colLanguage,Title="Sort tooltip").Wert
+                                          VerticalAlignment: =VerticalAlign.Middle
+                                          Width: =90
+                                          Wrap: =false
+                                          X: |+
+                                            =SortIcon1_1.X+SortIcon1_1.Width/2-Self.Width/2
+                                          Y: =70
+                              - Refresh:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: ManualLayout
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    DropShadow: =DropShadow.None
+                                    FillPortions: =0
+                                    Height: =Parent.Height
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Visible: =false
+                                    Width: =90
+                                    X: =
+                                    Y: =
+                                  Children:
+                                    - RefreshIcon1_2:
+                                        Control: Classic/Icon@2.5.0
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          Color: =RGBA(255, 255, 255, 1)
+                                          ContentLanguage: =Language()
+                                          DisabledFill: =RGBA(39, 113, 194, 1)
+                                          Fill: =RGBA(9, 33, 98, 1)
+                                          FocusedBorderColor: =RGBA(9, 33, 98, 1)
+                                          Height: =60
+                                          HoverBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                                          HoverFill: =RGBA(39, 113, 194, 1)
+                                          Icon: =Icon.Reload
+                                          OnSelect: |+
+                                            =Set(ShowDeleteDialog,false);
+                                            Set(InitialReadActivities,true);
+                                            //Set(ReadActivities;true);;
+                                          PaddingBottom: =5
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PaddingTop: =5
+                                          PressedBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                                          PressedFill: =RGBA(39, 113, 194, 1)
+                                          TabIndex: =0
+                                          Tooltip: |-
+                                            ="Reload data from SharePoint"
+                                            //LookUp(MyUVVSettings;Title="UVV Prüfung erfassen").Wert
+                                          Width: =60
+                                          X: =15
+                                          Y: =10
+                                    - RefreshLabel1_2:
+                                        Control: FluentV8/Label@1.8.6
+                                        Properties:
+                                          Alignment: =Align.Center
+                                          Color: =RGBA(0, 0, 0, 1)
+                                          ContentLanguage: =Language()
+                                          DisplayMode: =DisplayMode.View
+                                          Font: =Font.'Patrick Hand'
+                                          FontSize: =MyFontSize-4
+                                          Height: =20
+                                          Text: =LookUp(colLanguage,Title="Refresh").Wert
+                                          Tooltip: =LookUp(colLanguage,Title="Refresh tooltip").Wert
+                                          VerticalAlignment: =VerticalAlign.Middle
+                                          Visible: =RefreshIcon1_2.Visible
+                                          Width: =90
+                                          Wrap: =false
+                                          X: |+
+                                            =RefreshIcon1_2.X+RefreshIcon1_2.Width/2-Self.Width/2
+                                          Y: =70
+                        - Gallery:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              PaddingBottom: =5
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                            Children:
+                              - GalleryActivities:
+                                  Control: Gallery@2.15.0
+                                  Variant: BrowseLayout_Horizontal_TwoTextOneImageVariant_pcfCore
+                                  Properties:
+                                    AccessibleLabel: |-
+                                      ="Activities"
+                                      //LookUp(MyUVVSettings;Title="Serviceberichte").Wert
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    ContentLanguage: =Language()
+                                    DelayItemLoading: =false
+                                    Fill: =RGBA(241, 244, 249, 1)
+                                    FocusedBorderColor: =RGBA(98, 100, 167, 1)
+                                    FocusedBorderThickness: =2
+                                    Height: |-
+                                      =Parent.Height
+                                      -Parent.PaddingTop
+                                      -Parent.PaddingBottom
+                                      -15
+                                    ItemAccessibleLabel: |-
+                                      ="Activities"
+                                      //LookUp(MyUVVSettings;Title="Serviceberichte").Wert
+                                    Items: |+
+                                      =SortByColumns(
+                                          Filter(MyActivities, 
+                                              ActivitiesSearchBox.Text in Title||
+                                              ActivitiesSearchBox.Text in User||
+                                              ActivitiesSearchBox.Text in Date
+                                          ),
+                                          "Date", 
+                                          If(ActivitiesSortDescending,
+                                          SortOrder.Descending,SortOrder.Ascending)
+                                      )
+                                    LoadingSpinner: =LoadingSpinner.None
+                                    NavigationStep: =2
+                                    OnSelect: |+
+                                      =Set(ShowDeleteDialog,false);
+                                      Set(SelectedActivity,ThisItem.ID);
+                                      Set(ActivitySelected,true);
+                                      Navigate(ScreenActivity);
+                                    ShowNavigation: =true
+                                    TabIndex: =0
+                                    TemplatePadding: =15
+                                    TemplateSize: =Parent.Width/2-Self.TemplatePadding*2-5
+                                    Width: =Parent.Width-Self.X*2
+                                    Y: =Parent.PaddingTop
+                                  Children:
+                                    - GalleryActivitiesRectangle:
+                                        Control: Classic/TextInput@2.3.2
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          Align: =TextPosition.Left
+                                          BorderColor: |+
+                                            =If(ThisItem.ID=SelectedActivity,
+                                                galleryBorderColorSelected,
+                                                galleryBorderColor
+                                            )
+                                          BorderThickness: =1
+                                          ContentLanguage: =Language()
+                                          Default: =
+                                          DisabledFill: =GalleryActivitiesRectangle.Fill
+                                          Fill: |-
+                                            =If(ThisItem.ID=SelectedActivity,
+                                                galleryColorSelected,
+                                                Color.White
+                                                //galleryColorFill
+                                            )
+                                          FocusedBorderColor: =GalleryActivitiesRectangle.BorderColor
+                                          Height: =Parent.Height-Parent.TemplatePadding*2-25
+                                          HintText: =
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =GalleryActivitiesRectangle.Fill
+                                          OnChange: =
+                                          OnSelect: =Select(Parent)
+                                          PaddingBottom: =
+                                          PaddingLeft: =
+                                          PaddingRight: =
+                                          PaddingTop: =
+                                          PressedColor: =Color.Black
+                                          PressedFill: =GalleryActivitiesRectangle.Fill
+                                          RadiusBottomLeft: =30
+                                          RadiusBottomRight: =30
+                                          RadiusTopLeft: =30
+                                          RadiusTopRight: =30
+                                          Reset: =true
+                                          Size: =10
+                                          Tooltip: =" "
+                                          Width: =Parent.TemplateWidth
+                                    - GalleryActivitiesContainer:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: ManualLayout
+                                        Properties:
+                                          BorderThickness: =1
+                                          DropShadow: =DropShadow.ExtraBold
+                                          Fill: =RGBA(255, 255, 255, 1)
+                                          Height: =GalleryActivitiesRectangle.Height-Self.Y*2
+                                          RadiusBottomLeft: =30
+                                          RadiusBottomRight: =30
+                                          RadiusTopLeft: =30
+                                          RadiusTopRight: =30
+                                          Width: =GalleryActivitiesRectangle.Width-Self.X*2
+                                          X: =15
+                                          Y: =15
+                                        Children:
+                                          - HtmlText:
+                                              Control: HtmlViewer@2.1.0
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.Solid
+                                                ContentLanguage: =Language()
+                                                DisabledBorderColor: =RGBA(56, 56, 56, 1)
+                                                Fill: =RGBA(0, 0, 0, 0)
+                                                Font: =Font.'Open Sans'
+                                                Height: =Parent.Height
+                                                HtmlText: |+
+                                                  ="<b>"
+                                                  &"ID: " 
+                                                  &ThisItem.ID 
+                                                  &"<br />"
+                                                  &"<br />"
+                                                  &ThisItem.Date &"<br />"
+                                                  //&ThisItem.Title 
+                                                  &LookUp(MyChecklists,Title=ThisItem.Title,ChecklistText)
+                                                  //&"<br />"
+                                                  //&ThisItem.User &"<br />"
+                                                  &"</b>"
+                                                OnSelect: =Select(GalleryActivities)
+                                                PaddingBottom: =10
+                                                PaddingLeft: =10
+                                                PaddingRight: =10
+                                                PaddingTop: =10
+                                                Size: =MyFontSize-2
+                                                Tooltip: |-
+                                                  =//"ID, Date, Time, Checklist"
+                                                  LookUp(colLanguage,Title="Activities tooltip").Wert
+                                                Width: =Parent.Width-Self.X*2
+                                                X: =
+                                                Y: =
+                              - ContainerNoData:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: ManualLayout
+                                  Properties:
+                                    BorderThickness: =2
+                                    DropShadow: =DropShadow.Semibold
+                                    Fill: =RGBA(255, 255, 255, 1)
+                                    Height: =Parent.Height-Self.Y*2
+                                    RadiusBottomLeft: =30
+                                    RadiusBottomRight: =30
+                                    RadiusTopLeft: =30
+                                    RadiusTopRight: =30
+                                    Visible: |+
+                                      =CountRows(MyActivities)=0
+                                    Width: =Parent.Width-Self.X*2
+                                    X: =15
+                                    Y: =15
+                                  Children:
+                                    - NoDataImage:
+                                        Control: Image@2.2.3
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          AutoDisableOnSelect: =false
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          ContentLanguage: =Language()
+                                          DisplayMode: =DisplayMode.View
+                                          Height: |-
+                                            =Parent.Height
+                                            -NoDataLabel.Height
+                                          Image: =Anna
+                                          OnSelect: =
+                                          PaddingBottom: =50
+                                          PaddingLeft: =50
+                                          PaddingRight: =50
+                                          PaddingTop: =50
+                                          Tooltip: =" "
+                                          Width: =Parent.Width
+                                          X: =
+                                          Y: =
+                                    - NoDataLabel:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          Align: =Align.Center
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 18, 107, 1)
+                                          ContentLanguage: =Language()
+                                          DisplayMode: =DisplayMode.View
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          Height: =200
+                                          PaddingBottom: =15
+                                          PaddingTop: =15
+                                          Size: =MyFontSize+3
+                                          Text: =LookUp(colLanguage,Title="Nothing here").Wert
+                                          Tooltip: =" "
+                                          Width: =Parent.Width
+                                          X: =
+                                          Y: =NoDataImage.Height
+                  - ContainerMasterData:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DropShadow: =DropShadow.None
+                        Height: =NumberOfFlexFields.Height*2+20
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutGap: =10
+                        LayoutMinHeight: =NumberOfFlexFields.Height*2+20
+                        LayoutMinWidth: =1
+                        LayoutWrap: =true
+                        PaddingBottom: =5
+                        PaddingLeft: =2
+                        PaddingRight: =2
+                        PaddingTop: =5
+                        RadiusBottomLeft: =30
+                        RadiusBottomRight: =30
+                        RadiusTopLeft: =30
+                        RadiusTopRight: =30
+                        Visible: =CountRows(MyChecklists)>0
+                        Width: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                      Children:
+                        - NumberOfChecklists:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.SetByContainer
+                              BorderThickness: =2
+                              Fill: =RGBA(255, 255, 255, 1)
+                              FillPortions: =0
+                              Height: =135
+                              LayoutMinHeight: =1
+                              LayoutMinWidth: =1
+                              PaddingBottom: =
+                              PaddingLeft: =
+                              PaddingRight: =
+                              PaddingTop: =
+                              RadiusBottomLeft: =30
+                              RadiusBottomRight: =30
+                              RadiusTopLeft: =30
+                              RadiusTopRight: =30
+                              Width: =NumberOfFlexFields.Width
+                            Children:
+                              - ChecklistsValue:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    Align: =Align.Center
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    ContentLanguage: =Language()
+                                    FocusedBorderThickness: =2
+                                    Font: =Font.'Lato Black'
+                                    Height: =50
+                                    OnSelect: =
+                                    PaddingBottom: =
+                                    PaddingLeft: =0
+                                    PaddingRight: =
+                                    PaddingTop: =
+                                    Size: =ChecklistsTitle.Size*2
+                                    TabIndex: =0
+                                    Text: =CountRows(MyChecklists)
+                                    Tooltip: =" "
+                                    Width: =Parent.Width-Self.X-15
+                                    X: =15
+                                    Y: =70
+                              - ChecklistsIcon:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    AccessibleLabel: =" "
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    DisabledBorderColor: =RGBA(243, 242, 241, 1)
+                                    DisabledColor: =RGBA(220, 220, 220, 1)
+                                    DisabledFill: =RGBA(0, 0, 0, 0)
+                                    Height: =50
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverColor: =ColorFade(RGBA(98, 100, 167, 1), -30%)
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    Icon: =Icon.DetailList
+                                    OnSelect: =
+                                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                    PressedColor: =ColorFade(RGBA(98, 100, 167, 1), -30%)
+                                    PressedFill: =RGBA(0, 0, 0, 0)
+                                    TabIndex: =0
+                                    Tooltip: =" "
+                                    Width: =50
+                                    X: =15
+                                    Y: =10
+                              - ChecklistsTitle:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    ContentLanguage: =Language()
+                                    DisplayMode: =DisplayMode.View
+                                    FocusedBorderColor: =RGBA(109, 49, 162, 1)
+                                    FocusedBorderThickness: =1
+                                    Font: =Font.Arial
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =50
+                                    OnSelect: =
+                                    PaddingBottom: =0
+                                    PaddingLeft: =
+                                    PaddingRight: =
+                                    PaddingTop: =0
+                                    Size: =MyFontSize+2
+                                    TabIndex: =0
+                                    Text: =LookUp(colLanguage,Title="Checklists").Wert
+                                    Tooltip: =" "
+                                    Width: =Parent.Width-Self.X-15
+                                    Wrap: =false
+                                    X: =FlexFieldsTitle.X
+                                    Y: =10
+                              - ChecklistsRectangle:
+                                  Control: Rectangle@2.3.0
+                                  Properties:
+                                    AccessibleLabel: =" "
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =Parent.Height
+                                    OnSelect: =Navigate(ScreenChecklists);
+                                    TabIndex: =0
+                                    Tooltip: =" "
+                                    Width: =Parent.Width
+                                    Y: =
+                        - NumberOfFlexFields:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.SetByContainer
+                              BorderThickness: =2
+                              Fill: =RGBA(255, 255, 255, 1)
+                              FillPortions: =0
+                              Height: =135
+                              LayoutMinHeight: =1
+                              LayoutMinWidth: =1
+                              PaddingBottom: =
+                              PaddingLeft: =
+                              PaddingRight: =
+                              PaddingTop: =
+                              RadiusBottomLeft: =30
+                              RadiusBottomRight: =30
+                              RadiusTopLeft: =30
+                              RadiusTopRight: =30
+                              Width: =Parent.Width/2-10
+                              X: =
+                              Y: =
+                            Children:
+                              - FlexFieldsValue:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    Align: =Align.Center
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    ContentLanguage: =Language()
+                                    DisplayMode: =DisplayMode.View
+                                    FocusedBorderThickness: =2
+                                    Font: =Font.'Lato Black'
+                                    Height: =50
+                                    OnSelect: =
+                                    PaddingBottom: =
+                                    PaddingLeft: =0
+                                    PaddingRight: =
+                                    PaddingTop: =
+                                    Size: =FlexFieldsTitle.Size*2
+                                    TabIndex: =0
+                                    Text: =CountRows(MyFlexFields)
+                                    Tooltip: =" "
+                                    Width: =Parent.Width-Self.X-15
+                                    X: =15
+                                    Y: =70
+                              - FlexFieldsIcon:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    AccessibleLabel: =" "
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    DisabledBorderColor: =RGBA(243, 242, 241, 1)
+                                    DisabledColor: =RGBA(220, 220, 220, 1)
+                                    DisabledFill: =RGBA(0, 0, 0, 0)
+                                    DisplayMode: =DisplayMode.View
+                                    Height: =50
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverColor: =ColorFade(RGBA(98, 100, 167, 1), -30%)
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    Icon: =Icon.Text
+                                    OnSelect: =
+                                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                    PressedColor: =ColorFade(RGBA(98, 100, 167, 1), -30%)
+                                    PressedFill: =RGBA(0, 0, 0, 0)
+                                    TabIndex: =0
+                                    Tooltip: =" "
+                                    Width: =50
+                                    X: =15
+                                    Y: =10
+                              - FlexFieldsTitle:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    ContentLanguage: =Language()
+                                    DisplayMode: =DisplayMode.View
+                                    FocusedBorderThickness: =2
+                                    Font: =Font.Arial
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =50
+                                    OnSelect: =
+                                    PaddingBottom: =0
+                                    PaddingLeft: =
+                                    PaddingRight: =
+                                    PaddingTop: =0
+                                    Size: =MyFontSize+2
+                                    TabIndex: =0
+                                    Text: =LookUp(colLanguage,Title="FlexFields").Wert
+                                    Tooltip: =" "
+                                    Width: =Parent.Width-Self.X-15
+                                    Wrap: =false
+                                    X: =FlexFieldsIcon.X+FlexFieldsIcon.Width+15
+                                    Y: =10
+                              - FlexFieldsRectangle:
+                                  Control: Rectangle@2.3.0
+                                  Properties:
+                                    AccessibleLabel: =" "
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =Parent.Height
+                                    OnSelect: =Navigate(ScreenFlexFields);
+                                    TabIndex: =0
+                                    Tooltip: =" "
+                                    Width: =Parent.Width
+                                    Y: =
+                        - NumberOfStatus:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.SetByContainer
+                              BorderThickness: =2
+                              Fill: =RGBA(255, 255, 255, 1)
+                              FillPortions: =0
+                              Height: =135
+                              LayoutMinHeight: =1
+                              LayoutMinWidth: =1
+                              PaddingBottom: =
+                              PaddingRight: =
+                              PaddingTop: =
+                              RadiusBottomLeft: =30
+                              RadiusBottomRight: =30
+                              RadiusTopLeft: =30
+                              RadiusTopRight: =30
+                              Width: =NumberOfFlexFields.Width
+                            Children:
+                              - StatusValue:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    Align: =Align.Center
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    ContentLanguage: =Language()
+                                    DisplayMode: =DisplayMode.View
+                                    FocusedBorderThickness: =2
+                                    Font: =Font.'Lato Black'
+                                    Height: =50
+                                    OnSelect: =
+                                    PaddingBottom: =
+                                    PaddingLeft: =0
+                                    PaddingRight: =
+                                    PaddingTop: =
+                                    Size: =StatusTitle.Size*2
+                                    TabIndex: =0
+                                    Text: =CountRows(MyStatus)
+                                    Tooltip: =" "
+                                    Width: =Parent.Width-Self.X-15
+                                    X: =15
+                                    Y: =70
+                              - StatusIcon:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    AccessibleLabel: =" "
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    DisabledBorderColor: =RGBA(243, 242, 241, 1)
+                                    DisabledColor: =RGBA(220, 220, 220, 1)
+                                    DisabledFill: =RGBA(0, 0, 0, 0)
+                                    DisplayMode: =DisplayMode.View
+                                    Height: =50
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverColor: =ColorFade(RGBA(98, 100, 167, 1), -30%)
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    Icon: =Icon.LikeDislike
+                                    OnSelect: =
+                                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                    PressedColor: =ColorFade(RGBA(98, 100, 167, 1), -30%)
+                                    PressedFill: =RGBA(0, 0, 0, 0)
+                                    TabIndex: =0
+                                    Tooltip: =" "
+                                    Width: =50
+                                    X: =15
+                                    Y: =10
+                              - StatusTitle:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    ContentLanguage: =Language()
+                                    DisplayMode: =DisplayMode.View
+                                    FocusedBorderThickness: =2
+                                    Font: =Font.Arial
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =50
+                                    OnSelect: =
+                                    PaddingBottom: =0
+                                    PaddingLeft: =
+                                    PaddingRight: =
+                                    PaddingTop: =0
+                                    Size: =MyFontSize+2
+                                    TabIndex: =0
+                                    Text: =LookUp(colLanguage,Title="Possible status").Wert
+                                    Tooltip: =" "
+                                    Width: =Parent.Width-Self.X-15
+                                    Wrap: =false
+                                    X: =FlexFieldsTitle.X
+                                    Y: =10
+                              - StatusRectangle:
+                                  Control: Rectangle@2.3.0
+                                  Properties:
+                                    AccessibleLabel: =" "
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =Parent.Height
+                                    OnSelect: |-
+                                      =//Set(SelectedStatus;Blank());;
+                                      Navigate(ScreenStatus);
+                                    TabIndex: =0
+                                    Tooltip: =" "
+                                    Width: =Parent.Width
+                                    X: =
+                                    Y: =
+                  - ContainerChecklists:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderThickness: =1
+                        DropShadow: =DropShadow.None
+                        Fill: =RGBA(255, 255, 255, 1)
+                        FillPortions: =0
+                        Height: =400
+                        LayoutMinHeight: =1
+                        PaddingBottom: =
+                        PaddingLeft: =
+                        PaddingRight: =
+                        PaddingTop: =
+                        RadiusBottomLeft: =30
+                        RadiusBottomRight: =30
+                        RadiusTopLeft: =30
+                        RadiusTopRight: =30
+                        Visible: =false
+                        Width: |-
+                          =Parent.Width
+                          -Parent.PaddingLeft
+                          -Parent.PaddingRight
+                      Children:
+                        - ContainerChecklistsChart:
+                            Control: BarChart@2.3.0
+                            Properties:
+                              AccessibleLabel: =" "
+                              BorderStyle: =BorderStyle.None
+                              ContentLanguage: =Language()
+                              DisplayMode: |
+                                =If(ChartEdit,
+                                    DisplayMode.Edit
+                                ,//Else 
+                                    DisplayMode.View
+                                )
+                              Font: =Font.'Lato Black'
+                              GridStyle: =GridStyle.None
+                              Height: =Parent.Height-Self.Y-15
+                              ItemColorSet: =[RGBA(9, 33, 98, 1)]
+                              Items: |
+                                =AddColumns(
+                                    GroupBy(
+                                        colChecklists,
+                                        Load,REST
+                                    ),
+                                    Total,CountRows(REST)
+                                )
+                              Items.Labels: =Total
+                              Items.Series1: =Total
+                              Items.Series2: =Total
+                              Items.Series3: =Total
+                              Items.Series4: =Total
+                              Items.Series5: =Total
+                              Items.Series6: =Total
+                              Items.Series7: =Total
+                              Items.Series8: =Total
+                              Items.Series9: =Total
+                              ItemsGap: =15
+                              MarkerSuffix: =""
+                              MinimumBarWidth: =0
+                              PaddingLeft: =
+                              PaddingRight: =
+                              PaddingTop: =20
+                              SeriesAxisMax: =//Chart4Max
+                              SeriesAxisMin: =0
+                              Size: =MyFontSize
+                              Width: =Parent.Width-Self.X*2
+                              X: =15
+                              XLabelAngle: =0
+                              Y: =100
+                        - ContainerChecklistsIcon:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              AccessibleLabel: =" "
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              Color: =RGBA(98, 100, 167, 1)
+                              DisabledBorderColor: =RGBA(243, 242, 241, 1)
+                              DisabledColor: =RGBA(220, 220, 220, 1)
+                              DisabledFill: =RGBA(0, 0, 0, 0)
+                              DisplayMode: =DisplayMode.View
+                              Height: =50
+                              HoverBorderColor: =RGBA(0, 0, 0, 0)
+                              HoverColor: =ColorFade(RGBA(98, 100, 167, 1), -30%)
+                              HoverFill: =RGBA(0, 0, 0, 0)
+                              Icon: =Icon.DetailList
+                              PressedBorderColor: =RGBA(0, 0, 0, 0)
+                              PressedColor: =ColorFade(RGBA(98, 100, 167, 1), -30%)
+                              PressedFill: =RGBA(0, 0, 0, 0)
+                              TabIndex: =0
+                              Tooltip: =" "
+                              Width: =50
+                              X: =15
+                              Y: =10
+                        - ContainerChecklistsTitle:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              ContentLanguage: =Language()
+                              DisplayMode: =DisplayMode.View
+                              FocusedBorderThickness: =1
+                              Font: =Font.Arial
+                              FontWeight: =FontWeight.Bold
+                              Height: =50
+                              PaddingBottom: =0
+                              PaddingLeft: =
+                              PaddingRight: =
+                              PaddingTop: =0
+                              Size: =MyFontSize+2
+                              TabIndex: =0
+                              Text: =LookUp(colLanguage,Title="Checklists").Wert
+                              Tooltip: =" "
+                              Width: =Parent.Width-Self.X-100
+                              X: =80
+                              Y: =10
+                        - ContainerChecklistsRefresh:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              DropShadow: =DropShadow.None
+                              Height: =90
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Visible: =OnlineStatus=1
+                              Width: =90
+                              X: =Parent.Width-Self.Width
+                              Y: =
+                            Children:
+                              - RefreshIcon:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    AccessibleLabel: =Self.Tooltip
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    ContentLanguage: =Language()
+                                    DisabledFill: =RGBA(39, 113, 194, 1)
+                                    Fill: =RGBA(9, 33, 98, 1)
+                                    FocusedBorderColor: =RGBA(9, 33, 98, 1)
+                                    Height: =60
+                                    HoverBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                                    HoverFill: =RGBA(39, 113, 194, 1)
+                                    Icon: =Icon.Reload
+                                    OnSelect: |-
+                                      =Set(InitialReadChecklists,true);
+                                      Set(InitialReadStatus,true);
+                                    PaddingBottom: =5
+                                    PaddingLeft: =5
+                                    PaddingRight: =5
+                                    PaddingTop: =5
+                                    PressedBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                                    PressedFill: =RGBA(39, 113, 194, 1)
+                                    TabIndex: =0
+                                    Tooltip: =LookUp(colLanguage,Title="Refresh tooltip").Wert
+                                    Width: =60
+                                    X: =15
+                                    Y: =10
+                              - RefreshLabel:
+                                  Control: FluentV8/Label@1.8.6
+                                  Properties:
+                                    Alignment: =Align.Center
+                                    Color: =RGBA(0, 0, 0, 1)
+                                    ContentLanguage: =Language()
+                                    DisplayMode: =DisplayMode.View
+                                    Font: =Font.'Patrick Hand'
+                                    FontSize: =MyFontSize-4
+                                    Height: =20
+                                    Text: =LookUp(colLanguage,Title="Refresh").Wert
+                                    Tooltip: =LookUp(colLanguage,Title="Refresh tooltip").Wert
+                                    VerticalAlignment: =VerticalAlign.Middle
+                                    Visible: =RefreshIcon.Visible
+                                    Width: =90
+                                    Wrap: =false
+                                    X: |+
+                                      =RefreshIcon.X+RefreshIcon.Width/2-Self.Width/2
+                                    Y: =70
+                        - ContainerChecklistsNoData:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              BorderThickness: =2
+                              DropShadow: =DropShadow.Semibold
+                              Fill: =RGBA(255, 255, 255, 1)
+                              Height: =ContainerChecklistsChart.Height
+                              RadiusBottomLeft: =30
+                              RadiusBottomRight: =30
+                              RadiusTopLeft: =30
+                              RadiusTopRight: =30
+                              Visible: |+
+                                =!InitialReadChecklists &&
+                                !_ShowLoadingHint && 
+                                CountRows(MyChecklists)=0
+                              Width: =ContainerChecklistsChart.Width
+                              X: =ContainerChecklistsChart.X
+                              Y: =ContainerChecklistsChart.Y
+                            Children:
+                              - NoDataImage1_1:
+                                  Control: Image@2.2.3
+                                  Properties:
+                                    AccessibleLabel: =Self.Tooltip
+                                    AutoDisableOnSelect: =false
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    ContentLanguage: =Language()
+                                    DisplayMode: =DisplayMode.View
+                                    Height: |-
+                                      =Parent.Height
+                                      -NoDataLabel1_1.Height
+                                    Image: =Anna
+                                    OnSelect: =
+                                    PaddingBottom: =50
+                                    PaddingLeft: =50
+                                    PaddingRight: =50
+                                    PaddingTop: =50
+                                    Tooltip: =" "
+                                    Width: =Parent.Width
+                                    X: =
+                                    Y: =
+                              - NoDataLabel1_1:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    Align: =Align.Center
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    ContentLanguage: =Language()
+                                    DisplayMode: =DisplayMode.View
+                                    Font: =Font.'Open Sans'
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =200
+                                    PaddingBottom: =15
+                                    PaddingTop: =15
+                                    Size: =MyFontSize+3
+                                    Text: =LookUp(colLanguage,Title="Nothing here").Wert
+                                    Tooltip: =" "
+                                    Width: =Parent.Width
+                                    X: =
+                                    Y: =Parent.Height-Self.Height
+                        - ContainerChecklistsRectangle:
+                            Control: Rectangle@2.3.0
+                            Properties:
+                              AccessibleLabel: ="Chart Checklists"
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              Fill: =RGBA(0, 0, 0, 0)
+                              Height: =ContainerChecklistsChart.Height
+                              OnSelect: |-
+                                =UpdateContext({ChartEdit:false}); 
+                                Navigate(ScreenChecklists);
+                              TabIndex: =0
+                              Width: =ContainerChecklistsChart.Width
+                              X: =ContainerChecklistsChart.X
+                              Y: =ContainerChecklistsChart.Y
+                  - HtmlText2:
+                      Control: HtmlViewer@2.1.0
+                      Properties:
+                        AutoHeight: =true
+                        DisplayMode: =DisplayMode.View
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =1
+                        HtmlText: |+
+                          ="Location.Altitude:"&Location.Altitude &"<br />"
+                          &"<br />"
+                          &"Acceleration.X:"&Acceleration.X &"<br />"
+                          &"Acceleration.Y:"&Acceleration.Y &"<br />"
+                          &"Acceleration.Z:"&Acceleration.Z &"<br />"
+                          &"<br />"
+                          &"MyDeviceType:"&MyDeviceType &"<br />"
+                          &"<br />"
+                        LayoutMinHeight: =1
+                        Visible: =false
+                        Width: =Parent.Width
+            - FooterLabel:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Right
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  Color: =RGBA(255, 255, 255, 1)
+                  DisplayMode: =DisplayMode.View
+                  Fill: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Lighter
+                  Height: =50
+                  PaddingLeft: =15
+                  PaddingRight: =15
+                  Size: =MyFontSize-3
+                  Text: "=If(!IsBlank(FooterText),\r\n    FooterText,\r\n    \"v\"\r\n    &MyVersion\r\n    &\"|\"&MyDeviceType\r\n    &If(OnlineStatus=0,\"|Offline\",\"|Online\")\r\n    &\"|\"&MyLanguage\r\n    &\"|\"&App.Width &\"x\" &App.Height\r\n    \r\n    //&\"|Mode:\"&EditForm1_15.Mode //(0=Edit;1=Add)\r\n    //&\"|SelectedChecklist:\"&SelectedChecklist\r\n    //&\"|SelA:\"&SelectedActivity\r\n)\r\n"
+                  Width: =Parent.Width
+                  Y: =Parent.Height-Self.Height
+      - TimerDefaultWerteLaden:
+          Control: Timer@2.1.0
+          Properties:
+            AutoStart: =StartTimer
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+            DisabledColor: =ColorFade(Self.Fill, 90%)
+            DisabledFill: =ColorFade(Self.Fill, 70%)
+            Duration: =1000
+            Fill: =RGBA(56, 96, 178, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
+            Height: =163
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnTimerEnd: =
+            OnTimerStart: "=//Set( CurrentTime; Now() );;\r\n//------------------------------------------------\r\nIf(Connection.Connected,\r\n    Set (OnlineStatus, 1)\r\n,// Else    \r\n    Set (OnlineStatus, 0)\r\n);\r\n//------------------------------------------------\r\nIf(IsBlank(MyDeviceType),\r\n    Set(MyDeviceType,\r\n        If(Location.Altitude > 0 || \r\n        !IsBlank(Acceleration.X)||\r\n        Acceleration.Y > 0 ||\r\n        Acceleration.Z > 0,\r\n            \"Mobile\",\r\n            \"Desktop\"\r\n        )\r\n    );\r\n);\r\n//------------------------------------------------\r\n//Load language\r\nIf(IsBlank(InitialReadLanguage)||InitialReadLanguage,\r\n    Set(_ShowLoadingHint,true);\r\n    //-----------------------------------------------------\r\n    Set(InitialReadLanguage,false);\r\n    //-----------------------------------------------------\r\n    If(OnlineStatus=1,\r\n        //load language from SP list\r\n        Set(FooterText,\"Loading language\");\r\n        Refresh(pssChecklistsLanguages);\r\n        ClearCollect(colLanguage,\r\n            ShowColumns(\r\n                Filter(pssChecklistsLanguages,\r\n                    LanguageTag=Left(Language(),2)\r\n                ),\r\n                ID,Title,Wert\r\n            )\r\n        );\r\n        // Save language locally\r\n        If(MyDeviceType=\"Mobile\",\r\n            SaveData(colLanguage,\"Language\")  \r\n        );\r\n    ,//Else\r\n        If(MyDeviceType=\"Mobile\",\r\n            Clear(colLanguage);\r\n            Set(FooterText,\"Loading language from cache\");\r\n            LoadData(colLanguage,\"Language\",true);\r\n        )\r\n    );\r\n    Set(FooterText,\"\");\r\n    Set(_ShowLoadingHint,false); \r\n);\r\n//------------------------------------------------\r\n//Load activities from cache (on mobile devices)\r\nIf((IsBlank(InitialReadActivities)||InitialReadActivities) && MyDeviceType=\"Mobile\",\r\n    Set(_ShowLoadingHint,true);\r\n    //-----------------------------------------------------\r\n    Set(InitialReadActivities,false);\r\n    //-----------------------------------------------------\r\n    ClearCollect(MyActivities, \r\n    {\r\n        ID:Value(Text(CountRows(MyActivities)+1)), \r\n        KEY:\"\",\r\n        Title:\"Checklist\",\r\n        User:User().FullName,\r\n        UserEMail:\"\",\r\n        Date:Now(),\r\n        DocumentStatus:\"New\",\r\n        Comments:\"\"\r\n    }\r\n    );\r\n    Clear(MyActivities); \r\n\r\n    ClearCollect(MyActivitiesP,\r\n    {\r\n        ParentID:1,\r\n        KEY:\"\",\r\n        Pos:1,\r\n        Checkpoint:\"Checkpoint\",\r\n        CheckpointText:\"CheckpointText\",\r\n        Status:\"Status\",\r\n        StatusText:\"\",\r\n        DefectClass:0,\r\n        Comments:\"Comments\",\r\n        F1:\"Text1\",\r\n        F2:\"Text2\",\r\n        F3:\"Text3\",\r\n        F4:\"Text4\",\r\n        F5:\"Text5\",\r\n        F1Title:\"Title1\",\r\n        F2Title:\"Title2\",\r\n        F3Title:\"Title3\",\r\n        F4Title:\"Title4\",\r\n        F5Title:\"Title5\",\r\n        F1Label:\"Label1\",\r\n        F2Label:\"Label2\",\r\n        F3Label:\"Label3\",\r\n        F4Label:\"Label4\",\r\n        F5Label:\"Label5\"\r\n    }\r\n    );\r\n    Clear(MyActivitiesP);\r\n    //-----------------------------------------------------\r\n    //If(MyDeviceType=\"Mobile\";\r\n        Clear(MyActivities);\r\n        Set(FooterText,\"Loading activities from cache\");\r\n        LoadData(MyActivities,\"Activities\",true);\r\n        LoadData(MyActivitiesP,\"ActivitiesP\",true);\r\n    //);;\r\n    //-------------------------------------------------\r\n    Set(FooterText,\"\");\r\n    Set(_ShowLoadingHint,false); \r\n);\r\n//------------------------------------------------\r\n//Response types\r\nIf(IsBlank(InitialReadResponseTypes)||InitialReadResponseTypes,\r\n    Set(_ShowLoadingHint,true);\r\n    Set(InitialReadResponseTypes,false);\r\n    ClearCollect(colResponseTypes,\r\n        {Type:\"Text\"},\r\n        {Type:\"Number\"},\r\n        {Type:\"Combobox\"},\r\n        {Type:\"Radio\"},\r\n        {Type:\"Date\"}\r\n    );\r\n    Set(_ShowLoadingHint,false); \r\n);\r\n//------------------------------------------------\r\n//Load checklists\r\nIf(IsBlank(InitialReadChecklists)||InitialReadChecklists,\r\n    Set(_ShowLoadingHint,true);\r\n    //-----------------------------------------------------\r\n    Set(InitialReadChecklists,false);\r\n    //-----------------------------------------------------\r\n    If(IsBlank(ChecklistsSortDescending),\r\n        Set(ChecklistsSortDescending,false)\r\n    );\r\n    If(IsBlank(CheckpointsSortDescending),\r\n        Set(CheckpointsSortDescending,false)\r\n    );\r\n    If(IsBlank(FlexFieldsSortDescending),\r\n        Set(FlexFieldsSortDescending,false)\r\n    );\r\n    //-----------------------------------------------------\r\n    If(OnlineStatus=1,\r\n        //-------------------------------------------------\r\n        //load checklists from SP list\r\n        Set(FooterText,\"Loading checklists\");\r\n        Refresh(pssChecklistsChecklists);\r\n        ClearCollect(colChecklists,\r\n            ShowColumns(\r\n                Filter(pssChecklistsChecklists,\r\n                    Load=true\r\n                ),\r\n                ID,Title,Load\r\n            )\r\n        );\r\n        // Save checklists locally\r\n        If(MyDeviceType=\"Mobile\",\r\n            SaveData(colChecklists,\"Checklists\")  \r\n        );\r\n        //-------------------------------------------------\r\n        Set(FooterText,\"Loading checklists text\");\r\n        Refresh(pssChecklistsChecklistsText);\r\n        ClearCollect(colChecklistsText,\r\n            ShowColumns(\r\n                Filter(pssChecklistsChecklistsText,\r\n                    Load=true\r\n                ),\r\n                ID,Title,ChecklistText,Description,LanguageTag\r\n            )\r\n        );\r\n        // Save checklists text locally\r\n        If(MyDeviceType=\"Mobile\",\r\n            SaveData(colChecklistsText,\"ChecklistsText\")  \r\n        );\r\n        //-------------------------------------------------\r\n        //load checkpoints from SP list\r\n        Set(FooterText,\"Loading checkpoints\");\r\n        Refresh(pssChecklistsCheckpoints);\r\n        ClearCollect(colCheckpoints,\r\n            ShowColumns(\r\n                Filter(pssChecklistsCheckpoints,\r\n                    Load=true\r\n                ),\r\n                ID,Title,Checkpoint,Pos,Required,PossibleStatus,Status1,Status2,Status3,Status4,Status5,FlexForm\r\n            )\r\n        );\r\n        // Save checkpoints locally\r\n        If(MyDeviceType=\"Mobile\",\r\n            SaveData(colCheckpoints,\"Checkpoints\")  \r\n        );\r\n        //-------------------------------------------------\r\n        Set(FooterText,\"Loading checkpoints text\");\r\n        Refresh(pssChecklistsCheckpointsText);\r\n        ClearCollect(colCheckpointsText,\r\n            ShowColumns(\r\n                Filter(pssChecklistsCheckpointsText,\r\n                    Load=true\r\n                ),\r\n                ID,Title,Checkpoint,CheckpointText,Description,LanguageTag\r\n            )\r\n        );\r\n        // Save checkpoints text locally\r\n        If(MyDeviceType=\"Mobile\",\r\n            SaveData(colCheckpointsText,\"CheckpointsText\")  \r\n        );\r\n        //-------------------------------------------------\r\n        //load flex fields from SP list\r\n        Set(FooterText,\"Loading flex fields\");\r\n        Refresh(pssChecklistsFlexFields);\r\n        ClearCollect(colFlexFields,\r\n            ShowColumns(\r\n                Filter(pssChecklistsFlexFields,\r\n                    Load=true\r\n                ),\r\n                ID,Title,ResponseType,Choices,Load\r\n            )\r\n        );\r\n        // Save flex fields locally\r\n        If(MyDeviceType=\"Mobile\",\r\n            SaveData(colFlexFields,\"FlexFields\")  \r\n        );\r\n        //-------------------------------------------------\r\n        //load flex fields text from SP list\r\n        Set(FooterText,\"Loading flex fields text\");\r\n        Refresh(pssChecklistsFlexFieldsText);\r\n        ClearCollect(colFlexFieldsText,\r\n            ShowColumns(\r\n                Filter(pssChecklistsFlexFieldsText,\r\n                    Load=true\r\n                ),\r\n                ID,Title,Text,LanguageTag\r\n            )\r\n        );\r\n        // Save checklists text locally\r\n        If(MyDeviceType=\"Mobile\",\r\n            SaveData(colFlexFieldsText,\"FlexFieldsText\")  \r\n        );\r\n    ,//Else\r\n        If(MyDeviceType=\"Mobile\",\r\n            Clear(colChecklists);\r\n            Clear(colChecklistsText);\r\n            Clear(colCheckpoints);\r\n            Clear(colCheckpointsText);\r\n            Clear(colFlexFields);\r\n            Clear(colFlexFieldsText);\r\n            \r\n            Set(FooterText,\"Loading checklists from cache\");\r\n            LoadData(colChecklists,\"Checklists\",true);\r\n\r\n            Set(FooterText,\"Loading checklists text from cache\");\r\n            LoadData(colChecklistsText,\"ChecklistsText\",true);\r\n            \r\n            Set(FooterText,\"Loading checkpoints from cache\");\r\n            LoadData(colCheckpoints,\"Checkpoints\",true);\r\n\r\n            Set(FooterText,\"Loading checkpoints text from cache\");\r\n            LoadData(colCheckpointsText,\"CheckpointsText\",true);\r\n            \r\n            Set(FooterText,\"Loading flex fields from cache\");\r\n            LoadData(colFlexFields,\"FlexFields\",true);\r\n\r\n            Set(FooterText,\"Loading flex fields text from cache\");\r\n            LoadData(colFlexFieldsText,\"FlexFieldsText\",true);\r\n        )\r\n    );\r\n    //-------------------------------------------------\r\n    If(OnlineStatus=1 || MyDeviceType=\"Mobile\",\r\n        Set(FooterText,\"Loading MyChecklists\");\r\n        ClearCollect(MyChecklists,\r\n            SortByColumns(\r\n                AddColumns(\r\n                    ShowColumns(\r\n                        colChecklists,\r\n                        Title\r\n                    ) As aSource,\r\n\r\n                    ChecklistText,\r\n                        LookUp(colChecklistsText,\r\n                        Title=aSource.Title&&\r\n                        LanguageTag=Left(Language(),2),\r\n                        ChecklistText),\r\n                    \r\n                    Description,\r\n                        LookUp(colChecklistsText,\r\n                        Title=aSource.Title&&\r\n                        LanguageTag=Left(Language(),2),\r\n                        Description),\r\n\r\n                    Checkpoints,\r\n                        ShowColumns(\r\n                            Filter(colCheckpoints,\r\n                            Title=aSource.Title\r\n                            ),\r\n                            Title,Checkpoint\r\n                        )\r\n\r\n                ),\r\n                \"ChecklistText\",If(ChecklistsSortDescending,\r\n                SortOrder.Descending,SortOrder.Ascending)\r\n            )\r\n        )\r\n    );\r\n    If(CountRows(MyChecklists)>0,\r\n        Set(SelectedChecklist,First(MyChecklists).Title);\r\n        Set(ChecklistSelected,true);\r\n    ,//Else\r\n        Set(SelectedChecklist,\"\");\r\n        Set(ChecklistSelected,false);\r\n    );\r\n    //-------------------------------------------------\r\n    If(OnlineStatus=1 || MyDeviceType=\"Mobile\",\r\n        Set(FooterText,\"Loading MyFlexFields\");\r\n        ClearCollect(MyFlexFields,\r\n            SortByColumns(\r\n                AddColumns(\r\n                    ShowColumns(\r\n                        colFlexFields,\r\n                        Title,ResponseType,Choices\r\n                    ) As aSource,\r\n\r\n                    FlexFieldText,\r\n                        LookUp(colFlexFieldsText,\r\n                        Title=aSource.Title&&\r\n                        LanguageTag=Left(Language(),2),\r\n                        Text)\r\n\r\n                ),\r\n                \"FlexFieldText\",If(FlexFieldsSortDescending,\r\n                SortOrder.Descending,SortOrder.Ascending)\r\n            )\r\n        );\r\n        Collect(MyFlexFields, \r\n        {\r\n            Title:\"\",\r\n            ResponseType:\"\",\r\n            Choices:\"\",\r\n            FlexFieldText:\"\"\r\n        });\r\n    );\r\n    If(CountRows(MyFlexFields)>0,\r\n        Set(SelectedFlexField,First(MyFlexFields).Title);\r\n        Set(FlexFieldSelected,true);\r\n    ,//Else\r\n        Set(SelectedFlexField,\"\");\r\n        Set(FlexFieldSelected,false);\r\n    );\r\n    //-------------------------------------------------\r\n    Set(FooterText,\"\");\r\n    Set(_ShowLoadingHint,false); \r\n);\r\n//------------------------------------------------\r\n//Load status\r\nIf(IsBlank(InitialReadStatus)||InitialReadStatus,\r\n    Set(_ShowLoadingHint,true);\r\n    //-----------------------------------------------------\r\n    Set(InitialReadStatus,false);\r\n    //-----------------------------------------------------\r\n    If(OnlineStatus=1,\r\n        //load status from SP list\r\n        Set(FooterText,\"Loading status\");\r\n        Refresh(pssChecklistsStatus);\r\n        ClearCollect(colStatus,\r\n            AddColumns(\r\n                ShowColumns(\r\n                    pssChecklistsStatus,\r\n                    ID,Status,DefectClass,Icon\r\n                ) As aSource,\r\n                StatusText,                        \r\n                    LookUp(pssChecklistsStatusText,\r\n                    Status=aSource.Status &&\r\n                    LanguageTag=Left(Language(),2),\r\n                    StatusText)\r\n            )\r\n        );\r\n        // Save status locally\r\n        If(MyDeviceType=\"Mobile\",\r\n            SaveData(colStatus,\"Status\")  \r\n        );\r\n    ,//Else\r\n        If(MyDeviceType=\"Mobile\",\r\n            Clear(colStatus);\r\n            Set(FooterText,\"Loading status from cache\");\r\n            LoadData(colStatus,\"Status\",true);\r\n        )\r\n    );\r\n    //-------------------------------------------------\r\n    If(OnlineStatus=1 || MyDeviceType=\"Mobile\",\r\n        ClearCollect(MyStatus,\r\n            SortByColumns(\r\n                ShowColumns(\r\n                    colStatus,\r\n                    Status,DefectClass,Icon,StatusText\r\n                ),\r\n                \"StatusText\",SortOrder.Ascending\r\n            )\r\n        )\r\n    );\r\n    Set(FooterText,\"\");\r\n    Set(_ShowLoadingHint,false); \r\n);\r\n//------------------------------------------------\r\n//List of possible icons\r\nIf(IsBlank(InitialReadIcons)||InitialReadIcons,\r\n    Set(_ShowLoadingHint,true);\r\n    //-----------------------------------------------------\r\n    Set(InitialReadIcons,false);\r\n    //-----------------------------------------------------\r\n    ClearCollect(colIcons, \r\n        {Value:\"Icon.Add\",Icon:Icon.Add},\r\n        {Value:\"Icon.AddDocument\",Icon:Icon.AddDocument},\r\n        {Value:\"Icon.AddLibrary\",Icon:Icon.AddLibrary},\r\n        {Value:\"Icon.AddToCalendar\",Icon:Icon.AddToCalendar},\r\n        {Value:\"Icon.AddUser\",Icon:Icon.AddUser},\r\n        {Value:\"Icon.Blocked\",Icon:Icon.Blocked},\r\n        {Value:\"Icon.Flag\",Icon:Icon.Flag},\r\n        {Value:\"Icon.CheckBadge\",Icon:Icon.CheckBadge},\r\n        {Value:\"Icon.ThumbsUp\",Icon:Icon.ThumbsUp},\r\n        {Value:\"Icon.ThumbsDown\",Icon:Icon.ThumbsDown},\r\n        {Value:\"Icon.EmojiNeutral\",Icon:Icon.EmojiNeutral},\r\n        {Value:\"Icon.EmojiHappy\",Icon:Icon.EmojiHappy},\r\n        {Value:\"Icon.EmojiSmile\",Icon:Icon.EmojiSmile},\r\n        {Value:\"Icon.EmojiSad\",Icon:Icon.EmojiSad},\r\n        {Value:\"Icon.Warning\",Icon:Icon.Warning},\r\n        {Value:\"Icon.Medical\",Icon:Icon.Medical},\r\n        {Value:\"Icon.Enhance\",Icon:Icon.Enhance}\r\n    );\r\n    Set(FooterText,\"\");\r\n    Set(_ShowLoadingHint,false); \r\n);\r\n//------------------------------------------------\r\n\r\n\r\n"
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Repeat: =true
+            Visible: =false
+            Width: =608
+            X: =17
+            Y: =885
+      - ImageLoading_8:
+          Control: Image@2.2.3
+          Properties:
+            AccessibleLabel: =" "
+            BorderColor: =RGBA(0, 18, 107, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =150
+            Image: =Loading_1
+            ImagePosition: =ImagePosition.Fill
+            TabIndex: =0
+            Visible: =_ShowLoadingHint
+            Width: =150
+            X: =Parent.Width/2 - Self.Width/2
+            Y: =Parent.Height/2 - Self.Height/2

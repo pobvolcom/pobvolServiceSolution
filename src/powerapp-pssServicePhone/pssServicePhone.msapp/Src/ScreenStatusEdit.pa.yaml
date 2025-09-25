@@ -1,0 +1,1010 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  ScreenStatusEdit:
+    Properties:
+      BackgroundImage: ='uvv-clouds'
+      Fill: =RGBA(0, 0, 0, 0)
+      Height: |-
+        =//Max(App.Height; App.MinScreenHeight)
+        Max(App.Height, App.DesignHeight)
+      ImagePosition: =ImagePosition.Fill
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+      Width: |-
+        =//Max(App.Width; App.MinScreenWidth)
+        Max(App.Width, App.DesignWidth)
+    Children:
+      - MainContainer1_31:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            DropShadow: =DropShadow.None
+            Height: =Parent.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =10
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Parent.Width
+            X: =
+            Y: =
+          Children:
+            - Header1_31:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =88
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutMinHeight: =40
+                  LayoutMinWidth: =Parent.Width-15
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Parent.Width
+                Children:
+                  - HeaderLabel1_31:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        ContentLanguage: =Language()
+                        FillPortions: =1
+                        Font: =Font.'Open Sans'
+                        Height: =Parent.Height
+                        LayoutMinWidth: =1
+                        OnSelect: =
+                        PaddingLeft: =15
+                        Size: =MyFontSize+5
+                        Text: |+
+                          =//0=Edit;1=Add
+                          If(EditForm1_31.Mode=0,
+                              LookUp(colLanguage,Title="Edit status",Wert)
+                          ,//Else
+                              LookUp(colLanguage,Title="Add status",Wert)
+                          )
+                        Tooltip: =" "
+                        Width: =
+                        X: =
+                        Y: =
+                  - Back1_31:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =Parent.Height
+                        LayoutMinHeight: =
+                        LayoutMinWidth: =
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =90
+                        X: =
+                        Y: =
+                      Children:
+                        - BackIcon1_31:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              AccessibleLabel: =Self.Tooltip
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisabledFill: =RGBA(39, 113, 194, 1)
+                              FocusedBorderColor: =RGBA(9, 33, 98, 1)
+                              Height: =60
+                              HoverBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                              HoverFill: =RGBA(39, 113, 194, 1)
+                              Icon: =Icon.ArrowLeft
+                              OnSelect: =Navigate(ScreenStatus);
+                              PressedBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                              PressedFill: =RGBA(39, 113, 194, 1)
+                              TabIndex: =0
+                              Tooltip: =LookUp(colLanguage,Title="Back",Wert)
+                              Width: =60
+                              X: =15
+                              Y: =15
+                        - BackLabel1_31:
+                            Control: FluentV8/Label@1.8.6
+                            Properties:
+                              Alignment: =Align.Center
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisplayMode: =DisplayMode.View
+                              Font: =Font.'Patrick Hand'
+                              FontSize: =MyFontSize-4
+                              Height: =30
+                              Text: =LookUp(colLanguage,Title="Back",Wert)
+                              Tooltip: =" "
+                              VerticalAlignment: =VerticalAlign.Middle
+                              Visible: =BackIcon1_31.Visible
+                              Width: =90
+                              X: |+
+                                =BackIcon1_31.X+BackIcon1_31.Width/2-Self.Width/2
+                              Y: =58
+            - Body1_31:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.Start
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  DropShadow: =DropShadow.None
+                  Height: =88
+                  LayoutAlignItems: =LayoutAlignItems.Stretch
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutMinHeight: =40
+                  LayoutMinWidth: =Parent.Width-15
+                  PaddingLeft: =10
+                  PaddingRight: =10
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Parent.Width
+                Children:
+                  - ContainerEdit1_31:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Start
+                        BorderThickness: =2
+                        DropShadow: =DropShadow.None
+                        Fill: |-
+                          =RGBA(241, 244, 249, 1)
+                          //RGBA(244; 244; 243; 1)
+                        FillPortions: =0
+                        Height: |+
+                          =Parent.Height
+                          -Parent.PaddingTop
+                          -Parent.PaddingBottom
+                        LayoutMinHeight: =If(Self.Visible,Parent.Height-15,0)
+                        LayoutMinWidth: =1
+                        RadiusBottomLeft: =30
+                        RadiusBottomRight: =30
+                        RadiusTopLeft: =30
+                        RadiusTopRight: =30
+                        Width: |+
+                          =Parent.Width-Self.X*2
+                        X: =19+1
+                        Y: =20
+                      Children:
+                        - SaveGroupButton1_31:
+                            Control: Classic/Button@2.2.0
+                            Group: SaveGroup1_31
+                            Properties:
+                              BorderThickness: =0
+                              Color: =RGBA(255,255,255,1)
+                              ContentLanguage: =Language()
+                              DisplayMode: =If(OnlineStatus=1,DisplayMode.Edit,DisplayMode.Disabled)
+                              Fill: =RGBA(56, 96, 178, 1)
+                              Height: =60
+                              HoverBorderColor: =
+                              HoverColor: =RGBA(255, 255, 255, 1)
+                              HoverFill: =RGBA(9, 33, 98, 1)
+                              OnSelect: |+
+                                =// ScreenStatusEdit_SaveGroupButton1_31.vba
+
+                                Set (ShowDeleteDialog,false);
+                                Set(_ShowLoadingHint,true);
+                                //--------------------------------------------------
+                                UpdateContext({locInputCheck:true});
+                                //--------------------------------------------------
+                                // Status
+                                If(IsBlank(DataCardValue1_31.Text), 
+                                    UpdateContext({locInputCheck:false});
+                                    Notify("Status must not be empty");
+                                );
+                                // Language
+                                If(IsBlank(DataCardValue2_31.Text), 
+                                    UpdateContext({locInputCheck:false});
+                                    Notify("Language must not be empty");
+                                );
+                                //Label
+                                If(IsBlank(DataCardValue3_31.Text),
+                                    UpdateContext({locInputCheck:false});
+                                    Notify("Label must not be empty");
+                                );
+                                //Defect class
+                                If( Value(DataCardValue4_31.Text)<0||
+                                    Value(DataCardValue4_31.Text)>10,
+                                    UpdateContext({locInputCheck:false});
+                                    Notify("Defect class must be >=0 and <=10");
+                                );
+                                //Icon
+                                If(IsBlank(DCIcon5_31.Selected.Value),
+                                    UpdateContext({locInputCheck:false});
+                                    Notify("Icon must not be empty");
+                                );
+                                //--------------------------------------------------
+                                //Daten speichern
+                                //If(locInputCheck, 
+                                //    SubmitForm(EditForm1_31); 
+                                //);
+                                //--------------------------------------------------
+                                If(locInputCheck, 
+                                    Patch(MyStatus, 
+                                        LookUp(MyStatus,Status=SelectedStatus),
+                                        {
+                                            StatusText:DataCardValue3_31.Text,
+                                            DefectClass:Value(DataCardValue4_31.Text),
+                                            Icon:DCIcon5_31.Selected.Value
+                                        }
+                                    );    
+
+                                    If(!IsEmpty(Errors([@MyStatus])),
+                                        Set(locErrorCode,
+                                            "Error! Could not patch the record."
+                                        );
+                                        Notify(
+                                            locErrorCode,
+                                            //LookUp(MyUVVSettings;
+                                            //Title="Fehler beim Speichern!").Wert;
+                                            NotificationType.Error, 
+                                            2000
+                                        );
+                                    , //Else
+                                        Set(locErrorCode,"");
+                                    );
+
+                                    If(IsBlank(locErrorCode),
+                                        Patch(colStatus, 
+                                            LookUp(colStatus,Status=SelectedStatus),
+                                            {
+                                                StatusText:DataCardValue3_31.Text,
+                                                DefectClass:Value(DataCardValue4_31.Text),
+                                                Icon:DCIcon5_31.Selected.Value
+                                            }
+                                        );    
+                                    );
+
+                                    If(IsBlank(locErrorCode) && OnlineStatus=1,
+
+                                        //Record available?
+                                        Set(PatchID,0);
+                                        Set(PatchID,
+                                            LookUp(pssChecklistsStatus,
+                                            Status=SelectedStatus).ID
+                                        );
+                                        Patch(pssChecklistsStatus, 
+                                            If(PatchID>0,
+                                                LookUp(pssChecklistsStatus,ID=PatchID)
+                                            ,//Else
+                                                Defaults(pssChecklistsStatus)
+                                            ),
+                                            {
+                                                Title:"Status",
+                                                Status:SelectedStatus,
+                                                DefectClass:Value(DataCardValue4_31.Text),
+                                                Icon:DCIcon5_31.Selected.Value
+                                            }
+                                        );    
+
+                                        //Record available?
+                                        Set(PatchID,0);
+                                        Set(PatchID,
+                                            LookUp(pssChecklistsStatusText,
+                                                Status=SelectedStatus&&
+                                                LanguageTag=MyLanguage
+                                            ).ID
+                                        );
+                                        Patch(pssChecklistsStatusText, 
+                                            If(PatchID>0,
+                                                LookUp(pssChecklistsStatusText,ID=PatchID)
+                                            ,//Else
+                                                Defaults(pssChecklistsStatusText)
+                                            ),
+                                            {
+                                                Title:"S",
+                                                Status:SelectedStatus,
+                                                LanguageTag:MyLanguage,
+                                                StatusText:DataCardValue3_31.Text
+                                            }
+                                        );    
+                                    );
+                                );
+                                //--------------------------------------------------
+                                //Daten neu einlesen
+                                Set(_ShowLoadingHint,false);
+                                If(locInputCheck, 
+                                    //Set(ReadStatus;true);;
+                                    Set(StatusSelected,true);
+                                    Navigate(ScreenStatus);
+                                );
+                              PaddingLeft: =45
+                              PressedBorderColor: =
+                              PressedColor: =RGBA(255, 255, 255, 1)
+                              PressedFill: =RGBA(9, 33, 98, 1)
+                              Size: =MyFontSize-3
+                              Text: |+
+                                =LookUp(colLanguage,Title="Save").Wert
+                              Tooltip: =Self.Text
+                              Width: =Parent.Width/2
+                              X: =Parent.Width/2-Self.Width/2
+                              Y: =Parent.Height-Self.Height-15
+                        - SaveGroupIcon1_31:
+                            Control: Classic/Icon@2.5.0
+                            Group: SaveGroup1_31
+                            Properties:
+                              AccessibleLabel: =Self.Tooltip
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisplayMode: =If(OnlineStatus=1,DisplayMode.Edit,DisplayMode.Disabled)
+                              FocusedBorderColor: =Color.White
+                              FocusedBorderThickness: =1
+                              Height: =SaveGroupButton1_31.Height
+                              Icon: =Icon.Save
+                              PaddingBottom: =9
+                              PaddingLeft: =9
+                              PaddingRight: =9
+                              PaddingTop: =9
+                              TabIndex: =0
+                              Tooltip: =SaveGroupButton1_31.Text
+                              Width: =SaveGroupButton1_31.Height
+                              X: =SaveGroupButton1_31.X
+                              Y: =Parent.Height-Self.Height-15
+                        - EditForm1_31:
+                            Control: Form@2.4.4
+                            Variant: Classic
+                            Layout: Vertical
+                            Properties:
+                              AcceptsFocus: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              ContentLanguage: =Language()
+                              DataSource: |-
+                                =MyStatus
+                                //pssChecklistsStatus
+                              FocusedBorderThickness: =2
+                              Height: =SaveGroupButton1_31.Y-Self.Y-15
+                              Item: |-
+                                =First(Filter(MyStatus,Status=SelectedStatus))
+                                //First(Filter(pssChecklistsStatus;Status=SelectedStatus))
+                              SnapToColumns: =false
+                              Width: =Parent.Width-2
+                              Y: =14+1
+                            Children:
+                              - Status_DataCard1_31:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: ClassicTextualEdit
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    DataField: ="Status"
+                                    Default: =ThisItem.Status
+                                    DisplayMode: =DisplayMode.View
+                                    DisplayName: =LookUp(colLanguage,Title="Status").Wert
+                                    MaxLength: =DataSourceInfo([@pssChecklistsStatus], DataSourceInfo.MaxLength, Status)
+                                    Required: =false
+                                    Update: =DataCardValue1_31.Text
+                                    Width: =Parent.Width
+                                    X: =1
+                                    Y: =1
+                                  Children:
+                                    - DataCardKey1_31:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldName
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =48
+                                          Text: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          Wrap: =false
+                                          X: =30
+                                          Y: =10
+                                    - DataCardValue1_31:
+                                        Control: Classic/TextInput@2.3.2
+                                        MetadataKey: FieldValue
+                                        Properties:
+                                          AccessibleLabel: =Parent.DisplayName
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          Default: =Parent.Default
+                                          DelayOutput: =true
+                                          DisplayMode: =Parent.DisplayMode
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          MaxLength: =Parent.MaxLength
+                                          PaddingLeft: =5
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          Tooltip: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardKey1_31.Y + DataCardKey1_31.Height + 5
+                                    - ErrorMessage1_31:
+                                        Control: Label@2.5.1
+                                        MetadataKey: ErrorMessage
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(168, 0, 0, 1)
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =10
+                                          Live: =Live.Assertive
+                                          PaddingBottom: =0
+                                          PaddingLeft: =0
+                                          PaddingRight: =0
+                                          PaddingTop: =0
+                                          Size: =24
+                                          Text: =Parent.Error
+                                          Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardValue1_31.Y + DataCardValue1_31.Height
+                                    - StarVisible1_31:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldRequired
+                                        Properties:
+                                          Align: =Align.Center
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =DataCardKey1_31.Height
+                                          Text: ="*"
+                                          Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                          Width: =30
+                                          Wrap: =false
+                                          Y: =DataCardKey1_31.Y
+                              - LanguageTag_DataCard2_31:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: ClassicTextualEdit
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    DataField: ="LanguageTag"
+                                    Default: |+
+                                      =MyLanguage
+                                    DisplayMode: =DisplayMode.View
+                                    DisplayName: =LookUp(colLanguage,Title="Language").Wert
+                                    MaxLength: =2
+                                    Required: =true
+                                    Update: =DataCardValue2_31.Text
+                                    Width: =Parent.Width
+                                    X: =2
+                                    Y: =1
+                                  Children:
+                                    - StarVisible2_31:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldRequired
+                                        Properties:
+                                          Align: =Align.Center
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =DataCardKey2_31.Height
+                                          Text: ="*"
+                                          Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                          Width: =30
+                                          Wrap: =false
+                                          Y: =DataCardKey2_31.Y
+                                    - DataCardKey2_31:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldName
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =48
+                                          Size: =MyFontSize
+                                          Text: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          Wrap: =false
+                                          X: =30
+                                          Y: =10
+                                    - DataCardValue2_31:
+                                        Control: Classic/TextInput@2.3.2
+                                        MetadataKey: FieldValue
+                                        Properties:
+                                          AccessibleLabel: =Parent.DisplayName
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          Default: =Parent.Default
+                                          DelayOutput: =true
+                                          DisplayMode: =Parent.DisplayMode
+                                          Fill: |+
+                                            =//Ändern nur, wenn noch kein Wert vorhanden
+                                            If(Self.DisplayMode=DisplayMode.Edit,
+                                                RGBA(255, 255, 0, 1) //gelb
+                                            ,
+                                                RGBA(255, 255, 255, 1)
+                                            )
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          MaxLength: =Parent.MaxLength
+                                          PaddingLeft: =5
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          Size: =MyFontSize
+                                          Tooltip: =Parent.DisplayName
+                                          Width: =200
+                                          X: =30
+                                          Y: =DataCardKey2_31.Y + DataCardKey2_31.Height + 5
+                                    - ErrorMessage2_31:
+                                        Control: Label@2.5.1
+                                        MetadataKey: ErrorMessage
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(168, 0, 0, 1)
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =10
+                                          Live: =Live.Assertive
+                                          PaddingBottom: =0
+                                          PaddingLeft: =0
+                                          PaddingRight: =0
+                                          PaddingTop: =0
+                                          Size: =MyFontSize
+                                          Text: =Parent.Error
+                                          Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardValue2_31.Y + DataCardValue2_31.Height
+                              - StatusText_DataCard3_31:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: ClassicTextualEdit
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    DataField: ="ChecklistText"
+                                    Default: =ThisItem.StatusText
+                                    DisplayName: |+
+                                      =LookUp(colLanguage,Title="Status",Wert)
+                                      &" (" &MyLanguage &"): "
+
+                                    MaxLength: =128
+                                    Required: =true
+                                    Update: =DataCardValue3_31.Text
+                                    Width: =Parent.Width
+                                    X: =0
+                                    Y: =53
+                                  Children:
+                                    - StarVisible3_31:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldRequired
+                                        Properties:
+                                          Align: =Align.Center
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =DataCardKey3_31.Height
+                                          Text: ="*"
+                                          Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                          Width: =30
+                                          Wrap: =false
+                                          Y: =DataCardKey3_31.Y
+                                    - DataCardKey3_31:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldName
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =48
+                                          Size: =MyFontSize
+                                          Text: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          Wrap: =false
+                                          X: =30
+                                          Y: =10
+                                    - DataCardValue3_31:
+                                        Control: Classic/TextInput@2.3.2
+                                        MetadataKey: FieldValue
+                                        Properties:
+                                          AccessibleLabel: =Parent.DisplayName
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          Default: =Parent.Default
+                                          DelayOutput: =true
+                                          DisplayMode: =Parent.DisplayMode
+                                          Fill: |+
+                                            =//Ändern nur, wenn noch kein Wert vorhanden
+                                            If(Self.DisplayMode=DisplayMode.Edit,
+                                                RGBA(255, 255, 0, 1) //gelb
+                                            ,
+                                                RGBA(255, 255, 255, 1)
+                                            )
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          MaxLength: =Parent.MaxLength
+                                          PaddingLeft: =5
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          Size: =MyFontSize
+                                          Tooltip: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardKey3_31.Y + DataCardKey3_31.Height + 5
+                                    - ErrorMessage3_31:
+                                        Control: Label@2.5.1
+                                        MetadataKey: ErrorMessage
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(168, 0, 0, 1)
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =10
+                                          Live: =Live.Assertive
+                                          PaddingBottom: =0
+                                          PaddingLeft: =0
+                                          PaddingRight: =0
+                                          PaddingTop: =0
+                                          Size: =MyFontSize
+                                          Text: |+
+                                            =//Parent.Error
+                                            If(IsBlank(DataCardValue3_31.Text), 
+                                                "Label must not be empty"
+                                            )
+                                          Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardValue3_31.Y + DataCardValue3_31.Height
+                              - DefectClass_DataCard4_31:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: ClassicNumberEdit
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    DataField: ="DefectClass"
+                                    Default: =ThisItem.DefectClass
+                                    DisplayName: =LookUp(colLanguage,Title="DefectClass",Wert)
+                                    Required: =true
+                                    Update: =Value(DataCardValue4_31.Text)
+                                    Width: =Parent.Width
+                                    X: =2
+                                    Y: =53
+                                  Children:
+                                    - DataCardKey4_31:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldName
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =48
+                                          Text: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          Wrap: =false
+                                          X: =30
+                                          Y: =10
+                                    - DataCardValue4_31:
+                                        Control: Classic/TextInput@2.3.2
+                                        MetadataKey: FieldValue
+                                        Properties:
+                                          AccessibleLabel: =Parent.DisplayName
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          Default: =Parent.Default
+                                          DelayOutput: =true
+                                          DisplayMode: =Parent.DisplayMode
+                                          Fill: |+
+                                            =//Ändern nur, wenn noch kein Wert vorhanden
+                                            If(Self.DisplayMode=DisplayMode.Edit,
+                                                RGBA(255, 255, 0, 1) //gelb
+                                            ,
+                                                RGBA(255, 255, 255, 1)
+                                            )
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          Format: =TextFormat.Number
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          PaddingLeft: =5
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          Tooltip: =Parent.DisplayName
+                                          Width: =200
+                                          X: =30
+                                          Y: =DataCardKey4_31.Y + DataCardKey4_31.Height + 5
+                                    - ErrorMessage4_31:
+                                        Control: Label@2.5.1
+                                        MetadataKey: ErrorMessage
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(168, 0, 0, 1)
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =10
+                                          Live: =Live.Assertive
+                                          PaddingBottom: =0
+                                          PaddingLeft: =0
+                                          PaddingRight: =0
+                                          PaddingTop: =0
+                                          Size: =24
+                                          Text: =Parent.Error
+                                          Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardValue4_31.Y + DataCardValue4_31.Height
+                                    - StarVisible4_31:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldRequired
+                                        Properties:
+                                          Align: =Align.Center
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =DataCardKey4_31.Height
+                                          Text: ="*"
+                                          Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                          Width: =30
+                                          Wrap: =false
+                                          Y: =DataCardKey4_31.Y
+                              - Icon_DataCard5_31:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: ClassicTextualEdit
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    DataField: ="Icon"
+                                    Default: =ThisItem.Icon
+                                    DisplayName: =LookUp(colLanguage,Title="Icon",Wert)
+                                    MaxLength: =DataSourceInfo([@pssChecklistsStatus], DataSourceInfo.MaxLength, Icon)
+                                    Required: =true
+                                    Update: =DataCardValue5_31.Text
+                                    Width: =Parent.Width
+                                    X: =0
+                                    Y: =59
+                                  Children:
+                                    - DataCardKey5_31:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldName
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =60
+                                          Text: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          Wrap: =false
+                                          X: =30
+                                          Y: =10
+                                    - DataCardValue5_31:
+                                        Control: Classic/TextInput@2.3.2
+                                        MetadataKey: FieldValue
+                                        Properties:
+                                          AccessibleLabel: =Parent.DisplayName
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          Default: =Parent.Default
+                                          DelayOutput: =true
+                                          DisplayMode: =Parent.DisplayMode
+                                          Font: =Font.'Open Sans'
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          MaxLength: =Parent.MaxLength
+                                          PaddingLeft: =5
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          Tooltip: =Parent.DisplayName
+                                          Width: =Parent.Width - 60 - 70
+                                          X: =30
+                                          Y: =DataCardKey5_31.Y + DataCardKey5_31.Height + 5
+                                    - ErrorMessage5_31:
+                                        Control: Label@2.5.1
+                                        MetadataKey: ErrorMessage
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(168, 0, 0, 1)
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =10
+                                          Live: =Live.Assertive
+                                          PaddingBottom: =0
+                                          PaddingLeft: =0
+                                          PaddingRight: =0
+                                          PaddingTop: =0
+                                          Size: =24
+                                          Text: =Parent.Error
+                                          Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardValue5_31.Y + DataCardValue5_31.Height
+                                    - StarVisible5_31:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldRequired
+                                        Properties:
+                                          Align: =Align.Center
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =DataCardKey5_31.Height
+                                          Text: ="*"
+                                          Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                          Width: =30
+                                          Wrap: =false
+                                          Y: =DataCardKey5_31.Y
+                                    - StatusIcon5_31:
+                                        Control: Classic/Icon@2.5.0
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          AutoDisableOnSelect: =false
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          Color: =RGBA(0, 0, 0, 1)
+                                          ContentLanguage: =Language()
+                                          DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                                          DisabledColor: =RGBA(255, 255, 255, 1)
+                                          DisabledFill: =RGBA(255, 255, 255, 1)
+                                          Fill: =RGBA(255, 255, 255, 1)
+                                          FocusedBorderColor: =RGBA(109, 49, 162, 1)
+                                          Height: =60
+                                          HoverBorderColor: =RGBA(255, 255, 255, 1)
+                                          HoverColor: =RGBA(109, 49, 162, 1)
+                                          HoverFill: =RGBA(0, 0, 0, 0)
+                                          Icon: |-
+                                            =DCIcon5_31.SelectedText.'data-ADB4D7A662F548B49FAC2B986E348A1BIcon'
+                                            /*
+                                            Switch(DCIcon5_31.SelectedText.Value;
+                                                "Icon.Blocked";Icon.Blocked;
+                                                "Icon.Flag";Icon.Flag;
+                                                "Icon.CheckBadge";Icon.CheckBadge;
+                                                "Icon.ThumbsUp";Icon.ThumbsUp;
+                                                "Icon.ThumbsDown";Icon.ThumbsUp;
+                                                "Icon.EmojiNeutral";Icon.EmojiNeutral;
+                                                "Icon.EmojiHappy";Icon.EmojiHappy;
+                                                "Icon.EmojiSmile";Icon.EmojiSmile;
+                                                "Icon.EmojiSad";Icon.EmojiSad;
+                                                "Icon.Warning";Icon.Warning;
+                                                "Icon.Medical";Icon.Medical;
+                                                "Icon.Enhance";Icon.Enhance
+                                            )
+                                            */
+                                          PaddingBottom: =5
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PaddingTop: =5
+                                          PressedBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                                          PressedFill: =RGBA(39, 113, 194, 1)
+                                          TabIndex: =0
+                                          Tooltip: =LookUp(colLanguage,Title="Edit tooltip",Wert)
+                                          Width: =60
+                                          X: =Parent.Width-Self.Width-30
+                                          Y: =DataCardValue5_31.Y+5
+                                    - DCIcon5_31:
+                                        Control: Classic/DropDown@2.3.1
+                                        Properties:
+                                          AccessibleLabel: =Parent.DisplayName
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          ChevronBackground: =RGBA(56, 96, 178, 1)
+                                          ChevronFill: =RGBA(255, 255, 255, 1)
+                                          ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                                          ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                          ContentLanguage: =Language()
+                                          Default: =Parent.Default
+                                          Fill: =RGBA(255, 255, 0, 1) //gelb
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          Items: =colIcons
+                                          Items.Value: =Value
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PressedColor: =RGBA(255, 255, 255, 1)
+                                          PressedFill: =RGBA(0, 18, 107, 1)
+                                          Reset: =true
+                                          SelectionColor: =RGBA(255, 255, 255, 1)
+                                          SelectionFill: =RGBA(56, 96, 178, 1)
+                                          Size: =MyFontSize
+                                          Tooltip: |-
+                                            ="Select response type"
+                                            //LookUp(MyUVVSettings;Title="Status Tooltip").Wert
+                                          Width: =Parent.Width - 60 - 70
+                                          X: =29+1
+                                          Y: =DataCardKey5_31.Y + DataCardKey5_31.Height + 5
+            - FooterLabel1_31:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Right
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  Color: =RGBA(255, 255, 255, 1)
+                  DisplayMode: =DisplayMode.View
+                  Fill: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Lighter
+                  Height: =50
+                  PaddingLeft: =15
+                  PaddingRight: =15
+                  Size: =MyFontSize-3
+                  Text: |+
+                    =If(!IsBlank(FooterText),
+                        FooterText,
+                        //MyAppName
+                        //"|"
+                        "v"&MyVersion
+                        &"|"&MyDeviceType
+                        &If(OnlineStatus=0,"|Offline","|Online")
+                        &"|"&MyLanguage
+
+                        //&"|Mode:"&EditForm1_17.Mode //(0=Edit;1=Add)
+                    )
+                  Width: =Parent.Width
+                  Wrap: =false
+                  Y: =Parent.Height-Self.Height
+      - ImageLoading1_31:
+          Control: Image@2.2.3
+          Properties:
+            AccessibleLabel: =" "
+            BorderColor: =RGBA(0, 18, 107, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =150
+            Image: =Loading_1
+            ImagePosition: =ImagePosition.Fill
+            TabIndex: =0
+            Visible: =_ShowLoadingHint
+            Width: =150
+            X: =Parent.Width/2 - Self.Width/2
+            Y: =Parent.Height/2 - Self.Height/2
+      - Timer1_31:
+          Control: Timer@2.1.0
+          Properties:
+            AutoStart: =true
+            BorderColor: =//ColorFade(Self.Fill; -15%)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =
+            DisabledColor: =
+            DisabledFill: =
+            Duration: =500
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Lighter
+            Height: =26
+            HoverBorderColor: =
+            HoverColor: =
+            HoverFill: =
+            OnTimerEnd: |+
+              =//ScreenStatusEdit_Timer1_31.vba
+              If(Connection.Connected,
+                  Set (OnlineStatus, 1)
+              ,// Else    
+                  Set (OnlineStatus, 0)
+              );
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Repeat: =true
+            Size: =11
+            Text: =//Text(Time(0; 0; Self.Value/1000); "hh:mm:ss")
+            Visible: =false
+            Width: =98
+            X: =476
+            Y: =928

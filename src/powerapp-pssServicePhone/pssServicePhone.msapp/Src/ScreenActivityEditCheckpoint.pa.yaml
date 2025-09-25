@@ -1,0 +1,1885 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  ScreenActivityEditCheckpoint:
+    Properties:
+      BackgroundImage: ='uvv-clouds'
+      Fill: =RGBA(0, 0, 0, 0)
+      Height: |-
+        =//Max(App.Height; App.MinScreenHeight)
+        Max(App.Height, App.DesignHeight)
+      ImagePosition: =ImagePosition.Fill
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+      Width: |-
+        =//Max(App.Width; App.MinScreenWidth)
+        Max(App.Width, App.DesignWidth)
+    Children:
+      - MainContainer1_6:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            DropShadow: =DropShadow.None
+            Height: =Parent.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =10
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Parent.Width
+            X: =
+            Y: =
+          Children:
+            - Header1_6:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =88
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutMinHeight: =40
+                  LayoutMinWidth: =Parent.Width-15
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Parent.Width
+                Children:
+                  - HeaderLabel1_6:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        ContentLanguage: =Language()
+                        FillPortions: =1
+                        Font: =Font.'Open Sans'
+                        Height: =Parent.Height
+                        LayoutMinWidth: =1
+                        OnSelect: =
+                        PaddingLeft: =15
+                        Size: =MyFontSize+5
+                        Text: =LookUp(colLanguage,Title="Edit checkpoint").Wert
+                        Tooltip: =" "
+                        Width: =
+                        X: =
+                        Y: =
+                  - Back1_6:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =Parent.Height
+                        LayoutMinHeight: =
+                        LayoutMinWidth: =
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =90
+                        X: =
+                        Y: =
+                      Children:
+                        - BackIcon1_6:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              AccessibleLabel: =Self.Tooltip
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisabledFill: =RGBA(39, 113, 194, 1)
+                              FocusedBorderColor: =RGBA(9, 33, 98, 1)
+                              Height: =60
+                              HoverBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                              HoverFill: =RGBA(39, 113, 194, 1)
+                              Icon: =Icon.ArrowLeft
+                              OnSelect: =Navigate(ScreenActivity);
+                              PressedBorderColor: =ColorFade(RGBA(9, 33, 98, 1), 20%)
+                              PressedFill: =RGBA(39, 113, 194, 1)
+                              TabIndex: =0
+                              Tooltip: =BackLabel1_6.Text
+                              Width: =60
+                              X: =15
+                              Y: =15
+                        - BackLabel1_6:
+                            Control: FluentV8/Label@1.8.6
+                            Properties:
+                              Alignment: =Align.Center
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisplayMode: =DisplayMode.View
+                              Font: =Font.'Patrick Hand'
+                              FontSize: =MyFontSize-4
+                              Height: =30
+                              Text: =LookUp(colLanguage,Title="Back").Wert
+                              Tooltip: =" "
+                              VerticalAlignment: =VerticalAlign.Middle
+                              Visible: =BackIcon1_6.Visible
+                              Width: =90
+                              X: |+
+                                =BackIcon1_6.X+BackIcon1_6.Width/2-Self.Width/2
+                              Y: =58
+            - Body1_6:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.Start
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  DropShadow: =DropShadow.None
+                  Height: =88
+                  LayoutAlignItems: =LayoutAlignItems.Stretch
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutMinHeight: =40
+                  LayoutMinWidth: =Parent.Width-15
+                  PaddingLeft: =10
+                  PaddingRight: =10
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Parent.Width
+                Children:
+                  - ContainerEdit1_5:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Start
+                        BorderThickness: =2
+                        DropShadow: =DropShadow.None
+                        Fill: |-
+                          =RGBA(241, 244, 249, 1)
+                          //RGBA(244; 244; 243; 1)
+                        FillPortions: =0
+                        Height: |+
+                          =Parent.Height
+                          -Parent.PaddingTop
+                          -Parent.PaddingBottom
+                        LayoutMinHeight: =If(Self.Visible,Parent.Height-15,0)
+                        LayoutMinWidth: =1
+                        RadiusBottomLeft: =30
+                        RadiusBottomRight: =30
+                        RadiusTopLeft: =30
+                        RadiusTopRight: =30
+                        Width: |+
+                          =Parent.Width-Self.X*2
+                        X: =19+1
+                        Y: =20
+                      Children:
+                        - SaveGroupButton1_6:
+                            Control: Classic/Button@2.2.0
+                            Group: SaveGroup1_6
+                            Properties:
+                              BorderThickness: =0
+                              Color: =RGBA(255,255,255,1)
+                              ContentLanguage: =Language()
+                              Fill: =RGBA(56, 96, 178, 1)
+                              Height: =60
+                              HoverBorderColor: =
+                              HoverColor: =RGBA(255, 255, 255, 1)
+                              HoverFill: =RGBA(9, 33, 98, 1)
+                              OnSelect: |+
+                                =UpdateContext({locInputCheck:true});
+                                //--------------------------------------------------
+                                // Flex field 5
+                                If(!IsBlank(SACheckpointF5Label) &&
+                                    IsBlank(SACheckpointF5),
+                                    UpdateContext({locInputCheck:false});
+                                    Notify("Field5 must not be empty");
+                                );
+                                // Flex field 4
+                                If(!IsBlank(SACheckpointF4Label) &&
+                                    IsBlank(SACheckpointF4),
+                                    UpdateContext({locInputCheck:false});
+                                    Notify("Field4 must not be empty");
+                                );
+                                // Flex field 3
+                                If(!IsBlank(SACheckpointF3Label) &&
+                                    IsBlank(SACheckpointF3),
+                                    UpdateContext({locInputCheck:false});
+                                    Notify("Field3 must not be empty");
+                                );
+                                // Flex field 2
+                                If(!IsBlank(SACheckpointF2Label) &&
+                                    IsBlank(SACheckpointF2),
+                                    UpdateContext({locInputCheck:false});
+                                    Notify("Field2 must not be empty");
+                                );
+                                // Flex field 1
+                                If(!IsBlank(SACheckpointF1Label) &&
+                                    IsBlank(SACheckpointF1),
+                                    UpdateContext({locInputCheck:false});
+                                    Notify("Field1 must not be empty");
+                                );
+
+                                //Comments required if defect class > 0
+                                If(IsBlank(DataCardValue9_3.Text) &&
+                                    SACheckpointDefectClass>0,
+                                    UpdateContext({locInputCheck:false});
+                                    Notify("Comments must not be blank");
+                                );
+
+                                //--------------------------------------------------
+                                If(locInputCheck, 
+
+                                    Patch(SComponents,
+                                        LookUp(SComponents,Pos=SACheckpointPos),
+                                        {
+                                            Status:SACheckpointStatus,
+                                            StatusText:SACheckpointStatusText,
+                                            DefectClass:SACheckpointDefectClass,
+                                            Comments:SACheckpointComments,
+                                            F1:SACheckpointF1,
+                                            F2:SACheckpointF2,
+                                            F3:SACheckpointF3,
+                                            F4:SACheckpointF4,
+                                            F5:SACheckpointF5
+                                        }
+                                    );
+
+
+                                    //Checkpunkt speichern
+                                    Set(locKEY,
+                                        LookUp(MyActivitiesP,
+                                            KEY=SActivityKEY && 
+                                            Pos=SACheckpointPos,
+                                            KEY)
+                                    );
+                                    Patch(MyActivitiesP,
+                                        If(!IsBlank(locKEY),
+                                            LookUp(MyActivitiesP,KEY=SActivityKEY && Pos=SACheckpointPos)
+                                        ,//Else
+                                            Defaults(MyActivitiesP)
+                                        ),
+                                        {
+                                            KEY:SActivityKEY,
+                                            ParentID:SelectedActivity,
+                                            Pos:SACheckpointPos,
+                                            Checkpoint:SACheckpoint,
+                                            CheckpointText:SACheckpointText,
+                                            Status:SACheckpointStatus,
+                                            StatusText:SACheckpointStatusText,
+                                            DefectClass:SACheckpointDefectClass,
+                                            Comments:SACheckpointComments,
+                                            F1:SACheckpointF1,
+                                            F2:SACheckpointF2,
+                                            F3:SACheckpointF3,
+                                            F4:SACheckpointF4,
+                                            F5:SACheckpointF5,
+                                            F1Title:SACheckpointF1Title,
+                                            F2Title:SACheckpointF2Title,
+                                            F3Title:SACheckpointF3Title,
+                                            F4Title:SACheckpointF4Title,
+                                            F5Title:SACheckpointF5Title,
+                                            F1Label:SACheckpointF1Label,
+                                            F2Label:SACheckpointF2Label,
+                                            F3Label:SACheckpointF3Label,
+                                            F4Label:SACheckpointF4Label,
+                                            F5Label:SACheckpointF5Label
+                                        }
+                                    );
+
+                                    //Daten zu den Checkpunkten im Cache speichern 
+                                    //auf mobilen Geräten
+                                    If(MyDeviceType="Mobile",
+                                        SaveData(MyActivitiesP,"ActivitiesP")  
+                                    );
+
+                                );
+                                //--------------------------------------------------
+                                If(locInputCheck, 
+                                    Navigate(ScreenActivity);
+                                );
+                                Set(_ShowLoadingHint,false);
+                              PaddingLeft: =45
+                              PressedBorderColor: =
+                              PressedColor: =RGBA(255, 255, 255, 1)
+                              PressedFill: =RGBA(9, 33, 98, 1)
+                              Size: =MyFontSize-3
+                              Text: =LookUp(colLanguage,Title="Save").Wert
+                              Tooltip: =Self.Text
+                              Width: =Parent.Width/2
+                              X: =Parent.Width/2-Self.Width/2
+                              Y: =Parent.Height-Self.Height-15
+                        - SaveGroupIcon1_6:
+                            Control: Classic/Icon@2.5.0
+                            Group: SaveGroup1_6
+                            Properties:
+                              AccessibleLabel: =Self.Tooltip
+                              Color: =RGBA(255, 255, 255, 1)
+                              ContentLanguage: =Language()
+                              DisplayMode: =DisplayMode.View
+                              FocusedBorderColor: =Color.White
+                              FocusedBorderThickness: =1
+                              Height: =SaveGroupButton1_6.Height
+                              Icon: =Icon.Save
+                              PaddingBottom: =9
+                              PaddingLeft: =9
+                              PaddingRight: =9
+                              PaddingTop: =9
+                              TabIndex: =0
+                              Tooltip: =SaveGroupButton1_6.Text
+                              Width: =SaveGroupButton1_6.Height
+                              X: =SaveGroupButton1_6.X
+                              Y: =Parent.Height-Self.Height-15
+                        - ActivityHeaderHtmlText1_6:
+                            Control: HtmlViewer@2.1.0
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisplayMode: =DisplayMode.View
+                              Fill: =RGBA(0, 0, 0, 0)
+                              Font: =Font.'Open Sans'
+                              Height: =150
+                              HtmlText: |+
+                                =""
+                                &"<b>"  
+                                &SActivityChecklistText
+                                &"<br />"
+                                &If(Left(Language(),2)="de",
+                                    Text(SActivityDate,"dddd, d. mmmm yyyy | hh:mm","de")
+                                , //Else
+                                    Text(SActivityDate,"dddd, mmmm d, yyyy | hh:mm","en")
+                                )
+                                &"<br />"
+                                &"Checkpoint " &SACheckpointPos &": "
+                                &SACheckpointText
+                                &"</b>"  
+                              PaddingBottom: =15
+                              PaddingLeft: =30
+                              PaddingRight: =15
+                              PaddingTop: =15
+                              Size: =MyFontSize
+                              Width: =Parent.Width
+                              X: =
+                              Y: =
+                        - EditForm1_6:
+                            Control: Form@2.4.4
+                            Variant: Classic
+                            Layout: Vertical
+                            Properties:
+                              AcceptsFocus: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              ContentLanguage: =Language()
+                              DataSource: |-
+                                =SComponents
+                                //pssChecklistsActivitiesP
+                              FocusedBorderThickness: =2
+                              Height: =SaveGroupButton1_6.Y-Self.Y-15
+                              Item: =First(Filter(SComponents,Pos=SACheckpointPos))
+                              SnapToColumns: =false
+                              Width: =Parent.Width-2
+                              Y: =ActivityHeaderHtmlText1_6.Height
+                            Children:
+                              - Status_DataCard1_1:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: ClassicTextualEdit
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    DataField: ="Status"
+                                    Default: =ThisItem.Status
+                                    DisplayMode: =DisplayMode.Edit
+                                    DisplayName: =LookUp(colLanguage,Title="Status").Wert
+                                    MaxLength: =//DataSourceInfo([@pssChecklistsActivitiesP]; DataSourceInfo.MaxLength; Status)
+                                    Required: =false
+                                    Update: =DataCardValue3_1.Selected.Status
+                                    Width: =Parent.Width
+                                    X: =0
+                                    Y: =54
+                                  Children:
+                                    - DataCardValue3_1:
+                                        Control: Classic/DropDown@2.3.1
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          ChevronBackground: =RGBA(56, 96, 178, 1)
+                                          ChevronFill: =RGBA(255, 255, 255, 1)
+                                          ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                                          ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                          ContentLanguage: =Language()
+                                          Default: =SACheckpointStatusText
+                                          Fill: =RGBA(255, 255, 0, 1) //gelb
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          Items: =MyPossibleStatus
+                                          Items.Value: =StatusText
+                                          OnChange: |+
+                                            =Set(SACheckpointStatus,
+                                                DataCardValue3_1.Selected.Status
+                                            );
+                                            Set(SACheckpointStatusText,
+                                                DataCardValue3_1.Selected.StatusText
+                                            );
+                                            Set(SACheckpointDefectClass,
+                                                LookUp(MyStatus,Status=SACheckpointStatus,DefectClass)
+                                            );
+                                          OnSelect: =
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PressedColor: =RGBA(255, 255, 255, 1)
+                                          PressedFill: =RGBA(0, 18, 107, 1)
+                                          Reset: =true
+                                          SelectionColor: =RGBA(255, 255, 255, 1)
+                                          SelectionFill: =RGBA(56, 96, 178, 1)
+                                          Size: =MyFontSize
+                                          Tooltip: |-
+                                            ="Select status for this checkpoint"
+                                            //LookUp(MyUVVSettings;Title="Status Tooltip").Wert
+                                          Width: =Parent.Width - 60
+                                          X: =29+1
+                                          Y: =DataCardKey8_1.Y + DataCardKey8_1.Height + 5
+                                    - StarVisible8_1:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldRequired
+                                        Properties:
+                                          Align: =Align.Center
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =DataCardKey8_1.Height
+                                          Text: ="*"
+                                          Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                          Width: =30
+                                          Wrap: =false
+                                          Y: =DataCardKey8_1.Y
+                                    - DataCardKey8_1:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldName
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =48
+                                          Size: =MyFontSize-1
+                                          Text: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          Wrap: =false
+                                          X: =30
+                                          Y: =10
+                                    - ErrorMessage8_1:
+                                        Control: Label@2.5.1
+                                        MetadataKey: ErrorMessage
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(168, 0, 0, 1)
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =10
+                                          Live: =Live.Assertive
+                                          PaddingBottom: =0
+                                          PaddingLeft: =0
+                                          PaddingRight: =0
+                                          PaddingTop: =0
+                                          Size: =24
+                                          Text: =Parent.Error
+                                          Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardValue3_1.Y + DataCardValue3_1.Height
+                              - Comments_DataCard1_1:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: ClassicTextualEdit
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    DataField: ="Comments"
+                                    Default: |+
+                                      =Substitute(SACheckpointComments,"<br>",Char(10))
+                                      //ThisItem.Comments
+                                    DisplayName: =LookUp(colLanguage,Title="Comments").Wert
+                                    MaxLength: =//DataSourceInfo([@pssChecklistsActivitiesP]; DataSourceInfo.MaxLength; Comments)
+                                    Required: =false
+                                    Update: =SACheckpointComments
+                                    Width: =Parent.Width
+                                    X: =0
+                                    Y: =55
+                                  Children:
+                                    - StarVisible12_1:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldRequired
+                                        Properties:
+                                          Align: =Align.Center
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =DataCardKey11_1.Height
+                                          Text: ="*"
+                                          Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                          Width: =30
+                                          Wrap: =false
+                                          Y: =DataCardKey11_1.Y
+                                    - DataCardKey11_1:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldName
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =48
+                                          Size: =MyFontSize-1
+                                          Text: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          Wrap: =false
+                                          X: =30
+                                          Y: =10
+                                    - DataCardValue9_3:
+                                        Control: Classic/TextInput@2.3.2
+                                        MetadataKey: FieldValue
+                                        Properties:
+                                          AccessibleLabel: ="Add comments if required"
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          Default: =Parent.Default
+                                          DelayOutput: =true
+                                          DisplayMode: =Parent.DisplayMode
+                                          Fill: |+
+                                            =//Ändern nur, wenn noch kein Wert vorhanden
+                                            If(Self.DisplayMode=DisplayMode.Edit,
+                                                RGBA(255, 255, 0, 1) //gelb
+                                            ,
+                                                RGBA(255, 255, 255, 1)
+                                            )
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          Height: =170
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          MaxLength: =Parent.MaxLength
+                                          Mode: =TextMode.MultiLine
+                                          OnChange: |+
+                                            =Set(SACheckpointComments,
+                                                Substitute(DataCardValue9_3.Text,Char(10),"<br>")
+                                            );
+                                          PaddingLeft: =5
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          Size: =MyFontSize
+                                          Tooltip: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardKey11_1.Y + DataCardKey11_1.Height + 5
+                                    - ErrorMessage12_1:
+                                        Control: Label@2.5.1
+                                        MetadataKey: ErrorMessage
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(168, 0, 0, 1)
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =10
+                                          Live: =Live.Assertive
+                                          PaddingBottom: =0
+                                          PaddingLeft: =0
+                                          PaddingRight: =0
+                                          PaddingTop: =0
+                                          Size: =MyFontSize
+                                          Text: |-
+                                            =//Parent.Error
+                                            If(IsBlank(DataCardValue9_3.Text) &&
+                                                SACheckpointDefectClass>0,
+                                                "Comments must not be blank"
+                                            )
+                                          Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardValue9_3.Y + DataCardValue9_3.Height
+                              - F1_DataCard1:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: ClassicTextualEdit
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    DataField: ="OData__x0046_1"
+                                    Default: |+
+                                      =SACheckpointF1
+                                      //ThisItem.F1
+                                    DisplayName: |-
+                                      =SACheckpointF1Label
+                                      //DataSourceInfo([@pssChecklistsActivitiesP];DataSourceInfo.DisplayName;OData__x0046_1)
+                                    MaxLength: =//DataSourceInfo([@pssChecklistsActivitiesP]; DataSourceInfo.MaxLength; OData__x0046_1)
+                                    Required: =Self.Visible
+                                    Update: =DataCardValue13.Text
+                                    Visible: =!IsBlank(SACheckpointF1Label)
+                                    Width: =Parent.Width
+                                    X: =0
+                                    Y: =56
+                                  Children:
+                                    - DataCardKey15:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldName
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =48
+                                          Size: =MyFontSize-1
+                                          Text: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          Wrap: =false
+                                          X: =30
+                                          Y: =10
+                                    - DataCardValue13:
+                                        Control: Classic/TextInput@2.3.2
+                                        MetadataKey: FieldValue
+                                        Properties:
+                                          AccessibleLabel: =Parent.DisplayName
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          Default: =Parent.Default
+                                          DelayOutput: =true
+                                          DisplayMode: =Parent.DisplayMode
+                                          Fill: |+
+                                            =//Ändern nur, wenn noch kein Wert vorhanden
+                                            If(Self.DisplayMode=DisplayMode.Edit,
+                                                RGBA(255, 255, 0, 1) //gelb
+                                            ,
+                                                RGBA(255, 255, 255, 1)
+                                            )
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          MaxLength: =Parent.MaxLength
+                                          OnChange: =Set(SACheckpointF1,DataCardValue13.Text);
+                                          PaddingLeft: =5
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          Size: =MyFontSize
+                                          Tooltip: =Parent.DisplayName
+                                          Visible: =false
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardKey15.Y + DataCardKey15.Height + 5
+                                    - ErrorMessage15:
+                                        Control: Label@2.5.1
+                                        MetadataKey: ErrorMessage
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(168, 0, 0, 1)
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =10
+                                          Live: =Live.Assertive
+                                          PaddingBottom: =0
+                                          PaddingLeft: =0
+                                          PaddingRight: =0
+                                          PaddingTop: =0
+                                          Size: =MyFontSize
+                                          Text: |+
+                                            =//Parent.Error
+                                            If(IsBlank(SACheckpointF1), 
+                                                "must not be empty"
+                                            )
+                                          Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardValue13.Y + DataCardValue13.Height
+                                    - StarVisible15:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldRequired
+                                        Properties:
+                                          Align: =Align.Center
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =DataCardKey15.Height
+                                          Text: ="*"
+                                          Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                          Width: =30
+                                          Wrap: =false
+                                          Y: =DataCardKey15.Y
+                                    - F1ChoicesInput:
+                                        Control: FluentV8/Radio@1.4.7
+                                        Properties:
+                                          AccessibleLabel: ="Make a choice"
+                                          ContentLanguage: =Language()
+                                          DefaultSelectedItems: =[SACheckpointF1]
+                                          Font: =Font.'Open Sans'
+                                          Height: =(CountRows(Split(LookUp(colFlexForm,Value(DisplayOrder)=1,Choices),";"))+1)*40
+                                          ItemFontSize: =MyFontSize
+                                          Items: =Split(LookUp(colFlexForm,Value(DisplayOrder)=1,Choices),";")
+                                          OnChange: |+
+                                            =Set(SACheckpointF1,F1ChoicesInput.Selected.Value);
+                                          OnSelect: |+
+                                            =Set(SACheckpointF1,F1ChoicesInput.Selected.Value);
+                                          PaddingBottom: =5
+                                          PaddingEnd: =5
+                                          PaddingStart: =5
+                                          PaddingTop: =5
+                                          RadioFillColor: =Color.Black
+                                          Tooltip: =" "
+                                          Visible: =LookUp(colFlexForm,Value(DisplayOrder)=1,ResponseType) = "Radio"
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardKey15.Y + DataCardKey15.Height + 5
+                                        Children:
+                                          - Value1_1:
+                                              Control: FluentV8/RadioDataField@1.5.0
+                                              Variant: textualColumn
+                                              IsLocked: true
+                                              Properties:
+                                                FieldDisplayName: ="Value"
+                                                FieldName: ="Value"
+                                                FieldType: ="n"
+                                                Order: =2
+                                    - F1ComboInput:
+                                        Control: Classic/DropDown@2.3.1
+                                        Properties:
+                                          AccessibleLabel: ="Select an item"
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          BorderThickness: =1
+                                          ChevronBackground: =RGBA(56, 96, 178, 1)
+                                          ChevronFill: =RGBA(255, 255, 255, 1)
+                                          ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                                          ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                          ContentLanguage: =Language()
+                                          Default: =Parent.Default
+                                          Fill: =RGBA(255, 255, 0, 1)
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          Items: =Split(LookUp(colFlexForm,Value(DisplayOrder)=1,Choices),";")
+                                          Items.Value: =Value
+                                          OnChange: |+
+                                            =Set(SACheckpointF1,F1ComboInput.Selected.Value);
+                                          OnSelect: |+
+                                            =Set(SACheckpointF1,F1ComboInput.Selected.Value);
+                                          PaddingBottom: =5
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PaddingTop: =5
+                                          PressedColor: =RGBA(255, 255, 255, 1)
+                                          PressedFill: =RGBA(0, 18, 107, 1)
+                                          Reset: =true
+                                          SelectionColor: =RGBA(255, 255, 255, 1)
+                                          SelectionFill: =RGBA(56, 96, 178, 1)
+                                          Size: =MyFontSize
+                                          Tooltip: |-
+                                            =" "
+                                            //LookUp(MyUVVSettings;Title="Tooltip").Wert
+                                          Visible: |+
+                                            =LookUp(colFlexForm,Value(DisplayOrder)=1,ResponseType) = "Combobox"
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardKey15.Y + DataCardKey15.Height + 5
+                                    - F1DateInput:
+                                        Control: Classic/DatePicker@2.6.0
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          BorderThickness: =1
+                                          ContentLanguage: =Language()
+                                          DefaultDate: =If(LookUp(colFlexForm,Value(DisplayOrder)=1,ResponseType) = "Date",Parent.Default)
+                                          EndYear: =
+                                          Fill: =RGBA(255, 255, 0, 1)
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          IconBackground: =RGBA(56, 96, 178, 1)
+                                          IconFill: =RGBA(255, 255, 255, 1)
+                                          InputTextPlaceholder: =
+                                          IsEditable: =true
+                                          Language: =Language()
+                                          OnChange: |+
+                                            =Set(SACheckpointF1,
+                                                Text(F1DateInput.SelectedDate,DateTimeFormat.ShortDate)
+                                            );
+                                          OnSelect: =
+                                          PaddingLeft: =5
+                                          PaddingTop: =5
+                                          Reset: =true
+                                          Size: =MyFontSize
+                                          StartOfWeek: =StartOfWeek.Monday
+                                          StartYear: =
+                                          Tooltip: |-
+                                            ="DatePicker Tooltip"
+                                            //LookUp(MyUVVSettings;Title="Prüfdatum").Wert
+                                          Visible: =LookUp(colFlexForm,Value(DisplayOrder)=1,ResponseType) = "Date"
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardKey15.Y + DataCardKey15.Height + 5
+                                    - F1TextNumberInput:
+                                        Control: Classic/TextInput@2.3.2
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          BorderThickness: =1
+                                          ContentLanguage: =Language()
+                                          Default: =Parent.Default
+                                          DelayOutput: =true
+                                          Fill: =RGBA(255, 255, 0, 1)
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          Format: =If(LookUp(colFlexForm,Value(DisplayOrder)=1,ResponseType)="Number",TextFormat.Number,TextFormat.Text)
+                                          HintText: =
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          MaxLength: =If(LookUp(colFlexForm,Value(DisplayOrder)=1,ResponseType)="Number",10,30)
+                                          OnChange: =Set(SACheckpointF1,F1TextNumberInput.Text);
+                                          OnSelect: =
+                                          PaddingLeft: =5
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          Reset: =true
+                                          Size: =MyFontSize
+                                          Tooltip: =//LookUp(MyUVVSettings;Title="Prüfer").Wert
+                                          VirtualKeyboardMode: =VirtualKeyboardMode.Text
+                                          Visible: =LookUp(colFlexForm,Value(DisplayOrder)=1,ResponseType) in ["Text", "Number"]
+                                          Width: |+
+                                            =If(LookUp(colFlexForm,Value(DisplayOrder)=1,ResponseType)="Number",
+                                                250,
+                                                Parent.Width - 60
+                                            )
+                                          X: =30
+                                          Y: =DataCardKey15.Y + DataCardKey15.Height + 5
+                              - F2_DataCard1:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: ClassicTextualEdit
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    DataField: ="OData__x0046_2"
+                                    Default: |-
+                                      =SACheckpointF2
+                                      //ThisItem.F2
+                                    DisplayName: |-
+                                      =SACheckpointF2Label
+                                      //DataSourceInfo([@pssChecklistsActivitiesP];DataSourceInfo.DisplayName;OData__x0046_2)
+                                    MaxLength: =//DataSourceInfo([@pssChecklistsActivitiesP]; DataSourceInfo.MaxLength; OData__x0046_2)
+                                    Required: =Self.Visible
+                                    Update: =DataCardValue14.Text
+                                    Visible: =!IsBlank(SACheckpointF2Label)
+                                    Width: =Parent.Width
+                                    X: =0
+                                    Y: =57
+                                  Children:
+                                    - DataCardKey16:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldName
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =48
+                                          Size: =MyFontSize-1
+                                          Text: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          Wrap: =false
+                                          X: =30
+                                          Y: =10
+                                    - DataCardValue14:
+                                        Control: Classic/TextInput@2.3.2
+                                        MetadataKey: FieldValue
+                                        Properties:
+                                          AccessibleLabel: =Parent.DisplayName
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          Default: =Parent.Default
+                                          DelayOutput: =true
+                                          DisplayMode: =Parent.DisplayMode
+                                          Fill: |+
+                                            =//Ändern nur, wenn noch kein Wert vorhanden
+                                            If(Self.DisplayMode=DisplayMode.Edit,
+                                                RGBA(255, 255, 0, 1) //gelb
+                                            ,
+                                                RGBA(255, 255, 255, 1)
+                                            )
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          MaxLength: =Parent.MaxLength
+                                          OnChange: |+
+                                            =Set(SCheckpointF2,DataCardValue14.Text);
+                                          PaddingLeft: =5
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          Size: =MyFontSize
+                                          Tooltip: =Parent.DisplayName
+                                          Visible: =false
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardKey16.Y + DataCardKey16.Height + 5
+                                    - ErrorMessage16:
+                                        Control: Label@2.5.1
+                                        MetadataKey: ErrorMessage
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(168, 0, 0, 1)
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =10
+                                          Live: =Live.Assertive
+                                          PaddingBottom: =0
+                                          PaddingLeft: =0
+                                          PaddingRight: =0
+                                          PaddingTop: =0
+                                          Size: =MyFontSize
+                                          Text: |+
+                                            =//Parent.Error
+                                            If(IsBlank(SACheckpointF2), 
+                                                "must not be empty"
+                                            )
+                                          Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardValue14.Y + DataCardValue14.Height
+                                    - StarVisible16:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldRequired
+                                        Properties:
+                                          Align: =Align.Center
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =DataCardKey16.Height
+                                          Text: ="*"
+                                          Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                          Width: =30
+                                          Wrap: =false
+                                          Y: =DataCardKey16.Y
+                                    - F2ChoicesInput:
+                                        Control: FluentV8/Radio@1.4.7
+                                        Properties:
+                                          AccessibleLabel: ="Make a choice"
+                                          ContentLanguage: =Language()
+                                          DefaultSelectedItems: =[SACheckpointF2]
+                                          Font: =Font.'Open Sans'
+                                          Height: =(CountRows(Split(LookUp(colFlexForm,Value(DisplayOrder)=2,Choices),";"))+1)*40
+                                          ItemFontSize: =MyFontSize
+                                          Items: =Split(LookUp(colFlexForm,Value(DisplayOrder)=2,Choices),";")
+                                          OnChange: =Set(SACheckpointF2,F2ChoicesInput.Selected.Value);
+                                          OnSelect: =Set(SACheckpointF2,F2ChoicesInput.Selected.Value);
+                                          PaddingBottom: =5
+                                          PaddingEnd: =5
+                                          PaddingStart: =5
+                                          PaddingTop: =5
+                                          RadioFillColor: =Color.Black
+                                          Tooltip: =" "
+                                          Visible: =LookUp(colFlexForm,Value(DisplayOrder)=2,ResponseType) = "Radio"
+                                          Width: =Parent.Width - 60
+                                          X: =29+1
+                                          Y: =DataCardKey16.Y + DataCardKey16.Height + 5
+                                        Children:
+                                          - Value1_2:
+                                              Control: FluentV8/RadioDataField@1.5.0
+                                              Variant: textualColumn
+                                              IsLocked: true
+                                              Properties:
+                                                FieldDisplayName: ="Value"
+                                                FieldName: ="Value"
+                                                FieldType: ="n"
+                                                Order: =2
+                                    - F2ComboInput:
+                                        Control: Classic/DropDown@2.3.1
+                                        Properties:
+                                          AccessibleLabel: ="Select an item"
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          BorderThickness: =1
+                                          ChevronBackground: =RGBA(56, 96, 178, 1)
+                                          ChevronFill: =RGBA(255, 255, 255, 1)
+                                          ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                                          ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                          ContentLanguage: =Language()
+                                          Default: =Parent.Default
+                                          Fill: =RGBA(255, 255, 0, 1)
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          Items: =Split(LookUp(colFlexForm,Value(DisplayOrder)=2,Choices),";")
+                                          Items.Value: =Value
+                                          OnChange: =Set(SACheckpointF2,F2ComboInput.Selected.Value);
+                                          OnSelect: =Set(SACheckpointF2,F2ComboInput.Selected.Value);
+                                          PaddingBottom: =5
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PaddingTop: =5
+                                          PressedColor: =RGBA(255, 255, 255, 1)
+                                          PressedFill: =RGBA(0, 18, 107, 1)
+                                          Reset: =true
+                                          SelectionColor: =RGBA(255, 255, 255, 1)
+                                          SelectionFill: =RGBA(56, 96, 178, 1)
+                                          Size: =MyFontSize
+                                          Tooltip: =" "
+                                          Visible: =LookUp(colFlexForm,Value(DisplayOrder)=2,ResponseType) = "Combobox"
+                                          Width: =Parent.Width - 60
+                                          X: =29+1
+                                          Y: =DataCardKey16.Y + DataCardKey16.Height + 5
+                                    - F2DateInput:
+                                        Control: Classic/DatePicker@2.6.0
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          BorderThickness: =1
+                                          ContentLanguage: =Language()
+                                          DefaultDate: =If(LookUp(colFlexForm,Value(DisplayOrder)=2,ResponseType) = "Date",Parent.Default)
+                                          EndYear: =
+                                          Fill: =RGBA(255, 255, 0, 1)
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          IconBackground: =RGBA(56, 96, 178, 1)
+                                          IconFill: =RGBA(255, 255, 255, 1)
+                                          InputTextPlaceholder: =
+                                          IsEditable: =true
+                                          Language: =Language()
+                                          OnChange: |-
+                                            =Set(SACheckpointF2,
+                                                Text(F2DateInput.SelectedDate,DateTimeFormat.ShortDate)
+                                            );
+                                          OnSelect: =
+                                          PaddingLeft: =5
+                                          PaddingTop: =5
+                                          Reset: =true
+                                          Size: =MyFontSize
+                                          StartOfWeek: =StartOfWeek.Monday
+                                          StartYear: =
+                                          Tooltip: =" "
+                                          Visible: =LookUp(colFlexForm,Value(DisplayOrder)=2,ResponseType) = "Date"
+                                          Width: =Parent.Width - 60
+                                          X: =29+1
+                                          Y: =DataCardKey16.Y + DataCardKey16.Height + 5
+                                    - F2TextNumberInput:
+                                        Control: Classic/TextInput@2.3.2
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          BorderThickness: =1
+                                          ContentLanguage: =Language()
+                                          Default: =Parent.Default
+                                          DelayOutput: =true
+                                          Fill: =RGBA(255, 255, 0, 1)
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          Format: =If(LookUp(colFlexForm,Value(DisplayOrder)=2,ResponseType)="Number",TextFormat.Number,TextFormat.Text)
+                                          HintText: =
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          MaxLength: =If(LookUp(colFlexForm,Value(DisplayOrder)=2,ResponseType)="Number",10,30)
+                                          OnChange: |+
+                                            =Set(SACheckpointF2,F2TextNumberInput.Text);
+                                          OnSelect: =
+                                          PaddingLeft: =5
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          Reset: =true
+                                          Size: =MyFontSize
+                                          Tooltip: =" "
+                                          VirtualKeyboardMode: =VirtualKeyboardMode.Text
+                                          Visible: =LookUp(colFlexForm,Value(DisplayOrder)=2,ResponseType) in ["Text", "Number"]
+                                          Width: |+
+                                            =If(LookUp(colFlexForm,Value(DisplayOrder)=2,ResponseType)="Number",
+                                                250,
+                                                Parent.Width - 60
+                                            )
+                                          X: =29+1
+                                          Y: =DataCardKey16.Y + DataCardKey16.Height + 5
+                              - F3_DataCard1:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: ClassicTextualEdit
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    DataField: ="OData__x0046_3"
+                                    Default: |+
+                                      =SACheckpointF3
+                                      //ThisItem.F3
+                                    DisplayName: |-
+                                      =SACheckpointF3Label
+                                      //DataSourceInfo([@pssChecklistsActivitiesP];DataSourceInfo.DisplayName;OData__x0046_3)
+                                    MaxLength: =//DataSourceInfo([@pssChecklistsActivitiesP]; DataSourceInfo.MaxLength; OData__x0046_3)
+                                    Required: =Self.Visible
+                                    Update: =DataCardValue15.Text
+                                    Visible: =!IsBlank(SACheckpointF3Label)
+                                    Width: =Parent.Width
+                                    X: =0
+                                    Y: =58
+                                  Children:
+                                    - DataCardKey17:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldName
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =48
+                                          Size: =MyFontSize-1
+                                          Text: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          Wrap: =false
+                                          X: =30
+                                          Y: =10
+                                    - DataCardValue15:
+                                        Control: Classic/TextInput@2.3.2
+                                        MetadataKey: FieldValue
+                                        Properties:
+                                          AccessibleLabel: =Parent.DisplayName
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          Default: =Parent.Default
+                                          DelayOutput: =true
+                                          DisplayMode: =Parent.DisplayMode
+                                          Fill: |+
+                                            =//Ändern nur, wenn noch kein Wert vorhanden
+                                            If(Self.DisplayMode=DisplayMode.Edit,
+                                                RGBA(255, 255, 0, 1) //gelb
+                                            ,
+                                                RGBA(255, 255, 255, 1)
+                                            )
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          MaxLength: =Parent.MaxLength
+                                          OnChange: =Set(SCheckpointF3,DataCardValue15.Text);
+                                          PaddingLeft: =5
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          Size: =MyFontSize
+                                          Tooltip: =Parent.DisplayName
+                                          Visible: =false
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardKey17.Y + DataCardKey17.Height + 5
+                                    - ErrorMessage17:
+                                        Control: Label@2.5.1
+                                        MetadataKey: ErrorMessage
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(168, 0, 0, 1)
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =10
+                                          Live: =Live.Assertive
+                                          PaddingBottom: =0
+                                          PaddingLeft: =0
+                                          PaddingRight: =0
+                                          PaddingTop: =0
+                                          Size: =MyFontSize
+                                          Text: |+
+                                            =//Parent.Error
+                                            If(IsBlank(SACheckpointF3), 
+                                                "must not be empty"
+                                            )
+                                          Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardValue15.Y + DataCardValue15.Height
+                                    - StarVisible17:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldRequired
+                                        Properties:
+                                          Align: =Align.Center
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =DataCardKey17.Height
+                                          Text: ="*"
+                                          Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                          Width: =30
+                                          Wrap: =false
+                                          Y: =DataCardKey17.Y
+                                    - F3ChoicesInput:
+                                        Control: FluentV8/Radio@1.4.7
+                                        Properties:
+                                          AccessibleLabel: ="Make a choice"
+                                          ContentLanguage: =Language()
+                                          DefaultSelectedItems: =[SACheckpointF3]
+                                          Font: =Font.'Open Sans'
+                                          Height: =(CountRows(Split(LookUp(colFlexForm,Value(DisplayOrder)=3,Choices),";"))+1)*40
+                                          ItemFontSize: =MyFontSize
+                                          Items: =Split(LookUp(colFlexForm,Value(DisplayOrder)=3,Choices),";")
+                                          OnChange: =Set(SACheckpointF3,F3ChoicesInput.Selected.Value);
+                                          OnSelect: =Set(SACheckpointF3,F3ChoicesInput.Selected.Value);
+                                          PaddingBottom: =5
+                                          PaddingEnd: =5
+                                          PaddingStart: =5
+                                          PaddingTop: =5
+                                          RadioFillColor: =Color.Black
+                                          Tooltip: =" "
+                                          Visible: =LookUp(colFlexForm,Value(DisplayOrder)=3,ResponseType) = "Radio"
+                                          Width: =Parent.Width - 60
+                                          X: =29+1
+                                          Y: =DataCardKey17.Y + DataCardKey17.Height + 5
+                                        Children:
+                                          - Value1_3:
+                                              Control: FluentV8/RadioDataField@1.5.0
+                                              Variant: textualColumn
+                                              IsLocked: true
+                                              Properties:
+                                                FieldDisplayName: ="Value"
+                                                FieldName: ="Value"
+                                                FieldType: ="n"
+                                                Order: =2
+                                    - F3ComboInput:
+                                        Control: Classic/DropDown@2.3.1
+                                        Properties:
+                                          AccessibleLabel: ="Select an item"
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          BorderThickness: =1
+                                          ChevronBackground: =RGBA(56, 96, 178, 1)
+                                          ChevronFill: =RGBA(255, 255, 255, 1)
+                                          ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                                          ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                          ContentLanguage: =Language()
+                                          Default: =Parent.Default
+                                          Fill: =RGBA(255, 255, 0, 1)
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          Items: =Split(LookUp(colFlexForm,Value(DisplayOrder)=3,Choices),";")
+                                          Items.Value: =Value
+                                          OnChange: =Set(SACheckpointF3,F3ComboInput.Selected.Value);
+                                          OnSelect: =Set(SACheckpointF3,F3ComboInput.Selected.Value);
+                                          PaddingBottom: =5
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PaddingTop: =5
+                                          PressedColor: =RGBA(255, 255, 255, 1)
+                                          PressedFill: =RGBA(0, 18, 107, 1)
+                                          Reset: =true
+                                          SelectionColor: =RGBA(255, 255, 255, 1)
+                                          SelectionFill: =RGBA(56, 96, 178, 1)
+                                          Size: =MyFontSize
+                                          Tooltip: =" "
+                                          Visible: =LookUp(colFlexForm,Value(DisplayOrder)=3,ResponseType) = "Combobox"
+                                          Width: =Parent.Width - 60
+                                          X: =29+1
+                                          Y: =DataCardKey17.Y + DataCardKey17.Height + 5
+                                    - F3DateInput:
+                                        Control: Classic/DatePicker@2.6.0
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          BorderThickness: =1
+                                          ContentLanguage: =Language()
+                                          DefaultDate: =If(LookUp(colFlexForm,Value(DisplayOrder)=3,ResponseType) = "Date",Parent.Default)
+                                          EndYear: =
+                                          Fill: =RGBA(255, 255, 0, 1)
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          IconBackground: =RGBA(56, 96, 178, 1)
+                                          IconFill: =RGBA(255, 255, 255, 1)
+                                          InputTextPlaceholder: =
+                                          IsEditable: =true
+                                          Language: =Language()
+                                          OnChange: |+
+                                            =Set(SACheckpointF3,
+                                                Text(F3DateInput.SelectedDate,DateTimeFormat.ShortDate)
+                                            );
+                                          OnSelect: =
+                                          PaddingLeft: =5
+                                          PaddingTop: =5
+                                          Reset: =true
+                                          Size: =MyFontSize
+                                          StartOfWeek: =StartOfWeek.Monday
+                                          StartYear: =
+                                          Tooltip: =" "
+                                          Visible: =LookUp(colFlexForm,Value(DisplayOrder)=3,ResponseType) = "Date"
+                                          Width: =Parent.Width - 60
+                                          X: =29+1
+                                          Y: =DataCardKey17.Y + DataCardKey17.Height + 5
+                                    - F3TextNumberInput:
+                                        Control: Classic/TextInput@2.3.2
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          BorderThickness: =1
+                                          ContentLanguage: =Language()
+                                          Default: =Parent.Default
+                                          DelayOutput: =true
+                                          Fill: =RGBA(255, 255, 0, 1)
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          Format: =If(LookUp(colFlexForm,Value(DisplayOrder)=3,ResponseType)="Number",TextFormat.Number,TextFormat.Text)
+                                          HintText: =
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          MaxLength: =If(LookUp(colFlexForm,Value(DisplayOrder)=3,ResponseType)="Number",10,30)
+                                          OnChange: =Set(SACheckpointF3,F3TextNumberInput.Text);
+                                          OnSelect: =
+                                          PaddingLeft: =5
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          Reset: =true
+                                          Size: =MyFontSize
+                                          Tooltip: =" "
+                                          VirtualKeyboardMode: =VirtualKeyboardMode.Text
+                                          Visible: =LookUp(colFlexForm,Value(DisplayOrder)=3,ResponseType) in ["Text", "Number"]
+                                          Width: |+
+                                            =If(LookUp(colFlexForm,Value(DisplayOrder)=3,ResponseType)="Number",
+                                                250,
+                                                Parent.Width - 60
+                                            )
+                                          X: =29+1
+                                          Y: =DataCardKey17.Y + DataCardKey17.Height + 5
+                              - F4_DataCard1:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: ClassicTextualEdit
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    DataField: ="OData__x0046_4"
+                                    Default: |+
+                                      =SACheckpointF4
+                                      //ThisItem.F4
+                                    DisplayName: |-
+                                      =SACheckpointF4Label
+                                      //DataSourceInfo([@pssChecklistsActivitiesP];DataSourceInfo.DisplayName;OData__x0046_4)
+                                    MaxLength: =//DataSourceInfo([@pssChecklistsActivitiesP]; DataSourceInfo.MaxLength; OData__x0046_4)
+                                    Required: =Self.Visible
+                                    Update: =DataCardValue16.Text
+                                    Visible: =!IsBlank(SACheckpointF4Label)
+                                    Width: =Parent.Width
+                                    X: =0
+                                    Y: =59
+                                  Children:
+                                    - DataCardKey18:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldName
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =48
+                                          Size: =MyFontSize-1
+                                          Text: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          Wrap: =false
+                                          X: =30
+                                          Y: =10
+                                    - DataCardValue16:
+                                        Control: Classic/TextInput@2.3.2
+                                        MetadataKey: FieldValue
+                                        Properties:
+                                          AccessibleLabel: =Parent.DisplayName
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          Default: =Parent.Default
+                                          DelayOutput: =true
+                                          DisplayMode: =Parent.DisplayMode
+                                          Fill: |+
+                                            =//Ändern nur, wenn noch kein Wert vorhanden
+                                            If(Self.DisplayMode=DisplayMode.Edit,
+                                                RGBA(255, 255, 0, 1) //gelb
+                                            ,
+                                                RGBA(255, 255, 255, 1)
+                                            )
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          MaxLength: =Parent.MaxLength
+                                          OnChange: =Set(SCheckpointF4,DataCardValue16.Text);
+                                          PaddingLeft: =5
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          Size: =MyFontSize
+                                          Tooltip: =Parent.DisplayName
+                                          Visible: =false
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardKey18.Y + DataCardKey18.Height + 5
+                                    - ErrorMessage18:
+                                        Control: Label@2.5.1
+                                        MetadataKey: ErrorMessage
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(168, 0, 0, 1)
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =10
+                                          Live: =Live.Assertive
+                                          PaddingBottom: =0
+                                          PaddingLeft: =0
+                                          PaddingRight: =0
+                                          PaddingTop: =0
+                                          Size: =MyFontSize
+                                          Text: |+
+                                            =//Parent.Error
+                                            If(IsBlank(SACheckpointF4), 
+                                                "must not be empty"
+                                            )
+                                          Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardValue16.Y + DataCardValue16.Height
+                                    - StarVisible18:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldRequired
+                                        Properties:
+                                          Align: =Align.Center
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =DataCardKey18.Height
+                                          Text: ="*"
+                                          Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                          Width: =30
+                                          Wrap: =false
+                                          Y: =DataCardKey18.Y
+                                    - F4TextNumberInput:
+                                        Control: Classic/TextInput@2.3.2
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          BorderThickness: =1
+                                          ContentLanguage: =Language()
+                                          Default: =Parent.Default
+                                          DelayOutput: =true
+                                          Fill: =RGBA(255, 255, 0, 1)
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          Format: =If(LookUp(colFlexForm,Value(DisplayOrder)=4,ResponseType)="Number",TextFormat.Number,TextFormat.Text)
+                                          HintText: =
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          MaxLength: =If(LookUp(colFlexForm,Value(DisplayOrder)=4,ResponseType)="Number",10,30)
+                                          OnChange: =Set(SACheckpointF4,F4TextNumberInput.Text);
+                                          OnSelect: =
+                                          PaddingLeft: =5
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          Reset: =true
+                                          Size: =MyFontSize
+                                          Tooltip: =" "
+                                          VirtualKeyboardMode: =VirtualKeyboardMode.Text
+                                          Visible: =LookUp(colFlexForm,Value(DisplayOrder)=4,ResponseType) in ["Text", "Number"]
+                                          Width: |+
+                                            =If(LookUp(colFlexForm,Value(DisplayOrder)=4,ResponseType)="Number",
+                                                250,
+                                                Parent.Width - 60
+                                            )
+                                          X: =29+1
+                                          Y: =DataCardKey18.Y + DataCardKey18.Height + 5
+                                    - F4DateInput:
+                                        Control: Classic/DatePicker@2.6.0
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          BorderThickness: =1
+                                          ContentLanguage: =Language()
+                                          DefaultDate: =If(LookUp(colFlexForm,Value(DisplayOrder)=4,ResponseType) = "Date",Parent.Default)
+                                          EndYear: =
+                                          Fill: =RGBA(255, 255, 0, 1)
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          IconBackground: =RGBA(56, 96, 178, 1)
+                                          IconFill: =RGBA(255, 255, 255, 1)
+                                          InputTextPlaceholder: =
+                                          IsEditable: =true
+                                          Language: =Language()
+                                          OnChange: |+
+                                            =Set(SACheckpointF4,
+                                                Text(F4DateInput.SelectedDate,DateTimeFormat.ShortDate)
+                                            );
+                                          OnSelect: =
+                                          PaddingLeft: =5
+                                          PaddingTop: =5
+                                          Reset: =true
+                                          Size: =MyFontSize
+                                          StartOfWeek: =StartOfWeek.Monday
+                                          StartYear: =
+                                          Tooltip: =" "
+                                          Visible: =LookUp(colFlexForm,Value(DisplayOrder)=4,ResponseType) = "Date"
+                                          Width: =Parent.Width - 60
+                                          X: =29+1
+                                          Y: =DataCardKey18.Y + DataCardKey18.Height + 5
+                                    - F4ComboInput:
+                                        Control: Classic/DropDown@2.3.1
+                                        Properties:
+                                          AccessibleLabel: ="Select an item"
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          BorderThickness: =1
+                                          ChevronBackground: =RGBA(56, 96, 178, 1)
+                                          ChevronFill: =RGBA(255, 255, 255, 1)
+                                          ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                                          ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                          ContentLanguage: =Language()
+                                          Default: =Parent.Default
+                                          Fill: =RGBA(255, 255, 0, 1)
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          Items: =Split(LookUp(colFlexForm,Value(DisplayOrder)=4,Choices),";")
+                                          Items.Value: =Value
+                                          OnChange: =Set(SACheckpointF4,F4ComboInput.Selected.Value);
+                                          OnSelect: =Set(SACheckpointF4,F4ComboInput.Selected.Value);
+                                          PaddingBottom: =5
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PaddingTop: =5
+                                          PressedColor: =RGBA(255, 255, 255, 1)
+                                          PressedFill: =RGBA(0, 18, 107, 1)
+                                          Reset: =true
+                                          SelectionColor: =RGBA(255, 255, 255, 1)
+                                          SelectionFill: =RGBA(56, 96, 178, 1)
+                                          Size: =MyFontSize
+                                          Tooltip: =" "
+                                          Visible: =LookUp(colFlexForm,Value(DisplayOrder)=4,ResponseType) = "Combobox"
+                                          Width: =Parent.Width - 60
+                                          X: =29+1
+                                          Y: =DataCardKey18.Y + DataCardKey18.Height + 5
+                                    - F4ChoicesInput:
+                                        Control: FluentV8/Radio@1.4.7
+                                        Properties:
+                                          AccessibleLabel: ="Make a choice"
+                                          ContentLanguage: =Language()
+                                          DefaultSelectedItems: =[SACheckpointF4]
+                                          Font: =Font.'Open Sans'
+                                          Height: =(CountRows(Split(LookUp(colFlexForm,Value(DisplayOrder)=4,Choices),";"))+1)*40
+                                          ItemFontSize: =MyFontSize
+                                          Items: =Split(LookUp(colFlexForm,Value(DisplayOrder)=4,Choices),";")
+                                          OnChange: |+
+                                            =Set(SACheckpointF4,F4ChoicesInput.Selected.Value);
+                                          OnSelect: |+
+                                            =Set(SACheckpointF4,F4ChoicesInput.Selected.Value);
+                                          PaddingBottom: =5
+                                          PaddingEnd: =5
+                                          PaddingStart: =5
+                                          PaddingTop: =5
+                                          RadioFillColor: =Color.Black
+                                          Tooltip: =" "
+                                          Visible: =LookUp(colFlexForm,Value(DisplayOrder)=4,ResponseType) = "Radio"
+                                          Width: =Parent.Width - 60
+                                          X: =29+1
+                                          Y: =DataCardKey18.Y + DataCardKey18.Height + 5
+                                        Children:
+                                          - Value1_4:
+                                              Control: FluentV8/RadioDataField@1.5.0
+                                              Variant: textualColumn
+                                              IsLocked: true
+                                              Properties:
+                                                FieldDisplayName: ="Value"
+                                                FieldName: ="Value"
+                                                FieldType: ="n"
+                                                Order: =2
+                              - F5_DataCard1:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: ClassicTextualEdit
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    DataField: ="OData__x0046_5"
+                                    Default: |+
+                                      =SACheckpointF5
+                                      //ThisItem.F5
+                                    DisplayName: |-
+                                      =SACheckpointF5Label
+                                      //DataSourceInfo([@pssChecklistsActivitiesP];DataSourceInfo.DisplayName;OData__x0046_5)
+                                    MaxLength: =//DataSourceInfo([@pssChecklistsActivitiesP]; DataSourceInfo.MaxLength; OData__x0046_5)
+                                    Required: =Self.Visible
+                                    Update: =DataCardValue17.Text
+                                    Visible: =!IsBlank(SACheckpointF5Label)
+                                    Width: =Parent.Width
+                                    X: =0
+                                    Y: =60
+                                  Children:
+                                    - DataCardKey19:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldName
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =48
+                                          Size: =MyFontSize-1
+                                          Text: =Parent.DisplayName
+                                          Width: =Parent.Width - 60
+                                          Wrap: =false
+                                          X: =30
+                                          Y: =10
+                                    - DataCardValue17:
+                                        Control: Classic/TextInput@2.3.2
+                                        MetadataKey: FieldValue
+                                        Properties:
+                                          AccessibleLabel: =Parent.DisplayName
+                                          BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                          Default: =Parent.Default
+                                          DelayOutput: =true
+                                          DisplayMode: =Parent.DisplayMode
+                                          Fill: |+
+                                            =//Ändern nur, wenn noch kein Wert vorhanden
+                                            If(Self.DisplayMode=DisplayMode.Edit,
+                                                RGBA(255, 255, 0, 1) //gelb
+                                            ,
+                                                RGBA(255, 255, 255, 1)
+                                            )
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          MaxLength: =Parent.MaxLength
+                                          OnChange: =Set(SCheckpointF5,DataCardValue17.Text);
+                                          PaddingLeft: =5
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          Size: =MyFontSize
+                                          Tooltip: =Parent.DisplayName
+                                          Visible: =false
+                                          Width: =Parent.Width - 60
+                                          X: =29+1
+                                          Y: =DataCardKey19.Y + DataCardKey19.Height + 5
+                                    - ErrorMessage19:
+                                        Control: Label@2.5.1
+                                        MetadataKey: ErrorMessage
+                                        Properties:
+                                          AutoHeight: =true
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(168, 0, 0, 1)
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =10
+                                          Live: =Live.Assertive
+                                          PaddingBottom: =0
+                                          PaddingLeft: =0
+                                          PaddingRight: =0
+                                          PaddingTop: =0
+                                          Size: =MyFontSize
+                                          Text: |+
+                                            =//Parent.Error
+                                            If(IsBlank(SACheckpointF5), 
+                                                "must not be empty"
+                                            )
+                                          Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                          Width: =Parent.Width - 60
+                                          X: =30
+                                          Y: =DataCardValue17.Y + DataCardValue17.Height
+                                    - StarVisible19:
+                                        Control: Label@2.5.1
+                                        MetadataKey: FieldRequired
+                                        Properties:
+                                          Align: =Align.Center
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          Color: =RGBA(0, 18, 107, 1)
+                                          Font: =Font.'Open Sans'
+                                          Height: =DataCardKey19.Height
+                                          Text: ="*"
+                                          Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                          Width: =30
+                                          Wrap: =false
+                                          Y: =DataCardKey19.Y
+                                    - F5TextNumberInput:
+                                        Control: Classic/TextInput@2.3.2
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          BorderThickness: =1
+                                          ContentLanguage: =Language()
+                                          Default: =Parent.Default
+                                          DelayOutput: =true
+                                          Fill: =RGBA(255, 255, 0, 1)
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          Format: =If(LookUp(colFlexForm,Value(DisplayOrder)=5,ResponseType)="Number",TextFormat.Number,TextFormat.Text)
+                                          HintText: =
+                                          HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          MaxLength: =If(LookUp(colFlexForm,Value(DisplayOrder)=5,ResponseType)="Number",10,30)
+                                          OnChange: =Set(SACheckpointF5,F5TextNumberInput.Text);
+                                          OnSelect: =
+                                          PaddingLeft: =5
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          Reset: =true
+                                          Size: =MyFontSize
+                                          Tooltip: =" "
+                                          VirtualKeyboardMode: =VirtualKeyboardMode.Text
+                                          Visible: =LookUp(colFlexForm,Value(DisplayOrder)=5,ResponseType) in ["Text", "Number"]
+                                          Width: |+
+                                            =If(LookUp(colFlexForm,Value(DisplayOrder)=5,ResponseType)="Number",
+                                                250,
+                                                Parent.Width - 60
+                                            )
+                                          X: =29+1
+                                          Y: =DataCardKey19.Y + DataCardKey19.Height + 5
+                                    - F5DateInput:
+                                        Control: Classic/DatePicker@2.6.0
+                                        Properties:
+                                          AccessibleLabel: =Self.Tooltip
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          BorderThickness: =1
+                                          ContentLanguage: =Language()
+                                          DefaultDate: =If(LookUp(colFlexForm,Value(DisplayOrder)=5,ResponseType) = "Date",Parent.Default)
+                                          EndYear: =
+                                          Fill: =RGBA(255, 255, 0, 1)
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          IconBackground: =RGBA(56, 96, 178, 1)
+                                          IconFill: =RGBA(255, 255, 255, 1)
+                                          InputTextPlaceholder: =
+                                          IsEditable: =true
+                                          Language: =Language()
+                                          OnChange: |-
+                                            =Set(SACheckpointF5,
+                                                Text(F5DateInput.SelectedDate,DateTimeFormat.ShortDate)
+                                            );
+                                          OnSelect: =
+                                          PaddingLeft: =5
+                                          PaddingTop: =5
+                                          Reset: =true
+                                          Size: =MyFontSize
+                                          StartOfWeek: =StartOfWeek.Monday
+                                          StartYear: =
+                                          Tooltip: =" "
+                                          Visible: =LookUp(colFlexForm,Value(DisplayOrder)=5,ResponseType) = "Date"
+                                          Width: =Parent.Width - 60
+                                          X: =29+1
+                                          Y: =DataCardKey19.Y + DataCardKey19.Height + 5
+                                    - F5ComboInput:
+                                        Control: Classic/DropDown@2.3.1
+                                        Properties:
+                                          AccessibleLabel: ="Select an item"
+                                          BorderColor: =RGBA(0, 0, 0, 1)
+                                          BorderThickness: =1
+                                          ChevronBackground: =RGBA(56, 96, 178, 1)
+                                          ChevronFill: =RGBA(255, 255, 255, 1)
+                                          ChevronHoverBackground: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                                          ChevronHoverFill: =RGBA(255, 255, 255, 1)
+                                          ContentLanguage: =Language()
+                                          Default: =Parent.Default
+                                          Fill: =RGBA(255, 255, 0, 1)
+                                          FocusedBorderThickness: =2
+                                          Font: =Font.'Open Sans'
+                                          FontWeight: =FontWeight.Bold
+                                          HoverFill: =RGBA(186, 202, 226, 1)
+                                          Items: =Split(LookUp(colFlexForm,Value(DisplayOrder)=5,Choices),";")
+                                          Items.Value: =Value
+                                          OnChange: =Set(SACheckpointF5,F5ComboInput.Selected.Value);
+                                          OnSelect: =Set(SACheckpointF5,F5ComboInput.Selected.Value);
+                                          PaddingBottom: =5
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PaddingTop: =5
+                                          PressedColor: =RGBA(255, 255, 255, 1)
+                                          PressedFill: =RGBA(0, 18, 107, 1)
+                                          Reset: =true
+                                          SelectionColor: =RGBA(255, 255, 255, 1)
+                                          SelectionFill: =RGBA(56, 96, 178, 1)
+                                          Size: =MyFontSize
+                                          Tooltip: =" "
+                                          Visible: =LookUp(colFlexForm,Value(DisplayOrder)=5,ResponseType) = "Combobox"
+                                          Width: =Parent.Width - 60
+                                          X: =29+1
+                                          Y: =DataCardKey19.Y + DataCardKey19.Height + 5
+                                    - F5ChoicesInput:
+                                        Control: FluentV8/Radio@1.4.7
+                                        Properties:
+                                          AccessibleLabel: ="Make a choice"
+                                          ContentLanguage: =Language()
+                                          DefaultSelectedItems: =[SACheckpointF5]
+                                          Font: =Font.'Open Sans'
+                                          Height: =(CountRows(Split(LookUp(colFlexForm,Value(DisplayOrder)=5,Choices),";"))+1)*40
+                                          ItemFontSize: =MyFontSize
+                                          Items: =Split(LookUp(colFlexForm,Value(DisplayOrder)=5,Choices),";")
+                                          OnChange: =Set(SACheckpointF5,F5ChoicesInput.Selected.Value);
+                                          OnSelect: =Set(SACheckpointF5,F5ChoicesInput.Selected.Value);
+                                          PaddingBottom: =5
+                                          PaddingEnd: =5
+                                          PaddingStart: =5
+                                          PaddingTop: =5
+                                          RadioFillColor: =Color.Black
+                                          Tooltip: =" "
+                                          Visible: =LookUp(colFlexForm,Value(DisplayOrder)=5,ResponseType) = "Radio"
+                                          Width: =Parent.Width - 60
+                                          X: =29+1
+                                          Y: =DataCardKey19.Y + DataCardKey19.Height + 5
+                                        Children:
+                                          - Value1_5:
+                                              Control: FluentV8/RadioDataField@1.5.0
+                                              Variant: textualColumn
+                                              IsLocked: true
+                                              Properties:
+                                                FieldDisplayName: ="Value"
+                                                FieldName: ="Value"
+                                                FieldType: ="n"
+                                                Order: =2
+            - FooterLabel1_6:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Right
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  Color: =RGBA(255, 255, 255, 1)
+                  DisplayMode: =DisplayMode.View
+                  Fill: =RGBA(0, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Lighter
+                  Height: =50
+                  PaddingLeft: =15
+                  PaddingRight: =15
+                  Size: =MyFontSize-3
+                  Text: "=If(!IsBlank(FooterText),\r\n    FooterText,\r\n    \"v\"\r\n    &MyVersion\r\n    &\"|\"&MyDeviceType\r\n    &If(OnlineStatus=0,\"|Offline\",\"|Online\")\r\n    &\"|\"&MyLanguage\r\n    \r\n    //&\"|Mode:\"&EditForm1_15.Mode //(0=Edit;1=Add)\r\n    //&\"|EditEntry:\"&EditEntry\r\n    //&\"|SelectedChecklist\"&SelectedChecklist\r\n    //&\"|Choices:\"&LookUp(colFlexForm;Value(DisplayOrder)=3;Choices)\r\n    //&SACheckpointF1\r\n)\r\n"
+                  Width: =Parent.Width
+                  Wrap: =false
+                  Y: =Parent.Height-Self.Height
+      - ImageLoading1_6:
+          Control: Image@2.2.3
+          Properties:
+            AccessibleLabel: =" "
+            BorderColor: =RGBA(0, 18, 107, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =150
+            Image: =Loading_1
+            ImagePosition: =ImagePosition.Fill
+            TabIndex: =0
+            Visible: =_ShowLoadingHint
+            Width: =150
+            X: =Parent.Width/2 - Self.Width/2
+            Y: =Parent.Height/2 - Self.Height/2
