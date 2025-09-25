@@ -95,8 +95,6 @@ The team is notified of new service documents by email and reviews them. Incorre
 <div class="content">
   <p style="float: right;"><a href="#_home">Top</a>&nbsp;&#8593;</p>
   <h2>System environment</h2>
-  <br>
-
   <img width="100%" src="images/pobvolServiceSolutionEnvironment.png" alt="pobvol Service Solution">
   <br />
   <br />
