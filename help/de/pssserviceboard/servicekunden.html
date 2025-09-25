@@ -1,0 +1,280 @@
+<DOCTYPE html>
+<html lang="de-DE">
+    
+<!--
+#This file is part of the software solution pobvol Service Solution. 
+#pobvol Service Solution is Free Software, delivered as open source. You can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version. The solution is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with the solution. If not, see <http://www.gnu.org/licenses/>. 
+#Copyright © 2025 Volker Pobloth
+#Web: https://pobvol.com/
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;" />  
+    <title>Benutzerhandbuch | pobvol Service Solution | Power App pssService Board | Servicekunden</title>
+    <meta name="description" content="Benutzerhandbuch für die Softwarelösung pobvol Service Solution, Power App pssService Board. Servicekunden." />
+    <link type="text/css" rel="stylesheet" media="screen" href="style.css" />
+    <link type="text/css" rel="stylesheet" media="print" href="print.css" />    
+</head>
+
+<body>
+
+    <div class="content">
+        <a href="https://pobvol.com/de/pssservice.html" rel="nofollow" target="_blank" title="pobvol.com" >
+            <img class="logo" src="images/logo.png" alt="Logo"/>
+        </a>
+        <p style="font-size:normal; font-weight: bold;text-align: left;">
+            Benutzerhandbuch<br>
+            pobvol Service Solution<br>
+            Power App pssService Board<br>
+            Stand: 9'25<br>
+            <a href="../../de/pssserviceboard/home.html" rel="follow" target="_self" title="Deutsch" >Deutsch</a> / 
+            <a href="../../en/pssserviceboard/home.html" rel="follow" target="_self" title="English" >English</a>
+        </p>
+        <br>
+        <hr>
+        <h1 class="help">Servicekunden</h1>
+    </div>
+
+    <script src="mycookienoticede.js"></script>
+
+    <div class="content">
+        <p>
+            <b>Kundendaten benötigt Ihr Serviceteam für die Planung und Dokumentation der Serviceaktivitäten.</b><br>
+            <br> 
+            Die Daten werden entweder von App-Admins in der Power App <b>pssService Board</b> erfasst oder aus einer angeschlossenen Datenbank übernommen.<br>
+            <br>
+            Gespeichert werden die Daten in der SharePoint-Liste (SP-Liste) "Servicekunden".<br>
+        </p>
+    </div>
+
+
+    <a name="inhalt"></a>
+    <div class="content">
+        <h2>Inhalt</h2>
+        <br>
+        <p class="p12">
+            <a href="#_Toc202507260853">Das Kunden-Icon</a><br>
+            <a href="#_Toc202507251006">Anzahl Servicekunden</a><br>
+            <a href="#_Toc202507251011">Servicekundenübersicht I</a><br>
+            <a href="#_Toc180065540">Servicekundenübersicht II</a><br>
+            <a href="#_Toc180065542">Die Kundendaten</a><br>
+            <!--<a href="#_Toc180065544">Bing-Maps</a><br>-->
+            <a href="#_Toc180065545">Das Kundeninventar</a><br>
+            <a href="#_Toc180065539">Einen Servicekunden hinzufügen</a><br>
+            <a href="#_Toc202507250907">Eine Datenbank anschließen</a><br>
+        </p>
+    </div>
+
+
+    <a name="_Toc202507260853"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Das Kunden-Icon</h2>
+        <br>
+        <p>Auf jedem Screen der App <b>pssService Board</b> finden Sie links das Kunden-Icon.</p>
+        <br>
+        <img width=40 src="icons/icon_kunden.jpg">
+        Kunden: Ein Klick auf dieses Icon öffnet den Screen "Servicekunden". Die Servicekundenübersicht mit der Detailanzeige wird eingeblendet.<br>
+        <br>
+        <img width="100%" src="servicekunden-dateien/image007.png"><br>
+    </div>
+
+
+    <a name="_Toc202507251006"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Anzahl Servicekunden</h2>
+        <br>
+        <p>Der StartScreen der App <b>pssService Board</b> zeigt im Bereich "Stammdaten" die Anzahl der hinterlegten Servicekunden an.</p>
+        <br>
+        <img class="screenshotphone" src="servicekunden-dateien/image016.png">
+        <br>
+        <br>
+        <p>Ein Klick auf diesen Container öffnet den Screen "Servicekunden". Die Servicekundenübersicht mit der Detailanzeige wird eingeblendet.</p>
+    </div>
+
+
+    <a name="_Toc202507251011"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Die Kundenübersicht auf dem Startscreen</h2>
+        <br>
+        <p>Auf dem StartScreen der App <b>pssService Board</b> finden Sie im Bereich "Servicekunden" eine Kundenübersicht.</p>
+        <br>
+        <img class="screenshot" src="servicekunden-dateien/image017.png">
+        <br>
+        <br>
+        <p>Um die Liste zu filtern, einfach einen Suchbegriff im Suchfeld eingeben. Es werden dann die Kunden angezeigt, bei denen der Suchbegriff gefunden wird. Überprüft werden dazu Kundennummer, Kundenname, Strasse, Postleitzahl, Kundenort, Land, Ansprechpartner, Telefon und E-Mail.<br>
+        <br>
+        <p>Sortiert wird die Liste nach Kundenname.</p>
+        <br>
+        <img width=40 src="icons/icon_refresh.jpg">
+        Refresh: Mit einem Klick auf dieses Icon werden die Daten neu eingelesen.<br>
+        <br>
+        <p>Ein Klick auf einen Eintrag öffnet den Screen "Servicekunden". Die Servicekundenübersicht mit der Detailanzeige wird eingeblendet und der ausgewählte Kunde angezeigt.</p>
+    </div>
+
+
+    <a name="_Toc180065540"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Die Kundenübersicht auf dem Servicekunden-Screen</h2>
+        <br>
+        Kunden werden in der App <b>pssService Board</b> auf dem Screen "Servicekunden" in einer Kundenübersicht gelistet.<br>
+        <img class="screenshotphone" src="servicekunden-dateien/image004.png">
+        <br>
+        Erfolgt der Aufruf über das Kunden-Icon des Startscreens werden alle Kunden gelistet. Das gilt auch für den Aufruf über den Container "Anzahl Servicekunden". Ansonsten wird der ausgewählte Kunde gelistet und angezeigt.<br><br>
+        Werden alle Kunden gelistet, kann die Liste gefiltert werden, indem ein Suchbegriff in das Suchfeld eingeben wird. Es werden dann die Kunden gelistet, bei denen der Suchbegriff gefunden wird. Überprüft werden dazu Kundennummer, Kundenname, Strasse, Postleitzahl, Kundenort, Land, Ansprechpartner, Telefon und E-Mail.<br>
+        <br>
+        <img width=40 src="icons/icon_add.jpg">
+        Kunde hinzufügen: Mit einem Klick auf dieses Icon, kann ein Kunde hinzugefügt werden. Das Icon ist nur für Benutzer sichtbar, die zur App-Benutzergruppe App-Admins gehören.<br>
+        <br>
+        <img width=40 src="icons/icon_sort.jpg">
+        Sortierung: Sortiert wird die Liste nach Kundenname. Mit einem Klick auf dieses Icon, wechselt die Sortierung der Liste von aufsteigend zu absteigend und umgekehrt.<br>
+        <br>
+        <img width=40 src="icons/icon_refresh.jpg">
+        Refresh: Mit einem Klick auf dieses Icon werden die Daten neu eingelesen.<br>
+        <br>
+        <p>Mit einem Klick auf einen Kunden werden die Kundendaten in der Detailanzeige angezeigt.</p>
+    </div>
+
+    
+    <a name="_Toc180065542"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Die Kundendaten</h2>
+        <br>
+        Kundendaten zeigt die App <b>pssService Board</b> auf dem Screen "Servicekunden" in den Containern "Kunde" und "Servicekontakt" an.<br>
+        <br>
+        <b>Container: Kunde</b><br>
+        <img width="100%"  src="servicekunden-dateien/image008.png">
+        <br><br>
+        Die Kundennummer, den Kundenname und die Adresse benötigt Ihr Serviceteam für alle Aktivitäten. Die GPS-Koordinaten helfen bei der Nutzung von Navigationssoftware.</p>
+        <br>
+        <b>Container: Servicekontakt</b><br>
+        <img width="100%"  src="servicekunden-dateien/image010.png">
+        <br><br>
+        Ein Servicekontakt mit Telefon und E-Mail wird benötigt, damit Ihr Serviceteam den Kunden kontaktieren kann.<br>
+        <br>
+        Die Sprache hilft bei der Kommunikation mit dem Kunden. Möglich sind derzeit Deutsch und Englisch. Die Lösung nutzt die Sprache bei der automatischen Erstellung von Serviceberichten, E-Mails und Briefen.<br>
+        <br>
+        Die Kommunikationsart hilft bei der Kommunikation mit dem Kunden. Möglich sind "postalisch (per Brief)" und "elektronisch (per E-Mail)". Die Lösung verschickt nur dann automatisch erstellte E-Mails, wenn die Kunden einer Kommunikation per E-Mail zugestimmt haben.</p>
+        <br>
+        <img width=40 src="icons/icon_delete.jpg">
+        Löschen: Mit einem Klick auf dieses Icon kann der Kunde gelöscht werden. Wird nicht angezeigt, wenn bereits Servicevorgänge erfasst wurden. Das Icon ist nur für Benutzer sichtbar, die zur App-Benutzergruppe App-Admins gehören.<br>
+        <br>
+        <img width=40 src="icons/icon_edit.jpg">
+        Ändern: Mit einem Klick auf dieses Icon kann der Bearbeitungsmodus aufgerufen werden. Das Icon ist nur für Benutzer sichtbar, die zur App-Benutzergruppe App-Admins gehören.<br>
+    </div>
+
+    <!--
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <a name="_Toc180065544"><h2>Bing-Maps</h2></a>
+        <br>
+        <p>Der Standort des Kunden wird in einer Bing-Maps angezeigt, wenn ein Bing-Maps-Lizenzschlüssel hinterlegt wurde. Sind GPS-Koordinaten vorhanden, werden diese genutzt, ansonsten die Adresse.</p>
+        <br>
+        <img class="screenshot" src="servicekunden-dateien/image011.jpg">
+        <br>
+        <br>
+    </div>
+    -->
+
+
+    <a name="_Toc180065545"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Kundeninventar</h2>
+        <br>
+        Kundeninventar listet die App <b>pssService Board</b> auf dem Screen "Servicekunden" in dem Container
+        "Kundeninventar".<br>
+        <br>
+        <b>Container: Kundeninventar</b><br>
+        <img width="100%" src="servicekunden-dateien/image013.png">
+        <br><br>
+        <img width=40 src="icons/icon_inventar.png">
+        Inventar: Mit diesem Icon wird der Screen "Kundeninventar" aufgerufen. Die Inventarübersicht mit der Detailanzeige wird eingeblendet. Das gesamte Inventar des Kunden wird gelistet und das erste Inventar angezeigt.<br>
+        <br>
+        <p>Ein Klick auf einen Eintrag öffnet den Screen "Kundeninventar". Die Inventarübersicht mit der Detailanzeige wird eingeblendet. Das gesamte Inventar des Kunden wird gelistet und das ausgewählte Inventar angezeigt.</p>
+    </div>
+
+
+    <a name="_Toc180065539"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Einen Servicekunden hinzufügen</h2>
+        <br>
+        <p><b>Auf dem StartScreen der App pssService Board die Servicekunden aufrufen.</b> Die Servicekundenübersicht mit der Detailanzeige wird eingeblendet.</p>
+        <br>
+        <img width=40 src="icons/icon_add.jpg">
+        Kunde hinzufügen: Mit einem Klick auf dieses Icon, kann ein Kunde hinzugefügt werden. Das Icon ist nur für Benutzer sichtbar, die zur App-Benutzergruppe App-Admins gehören.<br>
+        <br>
+
+        <p><b>Das Icon "Kunde hinzufügen" wählen. </b>In der Detailansicht wird "Kunde hinzufügen" eingeblendet.</p>
+        <br>
+
+        <p><b>Eine eindeutige Kundennummer eingeben. </b>Geben Sie bitte die richtige Kundennummer ein. Dadurch werden geänderte Kundendaten automatisch aus einer eventuell angeschlossenen Datenbank übernommen. Für Kunden ohne Verbindung zu Ihrer Datenbank sollte ein separater Nummernkreis benutzt werden (bspw. ZDemo7).</p>
+
+        <br>
+        <p><b>Die Kundendaten eingeben.</b> Pflichtfelder sind Kundennummer, Kunde, Kundenort. Kundenummer, Name und Adresse benötigt Ihr Serviceteam für alle Aktivitäten. Die GPS-Koordinaten helfen bei der Nutzung von Navigationssoftware.</p>
+        <br>
+        <img width="100%" src="servicekunden-dateien/image005.png"><br>
+        <br>
+
+        <p><b>Nach unten scrollen und die Kontaktdaten eingeben. </b>Ein Servicekontakt mit Telefon und E-Mail wird benötigt, damit Ihr Serviceteam den Kunden kontaktieren kann.<br>
+        <br>
+
+        <img width="100%" src="servicekunden-dateien/image006.png"><br>
+
+        <br>
+        Die Sprache hilft bei der Kommunikation mit dem Kunden. Möglich sind derzeit Deutsch und Englisch. Die Lösung nutzt die Sprache bei der automatischen Erstellung von Serviceberichten, E-Mails und Briefen.<br>
+        <br>
+        Legen Sie auch die Kommunikationsart fest. Möglich sind "postalisch (per Brief)" und "elektronisch (per E-Mail)". Wünscht der Kunde die Kommunikation per E-Mail, werden genehmigte Serviceberichte automatisch per E-Mail an den Kunden gesendet.</p>
+        <br>
+        <p><b>Eingegebene Daten wurden bereits automatisch gespeichert. </b>Zum Schluss reicht daher ein Klick auf das Icon Schliessen, um den Bearbeitungsmodus zu beenden.</p>
+    </div>
+
+
+    <a name="_Toc202507250907"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Eine Datenbank anschließen</h2>
+        <br>
+        <p><b>Servicekunden und Kundeninventar können aus einer angeschlossenen Datenbank übernommen werden.</b> Eine Anpassung  der Stammdaten entfällt in diesem Fall.<br>
+        <br>
+        <img width="100%"  src="servicekunden-dateien/image015.png"><br>
+        <br>
+        <b>Es werden nur die Stammdaten übernommen, die auch benötigt werden!</b> Demodaten-Flag gesetzt? Servicevorgang erfasst? Kunde in SP-Liste Servicekunden vorhanden? Kundeninventar in SP-Liste Kundeninventar vorhanden?</p>
+        <br>
+        Abgeglichen werden die Kundendaten über die Kundennummer. Die App-Admins müssen daher bei der Anlage neuer Kunden in der App die richtige Kundennummer eingeben. Sollen Kunden ohne Verbindung zu einer Datenbank erfasst werden, sollte ein separater Nummernkreis benutzt werden (bspw. ZDemo7).<br>
+    </div>
+
+
+    <div class="content">
+        <a href="home.html">Einleitung</a> | 
+        <a href="einstellungen.html">Zurück</a>
+        <span style="float:right;"><a href="kundeninventar.html">Weiter</a></span> 
+        <!-- JS button -->
+        <a class="prev" href="einstellungen.html">&#60;</a>
+        <a class="next" href="kundeninventar.html">&#62;</a>
+    </div>
+
+    <div id="footer">
+        Copyright @ 2025 Volker Pobloth
+        <!-- | H: <span id="screenheight"></span> -->
+        <!-- | W: <span id="screenwidth"></span> -->
+    </div>
+
+    <div style="content: ''; clear: both; display: table;"></div>
+
+    <script>
+        //show all jsbutton class elements 
+        let jsbuttons = document.getElementsByClassName("jsbutton");
+        for (i = 0; i < jsbuttons.length; i++) {
+            jsbuttons[i].style.visibility = "initial";
+        }
+    </script>
+
+</body>
+</html>        

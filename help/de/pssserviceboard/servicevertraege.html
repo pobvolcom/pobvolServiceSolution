@@ -1,0 +1,254 @@
+<DOCTYPE html>
+<html lang="de-DE">
+    
+<!--
+#This file is part of the software solution pobvol Service Solution. 
+#pobvol Service Solution is Free Software, delivered as open source. You can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version. The solution is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with the solution. If not, see <http://www.gnu.org/licenses/>. 
+#Copyright © 2025 Volker Pobloth
+#Web: https://pobvol.com/
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;" />  
+    <title>Benutzerhandbuch | pobvol Service Solution | Power App pssService Board | Serviceverträge</title>
+    <meta name="description" content="Benutzerhandbuch für die Softwarelösung pobvol Service Solution, Power App pssService Board. Serviceverträge." />
+    <link type="text/css" rel="stylesheet" media="screen" href="style.css" />
+    <link type="text/css" rel="stylesheet" media="print" href="print.css" />    
+</head>
+
+<body>
+
+    <div class="content">
+        <a href="https://pobvol.com/de/pssservice.html" rel="nofollow" target="_blank" title="pobvol.com" >
+            <img class="logo" src="images/logo.png" alt="Logo"/>
+        </a>
+        <p style="font-size:normal; font-weight: bold;text-align: left;">
+            Benutzerhandbuch<br>
+            pobvol Service Solution<br>
+            Power App pssService Board<br>
+            Stand: 9'25<br>
+            <a href="../../de/pssserviceboard/home.html" rel="follow" target="_self" title="Deutsch" >Deutsch</a> / 
+            <a href="../../en/pssserviceboard/home.html" rel="follow" target="_self" title="English" >English</a>
+        </p>
+        <br>
+        <hr>
+        <h1 class="help">Serviceverträge</h1>
+    </div>
+
+    <script src="mycookienoticede.js"></script>
+
+    <div class="content">
+        <p>
+            <b>Vertragsdaten benötigt die Lösung nur dann, wenn Serviceleistungen abgerechnet werden sollen.</b><br> 
+            <br>
+            Dazu muss Ihr App-Admin die Standardpreise für Serviceleistungen hinterlegen und davon abweichende Preisvereinbarungen in der Power App <b>pssService Board</b> erfassen.<br>
+            <br>
+            Gespeichert werden die Vertragsdaten in den SharePoint-Listen (SP-Listen) "Servicevertraege" und "ServicevertraegeP".
+        </p>
+    </div>
+
+
+    <a name="inhalt"></a>
+    <div class="content">
+        <h2>Inhalt</h2>
+        <br>
+        <p class="p12">
+            <a href="#_Toc202507251600">Anzahl Serviceverträge</a><br>
+            <a href="#_Toc202507291840">Chart: Vertragsende ohne Folgevertrag</a>
+            <a href="#_Toc202507251011">Die Vertragsübersicht</a><br>
+            <a href="#_Toc180068700">Die Vertragsdaten</a><br>
+            <a href="#_Toc180068699">Einen Servicevertrag hinzufügen</a><br>
+            <a href="#_Toc180068701">Ein Vertragsdokument (PDF) hinzufügen</a><br>
+        </p>
+    </div>
+
+
+    <a name="_Toc202507251600"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Anzahl Serviceverträge</h2>
+        <br>
+        <p>Der StartScreen der App pssService Board zeigt im Bereich "Stammdaten" die Anzahl der hinterlegten Serviceverträge an.</p>
+        <br>
+        <img class="screenshotphone" src="servicevertraege-dateien/image001.png" alt="pobvol|pssService Board|StartScreen|Container|Anzahl Serviceverträge">
+        <br>
+        <br>
+        <p>Ein Klick auf diesen Container öffnet den Screen "Serviceverträge". Die Vertragsübersicht mit der Detailanzeige wird eingeblendet.</p>
+        <br>
+        <img width="100%" src="servicevertraege-dateien/image008.png" alt="pobvol|pssService Board|Screen:Serviceverträge"><br>
+    </div>
+
+
+    <a name="_Toc202507291840"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Chart: Vertragsende ohne Folgevertrag</h2>
+        <br>
+        <p>Der StartScreen der App <b>pssService Board</b> zeigt im Bereich "Serviceverträge" in einem Chart die monatliche Zahl an Verträgen, die in dem Monat auslaufen. Diese Verträge sollten von einem App-Admin überprüft werden.</p>
+        <img class="screenshotphone" src="servicevertraege-dateien/image013.png" alt="pobvol|pssService Board|StartScreen|Chart|Vertragsende ohne Folgevertrag">
+        <br>
+        <p>Ein Klick auf einen Monat des Charts öffnet den Screen "Serviceverträge". Die Vertragsübersicht mit der Detailanzeige wird eingeblendet. Gelistet werden Verträge, die in dem gewählten Monat auslaufen.</p>
+    </div>
+
+
+    <a name="_Toc202507251011"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Die Vertragsübersicht</h2>
+        <br>
+        Serviceverträge werden in der App <b>pssService Board</b> auf dem Screen "Serviceverträge" in einer Übersicht gelistet.<br>
+        <img class="screenshotphone" src="servicevertraege-dateien/image009.png" alt="pobvol|pssService Board|Screen:Serviceverträge|Vertragsübersicht">
+        <br>
+        <b>Welche Verträge werden gelistet?</b><br> 
+        <br>
+        <ul>
+        <li>Erfolgt der Aufruf über den Container "Anzahl Serviceverträge", werden alle Verträge gelistet.</li> 
+        <li>Erfolgt der Aufruf über das Chart "Verträge ohne Folgevertrag" werden die Verträge gelistet, die in dem gewählten Monat auslaufen.</li>
+        <li>Ansonsten werden die Verträge des gewählten Kunden / des gewählten Inventars gelistet.</li>
+        </ul>
+        <br>
+        <b>Kann die Liste gefiltert werden?</b><br> 
+        <br>
+        <p>Um die Liste zu filtern, einfach einen Suchbegriff im Suchfeld eingeben. Es werden dann die Verträge angezeigt, bei denen der Suchbegriff gefunden wird. Überprüft werden dazu Kundennummer, Kundenname, Inventarnummer, Hersteller, Geräteart, Vertragsnummer und Vertragsart.</p>
+        <br>
+        <img width=40 src="icons/icon_add.jpg">
+        Hinzufügen: Mit einem Klick auf dieses Icon, kann ein Servicevertrag hinzugefügt werden. Das Icon ist nur für Benutzer sichtbar, die zur App-Benutzergruppe App-Admins gehören.<br> 
+        <br>
+        <img width=40 src="icons/icon_sort.jpg">
+        Sortierung: Sortiert wird die Liste nach Kundenname, Inventarnummer und Vertragsstart. Mit einem Klick auf dieses Icon, wechselt die Sortierung der Liste von aufsteigend zu absteigend und umgekehrt.<br>
+        <br>
+        <img width=40 src="icons/icon_refresh.jpg">
+        Refresh: Mit einem Klick auf dieses Icon werden die Daten neu eingelesen.<br>
+        <br>
+        <p>Mit einem Klick auf einen Eintrag werden die Vertragsdaten in der Detailansicht angezeigt.</p>
+    </div>
+
+
+    <a name="_Toc180068700"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Die Vertragsdaten</h2>
+        <br>
+        Vertragsdaten zeigt die App <b>pssService Board</b> auf dem Screen "Serviceverträge" an.<br>
+        <br>
+        <b>Container: Vertragsdaten</b><br>
+        <img width="100%" src="servicevertraege-dateien/image010.png" alt="pobvol|pssService Board|Screen:Serviceverträge|Vertragsdaten">
+        <br>
+        <br>
+        <img width=40 src="icons/icon_delete.jpg">
+        Löschen: Mit einem Klick auf dieses Icon kann der Vertrag gelöscht werden. Das Icon ist nur für Benutzer sichtbar, die zur App-Benutzergruppe App-Admins gehören.<br>
+        <br>
+        <img width=40 src="icons/icon_edit.jpg">
+        Ändern: Mit einem Klick auf dieses Icon kann der Bearbeitungsmodus aufgerufen werden. Das Icon ist nur für Benutzer sichtbar, die zur App-Benutzergruppe App-Admins gehören.<br>
+        <br>
+        <p>Ein Klick auf das Vorschaubild öffnet das Dokument im PDF-Viewer. Mit einem Klick auf das X-Icon wechseln Sie zurück in die Anzeige der Vertragsdaten.</p>
+        <br>
+        <b>PDF-Viewer</b><br>
+        <img width="100%" src="servicevertraege-dateien/image011.png" alt="pobvol|pssService Board|Screen:Serviceverträge|Vertragsdokument im PDF-Viewer">
+        <br>
+    </div>
+
+
+    <a name="_Toc180068699"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Einen Servicevertrag hinzufügen</h2>
+        <br>
+        <p><b>In der Power App pssService Board die Serviceverträge aufrufen. </b>Dazu im Screen "Kundeninventar" im Container "Serviceverträge" das Icon "Verträge" aufrufen.</p>
+        <img class="screenshotphone" src="servicevertraege-dateien/image002.png" alt="pobvol|pssService Board|Screen:Serviceverträge|Vertragsübersicht">
+        <br>
+        <img width=40 src="icons/icon_add.jpg">
+        Hinzufügen: Mit einem Klick auf dieses Icon, kann ein Servicevertrag hinzugefügt werden. Das Icon ist nur für Benutzer sichtbar, die zur App-Benutzergruppe App-Admins gehören.<br> 
+        <br>
+        <p><b>Hinzufügen wählen.</b> Der Container "Vertrag hinzufügen" wird eingeblendet. Kunde und Kundeninventar sind vorbelegt.<br></p>
+        <br>
+        <img width="100%" src="servicevertraege-dateien/image003.png" alt="pobvol|pssService Board|Screen:Vertrag hinzufügen"><br>
+        <br><hr><br>
+
+        <p><b>Eine Vertragsart zuordnen. </b>Zur Verfügung stehen folgende Vertragsarten:</p>
+        <img class="screenshotphone" src="servicevertraege-dateien/image004.png" alt="pobvol|pssService Board|Screen:Serviceverträge|Vertragsarten">
+        <br><hr><br>
+
+        <p><b>Eine eindeutige Vertragsnummer wird vom System zugeordnet. </b>Die vom System zugeordnete Nummer wird zusammengesetzt aus aktuellem Jahr, Monat, Tag, Stunde, Minute und Sekunde (bspw. 20250727125449). Die Nummer kann geändert werden.</p>
+        <br><hr><br>
+
+        <p><b>Vertragslaufzeit-Anfang eingeben. </b>Dazu das Startdatum und die Startuhrzeit festlegen.</p>
+        <br><hr><br>
+
+        <p><b>Vertragslaufzeit in Monaten eingeben. </b></p>
+        <br><hr><br>
+            
+        <p>Das Ende der Vertragslaufzeit wird automatisch berechnet  und eingetragen. Änderungen sind nicht möglich.</p>
+        <br><hr><br>
+
+        <p>Das Kündigung bis-Datum wird ebenfalls automatisch berechnet und eingetragen. Dieses Datum liegt 30 Tage vor Vertragsende. Auch dieses Datum kann nicht geändert werden.</p>
+        <br><hr><br>
+
+        <p><b>Wenn gewünscht, die automatische Verlängerung aktivieren. </b></p>
+        <br>
+        <p>Der Power Automate Flow <b>"pobvol Service: Create follow-up contracts"</b> prüft jeden Montag um 8 Uhr ob Verträge verlängert werden sollen. Ist die automatische Verlängerung aktiv und wurde der Vertrag vom Kunden nicht bis zum Kündigung-bis-Datum gekündigt, wird ein Folgevertrag erstellt. Die App-Admins werden darüber per E-Mail informiert.</p>
+        <br>
+        <img class="screenshot" src="servicevertraege-dateien/image012.png"><br>
+        <br><hr><br>
+
+        <p><b>Die Services markieren, die Teil des Vertrags sind und den vereinbarten Preis eintragen.</b></p>
+        <br>
+        <img class="screenshot" src="servicevertraege-dateien/image005.png"><br>
+        <br>
+        <p>Die Servicearten sind abhängig von dem Gerätetyp (Flurförderzeuge, Fahrzeuge, etc.). Welche Servicearten angezeigt werden, hat Ihr Admin bei der Installation festgelegt.</p>
+        <br><hr><br>
+
+        <p><b>Das Serviceintervall festlegen.</b></p>
+        <img class="screenshotphone" src="servicevertraege-dateien/image006.png">
+        <br><hr><br>
+
+        <p><b>Zum Schluss "Daten speichern" wählen.</b></p>
+    </div>
+
+
+    <a name="_Toc180068701"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Ein Vertragsdokument (PDF) hinzufügen</h2>
+        <br>
+        <p><b>In der Vertragsanzeige das Icon "Ändern" aufrufen.</b></p>
+        <br>
+        <p><b>In der Änderungsanzeige herunterscrollen zu "PDF-Dokument in der SharePoint-Bibliothek speichern" und auf "PDF-Datei auswählen" klicken.</b></p>
+        <br><hr>
+        <img class="screenshotphone" src="servicevertraege-dateien/image007.png" alt="pobvol|pssService Board|Screen:Serviceverträge|PDF-Dokument hinzufügen">
+        <br><hr><br>
+        <p><b>Im nächsten Dialog, die PDF-Datei auswählen, die hochgeladen werden soll. </b>Sie können PDF-Dateien mit einer maximalen Größe von 10 MB hochladen!</p>
+        <br>
+        <p><b>Zum Schluss "Daten speichern" wählen. </b>Sie sehen ein Vorschaubild des Vertragsdokuments in der
+        Vertragsanzeige.</p>
+    </div>
+
+
+    <div class="content">
+        <a href="home.html">Einleitung</a> | 
+        <a href="kundeninventar.html">Zurück</a>
+        <span style="float:right;"><a href="serviceauftraege.html">Weiter</a></span> 
+        <!-- JS button -->
+        <a class="prev" href="kundeninventar.html">&#60;</a>
+        <a class="next" href="serviceauftraege.html">&#62;</a>
+    </div>
+
+    <div id="footer">
+        Copyright @ 2025 Volker Pobloth
+        <!-- | H: <span id="screenheight"></span> -->
+        <!-- | W: <span id="screenwidth"></span> -->
+    </div>
+
+    <div style="content: ''; clear: both; display: table;"></div>
+
+    <script>
+        //show all jsbutton class elements 
+        let jsbuttons = document.getElementsByClassName("jsbutton");
+        for (i = 0; i < jsbuttons.length; i++) {
+            jsbuttons[i].style.visibility = "initial";
+        }
+    </script>
+
+</body>
+</html>        

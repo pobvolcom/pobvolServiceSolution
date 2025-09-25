@@ -1,0 +1,334 @@
+<DOCTYPE html>
+<html lang="de-DE">
+    
+<!--
+#This file is part of the software solution pobvol Service Solution. 
+#pobvol Service Solution is Free Software, delivered as open source. You can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version. The solution is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with the solution. If not, see <http://www.gnu.org/licenses/>. 
+#Copyright © 2025 Volker Pobloth
+#Web: https://pobvol.com/
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;" />  
+    <title>Benutzerhandbuch | pobvol Service Solution | Power App pssService Board | Serviceaufträge & Erinnerungen</title>
+    <meta name="description" content="Benutzerhandbuch für die Softwarelösung pobvol Service Solution, Power App pssService Board. Serviceaufträge & Erinnerungen." />
+    <link type="text/css" rel="stylesheet" media="screen" href="style.css" />
+    <link type="text/css" rel="stylesheet" media="print" href="print.css" />    
+</head>
+
+<body>
+
+    <div class="content">
+        <a href="https://pobvol.com/de/pssservice.html" rel="nofollow" target="_blank" title="pobvol.com" >
+            <img class="logo" src="images/logo.png" alt="Logo"/>
+        </a>
+        <p style="font-size:normal; font-weight: bold;text-align: left;">
+            Benutzerhandbuch<br>
+            pobvol Service Solution<br>
+            Power App pssService Board<br>
+            Stand: 9'25<br>
+            <a href="../../de/pssserviceboard/home.html" rel="follow" target="_self" title="Deutsch" >Deutsch</a> / 
+            <a href="../../en/pssserviceboard/home.html" rel="follow" target="_self" title="English" >English</a>
+        </p>
+        <br>
+        <hr>
+        <h1 class="help">Serviceaufträge & Erinnerungen</a></h1>
+    </div>
+
+    <script src="mycookienoticede.js"></script>
+
+    <div class="content">
+        <p>
+            <b>Serviceaufträge sind mit den Kunden abgestimmte Termine. Erinnerungen helfen dabei, zukünftige Servicetermine nicht zu vergessen.</b><br>
+            <br> 
+            Die Daten werden von Benutzern der Gruppe "Serviceaufträge" in der Power App <b>pssService Board</b> angelegt, angepasst oder gelöscht. Auch die Lösung erstellt automatisch eine Erinnerung, sobald ein  Servicebericht der Serviceart Prüfung, Kontrolle, Wartung genehmigt wird.<br>
+            <br>
+            Gespeichert werden die Daten in den SharePoint-Listen (SP-Listen) "Serviceauftraege" und "ServiceauftraegeP". Serviceaufträge werden zusätzlich in einem <b>Outlook-Kalender</b> gespeichert. Outlook sendet diese Termine dann an die Techniker und wenn aktiviert, auch an die Kunden.<br>
+            <br>
+            Die App listet nur offene Aufträge / Erinnerungen. Als Offen gelten diese solange, bis für alle zugeordneten Geräte ein Servicevorgang angelegt wurde.<br>
+            <br>
+            <b>Hinweis: </b>Die Verwaltung Ihrer Servicetermine kann weiterhin wie bisher erfolgen, bspw. in Outlook oder über Excel-Listen. Die App muss nicht dazu benutzt werden. Es hilft aber, da voll integriert.
+        </p>
+    </div>
+
+
+    <a name="inhalt"></a>
+    <div class="content">
+        <h2>Inhalt</h2>
+        <br>
+        <p class="p12">
+            <a href="#_Toc202507260853">Das Aufträge-Icon</a><br>
+            <a href="#_Toc202507291840">Chart: Offene Serviceaufträge</a><br>
+            <a href="#_Toc202507291841">Chart: Offene Erinnerungen</a><br>            
+            <a href="#_Toc180133020">Die Auftragsübersicht</a><br>
+            <a href="#_Toc180133022">Die Auftragsdaten</a><br>
+            <a href="#_Toc180055425">Das zugeordnete Kundeninventar</a><br>
+            <a href="#_Toc180055426">Der Auftraggeber</a><br>
+            <!--<a href="#_Toc180055427">Auftrag/Erinnerung: Bing-Maps</a><br>-->
+            <a href="#_Toc180055428">Anlagen</a><br>
+            <a href="#_Toc180133019">Einen Auftrag / Erinnerung anlegen</a><br>
+        </p>
+    </div>
+
+
+    <a name="_Toc202507260853"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Das Aufträge-Icon</h2>
+        <br>
+        <p>Auf jedem Screen der App <b>pssService Board</b> finden Sie links das Aufträge-Icon.</p>
+        <br>
+        <img width=40 src="icons/icon_auftraege.jpg">
+        Aufträge: Ein Klick auf dieses Icon öffnet den Screen "Serviceaufträge". Die Auftragsübersicht mit der Detailanzeige wird eingeblendet.<br>
+        <br>
+        <img width="100%" src="serviceauftraege-dateien/image001.png"><br>
+    </div>
+
+
+    <a name="_Toc202507291840"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Chart: Offene Serviceaufträge</h2>
+        <br>
+        <p>Der StartScreen der App <b>pssService Board</b> zeigt im Bereich "Serviceaufträge" ein Chart mit den offenen Aufträgen pro Monat.</p>
+        <img class="screenshotphone" src="serviceauftraege-dateien/image002.png">
+        <br>
+        <p>Ein Klick auf einen Monat des Charts öffnet den Screen "Serviceaufträge". Die Auftragsübersicht mit der Detailanzeige wird eingeblendet. Gelistet werden die offenen Aufträge des ausgewählten Monats.</p>
+    </div>
+
+
+    <a name="_Toc202507291841"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Chart: Offene Erinnerungen</h2>
+        <br>
+        <p>Der StartScreen der App <b>pssService Board</b> zeigt im Bereich "Serviceaufträge" ein Chart mit den offenen Erinnerungen pro Monat.</p>
+        <img class="screenshotphone" src="serviceauftraege-dateien/image003.png">
+        <br>
+        <p>Ein Klick auf einen Monat des Charts öffnet den Screen "Serviceaufträge". Die Auftragsübersicht mit der Detailanzeige wird eingeblendet. Gelistet werden die offenen Erinnerungen des ausgewählten Monats.</p>
+    </div>
+
+
+    <a name="_Toc180133020"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Die Auftragsübersicht</h2>
+        <br>
+        Offene Aufträge und Erinnerungen werden in der App <b>pssService Board</b> auf dem Screen "Serviceaufträge" in einer Übersicht gelistet.<br>
+        <img class="screenshotphone" src="serviceauftraege-dateien/image004.png">
+        <br>
+        <b>Welche Aufträge / Erinnerungen werden gelistet?</b><br> 
+        <br>
+        <ul>
+        <li>Erfolgt der Aufruf über das Aufträge-Icon des Startscreens, werden alle offenen Aufträge / Erinnerungen gelistet.</li> 
+        <li>Erfolgt der Aufruf über das Chart "Offene Aufträge" werden die offenen Aufträge des ausgewählten Monats gelistet.</li>
+        <li>Erfolgt der Aufruf über das Chart "Offene Erinnerungen" werden die offenen Erinnerungen des ausgewählten Monats gelistet.</li> 
+        <li>Ansonsten werden die offenen Aufträge / Erinnerungen des gewählten Kunden / des gewählten Inventars gelistet.</li>
+        </ul>
+        <br>
+        <b>Kann die Liste gefiltert werden?</b><br> 
+        <br>
+        Die Liste kann gefiltert werden, indem ein Suchbegriff in das Suchfeld eingeben wird. Es werden dann die Einträge gelistet, bei denen der Suchbegriff gefunden wird. Überprüft werden dazu: Gerätetyp, Serviceart, Checkliste, Kundennummer, Kundenname, Kundenort, Anfangszeit, Monat, Jahr, Technikername, Inventarnummer, Hersteller, Inventarbezeichnung (Geräteart), Kundenauftragsdaten (Kundenauftragsnummer, Bestelldatum, Bestellung durch).<br>
+        <br>
+        <img width="40px" src="icons/icon_add.jpg">
+        Hinzufügen: Mit einem Klick auf dieses Icon, kann ein Auftrag / eine Erinnerung hinzugefügt werden. Das Icon ist nur für Benutzer sichtbar, die zu der App-Benutzergruppe "Serviceaufträge" gehören.<br>
+        <br>
+        <img width=40 src="icons/icon_sort.jpg">
+        Sortierung: Sortiert wird die Liste nach Anfangszeit auf-/absteigend und Kundenname aufsteigend. Mit einem Klick auf dieses Icon, wechselt die Sortierung der Liste von aufsteigend zu absteigend und umgekehrt.<br>
+        <br>
+        <img width=40 src="icons/icon_refresh.jpg">
+        Refresh: Mit einem Klick auf dieses Icon werden die Daten neu eingelesen.<br>
+        <br>
+        <p>Mit einem Klick auf einen Eintrag wird der Auftrag / die Erinnerung in der Detailansicht angezeigt.</p>
+    </div>
+
+
+    <a name="_Toc180133022"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Die Auftragsdaten</h2>
+        <br>
+        Auftragsdaten zeigt die App <b>pssService Board</b> auf dem Screen "Serviceaufträge" an.<br>
+        <br>
+        <b>Container: Auftragsdaten</b><br>
+        <img width="100%" src="serviceauftraege-dateien/image005.png">
+        <br><br>
+        <img width=40 src="icons/icon_delete.jpg">
+        Löschen: Mit einem Klick auf dieses Icon kann der Auftrag / die Erinnerung gelöscht werden. Das Icon ist nur für Benutzer sichtbar, die zur App-Benutzergruppe "Serviceaufträge" gehören.<br>
+        <br>
+        <img width=40 src="icons/icon_edit.jpg">
+        Ändern: Mit einem Klick auf dieses Icon kann der Bearbeitungsmodus aufgerufen werden. Das Icon ist nur für Benutzer sichtbar, die zur App-Benutzergruppe "Serviceaufträge" gehören.<br>
+    </div>
+
+
+    <a name="_Toc180055425"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top &#8593;</a></p>
+        <h2>Das zugeordnete Kundeninventar</h2>
+        <br>
+        Jedem Auftrag / Erinnerung ist mindestens ein Kundeninventar zugeordnet. Es können aber auch mehrere Einträge desselben Typs (bspw. Flurförderzeuge, Leitern, etc.) zugeordnet sein.<br>
+        <br>
+        <img width="100%" src="serviceauftraege-dateien/image006.png">
+        <br><br>
+        <img width=40 src="icons/icon_inventar.jpg">
+        Inventar: Ein Klick auf dieses Icon öffnet den Screen "Kundeninventar". Die Inventarübersicht mit der Detailanzeige wird eingeblendet. Gelistet wird das gesamte Inventar des Kunden.<br>
+        <br>
+        Wurde bereits ein Servicevorgang angelegt, wird mit einem Klick auf ein Inventar der Screen "Servicevorgänge" mit der Vorgangsübersicht und der Detailanzeige eingeblendet. Ansonsten wird der Screen "Neuer Servicevorgang" eingeblendet.<br>
+    </div>
+
+
+    <a name="_Toc180055426"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Der Auftraggeber</h2>
+        <br>
+        Kundendaten zeigt die App <b>pssService Board</b> auf dem Screen "Serviceaufträge" in den Containern "Auftraggeber" und "Servicekontakt" an.<br>
+        <br>
+        <b>Container: Auftraggeber</b><br>
+        <img width="100%" src="serviceauftraege-dateien/image007.png">
+        <br>
+        <br>
+        Hinweis: Wenn die Kundenauftragsdaten (Kundenauftragsnummer, Bestelldatum, Bestellung durch) angepasst werden müssen, dann muss der Bearbeitungsmodus des Auftrags / der Erinnerung aufgerufen werden. Dazu nach oben scrollen und das Ändern-Icon wählen.<br>
+        <br>
+        <b>Container: Servicekontakt</b><br>
+        <img width="100%" src="serviceauftraege-dateien/image008.png">
+    </div>
+
+
+    <!--
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top &#8593;</a></p>
+        <a name="_Toc180055427"></a><h2>Auftrag/Erinnerung: Bing-Maps</h2>
+        <br>
+        Es wird der Standort des Geräts angezeigt, wenn ein Bing-Maps-Lizenzschlüssel hinterlegt wurde. Sind GPS-Koordinaten vorhanden, werden diese genutzt, ansonsten die Adresse. Wurde im Auftrag/Erinnerung eine
+        abweichen Adresse eingegeben, wird diese angezeigt.<br>
+        <br>
+        <img class="screenshot" src="serviceauftraege-dateien/image016.jpg">
+        <br>
+    </div>
+    -->
+
+
+    <a name="_Toc180055428"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top &#8593;</a></p>
+        <h2>Anlagen</h2>
+        <br>
+        Anlagen zeigt die App <b>pssService Board</b> auf dem Screen "Serviceaufträge" in dem Container "Anlagen" an.<br>
+        <br>
+        <b>Container: Anlagen</b><br>
+        <img width="100%" src="serviceauftraege-dateien/image010.png">
+        <br>
+    </div>
+
+
+    <a name="_Toc180133019"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top &#8593;</a></p>
+        <h2>Einen Serviceauftrag / eine Erinnerung anlegen</h2>
+        <br>
+        <p><b>Auf dem Startbildschirm der App pssService Board die Servicekunden aufrufen. </b>Die Servicekundenübersicht mit der Detailanzeige wird eingeblendet.</p>
+        <br>
+        <p><b>In der Übersicht den Kunden suchen und auswählen. </b>Ist der Kunde nicht vorhanden, muss der Kunde in der App durch einen App-Admin erfasst werden.</p>
+        <br>
+        <p><b>Inventar aufrufen.</b> Die Inventarübersicht mit der Detailanzeige wird eingeblendet.</p>
+        <br>
+        <p><b>In der Übersicht das Inventar auswählen. </b>Ist das Inventar nicht vorhanden, muss es in der App durch einen App-Admin erfasst werden.</p>
+        <br>
+        <p><b>Aufträge aufrufen.</b> Die Serviceauftragsübersicht mit der Detailanzeige wird eingeblendet.</p>
+        <br>
+        <p><b>In der Übersicht auf das Hinzufügen-Icon klicken. </b>Das Icon ist nur für Benutzer sichtbar, die zur App-Benutzergruppe "Serviceaufträge" gehören. Es öffnet sich der Screen "Serviceauftrag hinzufügen".</p>
+        <br>
+        <img width="100%" src="serviceauftraege-dateien/image011.png">
+        <br><br>
+        <p>Im linken Bereich werden die Daten des Serviceauftrags / der Erinnerung angezeigt und bearbeitet. Im rechten Bereich erfolgt die Planung. Hier werden bis zu drei (3) Techniker ausgewählt, sowie das Datum und die Dauer des Technikereinsatzes bestimmt. Danach wird die Verfügbarkeit der Techniker angezeigt und die Startzeit ausgewählt. </p>
+        <br><hr><br>
+
+        <b>Gerätetyp: ist vorbelegt, kann aber geändert werden, wenn denn Inventar eines anderen Typs vorhanden ist. </b><br>
+        <br><hr><br>
+
+        <b>Serviceart: ist vorbelegt, kann aber geändert werden, wenn dem Gerätetyp weitere Servicearten zugeordnet wurden.</b> Welche Servicearten verfügbar sind, hat Ihr Admin bei der Installation der Lösung festgelegt.<br>
+        <br><hr><br>
+
+        <b>Checkliste: ist vorbelegt, kann aber geändert werden, wenn dem Gerätetyp und der gewählten Serviceart weitere Checklisten zugeordnet wurden.</b> Welche Checklisten verfügbar sind, hat Ihr Admin bei der Installation der Lösung festgelegt.<br>
+        <br><hr><br>
+
+        <b>Auftrag oder Erinnerung? </b>Standardwert ist Erinnerung. Soll ein Serviceauftrag erstellt werden, dann muss dieses Feld auf Nein gesetzt werden. Dadurch wird beim Speichern zusätzlich ein Outlook-Kalendereintrag
+        erstellt und der/die Techniker und der Kunde werden per E-Mail über den Termin informiert. Ob Kunden per E-Mail über Termine informiert werden, hat Ihr Admin bei der Installation der Lösung festgelegt.<br>
+        <br><hr><br>
+
+        <b>Kunde: ist vorbelegt. </b>Angezeigt wird der Kundenname, der Kundenort und die Kundennummer. Änderungen sind nicht möglich.<br>
+        <br><hr><br>
+
+        <b>Ort: ist vorbelegt. </b>Angezeigt wird die Kundenadresse. Änderungen sind nicht möglich.<br>
+        <br><hr><br>
+
+        <b>Abweichende Adresse: Falls das Gerät nicht an seinem üblichen Ort zu finden ist, kann eine abweichende Adresse eingeben werden.</b> Diese wird dann im Feld Ort angezeigt.<br>
+        <br><hr><br>
+
+        <b>Kundeninventar: Das gewählte Inventar ist ausgewählt und damit dem Auftrag / der Erinnerung zugeordnet. </b>Wird weiteres Inventar gelistet, kann dieses hinzugefügt und auch wieder entfernt werden.<br>
+        <img class="screenshotphone" src="serviceauftraege-dateien/image012.png">
+        <br><hr><br>
+
+        <b>Anfang, Ende, Techniker:  können nicht direkt bearbeitet werden. </b>Im rechten Bereich, in der Servicetermin-Planung, bis zu drei Techniker zuordnen, das gewünschte Datum auswählen und die Dauer des Servicevorgangs festlegen. Die Standardtermindauer für die Servicearten und Gerätetypen wurde von Ihrem Admin bei der Installation der Lösung festgelegt. Die Dauer wird vorbelegt mit der Standarddauer pro zugeordnetem Inventar.<br>
+        <br>
+        <b>Um die Anfangszeit festzulegen, im Bereich Verfügbarkeit auf den entsprechenden Balken klicken. </b>Danach sind Anfangszeit, Endezeit und Techniker eingetragen.<br>
+        <img class="screenshotphone" src="serviceauftraege-dateien/image013.png">
+        <br>
+        <img class="screenshotphone" src="serviceauftraege-dateien/image014.png">
+        <br>
+        
+        <br><hr><br>
+
+        <b>Auftragsdaten: Bestelldatum, Bestellung durch und falls bekannt, die Kundenauftragsnummer eingeben.</b><br>
+        <br><hr><br>
+
+        <b>Anlagen: Es können eine oder mehrere Dateien als Anlage(n) hinzugefügt werden. </b>Anlagen verbleiben auf dem SharePoint. Diese werden nicht in dem Outlook-Kalendereintrag gespeichert! Der Zugriff auf die Anlagen erfolgt über die Apps <b>pssService Board</b> und <b>pssServicePhone</b>.<br>
+        <br><hr><br>
+
+        <b>Beschreibung: Etwas nach unten scrollen, um die Beschreibung zu sehen. </b>Änderungen sind nicht möglich. Der Aufbau der Beschreibung wurde von ihrem Admin bei der Installation der Lösung festgelegt.<br>
+        <br><hr><br>
+
+        <b>Zum Schluss "Daten speichern" wählen. </b>Der neue Auftrag / die neue Erinnerung wird im Screen "Serviceaufträge" angezeigt.<br>
+        <br>
+        <img width="100%" src="serviceauftraege-dateien/image015.png">
+        <br><br>
+        <b>Serviceauftrag in Outlook</b>
+        <img width="100%" src="serviceauftraege-dateien/image016.png">
+        <br><br>
+        Wird ein Serviceauftrag in Outlook geöffnet, können alle Möglichkeiten des Button <b>Antworten </b>genutzt werden, die Outlook bietet (Zusagen, Mit Vorbehalt, Ablehnen, Andere Zeit vorschlagen, Antworten).<br>
+        <br>
+        <b>Wichtig: </b>Wird der Termin abgelehnt, dann muss ein Benutzer der App-Benutzergruppe "Serviceaufträge" den Serviceauftrag anpassen und einen anderen Techniker zuordnen.<br>
+        <br>
+        <b>Wichtig: </b>Wird eine andere Zeit vorgeschlagen, dann muss ein Benutzer der App-Benutzergruppe "Serviceaufträge" das Startdatum in dem Serviceauftrag anpassen.<br>
+    </div>
+
+
+    <div class="content">
+        <a href="home.html">Einleitung</a> | 
+        <a href="servicevertraege.html">Zurück</a>
+        <span style="float:right;"><a href="servicevorgaenge.html">Weiter</a></span> 
+        <!-- JS button -->
+        <a class="prev" href="servicevertraege.html">&#60;</a>
+        <a class="next" href="servicevorgaenge.html">&#62;</a>
+    </div>
+
+    <div id="footer">
+        Copyright @ 2025 Volker Pobloth
+        <!-- | H: <span id="screenheight"></span> -->
+        <!-- | W: <span id="screenwidth"></span> -->
+    </div>
+
+    <div style="content: ''; clear: both; display: table;"></div>
+
+    <script>
+        //show all jsbutton class elements 
+        let jsbuttons = document.getElementsByClassName("jsbutton");
+        for (i = 0; i < jsbuttons.length; i++) {
+            jsbuttons[i].style.visibility = "initial";
+        }
+    </script>
+
+</body>
+</html>        

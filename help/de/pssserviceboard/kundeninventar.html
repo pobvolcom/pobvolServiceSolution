@@ -1,0 +1,372 @@
+<DOCTYPE html>
+<html lang="de-DE">
+
+<!--
+#This file is part of the software solution pobvol Service Solution. 
+#pobvol Service Solution is Free Software, delivered as open source. You can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version. The solution is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with the solution. If not, see <http://www.gnu.org/licenses/>. 
+#Copyright © 2025 Volker Pobloth
+#Web: https://pobvol.com/
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;" />  
+    <title>Benutzerhandbuch | pobvol Service Solution | Power App pssService Board | Kundeninventar</title>
+    <meta name="description" content="Benutzerhandbuch für die Softwarelösung pobvol Service Solution, Power App pssService Board. Kundeninventar." />
+    <link type="text/css" rel="stylesheet" media="screen" href="style.css" />
+    <link type="text/css" rel="stylesheet" media="print" href="print.css" />    
+</head>
+
+<body>
+
+    <div class="content">
+        <a href="https://pobvol.com/de/pssservice.html" rel="nofollow" target="_blank" title="pobvol.com" >
+            <img class="logo" src="images/logo.png" alt="Logo"/>
+        </a>
+        <p style="font-size:normal; font-weight: bold;text-align: left;">
+            Benutzerhandbuch<br>
+            pobvol Service Solution<br>
+            Power App pssService Board<br>
+            Stand: 9'25<br>
+            <a href="../../de/pssserviceboard/home.html" rel="follow" target="_self" title="Deutsch" >Deutsch</a> / 
+            <a href="../../en/pssserviceboard/home.html" rel="follow" target="_self" title="English" >English</a>
+        </p>
+        <br>
+        <hr>
+        <h1 class="help">Kundeninventar</h1>
+    </div>
+
+    <script src="mycookienoticede.js"></script>
+
+    <div class="content">
+        <p>
+            <b>Kunden- und Kundeninventardaten benötigt Ihr Serviceteam für die Planung und Dokumentation der Serviceaktivitäten.</b><br>
+            <br> 
+            Die Daten werden entweder von App-Admins in der Power App <b>pssService Board</b> erfasst oder aus einer angeschlossenen Datenbank übernommen.<br>
+            <br>
+            Gespeichert werden die Inventardaten in der SharePoint-Liste (SP-Liste) "Kundeninventar".<br>
+        </p>
+    </div>
+
+
+    <a name="inhalt"></a>
+    <div class="content">
+        <h2>Inhalt</h2>
+        <br>
+        <p class="p12">
+            <a href="#_Toc202507260853">Das Inventar-Icon</a><br>
+            <a href="#_Toc202507251600">Anzahl Kundeninventar</a><br>
+            <a href="#_Toc202507251011">Inventarübersicht I</a><br>
+            <a href="#_Toc180133020">Inventarübersicht II</a><br>
+            <a href="#_Toc180133022">Die Kundeninventardaten</a><br>
+            <a href="#_Toc180133023">Die Kundendaten</a><br>
+            <!--<a href="#_Toc180133025">Bing-Maps</a><br>-->
+            <a href="#_Toc202507271201">Zugeordnete Serviceverträge</a><br>
+            <a href="#_Toc180133026">Erfasste Servicevorgänge</a><br>
+            <a href="#_Toc180133027">Offene Serviceaufträge & Erinnerungen</a><br>
+            <a href="#_Toc180133019">Ein Inventar hinzufügen</a><br>
+            <a href="#_Toc202507250907">Eine Datenbank anschließen</a><br>
+        </p>
+    </div>
+
+
+    <a name="_Toc202507260853"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Das Inventar-Icon</h2>
+        <br>
+        <p>Auf jedem Screen der App <b>pssService Board</b> finden Sie links das Inventar-Icon.</p>
+        <br>
+        <img width=40 src="icons/icon_inventar.png">
+        Inventar: Ein Klick auf dieses Icon öffnet den Screen "Kundeninventar". Die Inventarübersicht mit der Detailanzeige wird eingeblendet.
+        <br>
+        <br>
+        <img width="100%" src="kundeninventar-dateien/image004.png" alt="pobvol|pssService Board|Screen:Kundeninventar"><br>
+    </div>
+
+
+    <a name="_Toc202507251600"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Anzahl Kundeninventar</h2>
+        <br>
+        <p>Der StartScreen der App <b>pssService Board</b> zeigt im Bereich "Stammdaten" die Anzahl des hinterlegten Kundeninventars an.</p>
+        <br>
+        <img class="screenshotphone" src="kundeninventar-dateien/image001.png" alt="pobvol|pssService Board|StartScreen|Container|Anzahl Kundeninventar">
+        <br>
+        <br>
+        <p>Ein Klick auf diesen Container öffnet den Screen "Kundeninventar". Die Inventarübersicht mit der Detailanzeige wird eingeblendet.</p>
+    </div>
+
+
+    <a name="_Toc202507251011"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Die Inventarübersicht auf dem Startscreen</h2>
+        <br>
+        <p>Auf dem StartScreen der App <b>pssService Board</b> finden Sie im Bereich "Kundeninventar" eine Inventarübersicht.</p>
+        <br>
+        <img width="100%" src="kundeninventar-dateien/image002.png" alt="pobvol|pssService Board|Startscreen|Inventarübersicht">
+        <br>
+        <br>
+        <p>Um die Liste zu filtern, einfach einen Suchbegriff im Suchfeld eingeben. Es werden dann nur die Einträge gelistet, bei denen der Suchbegriff gefunden wird. Überprüft werden dazu Kundennummer, Kundenname, Seriennummer (=Gerätenummer), Hersteller, Geräteart (=Gerätebezeichnung), Kundeninventarnummer, Inventarnummer und Gerätetyp.<br>
+        <br>
+        <p>Sortiert wird die Liste nach Kundenname und Inventarnummer.</p>
+        <br>
+        <img width=40 src="icons/icon_serviceauftraege.jpg">
+        Aufträge: Ein Klick auf dieses Icon schaltet einen Auftragsfilter ein und aus. Ist der Filter aktiv, wird nur Kundeninventar ohne Auftrag gelistet. Das hilft Ihrem Team bei der Einsatzplanung.<br>
+        <br>
+        <img width=40 src="icons/icon_refresh.jpg">
+        Refresh: Mit einem Klick auf dieses Icon werden die Daten neu eingelesen.<br>
+        <br>
+        <p>Ein Klick auf einen Eintrag öffnet den Screen "Kundeninventar". Die Inventarübersicht mit der Detailanzeige wird eingeblendet und das ausgewählte Inventar angezeigt.</p>
+    </div>
+
+
+    <a name="_Toc180133020"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Die Inventarübersicht auf dem Kundeninventar-Screen</h2>
+        <br>
+        Kundeninventar wird in der App <b>pssService Board</b> auf dem Screen "Kundeninventar" in einer Übersicht gelistet.<br>
+        <img class="screenshotphone" src="kundeninventar-dateien/image003.png" alt="pobvol|pssService Board|Screen:Kundeninventar|Inventarübersicht">
+        <br>
+        Erfolgt der Aufruf über das Inventar-Icon des Startscreens, wird das gesamte Inventar gelistet. Das gilt auch für den Aufruf über den Container "Anzahl Kundeninventar". Ansonsten wird das Inventar des ausgewählten Kunden gelistet.<br>
+        <br>
+        Die Liste kann gefiltert werden, indem ein Suchbegriff in das Suchfeld eingeben wird. Es werden dann die Einträge gelistet, bei denen der Suchbegriff gefunden wird. Überprüft werden dazu Kundennummer, Kundenname, Seriennummer (=Gerätenummer), Hersteller, Geräteart, Kundeninventarnummer, Inventarnummer und Gerätetyp.</p>
+        <br>
+        <img width="40px" src="icons/icon_add.jpg">
+        Hinzufügen: Mit einem Klick auf dieses Icon, kann ein Kundeninventar hinzugefügt werden. Das Icon ist nur für Benutzer sichtbar, die zu der App-Benutzergruppe "App-Admins" gehören.<br>
+        <br>
+        <img width=40 src="icons/icon_sort.jpg">
+        Sortierung: Sortiert wird die Liste nach Kundenname und Inventarnummer. Mit einem Klick auf dieses Icon, wechselt die Sortierung der Liste von aufsteigend zu absteigend und umgekehrt.<br>
+        <br>
+        <img width=40 src="icons/icon_refresh.jpg">
+        Refresh: Mit einem Klick auf dieses Icon werden die Daten neu eingelesen.<br>
+        <br>
+        <p>Mit einem Klick auf einen Eintrag wird das Inventar in der Detailansicht angezeigt.</p>
+    </div>
+
+
+    <a name="_Toc180133022"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Die Kundeninventardaten</h2>
+        <br>
+        Kundeninventardaten zeigt die App <b>pssService Board</b> auf dem Screen "Kundeninventar" in den Containern "Kundeninventar" und "Bild mit Bemerkungen und Code" an.<br>
+        <br>
+        <b>Hinweis: </b>Welche Informationen zu einem Kundeninventar angezeigt werden, hat Ihr Admin bei der Installation der Lösung pro Gerätetyp festgelegt.<br>
+        <br>
+        <b>Container: Kundeninventar</b><br>
+        <img width="100%" src="kundeninventar-dateien/image005.png" alt="pobvol|pssService Board|Screen:Kundeninventar|Inventardaten">
+        <br><br>
+        <img width=40 src="icons/icon_delete.jpg">
+        Löschen: Mit einem Klick auf dieses Icon kann das Inventar gelöscht werden. Wird nicht angezeigt, wenn bereits Servicevorgänge erfasst wurden. Das Icon ist nur für Benutzer sichtbar, die zur App-Benutzergruppe App-Admins gehören.<br>
+        <br>
+        <img width=40 src="icons/icon_edit.jpg">
+        Ändern: Mit einem Klick auf dieses Icon kann der Bearbeitungsmodus aufgerufen werden. Das Icon ist nur für Benutzer sichtbar, die zur App-Benutzergruppe App-Admins gehören.<br>
+        <br>
+        Ein Bild sagt mehr als tausend Worte. Es hilft auf jeden Fall bei der Identifikation des gesuchten Inventars. Ihr App-Admin kann im Bearbeitungsmodus jederzeit ein Bild hinzuzufügen oder ändern.<br>
+        <br>
+        <img width="100%" src="kundeninventar-dateien/image006.png">
+    </div>
+
+
+    <a name="_Toc180133023"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Die Kundendaten</h2>
+        <br>
+        Kundendaten zeigt die App <b>pssService Board</b> auf dem Screen "Kundeninventar" in den Containern "Kunde" und "Servicekontakt" an.<br>
+        <br>
+        <b>Container: Kunde</b><br>
+        <img width="100%" src="kundeninventar-dateien/image007.png" alt="pobvol|pssService Board|Screen:Kundeninventar|Kundendaten">
+        <br>
+        <br>
+        <b>Container: Servicekontakt</b><br>
+        <img width="100%" src="kundeninventar-dateien/image008.png">
+        <br>
+    </div>
+
+
+    <!--
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <a name="_Toc180133025"></a><h2>Bing-Maps</h2>
+        <br>
+        <p>Es wird der Standort des Kundeninventar/Geräts angezeigt, wenn ein Bing-Maps-Lizenzschlüssel hinterlegt wurde. Sind GPS-Koordinaten vorhanden, werden diese genutzt, ansonsten die Adresse.</p>
+        <br>
+        <img class="screenshot" src="kundeninventar-dateien/image030.jpg">
+        <br>
+    </div>
+    -->
+
+
+    <a name="_Toc202507271201"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Zugeordnete Serviceverträge</h2>
+        <br>
+        Serviceverträge listet die App <b>pssService Board</b> auf dem Screen "Kundeninventar" in dem Container "Serviceverträge". Die Übersicht listet alle dem Kundeninventar zugeordneten Serviceverträge. Angezeigt werden: Vertragsart, Vertragsnummer und Vertragslaufzeit.<br>
+        <br>
+        <b>Container: Serviceverträge</b><br>
+        <img width="100%" src="kundeninventar-dateien/image016.png" alt="pobvol|pssService Board|Screen:Kundeninventar|Vertragsübersicht">
+        <br><br>
+        <img width=40 src="icons/icon_vertraege.jpg">
+        Verträge: Mit einem Klick auf dieses Icon, wechselt die App in das Modul Serviceverträge und zeigt die erfassten Serviceverträge zu dem Inventar an. In dieser Anzeige können dann Serviceverträge erfasst, geändert und gelöscht werden.<br>
+        <br>
+        <p>Ein Klick auf einen Eintrag öffnet den Screen "Serviceverträge". Die Vertragsübersicht mit der Detailanzeige wird eingeblendet und der ausgewählte Vertrag wird angezeigt.</p>
+    </div>
+
+
+    <a name="_Toc180133026"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Erfasste Servicevorgänge</h2>
+        <br>
+        Eine Zusammenfassung der erfassten Servicevorgänge listet die App <b>pssService Board</b> auf dem Screen "Kundeninventar" in dem Container "Servicevorgänge". Angezeigt werden: Satz ID, Serviceart, Vorgangsdatum, Name des Technikers, Mängelklasse, Plakette (wenn aktiv für Serviceart/Gerätetyp), Checkpunkte mit Mängeln, Sicherheitserhebliche Kommentare (wenn vorhanden).<br>
+        <br>
+        <b>Container: Servicevorgänge</b><br>
+        <img class="screenshotphone" src="kundeninventar-dateien/image014.png" alt="pobvol|pssService Board|Screen:Kundeninventar|Vorgangsübersicht">
+        <br><br>
+        <img width=40 src="icons/icon_service.jpg">
+        Service: Ein Klick auf dieses Icon öffnet den Screen "Servicevorgänge" und zeigt die Servicevorgänge zu dem Kundeninventar an. Hier können dann Servicevorgänge erfasst, angepasst und gelöscht werden.<br>
+        <br>
+        <p>Ein Klick auf einen Eintrag öffnet den Screen "Servicevorgänge". Die Vorgangsübersicht mit der Detailanzeige wird eingeblendet und der ausgewählte Vorgang angezeigt.</p>
+    </div>
+
+
+    <a name="_Toc180133027"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Offene Serviceaufträge und Erinnerungen</h2>
+        <br>
+        Offene Serviceaufträge und Erinnerungen listet die App <b>pssService Board</b> auf dem Screen "Kundeninventar" in dem Container "Aufträge". Angezeigt werden: Monat (bspw. Jan), Jahr, Satz ID, Satzart (Auftrag oder Erinnerung), Serviceart, Datum, Uhrzeit von - bis, Dauer und Status.<br>
+        <br>
+        <b>Container: Aufträge</b><br>
+        <img class="screenshotphone" src="kundeninventar-dateien/image011.png" alt="pobvol|pssService Board|Screen:Kundeninventar|Auftragsübersicht">
+        <br><br>
+        <img width=40 src="icons/icon_check.jpg">
+        Check: Mit einem Klick auf dieses Icon, kann eine Prüfung gestartet werden. Ergebnis der Prüfung ist eine neue Erinnerung für die nächste Prüfung/Wartung. Bitte beachten: Bestehende Erinnerungen werden dabei gelöscht.<br>
+        <br>
+        <img width=40 src="icons/icon_serviceauftraege.jpg">
+        Aufträge: Ein Klick auf dieses Icon öffnet den Screen "Serviceaufträge" und zeigt die offenen Aufträge und Erinnerungen zu dem Kundeninventar an. Hier können dann Serviceaufträge und Erinnerungen erfasst, angepasst und gelöscht werden.<br>
+        <br>
+        <p>Ein Klick auf einen Eintrag öffnet den Screen "Serviceaufträge". Die Auftragsübersicht mit der Detailanzeige wird eingeblendet und der ausgewählte Eintrag angezeigt.</p>
+    </div>
+
+
+    <a name="_Toc180133019"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Ein Kundeninventar hinzufügen</h2>
+        <br>
+        <p><b>Auf dem StartScreen der App pssService Board die Servicekunden aufrufen, einen Kunden auswählen und das Kundeninventar aufrufen.</b> Bei neuen Kunden ist die Inventaranzeige erst einmal leer, bis das erste Inventar erfasst wurde.</p>
+        <img class="screenshotphone" src="kundeninventar-dateien/image012.png" alt="pobvol|pssService Board|Screen:Kundeninventar|Inventarübersicht">
+        <br>
+        <br>
+        <img width="40px" src="icons/icon_add.jpg">
+        Hinzufügen: Mit einem Klick auf dieses Icon, kann ein Kundeninventar hinzugefügt werden. Das Icon ist nur für Benutzer sichtbar, die zu der App-Benutzergruppe "App-Admins" gehören.
+        <br>
+        <br>
+        <p><b>Hinzufügen wählen.</b> Der Screen "Kundeninventar hinzufügen" wird eingeblendet.</p>
+        <br>
+        <img width="100%" src="kundeninventar-dateien/image013.png" alt="pobvol|pssService Board|Screen:Kundeninventar|Inventar hinzufügen und bearbeiten"><br>
+        <br>
+        <p><b>Hinweis: </b>Welche Information zu einem Kundeninventar erfasst werden kann, hat Ihr Admin bei der Installation der Lösung pro Gerätetyp festgelegt.</p>
+        <br><hr><br>
+
+        <p><b>Eine eindeutige Inventarnummer eingeben. </b>Geben Sie bitte die richtige Inventarnummer ein. Dadurch werden geänderte Daten automatisch aus einer eventuell angeschlossenen Datenbank übernommen. Geräte ohne Verbindung zu Ihrer Datenbank sollten mit einem separaten Z-Nummernkreis erfasst werden (bspw. Z01).</p>
+        <br><hr><br>
+
+        <p><b>Den Gerätetyp festlegen. </b>Welche Gerätetypen verfügbar sind, hat Ihr Admin bei der Installation der Lösung festgelegt (Flurförderzeug, Fahrzeug, Leiter, etc.).</p>
+        <br><hr><br>
+
+        <p><b>Den Hersteller eingeben. </b></p>
+        <br><hr><br>
+
+        <p><b>Die Geräteart eingeben. </b>Das ist eine Kurzbeschreibung (bspw. Mini).</p>
+        <br><hr><br>
+
+        <p><b>Die Kundeninventarnummer eingeben - wenn bekannt. </b>Ob das Feld angezeigt wird, hat Ihr Admin bei der Installation festgelegt.</p>
+        <br><hr><br>
+
+        <p><b>Die Artikelnummer des Herstellers eingeben - wenn bekannt.</b> Ob das Feld angezeigt wird, hat Ihr Admin bei der Installation festgelegt.</p>
+        <br><hr><br>
+
+        <p><b>Die Seriennummer ( = Gerätenummer) eingeben - wenn bekannt.</b> Ob das Feld angezeigt wird, hat Ihr Admin bei der Installation festgelegt.</p>
+        <br><hr><br>
+
+        <p><b>Den Standort des Geräts eingeben - wenn bekannt.</b> Ob das Feld angezeigt wird, hat Ihr Admin bei der Installation festgelegt.</p>
+        <br><hr><br>
+
+        <p><b>Die GPS-Koordinaten des Standorts eingeben - wenn bekannt.</b> Das hilft den Technikern bei den Einsätzen. Die Koordinaten können von einer Navigationssoftware genutzt werden.</p>
+        <br><hr><br>
+
+        <p><b>Ein Serviceintervall für regelmäßig wiederkehrende Serviceaktivitäten (Wartung, Kontrolle, Prüfung) zuordnen. </b>Beim Speichern, wird die <b>nächste Prüfung/Wartung</b> berechnet. Formel: Datum der letzten Prüfung/Wartung + Serviceintervall in Monaten. Ist kein Serviceintervall bekannt, wird mit 12 Monaten gerechnet. Ob das Feld angezeigt wird, hat Ihr Admin bei der Installation festgelegt.</p>
+        <br><hr><br>
+
+        <p><b>Das Baujahr eingeben - wenn bekannt. </b>Ob das Feld angezeigt wird, hat Ihr Admin bei der Installation festgelegt.</p>
+        <br><hr><br>
+
+        <p><b>Betriebsstunden können nicht am Inventar/Gerät gepflegt werden. Diese Information kann nur im Servicevorgang erfasst werden.</b> Ob das Feld angezeigt wird, hat Ihr Admin bei der Installation festgelegt.</p>
+        <br><hr><br>
+
+        <p><b>Softwareversion eingeben - wenn bekannt.</b> Ob das Feld angezeigt wird, hat Ihr Admin bei der Installation festgelegt.</p>
+        <br><hr><br>
+
+        <p><b>Hardwarestand eingeben - wenn bekannt.</b> Ob das Feld angezeigt wird, hat Ihr Admin bei der Installation festgelegt.</p>
+        <br><hr><br>
+
+        <p><b>Modulinformation eingeben - wenn bekannt.</b> Ob das Feld angezeigt wird, hat Ihr Admin bei der Installation festgelegt.</p>
+        <br><hr><br>
+
+        <p><b>Zusätzliche Bemerkungen eingeben - wenn gewünscht.</b></p>
+        <br><hr><br>
+
+        <p><b>Zum Schluss "Daten speichern" wählen</b>.</p>
+    </div>
+
+
+    <a name="_Toc202507250907"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Eine Datenbank anschließen</h2>
+        <br>
+        <p><b>Servicekunden und Kundeninventar können aus einer angeschlossenen Datenbank übernommen werden.</b> Eine Anpassung  der Stammdaten entfällt in diesem Fall.<br>
+        <br>
+        <img width="100%" src="kundeninventar-dateien/image015.png" alt="pobvol|pssService Board|Screen:Kundeninventar|Inventardaten aus Kundendatenbank übernehmen"><br>
+        <br>
+        <b>Es werden nur die Stammdaten übernommen, die auch benötigt werden!</b> Demodaten-Flag gesetzt? Servicevorgang erfasst? Kunde in SP-Liste Servicekunden vorhanden? Kundeninventar in SP-Liste Kundeninventar vorhanden?</p>
+        <br>
+        Abgeglichen werden die Inventardaten über die Kunden- und die Inventarnummer. Wird in der App ein Inventar von einem App-Admins hinzugefügt, muss die richtige Inventarnummer eingeben werden! Für Inventar ohne Verbindung zu einer Datenbank sollte ein separater Nummernkreis benutzt werden (bspw. ZDemo7).<br>
+    </div>
+
+
+    <div class="content">
+        <a href="home.html">Einleitung</a> | 
+        <a href="servicekunden.html">Zurück</a>
+        <span style="float:right;"><a href="servicevertraege.html">Weiter</a></span> 
+        <!-- JS button -->
+        <a class="prev" href="servicekunden.html">&#60;</a>
+        <a class="next" href="servicevertraege.html">&#62;</a>
+    </div>
+
+    <div id="footer">
+        Copyright @ 2025 Volker Pobloth
+        <!-- | H: <span id="screenheight"></span> -->
+        <!-- | W: <span id="screenwidth"></span> -->
+    </div>
+
+    <div style="content: ''; clear: both; display: table;"></div>
+
+    <script>
+        //show all jsbutton class elements 
+        let jsbuttons = document.getElementsByClassName("jsbutton");
+        for (i = 0; i < jsbuttons.length; i++) {
+            jsbuttons[i].style.visibility = "initial";
+        }
+    </script>
+
+</body>
+</html>        
