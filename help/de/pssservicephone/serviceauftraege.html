@@ -1,0 +1,215 @@
+<DOCTYPE html>
+<html lang="de-DE">
+    
+<!--
+#This file is part of the software solution pobvol Service Solution. 
+#pobvol Service Solution is Free Software, delivered as open source. You can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version. The solution is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with the solution. If not, see <http://www.gnu.org/licenses/>. 
+#Copyright © 2025 Volker Pobloth
+#Web: https://pobvol.com/
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;" />  
+    <title>Benutzerhandbuch | pobvol Service Solution | Power App pssService Phone | Serviceaufträge & Erinnerungen
+    </title>
+    <meta name="description" content="Benutzerhandbuch für die Softwarelösung pobvol Service Solution, Power App pssService Phone. Serviceaufträge & Erinnerungen." />
+    <link type="text/css" rel="stylesheet" media="screen" href="style.css" />
+    <link type="text/css" rel="stylesheet" media="print" href="print.css" />    
+</head>
+
+<body>
+
+    <div class="content">
+        <a href="https://pobvol.com/de/pssservice.html" rel="nofollow" target="_blank" title="pobvol.com" >
+            <img class="logo" src="images/logo.png" alt="Logo"/>
+        </a>
+        <p style="font-size:normal; font-weight: bold;text-align: left;">
+            Benutzerhandbuch<br>
+            pobvol Service Solution<br>
+            Power App pssService Phone<br>
+            Stand: 9'25<br>
+            <a href="serviceauftraege.html" rel="follow" target="_self" title="Deutsch" >Deutsch</a> / 
+            <a href="../../en/pssservicephone/service-orders.html" rel="follow" target="_self" title="English" ">English</a>
+        </p>
+        <br>
+        <hr>
+        <h1 class="help">Serviceaufträge & Erinnerungen</a></h1>
+    </div>
+
+
+    <div class="content">
+        <p>
+            <b>Serviceaufträge sind mit den Kunden abgestimmte Termine. Erinnerungen helfen dabei, zukünftige Servicetermine nicht zu vergessen.</b><br>
+            <br> 
+            Die Daten werden von Benutzern der Gruppe "Serviceaufträge" in der Power App <b>pssService Board</b> angelegt, angepasst oder gelöscht. Auch die Lösung erstellt automatisch eine Erinnerung, sobald ein  Servicebericht der Serviceart Prüfung, Kontrolle, Wartung genehmigt wird.<br>
+            <br>
+            Gespeichert werden die Daten in den SharePoint-Listen (SP-Listen) "Serviceauftraege" und "ServiceauftraegeP". Serviceaufträge werden zusätzlich in einem <b>Outlook-Kalender</b> gespeichert. Outlook sendet diese Termine dann an die Techniker und wenn aktiviert, auch an die Kunden.<br>
+            <br>
+            In der Power App <b>pssService Phone</b> werden offene Aufträge / Erinnerungen nur gelistet, eine Erfassung ist nicht möglich. Als Offen gelten diese solange, bis für alle zugeordneten Geräte ein Servicevorgang angelegt wurde. <br>
+            <br>
+            <b>Hinweis: </b>Die Verwaltung Ihrer Servicetermine kann weiterhin wie bisher erfolgen, bspw. in Outlook oder über Excel-Listen. Die App muss nicht dazu benutzt werden. Es hilft aber, da voll integriert.
+        </p>
+    </div>
+
+
+    <a name="inhalt"></a>
+    <div class="content">
+        <h2>Inhalt</h2>
+        <br>
+        <p class="p12">
+            <a href="#_Toc202508070943">Chart: Meine Woche</a><br>
+            <a href="#_Toc202507291840">Chart: Serviceaufträge (Team)</a><br>
+            <a href="#_Toc180133022">Auftragsdaten</a><br>
+            <a href="#_Toc180055425">Kundeninventar</a><br>
+            <a href="#_Toc180055426">Auftraggeber</a><br>
+            <!--<a href="#_Toc180055427">Bing-Maps</a><br>-->
+            <a href="#_Toc180055428">Anlagen</a><br>
+        </p>
+    </div>
+
+
+    <a name="_Toc202508070943"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Chart: Meine Woche</h2>
+        <br>
+        <p>Der StartScreen der App <b>pssService Phone</b> zeigt in einem Balkendiagramm für den ausgewählten Zeitraum, pro Tag<br>
+        <br>
+        <ul>
+            <li>die Anzahl der offenen Serviceaufträge und Erinnerungen des Technikers,</li>
+            <li>die Anzahl der vom Techniker erfassten Servicevorgänge und</li>
+            <li>die Anzahl der vom Techniker erfassten Rückreisen.</li>
+        </ul>
+        <br>
+        Der ausgewählte Zeitraum umfasst immer eine Woche (erster Tag der Woche ist immer Montag).</p>
+        <img class="screenshotphone" src="serviceauftraege-dateien/image017.png" alt="pobvol|pssService Phone|StartScreen|Meine Woche">
+        <br>
+        <img height=40 src="icons/icon_heute.png">
+        Mit einem Klick auf dieses Icon, wird der Zeitraum (Mo-So) auf die aktuelle Woche zurückgesetzt.<br>
+        <br>
+        <img width=40 src="icons/icon_week_back.png">
+        Zurück: Mit einem Klick auf dieses Icon, wird der Zeitraum (Mo-So) um eine Woche verringert.<br>
+        <br>
+        <img width=40 src="icons/icon_week_next.png">
+        Vor: Mit einem Klick auf dieses Icon, wird der Zeitraum (Mo-So) um eine Woche erhöht.<br>
+        <br>
+        <p>Ein Klick auf einen Balken im Diagramm öffnet den Screen "Mein Tag" und blendet die offenen Termine, die erfassten Vorgänge und Rückreisen für den ausgewählten Tag ein.</p>
+        <img class="screenshotphone" src="serviceauftraege-dateien/image018.png" alt="pobvol|pssService Phone|Screen:Mein Tag">
+        <br>
+        <p>Mit einem Klick auf einen Auftrag / Erinnerung wird der Screen "Serviceauftrag" eingeblendet.</p>
+    </div>
+
+
+    <a name="_Toc202507291840"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Serviceaufträge (Team)</h2>
+        <br>
+        <p>Der StartScreen der App <b>pssService Phone</b> zeigt in einem Balkendiagramm für den ausgewählten Zeitraum die Anzahl der offenen Serviceaufträge und Erinnerungen des Teams pro Tag. Der Zeitraum wird über das Chart "Meine Woche" bestimmt. Gezählt werden die Daten des Teams. Wurde die App mittels Power Apps Mobile gestartet, werden die Daten der aktuellen Woche im Cache gespeichert und stehen auch Offline zur Verfügung.</p>
+        <img class="screenshotphone" src="serviceauftraege-dateien/image002.png" alt="pobvol|pssService Phone|StartScreen|Chart Serviceaufträge (Team)">
+        <br>
+        <p>Ein Klick auf das Diagramm öffnet die "Auftragsübersicht". Gelistet werden alle offenen Aufträge und Erinnerungen des Teams für den im Diagramm angezeigten Zeitraum.</p>
+        <img class="screenshotphone" src="serviceauftraege-dateien/image004.png" alt="pobvol|pssService Phone|Screen:Serviceaufträge|Auftragsübersicht">
+        <br>
+        Die Liste kann gefiltert werden, indem ein Suchbegriff in das Suchfeld eingeben wird. Es werden dann die Einträge gelistet, bei denen der Suchbegriff gefunden wird. Überprüft werden dazu: Gerätetyp, Serviceart, Checkliste, Kundennummer, Kundenname, Kundenort, Anfangszeit, Monat, Jahr, Technikername, Inventarnummer, Hersteller, Inventarbezeichnung (Geräteart), Kundenauftragsdaten (Kundenauftragsnummer, Bestelldatum, Bestellung durch).<br>
+        <br>
+        <img width=40 src="icons/icon_sort.jpg">
+        Sortierung: Sortiert wird die Liste nach Anfangszeit auf-/absteigend und Kundenname aufsteigend. Mit einem Klick auf dieses Icon, wechselt die Sortierung der Liste von aufsteigend zu absteigend und umgekehrt.<br>
+        <br>
+        <p>Mit einem Klick auf einen Eintrag wird der Screen "Serviceauftrag" eingeblendet.</p>
+    </div>
+
+
+    <a name="_Toc180133022"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Auftragsdaten</h2>
+        <br>
+        Auftragsdaten zeigt die App <b>pssService Phone</b> auf dem Screen "Serviceaufträge" an.<br>
+        <br>
+        <b>Container: Auftragsdaten</b><br>
+        <img class="screenshotphone" src="serviceauftraege-dateien/image005.png" alt="pobvol|pssService Phone|Screen:Serviceauftrag|Auftragsdaten">
+    </div>
+
+
+    <a name="_Toc180055425"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top &#8593;</a></p>
+        <h2>Kundeninventar</h2>
+        <br>
+        Jedem Auftrag / Erinnerung ist mindestens ein Kundeninventar zugeordnet. Es können aber auch mehrere Einträge desselben Typs (bspw. Flurförderzeuge, Leitern, etc.) zugeordnet sein.<br>
+        <br>
+        <b>Container: Kundeninventar</b><br>
+        <img class="screenshotphone" src="serviceauftraege-dateien/image006.png" alt="pobvol|pssService Phone|Screen:Serviceauftrag|Kundeninventar">
+        <br>
+        Wurde bereits ein Servicevorgang angelegt, wird mit einem Klick auf ein Inventar der Screen "Servicevorgänge" mit der Vorgangsübersicht und der Detailanzeige eingeblendet. Ansonsten wird der Screen "Neuer Servicevorgang" eingeblendet.<br>
+    </div>
+
+
+    <a name="_Toc180055426"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top</a>&nbsp;&#8593;</p>
+        <h2>Auftraggeber</h2>
+        <br>
+        Kundendaten zeigt die App <b>pssService Phone</b> auf dem Screen "Serviceaufträge" in dem Containern "Auftraggeber" an.<br>
+        <br>
+        <b>Container: Auftraggeber</b><br>
+        <img class="screenshotphone" src="serviceauftraege-dateien/image007.png" alt="pobvol|pssService Phone|Screen:Serviceauftrag|Auftraggeber">
+    </div>
+
+
+    <!--
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top &#8593;</a></p>
+        <a name="_Toc180055427"></a><h2>Screen Serviceauftrag: Bing-Maps</h2>
+        <br>
+        Es wird der Standort des Geräts angezeigt, wenn ein Bing-Maps-Lizenzschlüssel hinterlegt wurde. Sind GPS-Koordinaten vorhanden, werden diese genutzt, ansonsten die Adresse. Wurde im Auftrag/Erinnerung eine
+        abweichen Adresse eingegeben, wird diese angezeigt.<br>
+        <br>
+        <img class="screenshotphone" src="serviceauftraege-dateien/image016.jpg">
+        <br>
+    </div>
+    -->
+
+
+    <a name="_Toc180055428"></a>
+    <div class="content">
+        <p style="float: right;"><a href="#inhalt">Top &#8593;</a></p>
+        <h2>Anlagen</h2>
+        <br>
+        Anlagen zeigt die App <b>pssService Phone</b> auf dem Screen "Serviceaufträge" in dem Container "Anlagen" an.<br>
+        <br>
+        <b>Container: Anlagen</b><br>
+        <img class="screenshotphone" src="serviceauftraege-dateien/image010.png" alt="pobvol|pssService Phone|Screen:Serviceauftrag|Anlagen">
+        <br>
+    </div>
+
+    
+    <div class="content">
+        <a href="home.html">Einleitung</a> | 
+        <a href="unterschrift.html">Zurück</a>
+        <span style="float:right;"><a href="servicevorgaenge.html">Weiter</a></span> 
+        <!-- JS button -->
+        <a class="prev" href="unterschrift.html">&#60;</a>
+        <a class="next" href="servicevorgaenge.html">&#62;</a>
+    </div>
+
+    <div id="footer">
+        Copyright @ 2025 Volker Pobloth
+        <!-- | H: <span id="screenheight"></span> -->
+        <!-- | W: <span id="screenwidth"></span> -->
+    </div>
+
+    <div style="content: ''; clear: both; display: table;"></div>
+
+    <script>
+        //show all jsbutton class elements 
+        let jsbuttons = document.getElementsByClassName("jsbutton");
+        for (i = 0; i < jsbuttons.length; i++) {
+            jsbuttons[i].style.visibility = "initial";
+        }
+    </script>
+
+</body>
+</html>        

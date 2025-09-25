@@ -1,0 +1,807 @@
+
+body, html {    
+    background: #f1f1f1;
+    background: linear-gradient(
+      to right,
+      rgb(60, 58, 58),
+      rgb(103, 99, 99)
+    );
+    background-color: transparent;
+    background-image: url("images/background/clouds.jpg");
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-attachment: fixed;
+    background-size:cover;
+	margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+* {
+    box-sizing: border-box;
+    font-family:"Bahnschrift";
+    font-size: 18px;
+	margin:0;
+    padding:0;
+}
+
+a.home{ 
+    text-decoration: none;
+    color: black;
+}
+
+a.small{ 
+    font-size: small;
+    font-weight: normal;
+    text-align: left;
+}
+
+a.smaller{ 
+    font-size: smaller;
+    font-weight: normal;
+    text-align: left;
+}
+
+a:hover{font-weight:bold;}
+
+#contentheader {
+	width: 64%;
+	margin-left: 17%;
+    margin-right: 19%;
+    margin-bottom: 10px;
+    padding-left: 10px;
+	background:transparent;
+    font-size:larger;
+    font-weight: bold;
+    text-align: left; 
+    color:white;
+}
+
+.cookies {
+	width: 64%;
+	margin-top: 10%;
+    margin-left: 17%;
+    margin-right: 19%;
+    margin-bottom: 10px;
+    padding: 20px;
+	background: whitesmoke;
+    border-radius: 25px;
+    border: 3px solid green;
+    line-height: 1.2;
+    overflow: auto;
+}
+
+#jscookiesmessage {
+    display:none; 
+}
+
+.content {
+	width: 64%;
+	margin-left: 17%;
+    margin-right: 19%;
+    margin-bottom: 50px;
+    padding: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+	background: white;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 25px;
+    line-height: 1.2;
+    overflow: auto;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/* https://www.w3schools.com/csS/tryit.asp?filename=trycss3_flexbox
+A Flexible Layout must have a parent element with the display property set to flex.
+Direct child elements(s) of the flexible container automatically becomes flexible items.
+*/
+
+.contentflexfix {
+    display: flex;
+    flex-flow: row nowrap;
+    height: auto;
+    margin-bottom: 10px;
+    padding-bottom:10px;
+    max-width: 100%; /* Maximum width */
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    overflow-x:hidden;
+    background-color: whitesmoke;
+    border-radius: 25px;
+    line-height: 1.2;
+
+    /*align-items: center;*/
+
+}
+.contentflexfix > div {
+    background-color: white;
+    margin-right:20px;
+    padding:15px;
+    min-width: 400px; 
+    max-width: 400px; 
+    border: 1px solid grey;
+    border-radius: 25px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.contentflex {
+    display: flex;
+    flex-flow: row nowrap;
+
+    height: auto;
+    margin-bottom: 10px;
+    padding-bottom:10px;
+
+    max-width: 100%; /* Maximum width */
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    overflow-x: scroll;  
+
+	background: white;
+    border-radius: 25px;
+    line-height: 1.2;
+
+    /*align-items: center;*/
+
+}
+.contentflex > div {
+    background-color: whitesmoke;
+    margin-right:20px;
+    padding:15px;
+    min-width: 400px; 
+    max-width: 400px; 
+    border: 1px solid grey;
+    border-radius: 25px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.fixheight {
+    min-height:175px;
+}
+
+.fixheight200 {
+    min-height:225px;
+}
+
+#footer {
+	width: 100%;
+    text-align: right;
+    /* 
+    margin-top: 50px;
+    margin-left: 17%;
+    margin-right: 19%;
+    margin-bottom: 10px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 25px;
+    height: auto;
+    text-align: center;
+    line-height: 1.5;
+	*/
+}
+
+#sidebar1 {
+	float: left;
+    width: 48%;
+	margin-right: 2%;
+	background: lightblue;
+    text-align: center;
+}
+
+#sidebar2 {
+	float: left;
+    width: 48%;
+	margin-left: 2%;
+	background: lightyellow;
+	text-align: center;
+}
+
+.price {
+    text-transform: uppercase;
+    padding: 15px 0;
+    font-size: xx-large;
+    font-weight:600;
+      
+      span {
+        font-size: 14px;
+        vertical-align: super;
+      }
+}
+
+p{ 
+    padding-top: 0px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+p.p12{ 
+    line-height: 1.5;
+}
+
+h1{ 
+    font-size:larger;
+    font-weight: bold;
+    margin: 0px;
+}
+
+h1.help{ 
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    font-style: inherit;
+    line-height: 1.2;
+    text-transform: inherit;
+    color: rgb(76, 33, 133);
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 18px;
+    margin-bottom: 0px;
+    page-break-after:avoid;
+}
+
+h2{ 
+    font-size: 22px;
+    font-weight: bolder;
+    font-style: inherit;
+    line-height: 1.0;
+    text-transform: inherit;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: px;
+    margin-left: 0px;
+    page-break-after:avoid;
+}
+
+h3{
+    font-size: 20px;
+    font-weight: bolder;
+    font-style: inherit;
+    line-height: 1.0;
+    text-transform: inherit;
+    color: rgb(76, 33, 133);
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: px;
+    margin-left: 0px;
+    page-break-after:avoid;
+}
+
+ul, ol, li{
+    margin-left: 15px;
+}
+
+#list{
+    margin-left: 35px;
+}
+ 
+#downloads {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+}
+#downloads td, #downloads th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+#downloads tr:nth-child(even){background-color: #f2f2f2;}
+#downloads tr:hover {background-color: #ddd;}
+#downloads th {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    text-align: left;
+    background-color:rgb(254,197,25);
+    color: black;
+}
+
+table.style1 {
+    border-collapse: collapse;
+    page-break-inside: auto;
+}
+
+th.style1,td.style1 {
+    border: 1px solid #ddd;
+    border: 1px solid black;
+    padding: 5px;    
+}
+
+tr.style1 { 
+    page-break-inside:avoid; 
+    page-break-after:auto;
+}
+
+tr.style1:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+.button {
+    background:none;
+    background-color:rgb(254,197,25);
+    background-image:none;    
+    border: 1px solid grey;       /*rgb(254,197,25);*/
+    border-radius: 10px;
+    color:rgba(0,0,0,0.9);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s; /*https://www.w3schools.com/css/css3_buttons.asp / Use the transition-duration property to determine the speed of the "hover" effect: */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.button:hover {
+    background-color:lightgoldenrodyellow;
+    color: black;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button2 {
+    position: relative; /* Position the background text */
+    bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+    cursor: pointer;
+    background:none;
+    background-color:rgb(254,197,25);
+    background-image:none;    
+    border: 1px solid grey;       /*rgb(254,197,25);*/
+    border-radius: 10px;
+    color:rgba(0,0,0,0.9);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s; /*https://www.w3schools.com/css/css3_buttons.asp / Use the transition-duration property to determine the speed of the "hover" effect: */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.button2:hover {
+    background-color:lightgoldenrodyellow;
+    color: black;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.jsbutton {
+    visibility:initial;
+    visibility: hidden;
+    display: inline-block;
+    background:none;
+    background-color:rgb(254,197,25);
+    background-image:none;    
+    border: 1px solid grey;       /*rgb(254,197,25);*/
+    border-radius: 10px;
+    color:rgba(0,0,0,0.9);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition-duration: 0.4s; /*https://www.w3schools.com/css/css3_buttons.asp / Use the transition-duration property to determine the speed of the "hover" effect: */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+}
+.jsbutton:hover {
+    background-color:lightgoldenrodyellow;
+    color: black;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    width: 50px;
+    padding: 0px;
+    margin: 0px;
+    color: white;
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: goldenrod;
+    border: 5px solid #f1f1f1;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/* Position the "prev button" to the left */
+.prev {
+    left: 5px;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 5px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity/see-through */
+    background-color:lightgoldenrodyellow;
+}
+
+a.prev,
+a.next { 
+    text-decoration: none;
+}
+
+img.logo {
+    float: right;
+    margin-left: 0.5em;
+    width: 100px;
+}
+
+img.imglft{
+    float: left;
+    margin-right: 9px;
+    margin-bottom: 9px;
+}
+
+img.imglftshadow{
+    float: left;
+    margin-top: 1px;
+    margin-right: 18px;
+    margin-bottom: 9px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+img.imgrght{
+    float: right;
+    margin-left: 18px;
+    margin-bottom: 9px;
+}
+
+img.imgrghtshadow{
+    float: right;
+    margin-left: 18px;
+    margin-bottom: 9px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+img .btn {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #f1f1f1;
+    color: black;
+    font-size: 16px;
+    padding: 16px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+.img .btn:hover {
+background-color: black;
+color: white;
+}
+
+img.marker {
+    float: left;
+    margin-right: 15px;
+    width: 20px;
+}
+img.screenshot {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 90%;
+    border: 2px solid grey
+}
+
+img.screenshotphone {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    width: 400px;
+}
+
+img.screen1024plus {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+@media all and (max-width:1920px) and (max-height:1920px) { 
+
+    .cookies {
+        margin-top: 12%;
+        width: 84%;
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+
+    #contentheader {
+        width: 84%;
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+
+    .content {
+        width: 84%;
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+
+    #footer {
+        width:100%;
+        /* 
+        width: 84%;
+        margin-left: 7%;
+        margin-right: 7%;
+        */
+    }
+
+    img.imglft{
+        width: 400px;
+    }
+
+}
+
+@media all and (max-width:1920px) and (max-height:1920px) and (-webkit-min-device-pixel-ratio:2) { 
+}
+
+
+/*@media all and (max-width:1280px) and (max-height:1280px) { */
+@media all and (max-width:1280px) { 
+
+    .cookies {
+        margin-top: 12%;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    #contentheader {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .content {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    #footer {
+        width: 100%;
+        /* 
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        */
+    }
+
+    img.imglft{
+        width: 400px;
+    }
+
+}
+
+@media all and (max-width:1280px) and (max-height:1280px) and (-webkit-min-device-pixel-ratio:2) { 
+}
+
+@media all and (max-width:1280px) and (max-height:1280px) and (-webkit-min-device-pixel-ratio:3){ 
+}
+
+@media only screen and (max-width: 1024px) {
+
+    body {
+        margin-top: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .cookies {
+        width: 94%;
+        margin-top: 15%;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+
+    #contentheader {
+        width: 94%;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+
+    .content {
+        width: 94%;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+
+    .contentflex > div {
+        min-width: 300px; 
+        max-width: 300px; 
+    }
+
+    .fixheight200 {
+        min-height:275px;
+    }
+    
+    .fixheight {
+        min-height:250px;
+        height: 250px;  
+    }
+
+    #footer {
+        width:100%;
+        /* 
+        width: 94%;
+        margin-left: 3%;
+        margin-right: 3%;
+        */
+    }
+
+    img.screenshotphone {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        width: 400px;
+    }
+
+    img.screen1024 {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        width: 90%;
+    }
+
+    img.imglft{
+        width: 300px;
+    }
+            
+} 
+
+@media only screen and (max-width:768px) and (max-height:768px) {
+}
+
+@media only screen and (max-width:768px) {
+
+
+    body {
+        margin-top: 15px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .cookies {
+        width: 98%;
+        margin-top: 15%;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    #contentheader {
+        width: 98%;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    
+    .content {
+        width: 98%;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+
+    .contentflex > div {
+        min-width: 275px; 
+        max-width: 275px;
+         
+    }
+
+    .fixheight200 {
+        min-height:295px;
+    }
+    
+    .fixheight {
+        min-height:270px;
+        height: 270px;  
+    }
+
+    #footer {
+        width:100%;
+        /* 
+        width: 98%;
+        margin-left: 1%;
+        margin-right: 1%;
+        */
+    }
+
+    img.screenshotphone {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        width: 390px;    
+    }
+
+    img.imglft{
+        width: 200px;
+    }
+
+}
+
+@media all and (max-width:768px) and (max-height:768px) and (-webkit-min-device-pixel-ratio:2) { 
+}
+
+@media all and (max-width:768px) and (max-height:768px) and (-webkit-min-device-pixel-ratio:3) { 
+}
+
+@media all and (max-width:768px) and (max-height:768px) and (-webkit-min-device-pixel-ratio:4) { 
+}
+
+@media only screen and (max-width: 480px) {
+
+    body {
+        margin-top: 15px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .cookies {
+        width: 98%;
+        margin-top: 15%;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    #contentheader {
+        width: 98%;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    .content {
+        width: 98%;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    .contentflex > div {
+        min-width: 250px; 
+        max-width: 250px; 
+    }
+
+    .fixheight200 {
+        min-height:325px;
+    }
+        
+    .fixheight {
+        min-height:300px;
+        height: 300px;  
+    }
+    
+    #footer {
+        width:100%;
+        /* 
+        width: 98%;
+        margin-left: 1%;
+        margin-right: 1%;
+        */
+    }
+
+    img.screenshotphone {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        width: 90%;
+    }
+
+    img.screen480 {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        width: 90%;
+    }
+
+    img.imglft{
+        width: 200px;
+    }
+
+}
+
+
+
