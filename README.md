@@ -36,16 +36,16 @@ Web: <https://pobvol.com>
 <p style="float:right;"><a href="#_home">Top</a>&nbsp;&#8593;</p>
 <h2>Functions</h2>
 
-<img style="float:left" width="75px" src="images/customers.png" alt="image:customers"/> <b>Master data</b>: Customers and devices can be taken from a database. Your team manages customers, devices, and contracts in an app. Your technicians need the master data for customer visits and the documentation of service activities. <a href="help/de/pssserviceboard/servicekunden.html" target="_blank" title="Service customers" >Learn more ></a>
+<img style="float:left" width="75px" src="images/customers.png" alt="image:customers"/> <b>Master data</b>: Customers and devices can be taken from a database. Your team manages customers, devices, and contracts in an app. Your technicians need the master data for customer visits and the documentation of service activities. [Learn more >](https://pobvol.com/help/en/pssserviceboard/service-customers.html)
         
-<img style="float:left" width="75px" src="images/appointment.png" alt="image:appointment"/> <b>Service orders</b>: Your service orders contain all relevant information about the customer, device and appointment with just a few clicks. Automatically generated reminders for the next service activities help your team plan new service appointments. <a href="help/de/pssserviceboard/serviceauftraege.html" target="_blank" title="Service orders" >Learn more ></a>
+<img style="float:left" width="75px" src="images/appointment.png" alt="image:appointment"/> <b>Service orders</b>: Your service orders contain all relevant information about the customer, device and appointment with just a few clicks. Automatically generated reminders for the next service activities help your team plan new service appointments. [Learn more >](https://pobvol.com/help/en/pssserviceboard/service-orders.html)
 
-<img style="float:left" width="75px" src="images/checklist.png" alt="image:checklist"/> <b>Service activities</b>: Your technicians scan the customer inventory using a barcode, QR code or NFC tag, or they use the information from a service order. This means that the customer and device data is pre-populated for the service activity and your technicians only record the results. <a href="help/de/pssserviceboard/servicevorgaenge.html" target="_blank" title="Service activities" >Learn more ></a>
+<img style="float:left" width="75px" src="images/checklist.png" alt="image:checklist"/> <b>Service activities</b>: Your technicians scan the customer inventory using a barcode, QR code or NFC tag, or they use the information from a service order. This means that the customer and device data is pre-populated for the service activity and your technicians only record the results. [Learn more >](https://pobvol.com/help/en/pssserviceboard/service-activities.html)
 
 <img style="float:left" width="75px" src="images/document.png" alt="image:document"/> <b>Service reports</b>: For each service activity, a service report (PDF file) is automatically created when requested. 
-The team is notified of new service documents by email and reviews them. Incorrect data is corrected. If everything is correct, the service report must be approved. <a href="help/de/pssserviceboard/serviceberichte.html" target="_blank" title="Service reports" >Learn more ></a>
+The team is notified of new service documents by email and reviews them. Incorrect data is corrected. If everything is correct, the service report must be approved. [Learn more >](https://pobvol.com/help/en/pssserviceboard/service-reports.html)
 
-<img style="float:left" width="75px" src="images/chart.png" alt="image:chart"/> <b>Reporting</b>: A script regularly updates the Excel-based Pivot reports. This gives you a dashboard, a list of visited customers and a technician schedule. A Power BI report can be included also. <a href="../help/en/pssserviceboard/reporting.html" target="_blank" title="Reporting" >Learn more ></a>
+<img style="float:left" width="75px" src="images/chart.png" alt="image:chart"/> <b>Reporting</b>: A script regularly updates the Excel-based Pivot reports. This gives you a dashboard, a list of visited customers and a technician schedule. A Power BI report can be included also. [Learn more >](https://pobvol.com/help/en/pssserviceboard/reporting.html)
 
 <hr>
 
