@@ -1,0 +1,76 @@
+{
+  "Resources": [
+    {
+      "Name": "SampleImage",
+      "Schema": "i",
+      "IsSampleData": true,
+      "IsWritable": false,
+      "Type": "ResourceInfo",
+      "FileName": "/ctrllib/image/images/SampleImage.svg",
+      "Path": "/ctrllib/image/images/SampleImage.svg",
+      "Content": "Image",
+      "ResourceKind": "Uri",
+      "RootPath": "ms-appx:///ctrllib/image/images/SampleImage.svg"
+    },
+    {
+      "Name": "SampleVideo",
+      "Schema": "m",
+      "IsSampleData": true,
+      "IsWritable": false,
+      "Type": "ResourceInfo",
+      "FileName": "/ctrllib/videoPlayback/media/SampleVideo.mp4",
+      "Path": "/ctrllib/videoPlayback/media/SampleVideo.mp4",
+      "Content": "Video",
+      "ResourceKind": "Uri",
+      "RootPath": "ms-appx:///ctrllib/videoPlayback/media/SampleVideo.mp4"
+    },
+    {
+      "Name": "Loading_1",
+      "Schema": "i",
+      "IsSampleData": false,
+      "IsWritable": false,
+      "Type": "ResourceInfo",
+      "FileName": "21d66126-b8ea-492c-b028-a880e445cb15.gif",
+      "Path": "Assets\\Images\\21d66126-b8ea-492c-b028-a880e445cb15.gif",
+      "Content": "Image",
+      "ResourceKind": "LocalFile",
+      "RootPath": "https://dsprdil106neu.blob.core.windows.net/3b7e195d-6288-423b-9ce9-708e710a0f53-1/resource/MjFkNjYxMjYtYjhlYS00OTJjLWIwMjgtYTg4MGU0NDVjYjE1.gif?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2025-08-29T12%3A29%3A27Z&ske=2025-08-30T12%3A44%3A27Z&sks=b&skv=2023-01-03&sv=2023-01-03&spr=https&se=2025-08-30T12%3A44%3A27Z&sr=b&sp=r&sig=R3UFS77DkU8WE2kP0oyWLcEhIaraq4Kz0RVZOEtl9EY%3D"
+    },
+    {
+      "Name": "Anna",
+      "Schema": "i",
+      "IsSampleData": false,
+      "IsWritable": false,
+      "Type": "ResourceInfo",
+      "FileName": "db135a90-1758-493e-97ad-d831d6ba7b41.jpg",
+      "Path": "Assets\\Images\\db135a90-1758-493e-97ad-d831d6ba7b41.jpg",
+      "Content": "Image",
+      "ResourceKind": "LocalFile",
+      "RootPath": "https://dsprdil106neu.blob.core.windows.net/3b7e195d-6288-423b-9ce9-708e710a0f53-1/resource/ZGIxMzVhOTAtMTc1OC00OTNlLTk3YWQtZDgzMWQ2YmE3YjQx.jpg?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2025-08-29T12%3A29%3A27Z&ske=2025-08-30T12%3A44%3A27Z&sks=b&skv=2023-01-03&sv=2023-01-03&spr=https&se=2025-08-30T12%3A44%3A27Z&sr=b&sp=r&sig=jUsPrLpoZAXwz8bbHETXHa%2FtTW%2F7qZQaYr9CZM2T1vU%3D"
+    },
+    {
+      "Name": "SamplePdf",
+      "Schema": "o",
+      "IsSampleData": true,
+      "IsWritable": false,
+      "Type": "ResourceInfo",
+      "FileName": "/ctrllib/pdfViewer/data/SamplePdf.pdf",
+      "Path": "/ctrllib/pdfViewer/data/SamplePdf.pdf",
+      "Content": "Pdf",
+      "ResourceKind": "Uri",
+      "RootPath": "ms-appx:///ctrllib/pdfViewer/data/SamplePdf.pdf"
+    },
+    {
+      "Name": "uvv-clouds",
+      "Schema": "i",
+      "IsSampleData": false,
+      "IsWritable": false,
+      "Type": "ResourceInfo",
+      "FileName": "c178a1ef-1fcd-4288-90ed-afe61ebdae5a.jpg",
+      "Path": "Assets\\Images\\c178a1ef-1fcd-4288-90ed-afe61ebdae5a.jpg",
+      "Content": "Image",
+      "ResourceKind": "LocalFile",
+      "RootPath": "https://dsprdil106neu.blob.core.windows.net/3b7e195d-6288-423b-9ce9-708e710a0f53-1/resource/YzE3OGExZWYtMWZjZC00Mjg4LTkwZWQtYWZlNjFlYmRhZTVh.jpg?skoid=58690ece-ec83-4ce2-9ce8-883d4d6a54ee&sktid=975f013f-7f24-47e8-a7d3-abc4752bf346&skt=2025-08-29T12%3A29%3A27Z&ske=2025-08-30T12%3A44%3A27Z&sks=b&skv=2023-01-03&sv=2023-01-03&spr=https&se=2025-08-30T12%3A44%3A27Z&sr=b&sp=r&sig=COsx%2F9mspQF6gu08zuE5GlXTkmTFZRpTgfIReH%2FSDRU%3D"
+    }
+  ]
+}
