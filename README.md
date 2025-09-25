@@ -28,7 +28,7 @@ The solution is distributed in the hope that it will be useful, but WITHOUT ANY 
 See the GNU General Public License for more details. You should receive a copy of the GNU General Public License along with the solution. If not, see <a href="https://www.gnu.org/licenses/gpl-3.0" target="_blank" rel="nofollow">GNU General Public License&#9775;</a> for more details.<br> 
 <br>
 Copyright @ 2025 Volker Pobloth<br>
-Web: <https://pobvol.com>
+Web: <https://pobvol.com>&#9775;
 <hr>
 
 
@@ -36,16 +36,16 @@ Web: <https://pobvol.com>
 <p style="float:right;"><a href="#_home">Top</a>&nbsp;&#8593;</p>
 <h2>Functions</h2>
 
-<img style="float:left" width="75px" src="images/customers.png" alt="image:customers"/> <b>Master data</b>: Customers and devices can be taken from a database. Your team manages customers, devices, and contracts in an app. Your technicians need the master data for customer visits and the documentation of service activities. [Learn more >](https://pobvol.com/help/en/pssserviceboard/service-customers.html)
+<img style="float:left" width="75px" src="images/customers.png" alt="image:customers"/> <b>Master data</b>: Customers and devices can be taken from a database. Your team manages customers, devices, and contracts in an app. Your technicians need the master data for customer visits and the documentation of service activities. [Learn more >&#9775;](https://pobvol.com/help/en/pssserviceboard/service-customers.html)
         
-<img style="float:left" width="75px" src="images/appointment.png" alt="image:appointment"/> <b>Service orders</b>: Your service orders contain all relevant information about the customer, device and appointment with just a few clicks. Automatically generated reminders for the next service activities help your team plan new service appointments. [Learn more >](https://pobvol.com/help/en/pssserviceboard/service-orders.html)
+<img style="float:left" width="75px" src="images/appointment.png" alt="image:appointment"/> <b>Service orders</b>: Your service orders contain all relevant information about the customer, device and appointment with just a few clicks. Automatically generated reminders for the next service activities help your team plan new service appointments. [Learn more >&#9775;](https://pobvol.com/help/en/pssserviceboard/service-orders.html)
 
-<img style="float:left" width="75px" src="images/checklist.png" alt="image:checklist"/> <b>Service activities</b>: Your technicians scan the customer inventory using a barcode, QR code or NFC tag, or they use the information from a service order. This means that the customer and device data is pre-populated for the service activity and your technicians only record the results. [Learn more >](https://pobvol.com/help/en/pssserviceboard/service-activities.html)
+<img style="float:left" width="75px" src="images/checklist.png" alt="image:checklist"/> <b>Service activities</b>: Your technicians scan the customer inventory using a barcode, QR code or NFC tag, or they use the information from a service order. This means that the customer and device data is pre-populated for the service activity and your technicians only record the results. [Learn more >&#9775;](https://pobvol.com/help/en/pssserviceboard/service-activities.html)
 
 <img style="float:left" width="75px" src="images/document.png" alt="image:document"/> <b>Service reports</b>: For each service activity, a service report (PDF file) is automatically created when requested. 
-The team is notified of new service documents by email and reviews them. Incorrect data is corrected. If everything is correct, the service report must be approved. [Learn more >](https://pobvol.com/help/en/pssserviceboard/service-reports.html)
+The team is notified of new service documents by email and reviews them. Incorrect data is corrected. If everything is correct, the service report must be approved. [Learn more >&#9775;](https://pobvol.com/help/en/pssserviceboard/service-reports.html)
 
-<img style="float:left" width="75px" src="images/chart.png" alt="image:chart"/> <b>Reporting</b>: A script regularly updates the Excel-based Pivot reports. This gives you a dashboard, a list of visited customers and a technician schedule. A Power BI report can be included also. [Learn more >](https://pobvol.com/help/en/pssserviceboard/reporting.html)
+<img style="float:left" width="75px" src="images/chart.png" alt="image:chart"/> <b>Reporting</b>: A script regularly updates the Excel-based Pivot reports. This gives you a dashboard, a list of visited customers and a technician schedule. A Power BI report can be included also. [Learn more >&#9775;](https://pobvol.com/help/en/pssserviceboard/reporting.html)
 
 <hr>
 
@@ -120,7 +120,7 @@ The team is notified of new service documents by email and reviews them. Incorre
   Your data is stored in your <a href="https://docs.microsoft.com/en-us/sharepoint/" target="_blank" rel="nofollow"><b>Microsoft 365 SharePoint</b>&#9775;</a> environment. This gives you full control over your data and allows you to manage access. I chose SharePoint to keep your licensing costs as low as possible. SharePoint is included in Microsoft 365 Business Basic. The limitations of this technology may require a transition to another storage solution (e.g., Microsoft SQL) with higher data volumes. This is not part of the solution!<br />
   <br />
     
-  For customers in Germany, Microsoft provides <a href="https://www.microsoft.com/de-de/microsoft-365/business/data-security-privacy-germany" rel="nofollow" target="_blank" title="data-security-privacy-germany">cloud services from Germany</a>. Your business data is stored in Germany in compliance with GDPR - demonstrably secure data storage in German data centers.<br />
+  For customers in Germany, Microsoft provides <a href="https://www.microsoft.com/de-de/microsoft-365/business/data-security-privacy-germany" rel="nofollow" target="_blank" title="data-security-privacy-germany">cloud services from Germany&#9775;</a>. Your business data is stored in Germany in compliance with GDPR - demonstrably secure data storage in German data centers.<br />
   <br />
 
   <a href="https://docs.microsoft.com/en-us/power-apps/maker/canvas-apps/connections/connection-office365-outlook" target="_blank" rel="nofollow"><b>Microsoft 365 Outlook</b>&#9775;</a>: Appointments are saved in a shared Outlook calendar. From here, invitations are sent to your team and, if desired, also to your customers. Outlook is included in Microsoft 365 Business Basic.<br />
