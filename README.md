@@ -36,14 +36,13 @@ Web: <https://pobvol.com>&#9775;
 <p style="float:right;"><a href="#_home">Top</a>&nbsp;&#8593;</p>
 <h2>Functions</h2>
 
-<img style="float:left" width="75px" src="images/customers.png" alt="image:customers"/> <b>Master data</b>: Customers and devices can be taken from a database. Your team manages customers, devices, and contracts in an app. Your technicians need the master data for customer visits and the documentation of service activities. [Learn more >&#9775;](https://pobvol.com/help/en/pssserviceboard/service-customers.html)
+<img style="float:left" width="75px" src="images/customers.png" alt="image:customers"/> <b>Master data</b>: Your team manages customers, devices and contracts in an app. Your technicians need the master data for customer visits and the documentation of service activities. Customers and devices can be imported from a database. [Learn more >&#9775;](https://pobvol.com/help/en/pssserviceboard/service-customers.html)
         
-<img style="float:left" width="75px" src="images/appointment.png" alt="image:appointment"/> <b>Service orders</b>: Your service orders contain all relevant information about the customer, device and appointment with just a few clicks. Automatically generated reminders for the next service activities help your team plan new service appointments. [Learn more >&#9775;](https://pobvol.com/help/en/pssserviceboard/service-orders.html)
+<img style="float:left" width="75px" src="images/appointment.png" alt="image:appointment"/> <b>Service orders</b>: Your service orders contain all relevant information about customer, device and appointment with just a few clicks. Automatically generated reminders help not to forget the next service activities. [Learn more >&#9775;](https://pobvol.com/help/en/pssserviceboard/service-orders.html)
 
 <img style="float:left" width="75px" src="images/checklist.png" alt="image:checklist"/> <b>Service activities</b>: Your technicians scan the customer inventory using a barcode, QR code or NFC tag, or they use the information from a service order. This means that the customer and device data is pre-populated for the service activity and your technicians only record the results. [Learn more >&#9775;](https://pobvol.com/help/en/pssserviceboard/service-activities.html)
 
-<img style="float:left" width="75px" src="images/document.png" alt="image:document"/> <b>Service reports</b>: For each service activity, a service report (PDF file) is automatically created when requested. 
-The team is notified of new service documents by email and reviews them. Incorrect data is corrected. If everything is correct, the service report must be approved. [Learn more >&#9775;](https://pobvol.com/help/en/pssserviceboard/service-reports.html)
+<img style="float:left" width="75px" src="images/document.png" alt="image:document"/> <b>Service reports</b>: For each service activity, a service report (PDF file) is automatically created when requested. The team is notified of new service documents by email and reviews them. Incorrect data is corrected. If everything is fine, the service report can be approved. [Learn more >&#9775;](https://pobvol.com/help/en/pssserviceboard/service-reports.html)
 
 <img style="float:left" width="75px" src="images/chart.png" alt="image:chart"/> <b>Reporting</b>: A script regularly updates the Excel-based Pivot reports. This gives you a dashboard, a list of visited customers and a technician schedule. A Power BI report can be included also. [Learn more >&#9775;](https://pobvol.com/help/en/pssserviceboard/reporting.html)
 
@@ -102,16 +101,13 @@ The team is notified of new service documents by email and reviews them. Incorre
   <a href="https://docs.microsoft.com/en-us/powershell/" target="_blank" rel="nofollow"><b>Microsoft PowerShell</b>&#9775;</a> with the open-source component <a href="https://learn.microsoft.com/en-us/powershell/sharepoint/sharepoint-pnp/sharepoint-pnp-cmdlets" target="_blank" rel="nofollow"><b>PnP PowerShell</b>&#9775;</a> is used for the installation of the solution, for data backups, and for data migration. PowerShell is included in Microsoft Windows. No additional licensing costs are incurred.<br />
   <br />
 
-  <a href="https://support.microsoft.com/en-us/office/introduction-to-queries-a9739a09-d3ff-4f36-8ac3-5760249fb65c" target="_blank" rel="nofollow"><b>Microsoft Access</b>&#9775;</a> is used by the PC component of the automation solution. Queries retrieve data for the solution from Excel and databases into your SharePoint lists.<br />
+  <a href="https://support.microsoft.com/en-us/office/introduction-to-queries-a9739a09-d3ff-4f36-8ac3-5760249fb65c" target="_blank" rel="nofollow"><b>Microsoft Access</b>&#9775;</a> and <a href="https://docs.microsoft.com/en-us/office/vba/api/overview/" target="_blank" rel="nofollow"><b>Microsoft Excel</b>&#9775;</a> are used for automation. Data is imported to your SharePoint lists with queries in Access databases, Pivot charts and lists are refreshed in an Excel Pivot-report.<br />
   <br />
-
-  The PC component of the solution uses <a href="https://docs.microsoft.com/en-us/office/vba/api/overview/" target="_blank" rel="nofollow"><b>Microsoft Excel</b>&#9775;</a> lists to import data for the solution. A pivot report for your monitoring can also be created using Excel.<br />
-  <br />
-
-  <a href="https://support.microsoft.com/en-us/office/sync-files-with-onedrive-in-windows-615391c4-2bd3-4aae-a42a-858262e42a49" target="_blank" rel="nofollow"><b>Microsoft OneDrive</b>&#9775;</a> is used by the PC component of the automation solution. The tool synchronizes files between the PC component and your team's SharePoint library. OneDrive is included in Microsoft 365 Business Basic.<br />
+  
+  <a href="https://support.microsoft.com/en-us/office/sync-files-with-onedrive-in-windows-615391c4-2bd3-4aae-a42a-858262e42a49" target="_blank" rel="nofollow"><b>Microsoft OneDrive</b>&#9775;</a> synchronizes files between the PC component and your team's SharePoint library. OneDrive is included in Microsoft 365 Business Basic.<br />
   <br />
     
-  Two <a href="https://docs.microsoft.com/en-us/powerapps/" target="_blank" rel="nofollow"><b>Microsoft Power Apps</b>&#9775;</a> applications are the most important part of the solution. With the Power App <b>pssService Board</b>, your team manages its service data and monitors service activities and reports. The Power App <b>pssService Phone</b> is used by your technicians to document service processes on Apple iPhones and Android smartphones. Power Apps is included in Microsoft 365 Business Basic.<br />
+  Two <a href="https://docs.microsoft.com/en-us/powerapps/" target="_blank" rel="nofollow"><b>Microsoft Power Apps</b>&#9775;</a> applications are the most important part of the solution. With the Power App <b>pssService Board</b>, your team manages its service data and monitors service activities and reports. The Power App <b>pssService Phone</b> is used by your technicians to document service processes on iPhones and Android smartphones. Power Apps is included in Microsoft 365 Business Basic.<br />
   <br />
             
   <a href="https://docs.microsoft.com/en-us/power-automate/" target="_blank" rel="nofollow"><b>Microsoft Power Automate</b>&#9775;</a> - Flows are used for automation. Power Automate is included in Microsoft 365 Business Basic.<br />
